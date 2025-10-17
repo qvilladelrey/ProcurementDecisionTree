@@ -11,7 +11,7 @@
             margin: 0;
             padding: 20px;
             /* Option 1: Use an image URL */
-            background-image: url('https://gppbgov-my.sharepoint.com/:i:/g/personal/alvilladelrey_gppb_gov_ph/Ef5pi17YGUtCllB6QPCX3CYB3OCdtXJ9ms0ZvRFxe1JqjQ?e=AnkXcA');
+            background-image: ![Example Image](https://gppbgov-my.sharepoint.com/:i:/g/personal/alvilladelrey_gppb_gov_ph/Ef5pi17YGUtCllB6QPCX3CYB3OCdtXJ9ms0ZvRFxe1JqjQ?e=RUA223);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
