@@ -3,26 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Decision Tree</title>
+    <title>Digital Procurement Mode Decision Tree</title>
     <style>
         body {
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 20px;
-            /* Option 1: Use an image URL */
             background-image: ![Example Image](https://gppbgov-my.sharepoint.com/:i:/g/personal/alvilladelrey_gppb_gov_ph/Ef5pi17YGUtCllB6QPCX3CYB3OCdtXJ9ms0ZvRFxe1JqjQ?e=RUA223);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            
-            /* Option 2: Keep gradient as fallback - uncomment line below if image fails to load */
-            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .decision-container {
