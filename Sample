@@ -37,12 +37,12 @@
             font-family: 'Bricolage Grotesque', 'Arial', sans-serif;
             color: #333;
             margin-bottom: 30px;
-            font-size: 3em;
-            font-weight: 700;
+            font-size: 2.5em;
+            font-weight: 600;
         }
 
         .question {
-            font-size: 1.3em;
+            font-size: 2em;
             color: #555;
             margin-bottom: 30px;
             line-height: 1.5;
@@ -166,7 +166,7 @@
             </div>
             
             <div class="options">
-                <img src="START.png" onclick="startDecisionTree()" style="width: 300px; height: 100px; object-fit: cover; border-radius: 15px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: block; margin: 0 auto;" alt="Start icon" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onmousedown="this.style.transform='scale(0.95)'" onmouseup="this.style.transform='scale(1.05)'" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                <img src="START.png" onclick="startDecisionTree()" style="width: 280px; height: 90px; object-fit: cover; border-radius: 15px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: block; margin: 0 auto;" alt="Start icon" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onmousedown="this.style.transform='scale(0.95)'" onmouseup="this.style.transform='scale(1.05)'" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
             </div>
         </div>
 
