@@ -274,7 +274,7 @@
             <div class="options" id="optionsContainer">
                 <div class="image-option" onclick="makeChoice('goods')">
                     <img src="Billy Goods.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Goods icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
-                    <h3>Goods</h3>
+                    <h3><span class="definition-word">Goods<span class="definition-tooltip">Goods refer to (i) all items, supplies, and  materials, whether in the nature of equipment, furniture, stationery, materials for construction, or personal property of any kind, needed in the transaction of public businesses or in the pursuit of any government undertaking, project or activity; or (ii) general support services which pertain to all types of services except Consulting Services and Infrastructure Projects, such as the repair and maintenance of equipment and furniture, as well as trucking, hauling, janitorial, security, and related or analogous services. Personnel Services or individual COS or JO engagements do not fall under this definition.</span></span></h3>
                 </div>
                 <div class="image-option" onclick="makeChoice('infrastructure')">
                     <img src="Billy Infra.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Infrastructure icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
