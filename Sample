@@ -176,7 +176,7 @@
             
             <div class="options">
                 <button class="option-btn" onclick="startDecisionTree()">
-                    img: url(START.png');
+                    url(START.png');
                 </button>
             </div>
         </div>
