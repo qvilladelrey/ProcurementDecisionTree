@@ -200,7 +200,7 @@
             color: white;
             padding: 10px 16px;
             border-radius: 8px;
-            font-size: 0.85em;
+            font-size: 0.25em;
             white-space: nowrap;
             z-index: 1000;
             opacity: 0;
