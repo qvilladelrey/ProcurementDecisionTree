@@ -273,11 +273,11 @@
                 question: "Was the Good procured previously?",
                 options: {
                     yes: {
-                        text:   <img src="YES.png" style="width: 130px; height: 70px; object-fit: cover; border-radius: 8px;" alt="Consulting icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        text: "✅ Yes",
                         next: "need_to_action"
                     },
                     no: {
-                        text: <img src="YES.png" style="width: 130px; height: 70px; object-fit: cover; border-radius: 8px;" alt="Consulting icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        text: "❌ No",
                         next: "result_under_construction"
                     }
                 }
