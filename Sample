@@ -520,7 +520,6 @@
 
         function startDecisionTree() {
             document.getElementById('homeContainer').style.display = 'none';
-            document.getElementById('progressBarContainer').style.display = 'block';
             document.getElementById('questionContainer').style.display = 'block';
             showQuestion();
         }
@@ -530,7 +529,6 @@
             userPath = [];
             
             document.getElementById('homeContainer').style.display = 'block';
-            document.getElementById('progressBarContainer').style.display = 'none';
             document.getElementById('questionContainer').style.display = 'none';
             document.getElementById('resultContainer').style.display = 'none';
             document.getElementById('progressFill').style.width = '0%';
