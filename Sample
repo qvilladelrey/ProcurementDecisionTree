@@ -183,6 +183,52 @@
             transition: width 0.5s ease;
         }
 
+        .definition-word {
+            position: relative;
+            cursor: help;
+            color: #667eea;
+            font-weight: 500;
+            border-bottom: 1px dotted #667eea;
+        }
+
+        .definition-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            white-space: nowrap;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: 5px;
+            max-width: 250px;
+            white-space: normal;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .definition-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #333;
+        }
+
+        .definition-word:hover .definition-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
         @media (max-width: 768px) {
             .decision-container {
                 padding: 25px;
