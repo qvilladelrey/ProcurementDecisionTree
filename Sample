@@ -63,7 +63,7 @@
         }
 
         .option-btn {
-            background: linear-gradient(135deg, #1e3888, 135deg);
+            background: linear-gradient(135deg, #1e3888, #3a6ea5);
             color: white;
             border: none;
             padding: 18px 25px;
