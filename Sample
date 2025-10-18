@@ -34,7 +34,7 @@
         }
 
         h1 {
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: 'Bricolage Grotesque', 'Arial', sans-serif;
             color: #333;
             margin-bottom: 30px;
             font-size: 2.2em;
