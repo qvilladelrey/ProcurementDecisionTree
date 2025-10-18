@@ -175,7 +175,7 @@
             </div>
             
             <div class="options">
-                <img src="START.png" onclick="startDecisionTree()" style="width: 200px; height: 120px; object-fit: cover; border-radius: 15px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" alt="Start icon" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onmousedown="this.style.transform='scale(0.95)'" onmouseup="this.style.transform='scale(1.05)'" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                <img src="START.png" onclick="startDecisionTree()" style="width: 300px; height: 100px; object-fit: cover; border-radius: 15px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" alt="Start icon" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onmousedown="this.style.transform='scale(0.95)'" onmouseup="this.style.transform='scale(1.05)'" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
             </div>
         </div>
 
