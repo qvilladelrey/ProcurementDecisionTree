@@ -474,7 +474,7 @@
                 `;
             } else {
                 // Use image options for yes/no questions
-                if (currentNode === 'goods_previously') {
+                if (currentNode === 'goods_previously' || currentNode === 'contract_rescinded') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
