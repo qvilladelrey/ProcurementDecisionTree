@@ -176,15 +176,21 @@
             </div>
             
             <div class="options" id="optionsContainer">
-                <button class="option-btn" onclick="makeChoice('goods')">
-                    📦 Goods
-                </button>
-                <button class="option-btn" onclick="makeChoice('infrastructure')">
-                    🏗️ Infrastructure Projects
-                </button>
-                <button class="option-btn" onclick="makeChoice('consulting')">
-                    🤝 Consulting Services
-                </button>
+                <div class="image-option" onclick="makeChoice('goods')">
+                    <img src="Billy Goods.png" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;" alt="Goods icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    <h3>Goods</h3>
+                    <p>Physical products, supplies, and materials</p>
+                </div>
+                <div class="image-option" onclick="makeChoice('infrastructure')">
+                    <img src="Billy Infra.png" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;" alt="Infrastructure icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    <h3>Infrastructure Projects</h3>
+                    <p>Construction, buildings, and public works</p>
+                </div>
+                <div class="image-option" onclick="makeChoice('consulting')">
+                    <img src="Billy Consulting.png" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;" alt="Consulting icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    <h3>Consulting Services</h3>
+                    <p>Professional advice and expertise</p>
+                </div>
             </div>
         </div>
         
