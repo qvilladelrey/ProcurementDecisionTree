@@ -343,7 +343,7 @@
                 options: {
                     immediate: {
                         text: "🚨 Undertake immediate action to prevent damage to or loss of life or property or restore vital public services",
-                        next: "result_immediate_action"
+                        next: "contract_rescinded"
                     },
                     failed_bidding: {
                         text: "🔄 Procure again due to two (2) failures of bidding",
@@ -356,6 +356,20 @@
                     other: {
                         text: "❓ Not among the stated options",
                         next: "result_other_options"
+                    }
+                }
+            }
+        },
+        contract_rescinded:{
+            question: "Was the contract of the previous bidder rescinded or terminated?",
+            options:
+                    yes: {
+                        text: "✅ Yes",
+                        next: "need_to_action"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_under_construction"
                     }
                 }
             }
