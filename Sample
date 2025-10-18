@@ -37,8 +37,8 @@
             font-family: 'Bricolage Grotesque', 'Arial', sans-serif;
             color: #333;
             margin-bottom: 30px;
-            font-size: 2.2em;
-            font-weight: 600;
+            font-size: 3em;
+            font-weight: 700;
         }
 
         .question {
