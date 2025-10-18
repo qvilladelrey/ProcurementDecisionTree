@@ -169,10 +169,6 @@
     <div class="decision-container">
         <h1>Decision Tree for Modes of Procurement</h1>
         
-        <div class="progress-bar">
-            <div class="progress-fill" id="progressFill"></div>
-        </div>
-        
         <div id="homeContainer">
             <div class="question" style="font-size: 1.1em; text-align: left; margin-bottom: 30px;">
                 This decision tree for modes of procurement is a step-by-step guide that uses yes/no or conditional questions to determine the most appropriate procurement method based on thresholds, conditions, and justifications. It ensures Procuring Entities choose which mode of procurement is the most fit for their desired purpose, in accordance with the Fit-for-Purpose Approach under Republic Act No. 12009 or the New Government Procurement Act.
