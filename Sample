@@ -179,17 +179,14 @@
                 <div class="image-option" onclick="makeChoice('goods')">
                     <img src="Billy Goods.png" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;" alt="Goods icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
                     <h3>Goods</h3>
-                    <p>Physical products, supplies, and materials</p>
                 </div>
                 <div class="image-option" onclick="makeChoice('infrastructure')">
                     <img src="Billy Infra.png" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;" alt="Infrastructure icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
                     <h3>Infrastructure Projects</h3>
-                    <p>Construction, buildings, and public works</p>
                 </div>
                 <div class="image-option" onclick="makeChoice('consulting')">
                     <img src="Billy Consulting.png" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;" alt="Consulting icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
                     <h3>Consulting Services</h3>
-                    <p>Professional advice and expertise</p>
                 </div>
             </div>
         </div>
@@ -341,15 +338,35 @@
             document.getElementById('questionText').textContent = nodeData.question;
             
             const optionsContainer = document.getElementById('optionsContainer');
-            optionsContainer.innerHTML = '';
             
-            for (let optionKey in nodeData.options) {
-                const option = nodeData.options[optionKey];
-                const button = document.createElement('button');
-                button.className = 'option-btn';
-                button.textContent = option.text;
-                button.onclick = () => makeChoice(optionKey);
-                optionsContainer.appendChild(button);
+            // Only replace with image options for the first question
+            if (currentNode === 'start') {
+                optionsContainer.innerHTML = `
+                    <div class="image-option" onclick="makeChoice('goods')">
+                        <img src="Billy Goods.png" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;" alt="Goods icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        <h3>Goods</h3>
+                    </div>
+                    <div class="image-option" onclick="makeChoice('infrastructure')">
+                        <img src="Billy Infra.png" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;" alt="Infrastructure icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        <h3>Infrastructure Projects</h3>
+                    </div>
+                    <div class="image-option" onclick="makeChoice('consulting')">
+                        <img src="Billy Consulting.png" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;" alt="Consulting icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        <h3>Consulting Services</h3>
+                    </div>
+                `;
+            } else {
+                // Use regular buttons for other questions
+                optionsContainer.innerHTML = '';
+                
+                for (let optionKey in nodeData.options) {
+                    const option = nodeData.options[optionKey];
+                    const button = document.createElement('button');
+                    button.className = 'option-btn';
+                    button.textContent = option.text;
+                    button.onclick = () => makeChoice(optionKey);
+                    optionsContainer.appendChild(button);
+                }
             }
         }
 
