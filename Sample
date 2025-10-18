@@ -25,7 +25,7 @@
             background: white;
             border-radius: 20px;
             padding: 30px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            box-shadow: 0 35px 65px rgba(0.25,0.25,0.25,0.25);
             max-width: 600px;
             width: 100%;
             text-align: center;
@@ -161,7 +161,7 @@
         <h1>Decision Tree for Modes of Procurement</h1>
         
         <div id="homeContainer">
-            <div class="question" style="font-size: 1.1em; text-align: left; margin-bottom: 30px;">
+            <div class="question" style="font-size: 1.1em; text-align: justified; margin-bottom: 30px;">
                 This decision tree for modes of procurement is a step-by-step guide that uses yes/no or conditional questions to determine the most appropriate procurement method based on thresholds, conditions, and justifications. It ensures Procuring Entities choose which mode of procurement is the most fit for their desired purpose, in accordance with the Fit-for-Purpose Approach under Republic Act No. 12009 or the New Government Procurement Act.
             </div>
             
