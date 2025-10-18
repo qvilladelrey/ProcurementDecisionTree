@@ -408,10 +408,10 @@
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
-                            <img src="YES.png" style="width: 170px; height: 30px; object-fit: cover; border-radius: 1px;" alt="Yes icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                            <img src="YES.png" style="width: 130px; height: 70px; object-fit: cover; border-radius: 1px;" alt="Yes icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
                         </div>
                         <div class="image-option" onclick="makeChoice('no')">
-                            <img src="NO.png" style="width: 170px; height: 30px; object-fit: cover; border-radius: 1px;" alt="No icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                            <img src="NO.png" style="width: 130px; height: 70px; object-fit: cover; border-radius: 1px;" alt="No icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
                         </div>
                     `;
                 } else {
