@@ -174,19 +174,10 @@
                 This decision tree for modes of procurement is a step-by-step guide that uses yes/no or conditional questions to determine the most appropriate procurement method based on thresholds, conditions, and justifications. It ensures Procuring Entities choose which mode of procurement is the most fit for their desired purpose, in accordance with the Fit-for-Purpose Approach under Republic Act No. 12009 or the New Government Procurement Act.
             </div>
             
-    <div class="options" 
-         style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-      <img 
-        src="START.png" 
-        onclick="startDecisionTree()" 
-        style="width: 300px; height: 100px; object-fit: cover; border-radius: 15px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"
-        alt="Start icon"
-        onmouseover="this.style.transform='scale(1.05)'"
-        onmouseout="this.style.transform='scale(1)'"
-        onmousedown="this.style.transform='scale(0.95)'"
-        onmouseup="this.style.transform='scale(1.05)'"
-        onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
-    </div>
+            <div class="options">
+                <img src="START.png" onclick="startDecisionTree()" style="width: 300px; height: 100px; object-fit: cover; border-radius: 15px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: block; margin: 0 auto;" alt="Start icon" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onmousedown="this.style.transform='scale(0.95)'" onmouseup="this.style.transform='scale(1.05)'" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+            </div>
+        </div>
 
         <div id="questionContainer" style="display: none;">
             <div class="question" id="questionText">
