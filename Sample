@@ -358,60 +358,60 @@
                         next: "result_other_options"
                     }
                 }
-        },
-        contract_rescinded: {
-            question: "Was the contract of the previous bidder rescinded or terminated?",
-            options: {
-                yes: {
-                    text: "✅ Yes",
-                    next: "prefer_takeover_goods"
-                },
-                no: {
-                    text: "❌ No",
-                    next: "result_under_construction"
-                }
-            }
-        },
-        prefer_takeover_goods: {
-            question: "Do you prefer to:",
-            options: {
-                negotiated: {
-                    text: "📋 Post-Qualify and negotiate with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
-                    next: "result_negotiated_procurement_takeover"
-                },
-                different: {
-                    text: "🔄 Adopt different procurement mode",
-                    next: "result_under_construction"
+            },
+            contract_rescinded: {
+                question: "Was the contract of the previous bidder rescinded or terminated?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_takeover_goods"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_under_construction"
                     }
                 }
             },
-        prefer_emergency_cases: {
-            question: "Do you prefer to:",
-            options: {
-                negotiated: {
-                    text: "Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
-                    result: "result_emergency_cases"
-                },
-                different: {
-                    text: "🔄 Adopt different procurement mode",
-                    next: "result_under_construction"
+            prefer_takeover_goods: {
+                question: "Do you prefer to:",
+                options: {
+                    negotiated: {
+                        text: "📋 Post-Qualify and negotiate with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
+                        next: "result_negotiated_procurement_takeover"
+                    },
+                    different: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_under_construction"
                     }
                 }
             },
-        prefer_failed_bidding: {
-            question: "Do you prefer to:",
-            options: {
-                negotiated: {
-                    text: "Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
-                    result: "result_failed_bidding"
-                },
-                different: {
-                    text: "🔄 Adopt different procurement mode",
-                    next: "result_under_construction"
+            prefer_emergency_cases: {
+                question: "Do you prefer to:",
+                options: {
+                    negotiated: {
+                        text: "Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
+                        result: "result_emergency_cases"
+                    },
+                    different: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_under_construction"
+                        }
+                    }
+            },
+            prefer_failed_bidding: {
+                question: "Do you prefer to:",
+                options: {
+                    negotiated: {
+                        text: "Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
+                        result: "result_failed_bidding"
+                    },
+                    different: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_under_construction"
+                        }
                     }
                 }
-            }
-        };
+            };
 
         const results = {
             result_emergency_cases: {
