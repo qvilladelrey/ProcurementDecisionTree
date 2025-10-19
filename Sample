@@ -368,7 +368,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_under_construction"
+                        next: "prefer_emergency_cases"
                     }
                 }
             },
