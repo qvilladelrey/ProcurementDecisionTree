@@ -376,7 +376,7 @@
             question: "Do you prefer to:",
             options: {
                 negotiated: {
-                    text: "📋 Post-Qualify and negotiated with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
+                    text: "📋 Post-Qualify and negotiate with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
                     next: "result_negotiated_procurement_takeover"
                 },
                 different: {
@@ -384,12 +384,24 @@
                     next: "result_under_construction"
                     }
                 }
+            },
+        prefer_emergency_cases: {
+            question: "Do you prefer to:",
+            options: {
+                negotiated: {
+                    text: "Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
+                    result: "result_emergency_cases"
+            },
+                different: {
+                    text: "🔄 Adopt different procurement mode",
+                    next: "result_under_construction"
+                }
             }
         };
 
         const results = {
-            result_immediate_action: {
-                title: "🚨 Emergency Procurement",
+            result_emergency_cases: {
+                title: "🚨 Negotiated Procurement: Emergency Cases",
                 description: "This situation qualifies for emergency procurement procedures. You may proceed with direct contracting or negotiated procurement to address the immediate threat to life, property, or vital public services. Ensure proper documentation of the emergency circumstances and follow up with standard procurement procedures when the emergency has passed.",
                 path: []
             },
