@@ -377,7 +377,7 @@
                 options: {
                     negotiated: {
                         text: "📋 Post-Qualify and negotiate with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
-                        next: "result_negotiated_procurement_takeover"
+                        next: "result_takeover"
                     },
                     different: {
                         text: "🔄 Adopt different procurement mode",
@@ -434,7 +434,7 @@
                 description: "Your situation doesn't fall under the standard exceptions. You will need to follow regular competitive bidding procedures unless other specific exemptions apply. Consider reviewing procurement regulations for additional applicable exceptions or consult with your procurement office for guidance.",
                 path: []
             },
-            result_negotiated_procurement_takeover: {
+            result_takeover: {
                 title: "📋 Negotiated Procurement",
                 description: "This is a mode of procurement that can be adopted to take-over contracts which have been rescinded or terminated for causes provided for in the contract and existing laws, where immediate action is necessary to prevent damage to or loss of life or property, or to restore vital public services, infrastracture facilities, and other public utilities.",
                 path: []
