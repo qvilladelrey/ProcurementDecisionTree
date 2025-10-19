@@ -359,18 +359,18 @@
                     }
                 }
         },
-        contract_rescinded:{
+        contract_rescinded: {
             question: "Was the contract of the previous bidder rescinded or terminated?",
             options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "prefer_takeover_goods"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "result_under_construction"
-                    }
+                yes: {
+                    text: "✅ Yes",
+                    next: "prefer_takeover_goods"
+                },
+                no: {
+                    text: "❌ No",
+                    next: "result_under_construction"
                 }
+            }
         },
         prefer_takeover_goods: {
             question: "Do you prefer to:",
