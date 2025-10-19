@@ -372,15 +372,16 @@
                     }
                 }
             },
-            prefer_takeover_goods" {
+        prefer_takeover_goods: {
+            question: "Do you prefer:",
             options: {
                 negotiated: {
-                        text: "📋 Adopt negotiated procurement",
-                        next: "result_negotiated_procurement"
-                    },
-                    different: {
-                        text: "🔄 Adopt another different procurement mode",
-                        next: "result_under_construction"
+                    text: "📋 Adopt negotiated procurement",
+                    next: "result_negotiated_procurement"
+                },
+                different: {
+                    text: "🔄 Adopt another different procurement mode",
+                    next: "result_under_construction"
                     }
                 }
             }
