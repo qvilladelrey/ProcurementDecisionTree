@@ -373,14 +373,14 @@
                 }
             },
         prefer_takeover_goods: {
-            question: "Do you prefer:",
+            question: "Do you prefer to:",
             options: {
                 negotiated: {
-                    text: "📋 Adopt negotiated procurement",
-                    next: "result_negotiated_procurement"
+                    text: "📋 Post-Qualify and negotiated with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
+                    next: "result_negotiated_procurement_takeover"
                 },
                 different: {
-                    text: "🔄 Adopt another different procurement mode",
+                    text: "🔄 Adopt different procurement mode",
                     next: "result_under_construction"
                     }
                 }
@@ -408,9 +408,9 @@
                 description: "Your situation doesn't fall under the standard exceptions. You will need to follow regular competitive bidding procedures unless other specific exemptions apply. Consider reviewing procurement regulations for additional applicable exceptions or consult with your procurement office for guidance.",
                 path: []
             },
-            result_negotiated_procurement: {
+            result_negotiated_procurement_takeover: {
                 title: "📋 Negotiated Procurement",
-                description: "You may proceed with negotiated procurement. This method allows direct negotiation with qualified suppliers to secure the best terms and conditions for your emergency requirements. Ensure compliance with negotiated procurement guidelines and maintain proper documentation throughout the process.",
+                description: "This is a mode of procurement that can be adopted to take-over contracts which have been rescinded or terminated for causes provided for in the contract and existing laws, where immediate action is necessary to prevent damage to or loss of life or property, or to restore vital public services, infrastracture facilities, and other public utilities.",
                 path: []
             },
             result_under_construction: {
