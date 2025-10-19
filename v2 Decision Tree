@@ -313,7 +313,7 @@
                 options: {
                     goods: {
                         text: "📦 Goods",
-                        next: "goods_previously"
+                        next: "goods_previously_procured"
                     },
                     infrastructure: {
                         text: "🏗️ Infrastructure Projects",
@@ -325,12 +325,12 @@
                     }
                 }
             },
-            goods_previously: {
+            previously_procured_goods: {
                 question: "Was the Good procured previously?",
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "need_to_action"
+                        next: "need_goods_A"
                     },
                     no: {
                         text: "❌ No",
@@ -338,28 +338,28 @@
                     }
                 }
             },
-            need_to_action: {
+            need_goods_A: {
                 question: "Is there a need to:",
                 options: {
-                    immediate: {
+                    immediate_action_goods: {
                         text: "🚨 Undertake immediate action to prevent damage to or loss of life or property or restore vital public services",
-                        next: "contract_rescinded"
+                        next: "contract_rescinded_goods"
                     },
-                    failed_bidding: {
+                    failed_bidding_goods: {
                         text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
-                        next: "prefer_failed_bidding"
+                        next: "prefer_failedbidding_goods"
                     },
-                    replenish: {
-                        text: "📋 Replenish Goods procured under zzz",
+                    replenish_goods: {
+                        text: "📋 Replenish Goods procured under a previously awarded contract",
                         next: "result_replenish"
                     },
-                    other: {
+                    other_goods_A: {
                         text: "❓ Not among the stated options",
                         next: "result_other_options"
                     }
                 }
             },
-            contract_rescinded: {
+            contract_rescinded_goods: {
                 question: "Was the contract of the previous bidder rescinded or terminated?",
                 options: {
                     yes: {
@@ -368,7 +368,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "prefer_emergency_cases"
+                        next: "prefer_emergencycases_goods"
                     }
                 }
             },
@@ -379,33 +379,33 @@
                         text: "📋 Post-Qualify and negotiate with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
                         next: "result_takeover"
                     },
-                    different_takeover: {
+                    different_prefer_takeover: {
                         text: "🔄 Adopt different procurement mode",
                         next: "result_under_construction"
                     }
                 }
             },
-            prefer_emergency_cases: {
+            prefer_emergencycases_goods: {
                 question: "Do you prefer to:",
                 options: {
-                    yes_prefer_emergency_cases: {
+                    yes_prefer_emergencycases_goods: {
                         text: "Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
                         next: "result_emergency_cases"
                     },
-                    different_prefer_emergency_cases: {
+                    different_prefer_emergencycases_goods: {
                         text: "🔄 Adopt different procurement mode",
                         next: "result_under_construction"
                     }
                 }
             },
-            prefer_failed_bidding: {
+            prefer_failedbidding_goods: {
                 question: "Do you prefer to:",
                 options: {
-                    yes_prefer_failed_bidding: {
+                    yes_prefer_failedbidding_goods: {
                         text: "Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
                         next: "result_failed_bidding"
                     },
-                    different_prefer_failed_bidding: {
+                    different_prefer_failedbidding_goods: {
                         text: "🔄 Adopt different procurement mode",
                         next: "result_under_construction"
                     }
