@@ -390,7 +390,7 @@
                 options: {
                     yes_prefer_emergency_cases: {
                         text: "Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
-                        result: "result_emergency_cases"
+                        next: "result_emergency_cases"
                     },
                     different_prefer_emergency_cases: {
                         text: "🔄 Adopt different procurement mode",
@@ -403,7 +403,7 @@
                 options: {
                     yes_prefer_failed_bidding: {
                         text: "Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
-                        result: "result_failed_bidding"
+                        next: "result_failed_bidding"
                     },
                     different_prefer_failed_bidding: {
                         text: "🔄 Adopt different procurement mode",
