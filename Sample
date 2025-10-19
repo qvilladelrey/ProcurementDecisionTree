@@ -128,7 +128,7 @@
         }
 
         .result {
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            background: linear-gradient(135deg, #1e3888, #3a6ea5);
             color: white;
             padding: 25px;
             border-radius: 15px;
