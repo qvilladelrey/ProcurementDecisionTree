@@ -404,7 +404,7 @@
                 negotiated: {
                     text: "Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
                     result: "result_failed_bidding"
-            },
+                },
                 different: {
                     text: "🔄 Adopt different procurement mode",
                     next: "result_under_construction"
