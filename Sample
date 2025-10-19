@@ -364,10 +364,22 @@
             options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "need_to_action"
+                        next: "prefer_takeover_goods"
                     },
                     no: {
                         text: "❌ No",
+                        next: "result_under_construction"
+                    }
+                }
+            },
+            prefer_takeover_goods" {
+            options: {
+                negotiated: {
+                        text: "📋 Adopt negotiated procurement",
+                        next: "result_negotiated_procurement"
+                    },
+                    different: {
+                        text: "🔄 Adopt another different procurement mode",
                         next: "result_under_construction"
                     }
                 }
@@ -393,6 +405,11 @@
             result_other_options: {
                 title: "❓ Alternative Procurement Path",
                 description: "Your situation doesn't fall under the standard exceptions. You will need to follow regular competitive bidding procedures unless other specific exemptions apply. Consider reviewing procurement regulations for additional applicable exceptions or consult with your procurement office for guidance.",
+                path: []
+            },
+            result_negotiated_procurement: {
+                title: "📋 Negotiated Procurement",
+                description: "You may proceed with negotiated procurement. This method allows direct negotiation with qualified suppliers to secure the best terms and conditions for your emergency requirements. Ensure compliance with negotiated procurement guidelines and maintain proper documentation throughout the process.",
                 path: []
             },
             result_under_construction: {
