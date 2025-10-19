@@ -371,7 +371,7 @@
                         next: "result_under_construction"
                     }
                 }
-            },
+        },
         prefer_takeover_goods: {
             question: "Do you prefer to:",
             options: {
@@ -410,6 +410,7 @@
                     next: "result_under_construction"
                     }
                 }
+            }
         };
 
         const results = {
