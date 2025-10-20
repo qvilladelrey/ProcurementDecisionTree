@@ -653,8 +653,8 @@
                         text: "Highly specialized life-saving medical and biotech equipment and devices, medicine, supplies, materials, tools and consumables, as certified by the Department of Health (DOH)",
                         next: "result_under_construction"
                      },
-                    biotechequipment: {
-                        text: "💉 Highly specialized life-saving medical and biotech equipment and devices, medicine, supplies, materials, tools and consumables, as certified by the Department of Health (DOH)",
+                    stateofthearttechnology_goods: {
+                        text: "🚀 Involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
                         next: "result_under_construction"
                      },
                     others_scholarlygoods: {
@@ -673,19 +673,6 @@
                     different_ prefer_scholarly_goods: {
                         text: "🔄 Adopt different procurement mode",
                         next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                unsolicitedoffer_goods: {
-                    question: "Was an unsolicited offer initially submitted by an entity that was determined by the Procuring Entity as necessary?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "result_under_construction"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "result_under_construction"
                         }
                     }
                 },
