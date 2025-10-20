@@ -442,6 +442,19 @@
                     options: {
                     yes: {
                         text: "✅ Yes",
+                        next: "quantifiable_goods"
+                     },
+                    no: {
+                        text: "❌ No",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                quantifiable_goods: {
+                    question: "Is the Good quantifiable, divisible, and consisting of at least four (4) units per item, and does not exceed 25% of the quantity of each item in the original contract?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
                         next: "result_under_construction"
                      },
                     no: {
@@ -561,7 +574,8 @@
                     currentNode === 'contract_rescinded_goods' || 
                     currentNode === 'competitive_contract_goods' || 
                     currentNode === 'unitprice_goods' ||
-                    currentNode === 'sixmonthsprocurement_goods') {
+                    currentNode === 'sixmonthsprocurement_goods') 
+                    currentNode === 'quantifiable_goods'){
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
