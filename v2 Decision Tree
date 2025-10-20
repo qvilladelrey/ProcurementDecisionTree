@@ -677,14 +677,31 @@
                     options: {
                     innovativedesign_goods: {
                         text: "Include innovative design or solutions involving procurement of complex purchases",
-                        next: "result_under_construction"
+                        next: "prefer_competitivedialogue_goods"
                     },
                     contractpriornegotiations_goods: {
                         text: "🤝 Entails a contract that requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
-                        next: "result_under_construction"
+                        next: "prefer_competitivedialogue_goods"
                     },
                     undefinedtechspecs_goods: {
-                        text: "❓ Have Technical Specifications that cannot be sufficiently established or precisely defined by the PE",
+                        text: "💭 Have Technical Specifications that cannot be sufficiently established or precisely defined by the PE",
+                        next: "prefer_competitivedialogue_goods"
+                     },
+                    others_competitivedialoguegoods: {
+                        text: "❓ Not among the stated options",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                prefer_competitivedialogue_goods: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_competitivedialogue_goods: {
+                        text: "🤝 Employ a 2-stage bidding process where the PE invites suppliers etc., to propose solutions to address its needs and requirements",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_competitivedialogue_goods: {
+                        text: "🔄 Adopt different procurement mode",
                         next: "result_under_construction"
                     }
                 }
