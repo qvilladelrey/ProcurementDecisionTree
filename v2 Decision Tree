@@ -803,7 +803,7 @@
                      },
                     different_prefer_intlagency_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "abc_goods_c"
+                        next: "typeofgood_directcontracting_c"
                         }
                     }
                 },
