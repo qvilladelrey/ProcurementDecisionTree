@@ -676,7 +676,7 @@
                     question: "Does the Good:",
                     options: {
                     innovativedesign_goods: {
-                        text: "Include innovative design or solutions involving procurement of complex purchases",
+                        text: "🛠️ Include innovative design or solutions involving procurement of complex purchases",
                         next: "prefer_competitivedialogue_goods"
                     },
                     contractpriornegotiations_goods: {
@@ -726,6 +726,27 @@
                         next: "result_under_construction"
                      },
                     others_competitivedialoguegoods: {
+                        text: "❓ Not among the stated options",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                typeofsupplier_goods_C: {
+                    question: "Is the supplier:",
+                    options: {
+                    intlagency_goods: {
+                        text: "A United Nations Agency, International Organization, or International Financing Organization",
+                        next: "result_under_construction"
+                    },
+                    ngo_goods: {
+                        text: "SEC registered non-stock, non-profit domestic corporation OR CDA-registered cooperative",
+                        next: "result_under_construction"
+                    },
+                    anotheragency_goods: {
+                        text: "Another agency that has the mandate and absorptive capacity to undertake the project",
+                        next: "result_under_construction"
+                    },
+                    others_typeofsupplier_goods_C: {
                         text: "❓ Not among the stated options",
                         next: "result_under_construction"
                     }
