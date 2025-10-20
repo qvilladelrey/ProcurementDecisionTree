@@ -502,6 +502,10 @@
                         newconcept_goods: {
                             text: "A new concept or technology",
                             next: "result_under_construction"
+                        },
+                        other_goods_B: {
+                            text: "Not among the stated options,"
+                            next: "result_under_construction"
                     }
                 }
             }
