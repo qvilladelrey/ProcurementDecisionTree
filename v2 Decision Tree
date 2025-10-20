@@ -506,6 +506,19 @@
                         other_goods_B: {
                             text: "❓ Not among the stated options",
                             next: "result_under_construction"
+                            }
+                        }
+                    },
+                    preselectedsupplier_goods: {
+                    question: "Do you have a set of pre-selected suppliers included in the government-approved or self-generated supplier list?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_under_construction"
+                     },
+                    no: {
+                        text: "❌ No",
+                        next: "result_under_construction"
                     }
                 }
             }
@@ -621,7 +634,8 @@
                     currentNode === 'competitive_contract_goods' || 
                     currentNode === 'unitprice_goods' ||
                     currentNode === 'sixmonthsprocurement_goods' ||
-                    currentNode === 'quantifiable_goods'){
+                    currentNode === 'quantifiable_goods' ||
+                    currentNode === 'preselectedsupplier_goods'){
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
