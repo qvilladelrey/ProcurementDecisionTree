@@ -555,11 +555,7 @@
                 `;
             } else {
                 // Use image options for yes/no questions
-                if (currentNode === 'previously_procured_goods' || 
-                    currentNode === 'contract_rescinded_goods' || 
-                    currentNode === 'competitive_contract_goods' || 
-                    currentNode === 'unitprice_goods' ||
-                    currentNode === 'sixmonthsprocurement_goods') {
+                if (currentNode === 'previously_procured_goods' || currentNode === 'contract_rescinded_goods' || currentNode === 'competitive_contract_goods' || currentNode === 'unitprice_goods' ||currentNode === 'sixmonthsprocurement_goods') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
