@@ -838,7 +838,7 @@
                     options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_competitivebidding"
+                        next: "result_under_construction"
                     },
                     no: {
                         text: "❌ No",
