@@ -871,8 +871,8 @@
                 description: "Sample.",
                 path: []
             },
-            result_under_construction: {
-                title: "Small Value Procurement,
+            result_smallvalueprocurement: {
+                title: "Small Value Procurement",
                 description: "Sample.",
                 path: []
             }
