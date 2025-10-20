@@ -408,8 +408,9 @@
                     different_prefer_failedbidding_goods: {
                         text: "🔄 Adopt different procurement mode",
                         next: "result_under_construction"
+                        }
                     }
-                }
+                },
                 competitive_contract_goods
                 question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
                 options: {
