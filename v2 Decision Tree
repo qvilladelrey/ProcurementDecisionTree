@@ -328,11 +328,11 @@
             previously_procured_goods: {
                 question: "Was the Good procured previously?",
                 options: {
-                    yes: {
+                    yes_previously_procured_goods: {
                         text: "✅ Yes",
                         next: "need_goods_A"
                     },
-                    no: {
+                    no_previously_procured_goods: {
                         text: "❌ No",
                         next: "result_under_construction"
                     }
@@ -414,11 +414,11 @@
                 competitive_contract_goods
                     question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
                     options: {
-                    yes: {
+                    yes_competitive_contract_goods: {
                         text: "✅ Yes",
                         next: "result_under_construction"
                     },
-                    no: {
+                    no_competitive_contract_goods: {
                         text: "❌ No",
                         next: "result_under_construction"
                     }
