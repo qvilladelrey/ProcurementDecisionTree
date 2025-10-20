@@ -518,7 +518,7 @@
                         },
                         other_goods_B: {
                             text: "❓ Not among the stated options",
-                            next: "result_under_construction"
+                            next: "typeofsupplier_goods_C"
                             }
                         }
                 },
