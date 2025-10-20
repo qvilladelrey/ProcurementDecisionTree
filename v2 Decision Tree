@@ -583,11 +583,37 @@
                 options: {
                 yes: {
                     text: "✅ Yes",
-                    next: "result_under_construction"
+                    next: "performancesecurity_goods"
                 },
                 no: {
                     text: "❌ No",
                     next: "result_under_construction"
+                        }
+                    }
+                },
+                performancesecurity_goods: {
+                question: "Will the supplier or manufacturer provide performance security in accordance with Republic Act No. 12009?",
+                options: {
+                yes: {
+                    text: "✅ Yes",
+                    next: "prefer_defensecooperationagreement_goods"
+                },
+                no: {
+                    text: "❌ No",
+                    next: "result_under_construction"
+                        }
+                    }
+                },
+                prefer_defensecooperationagreement_goods: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_defensecooperationagreement_goods: {
+                        text: "Directly negotiate with identified supplier or manufacturer",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_defensecooperationagreement_goods: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_under_construction"
                     }
                 }
             }
@@ -708,7 +734,8 @@
                     currentNode === 'preselectedsupplier_goods' ||
                     currentNode === 'afpmodernizationprogram_goods' ||
                     currentNode === 'directnegotiationcompatibility_goods' ||
-                    currentNode === 'completecontractdnd_goods'){
+                    currentNode === 'completecontractdnd_goods' ||
+                    currentNode === 'performancesecurity_goods'){
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
