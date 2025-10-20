@@ -460,6 +460,19 @@
                     no: {
                         text: "❌ No",
                         next: "result_under_construction"
+                        }
+                    }
+                },
+                prefer_repeatorder_goods: {
+                    question: "Do you prefer:",
+                    options: {
+                    yes_prefer_repeatorder_goods: {
+                        text: "📋 Prepare Purchase Order and adopt Repeat Order",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_repeatorder_goods: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_under_construction"
                     }
                 }
             }
