@@ -313,7 +313,7 @@
                 options: {
                     goods: {
                         text: "📦 Goods",
-                        next: "previously_procured_goods"
+                        next: "highlyspecialized_goods"
                     },
                     infrastructure: {
                         text: "🏗️ Infrastructure Projects",
