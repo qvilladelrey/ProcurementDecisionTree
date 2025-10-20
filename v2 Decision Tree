@@ -799,7 +799,7 @@
                     options: {
                     yes_prefer_intlagency_goods: {
                         text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency",
-                        next: "result_other_options"
+                        next: "result_under_construction"
                      },
                     different_prefer_intlagency_goods: {
                         text: "🔄 Adopt different procurement mode",
@@ -830,6 +830,32 @@
                     no: {
                         text: "❌ No",
                         next: "result_smallvalueprocurement"
+                       }
+                    }
+                },
+                ordinancengo_goods: {
+                    question: "Is there an appropriation law or ordinance earmarking an amount to be specifically contacted out to NGOs?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_under_construction"
+                       }
+                    }
+                },
+                prefer_ngoparticipation_goods: {
+                    question: "Do you prefer:",
+                    options: {
+                    yes_prefer_ngoparticipation_goods: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency",
+                        next: "result_under_construction"
+                    },
+                    different_prefer_ngoparticipation_goods: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_under_construction"
                     }
                 }
             }
@@ -963,7 +989,8 @@
                     currentNode === 'performancesecurity_goods' ||
                     currentNode === 'unsolicitedoffer_goods' ||
                     currentNode === 'prefer_publicbidding_goods' ||
-                    currentNode === 'abc_goods_c'){
+                    currentNode === 'abc_goods_c'
+                    currentNode === 'ordinancengo_goods'){
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
