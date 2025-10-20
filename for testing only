@@ -936,4 +936,15 @@
             breadcrumbPath = [];
             
             document.getElementById('homeContainer').style.display = 'block';
-            document.getElementById('
+            document.getElementById('questionContainer').style.display = 'none';
+            document.getElementById('resultContainer').style.display = 'none';
+            document.getElementById('progressBarContainer').style.display = 'none';
+            document.getElementById('breadcrumbContainer').style.display = 'none';
+            document.getElementById('progressFill').style.width = '0%';
+        }
+
+        // Initialize - calculate steps but don't show question until user starts
+        totalSteps = calculateTotalSteps();
+    </script>
+</body>
+</html>
