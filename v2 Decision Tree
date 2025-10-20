@@ -665,7 +665,8 @@
                     currentNode === 'unitprice_goods' ||
                     currentNode === 'sixmonthsprocurement_goods' ||
                     currentNode === 'quantifiable_goods' ||
-                    currentNode === 'preselectedsupplier_goods'){
+                    currentNode === 'preselectedsupplier_goods' ||
+                    currentNode === 'afpmodernizationprogram_goods'){
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
