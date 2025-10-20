@@ -850,7 +850,7 @@
                         next: "result_competitivebidding"
                     },
                     no: {
-                        text: "❌ No",
+                        text: "❌ No - sample",
                         next: "prefer_publicbidding_goods"
                        }
                     }
@@ -859,7 +859,7 @@
                     question: "Do you prefer/have the capacity to undertake the public bidding process?",
                     options: {
                     yes: {
-                        text: "✅ Yes",
+                        text: "✅ Yes - Can do Competitive Bidding",
                         next: "result_competitivebidding"
                     },
                     no: {
@@ -874,17 +874,13 @@
                 name: "Competitive Bidding",
                 description: "sample: [
                     "✅ Yes - Can do Competitive Bidding",
-                    "✅ Yes - Can do Public Bidding",
-                    "❌ No - Standard Process",
-                    "❌ No - Multiple Sources Available"
                 ]
             },
             smallValueProcurement: {
                 name: "Small Value Procurement", 
                 description: "sample",
                 triggerAnswers: [
-                    "❌ No - ABC ≤ ₱2M",
-                    "❌ No - Cannot do Public Bidding"
+                    "❌ No - sample"
                 ]
             },
             alternativeMethods: {
@@ -892,8 +888,6 @@
                 description: "Other procurement methods subject to approval and justification.",
                 triggerAnswers: [
                     "🔄 Adopt different procurement mode",
-                    "❌ No - Need Alternative Methods",
-                    "❓ Not among the stated options"
                 ]
             }
         };
