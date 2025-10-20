@@ -481,7 +481,7 @@
                     options: {
                         necessarytopreventdamage_goods: {
                             text: "🚨 Necessary to prevent damage to or loss of life or property OR restore vital public services, etc.",
-                            next: "result_under_construction"
+                            next: "result_emergency_cases"
                         },
                         limitedsources_plantcomponent_goods: {
                             text: "🏭 Obtainable only from a limited number of sources OR a major plant component",
