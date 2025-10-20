@@ -539,15 +539,15 @@
                 question: "Is the Good:",
                 options: {
                     actualuseforscience: {
-                        text: "Supplies, materials, equipment and related services to be used actually, exclusively, and directly in the conduct of research and development projects or activities",
+                        text: "🔬 Supplies, materials, equipment and related services to be used actually, exclusively, and directly in the conduct of research and development projects or activities",
                         next: "result_under_construction"
                     },
                     commissionedgoods:{ 
-                        text: "Goods which include products of a commissioned task by a PE which where processed, developed, and manufactured in satisfaction of its needs and requirements, which include: (i) pre-commercial goods and services that involve early market engagement, (ii) goods to be manufactured by qualified start up businesses",
+                        text: "🔧 Goods which include products of a commissioned task by a PE which where processed, developed, and manufactured in satisfaction of its needs and requirements, which include: (i) pre-commercial goods and services that involve early market engagement, (ii) goods to be manufactured by qualified start up businesses",
                         next: "result_under_construction"
                     },
                     analogousgoods: {
-                        text: "Other analogous goods",
+                        text: "🧪 Other analogous goods",
                         next: "result_under_construction"
                         }
                     }
@@ -557,11 +557,11 @@
                 options: {
                 yes: {
                     text: "✅ Yes",
-                    next: "directnegotiationcompatibility_goods"
+                    next: "prefer_defensecooperationagreement_goods"
                 },
                 no: {
                     text: "❌ No",
-                    next: "result_under_construction"
+                    next: "directnegotiationcompatibility_goods"
                         }
                     }
                 },
@@ -608,7 +608,7 @@
                     question: "Do you prefer to:",
                     options: {
                     yes_prefer_defensecooperationagreement_goods: {
-                        text: "Directly negotiate with identified supplier or manufacturer",
+                        text: "🤝 Directly negotiate with identified supplier or manufacturer",
                         next: "result_under_construction"
                      },
                     different_prefer_defensecooperationagreement_goods: {
