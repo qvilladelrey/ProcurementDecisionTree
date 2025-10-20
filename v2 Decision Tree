@@ -774,23 +774,36 @@
                     options: {
                     advancedinnovation_goods: {
                         text: "Goods and Consulting Services involving advanced technologies, techniques, and innovations not locally available as certified by the DTI, when it is most advantageous to the PE",
-                        next: "result_under_construction"
+                        next: "prefer_intlagency_goods"
                     },
                     specializedproducts_goods: {
                         text: "Specialized products where the number of suppliers is limited, such as vaccines",
-                        next: "result_under_construction"
+                        next: "prefer_intlagency_goods"
                     },
                     offtheshelf_goods: {
                         text: "Small quantities of off-the-shelf goods exclusively used in education and health",
-                        next: "result_under_construction"
+                        next: "prefer_intlagency_goods"
                     },
                     criticalpublichealth_goods: {
                         text: "Goods for critical public health priorities as determined and certified by the DOH",
-                        next: "result_under_construction"
+                        next: "prefer_intlagency_goods"
                     },
                     others_typeofgood_intlagency: {
                         text: "❓ Not among the stated options",
                         next: "result_under_construction"
+                        }
+                    }
+                },
+                prefer_intlagency_goods: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_intlagency_goods: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_intlagency_goods: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofsupplier_goods_C"
                     }
                 }
             }
