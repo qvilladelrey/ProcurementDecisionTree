@@ -856,6 +856,19 @@
                     different_prefer_ngoparticipation_goods: {
                         text: "🔄 Adopt different procurement mode",
                         next: "result_under_construction"
+                       }
+                    }
+                },
+                necessarytools_goods: {
+                    question: "Does the Servicing Agency (SA) own or has access to the necessary tools and equipment required for the project?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_under_construction"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_under_construction"
                     }
                 }
             }
@@ -990,7 +1003,8 @@
                     currentNode === 'unsolicitedoffer_goods' ||
                     currentNode === 'prefer_publicbidding_goods' ||
                     currentNode === 'abc_goods_c' ||
-                    currentNode === 'ordinancengo_goods'){
+                    currentNode === 'ordinancengo_goods' ||
+                    currentNode === 'necessarytools_goods'){
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
