@@ -808,15 +808,15 @@
                     }
                 },
                 abc_goods_c: {
-                    question: "Do you prefer to:",
+                    question: "Is the ABC more than P2 million?",
                     options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "performancesecurity_goods"
+                        next: "result_competitivebidding"
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofsupplier_goods_C"
+                        next: "prefer_publicbidding_goods"
                        }
                     }
                 },
