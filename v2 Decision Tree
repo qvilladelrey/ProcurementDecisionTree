@@ -485,7 +485,7 @@
                         },
                         limitedsources_plantcomponent_goods: {
                             text: "🏭 Obtainable only from a limited number of sources OR a major plant component",
-                            next: "result_under_construction"
+                            next: "preselectedsupplier_goods"
                         },
                         researchanddevelopment_goods: {
                             text: "🔬 To be used actually, exclusively, and directly in the conduct of research and development projects or activities",
