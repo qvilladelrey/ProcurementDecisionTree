@@ -532,6 +532,10 @@
                     commissionedgoods:{ 
                         text: "Goods which include products of a commissioned task by a PE which where processed, developed, and manufactured in satisfaction of its needs and requirements, which include: (i) pre-commercial goods and services that involve early market engagement, (ii) goods to be manufactured by qualified start up businesses",
                         next: "result_under_construction"
+                    },
+                    analogousgoods: {
+                        text: "Other analogous goods",
+                        next: "result_under_construction"
                     }
                 }
             }
@@ -540,7 +544,7 @@
         const results = {
             result_emergency_cases: {
                 title: "🚨 Negotiated Procurement: Emergency Cases",
-                description: "This situation qualifies for emergency procurement procedures. You may proceed with direct contracting or negotiated procurement to address the immediate threat to life, property, or vital public services. Ensure proper documentation of the emergency circumstances and follow up with standard procurement procedures when the emergency has passed.",
+                description: "This is a mode of procurement that can be adopted in case of imminent danger to life or property during a state of calamity, or when time is of the essence arising from natural or man-made calamities or other causes where immediate action is necessary to prevent damage to or loss of life or property, or to restore vital public services, infrastructure facilities, and other public utilities.",
                 path: []
             },
             result_failed_bidding: {
