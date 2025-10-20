@@ -493,7 +493,7 @@
                         },
                         defenseequipment_goods: {
                             text: "🚁 Major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense (DND)",
-                            next: "result_under_construction"
+                            next: "afpmodernizationprogram_goods"
                         },
                         scholarlyartisticwork_goods: {
                             text: "🎓 Scientific, Scholarly or Artistic Work, Exclusive Technology, and/or Media Services",
@@ -536,6 +536,19 @@
                     analogousgoods: {
                         text: "Other analogous goods",
                         next: "result_under_construction"
+                        }
+                    }
+                },
+                afpmodernizationprogram_goods: {
+                question: "Is the Good included in the AFP Modernization Program previously approved by the President of the Philippines?",
+                options: {
+                yes: {
+                    text: "✅ Yes",
+                    next: "result_under_construction"
+                },
+                no: {
+                    text: "❌ No",
+                    next: "result_under_construction"        
                     }
                 }
             }
