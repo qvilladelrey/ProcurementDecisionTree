@@ -416,7 +416,7 @@
                     options: {
                     yes_competitive_contract_goods: {
                         text: "✅ Yes",
-                        next: "result_under_construction"
+                        next: "unitprice_goods"
                     },
                     no_competitive_contract_goods: {
                         text: "❌ No",
@@ -427,13 +427,13 @@
                 unitprice_goods: {
                     question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
                     options: {
-                        yes: {
-                            text: "✅ Yes",
-                            next: "result_under_construction"
-                        },
-                        no: {
-                            text: "❌ No",
-                            next: "result_under_construction"
+                     yes_unitprice_goods: {
+                        text: "✅ Yes",
+                        next: "result_under_construction"
+                     },
+                    no_unitprice_goods: {
+                        text: "❌ No",
+                         next: "result_under_construction"
                     }
                 }
             }
@@ -544,7 +544,7 @@
                 `;
             } else {
                 // Use image options for yes/no questions
-                if (currentNode === 'previously_procured_goods' || currentNode === 'contract_rescinded_goods' || currentNode === 'competitive_contract_goods') {
+                if (currentNode === 'previously_procured_goods' || currentNode === 'contract_rescinded_goods' || currentNode === 'competitive_contract_goods' || currentNode === 'unitprice_goods') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
