@@ -790,7 +790,7 @@
                     },
                     others_typeofgood_intlagency: {
                         text: "❓ Not among the stated options",
-                        next: "result_under_construction"
+                        next: "typeofgood_directcontracting_c"
                         }
                     }
                 },
@@ -838,11 +838,11 @@
                     options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_under_construction"
+                        next: "prefer_ngoparticipation_goods"
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_under_construction"
+                        next: "typeofgood_directcontracting_c"
                        }
                     }
                 },
@@ -855,7 +855,7 @@
                     },
                     different_prefer_ngoparticipation_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "result_under_construction"
+                        next: "typeofgood_directcontracting_c"
                        }
                     }
                 },
@@ -864,11 +864,24 @@
                     options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_under_construction"
+                        next: "prefer_agencytoagency_goods"
                     },
                     no: {
                         text: "❌ No",
+                        next: "typeofgood_directcontracting_c"
+                       }
+                    }
+                },
+                prefer_agencytoagency_goods: {
+                    question: "Do you prefer:",
+                    options: {
+                    yes_prefer_agencytoagency_goods: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency",
                         next: "result_under_construction"
+                    },
+                    different_prefer_agencytoagency_goods: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofgood_directcontracting_c"
                         }
                     }
                 },
@@ -897,12 +910,12 @@
                     question: "Do you prefer to:",
                     options: {
                     yes_prefer_directcontracting_goods_c: {
-                        text: "Prepare Bidding Documents",
-                        next: "prefer_publicbidding_goods"
-                    },
-                    different_prefer_directcontracting_goods_c: {
                         text: "Prepare Price Quotation or Pro Forma Invoice with Conditions of Sale",
                         next: "result_under_construction"
+                    },
+                    different_prefer_directcontracting_goods_c: {
+                        text: "Prepare Bidding Documents",
+                        next: "abc_goods_c"
                     }
                 }
             }
