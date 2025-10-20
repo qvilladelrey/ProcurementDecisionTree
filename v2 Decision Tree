@@ -531,7 +531,7 @@
                 },
                 no: {
                     text: "❌ No",
-                    next: "result_under_construction"
+                    next: "typeofsupplier_goods_C"
                         }
                     }
                 },
@@ -549,6 +549,23 @@
                     analogousgoods: {
                         text: "🧪 Other analogous goods",
                         next: "result_under_construction"
+                    },
+                    others_typeofsciencegood: {
+                        text: "❓ Not among the stated options",
+                        next: "typeofsupplier_goods_C"
+                        }
+                    }
+                },
+                prefer_science_goods: {
+                    question: "Do you prefer:",
+                    options: {
+                    yes_prefer_science_goods: {
+                        text: "📋 Direct Procurement",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_science_goods: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofsupplier_goods_C"
                         }
                     }
                 },
@@ -574,7 +591,7 @@
                 },
                 no: {
                     text: "❌ No",
-                    next: "result_under_construction"
+                    next: "typeofsupplier_goods_C"
                         }
                     }
                 },
@@ -587,7 +604,7 @@
                 },
                 no: {
                     text: "❌ No",
-                    next: "result_under_construction"
+                    next: "typeofsupplier_goods_C"
                         }
                     }
                 },
@@ -600,7 +617,7 @@
                 },
                 no: {
                     text: "❌ No",
-                    next: "result_under_construction"
+                    next: "typeofsupplier_goods_C"
                         }
                     }
                 },
@@ -613,7 +630,7 @@
                      },
                     different_prefer_defensecooperationagreement_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "result_under_construction"
+                        next: "typeofsupplier_goods_C"
                        }
                     }
                 },
@@ -642,7 +659,20 @@
                      },
                     others_scholarlygoods: {
                         text: "❓ Not among the stated options",
+                        next: "typeofsupplier_goods_C"
+                        }
+                    }
+                },
+                prefer_scholarly_goods: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_ prefer_scholarly_goods: {
+                        text: "🤝 Directly negotiate with identified supplier or manufacturer",
                         next: "result_under_construction"
+                     },
+                    different_ prefer_scholarly_goods: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofsupplier_goods_C"
                         }
                     }
                 },
@@ -689,7 +719,7 @@
                      },
                     others_competitivedialoguegoods: {
                         text: "❓ Not among the stated options",
-                        next: "result_under_construction"
+                        next: "typeofsupplier_goods_C"
                         }
                     }
                 },
@@ -702,7 +732,7 @@
                      },
                     different_prefer_competitivedialogue_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "result_under_construction"
+                        next: "typeofsupplier_goods_C"
                         }
                     }
                 },
