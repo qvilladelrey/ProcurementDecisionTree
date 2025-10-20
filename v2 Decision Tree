@@ -803,7 +803,33 @@
                      },
                     different_prefer_intlagency_goods: {
                         text: "🔄 Adopt different procurement mode",
+                        next: "abc_goods_c"
+                        }
+                    }
+                },
+                abc_goods_c: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "performancesecurity_goods"
+                    },
+                    no: {
+                        text: "❌ No",
                         next: "typeofsupplier_goods_C"
+                       }
+                    }
+                },
+                prefer_publicbidding_goods: {
+                    question: "Do you prefer/have the capacity to undertake the public bidding process?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_smallvalueprocurement"
                     }
                 }
             }
@@ -839,8 +865,17 @@
                 title: "🚧 Under Construction",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
+            },
+            result_competitivebidding: {
+                title: "Competitive Bidding",
+                description: "Sample.",
+                path: []
+            },
+            result_under_construction: {
+                title: "Small Value Procurement,
+                description: "Sample.",
+                path: []
             }
-
         };
 
         let currentNode = 'start';
