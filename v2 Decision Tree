@@ -510,7 +510,7 @@
                         },
                         scholarlyartisticwork_goods: {
                             text: "🎓 Scientific, Scholarly or Artistic Work, Exclusive Technology, and/or Media Services",
-                            next: "result_under_construction"
+                            next: "typeofscholarly_goods"
                         },
                         newconcept_goods: {
                             text: "💡 A new concept or technology",
@@ -613,6 +613,35 @@
                      },
                     different_prefer_defensecooperationagreement_goods: {
                         text: "🔄 Adopt different procurement mode",
+                        next: "result_under_construction"
+                       }
+                    }
+                },
+                typeofscholarly_goods: {
+                    question: "Is the Good:",
+                    options: {
+                    workofart: {
+                        text: "🎨 Work of art; commissioned work or services for creative design or a specific artist skill (e.g., singer, performer, poet, writer, painter, sculptor, etc.)",
+                        next: "result_under_construction"
+                     },
+                    scientificjournal: {
+                        text: "📝 Scientific, technical, economic, business, trade or legal journal, magazine, paper, subscription, or other exclusive statistical publications and references",
+                        next: "result_under_construction"
+                     },
+                    communicationmedia: {
+                        text: "🎬 Media documentation, advertisement, or announcement through television, radio, newspaper, internet, and other communication media",
+                        next: "result_under_construction"
+                     },
+                    biotechequipment: {
+                        text: "Highly specialized life-saving medical and biotech equipment and devices, medicine, supplies, materials, tools and consumables, as certified by the Department of Health (DOH)",
+                        next: "result_under_construction"
+                     },
+                    biotechequipment: {
+                        text: "💉 Highly specialized life-saving medical and biotech equipment and devices, medicine, supplies, materials, tools and consumables, as certified by the Department of Health (DOH)",
+                        next: "result_under_construction"
+                     },
+                    others_scholarlygoods: {
+                        text: "❓ Not among the stated options",
                         next: "result_under_construction"
                     }
                 }
