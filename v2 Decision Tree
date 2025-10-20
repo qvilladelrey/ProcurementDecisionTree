@@ -351,7 +351,7 @@
                     },
                     replenish_goods: {
                         text: "📋 Replenish Goods procured under a previously awarded contract",
-                        next: "result_replenish"
+                        next: "competitive_contract_goods"
                     },
                     other_goods_A: {
                         text: "❓ Not among the stated options",
@@ -421,6 +421,19 @@
                     no_competitive_contract_goods: {
                         text: "❌ No",
                         next: "result_under_construction"
+                        }
+                    }
+                },
+                unitprice_goods: {
+                    question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
+                    options: {
+                        yes: {
+                            text: "✅ Yes",
+                            next: "result_under_construction"
+                        },
+                        no: {
+                            text: "❌ No",
+                            next: "result_under_construction"
                     }
                 }
             }
