@@ -504,7 +504,7 @@
                             next: "result_under_construction"
                         },
                         other_goods_B: {
-                            text: "Not among the stated options,"
+                            text: "Not among the stated options",
                             next: "result_under_construction"
                     }
                 }
