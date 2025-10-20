@@ -410,6 +410,19 @@
                         next: "result_under_construction"
                     }
                 }
+                competitive_contract_goods
+                question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
+                options: {
+                    yes_competitive_contract_goods: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_under_construction"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_under_construction"
+                    }
+                }
             }
         };
 
@@ -518,7 +531,7 @@
                 `;
             } else {
                 // Use image options for yes/no questions
-                if (currentNode === 'goods_previously' || currentNode === 'contract_rescinded') {
+                if (currentNode === 'previously_procured_goods' || currentNode === 'contract_rescinded_goods' || currentNode === 'competitive_contract_goods') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
