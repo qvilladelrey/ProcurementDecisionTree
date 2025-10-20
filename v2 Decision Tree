@@ -757,11 +757,11 @@
                     },
                     ngo_goods: {
                         text: "SEC registered non-stock, non-profit domestic corporation OR CDA-registered cooperative",
-                        next: "result_under_construction"
+                        next: "ordinancengo_goods"
                     },
                     anotheragency_goods: {
                         text: "Another agency that has the mandate and absorptive capacity to undertake the project",
-                        next: "result_under_construction"
+                        next: "necessarytools_goods"
                     },
                     others_typeofsupplier_goods_C: {
                         text: "❓ Not among the stated options",
@@ -868,6 +868,40 @@
                     },
                     no: {
                         text: "❌ No",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                typeofgood_directcontracting_c: {
+                    question: "Is the Good:",
+                    options: {
+                    exclusivedealer_goods: {
+                        text: "Sold by an exclusive dealer or manufacturer which does not have sub-dealers selling at lower prices and for which no suitable substitute can be obtained at more advantageous terms to the government",
+                        next: "prefer_directcontracting_goods_c"
+                     },
+                    criticalcomponent_goods: {
+                        text: "A critical component from a specific manufacturer, supplier, or distributor that must be used as a requirement for the service provider to guarantee project performance, in accordance with the provisions of the contract, as determined by the EU/IU",
+                        next: "prefer_directcontracting_goods_c"
+                     },
+                    proprietarysource_goods: {
+                        text: "Proprietary in nature, which can only be obtained from the proprietary source; or when patents, trade secrets, and copyrights prohibit others from manufacturing the same item, as supported by relevant documentary evidence issued by competent authority",
+                        next: "prefer_directcontracting_goods_c"
+                    },
+                    others_typeofgood_directcontracting_c: {
+                        text: "❓ Not among the stated options",
+                        next: "prefer_publicbidding_goods"
+                       }
+                    }
+                },
+                prefer_directcontracting_goods_c: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_directcontracting_goods_c: {
+                        text: "Prepare Bidding Documents",
+                        next: "prefer_publicbidding_goods"
+                    },
+                    different_prefer_directcontracting_goods_c: {
+                        text: "Prepare Price Quotation or Pro Forma Invoice with Conditions of Sale",
                         next: "result_under_construction"
                     }
                 }
