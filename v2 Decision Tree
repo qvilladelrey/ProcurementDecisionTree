@@ -753,7 +753,7 @@
                     options: {
                     intlagency_goods: {
                         text: "A United Nations Agency, International Organization, or International Financing Organization",
-                        next: "result_under_construction"
+                        next: "typeofgood_intlagency"
                     },
                     ngo_goods: {
                         text: "SEC registered non-stock, non-profit domestic corporation OR CDA-registered cooperative",
