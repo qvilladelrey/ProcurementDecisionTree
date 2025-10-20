@@ -575,7 +575,7 @@
                     currentNode === 'competitive_contract_goods' || 
                     currentNode === 'unitprice_goods' ||
                     currentNode === 'sixmonthsprocurement_goods') 
-                    currentNode === 'quantifiable_goods'){
+                    currentNode === 'quantifiable_goods') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
