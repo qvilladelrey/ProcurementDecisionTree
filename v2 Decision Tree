@@ -429,7 +429,7 @@
                     options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_under_construction"
+                        next: "sixmonthsprocurement_goods"
                      },
                     no: {
                         text: "❌ No",
