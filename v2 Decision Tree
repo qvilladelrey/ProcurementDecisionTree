@@ -508,16 +508,29 @@
                             next: "result_under_construction"
                             }
                         }
-                    },
-                    preselectedsupplier_goods: {
-                    question: "Do you have a set of pre-selected suppliers included in the government-approved or self-generated supplier list?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
+                },
+                preselectedsupplier_goods: {
+                question: "Do you have a set of pre-selected suppliers included in the government-approved or self-generated supplier list?",
+                options: {
+                yes: {
+                    text: "✅ Yes",
+                    next: "result_under_construction"
+                },
+                no: {
+                    text: "❌ No",
+                    next: "result_under_construction"
+                        }
+                    }
+                },
+                typeofsciencegood: {
+                question: "Is the Good:",
+                options: {
+                    actualuseforscience: {
+                        text: "Supplies, materials, equipment and related services to be used actually, exclusively, and directly in the conduct of research and development projects or activities",
                         next: "result_under_construction"
-                     },
-                    no: {
-                        text: "❌ No",
+                    },
+                    commissionedgoods:{ 
+                        text: "Goods which include products of a commissioned task by a PE which where processed, developed, and manufactured in satisfaction of its needs and requirements, which include: (i) pre-commercial goods and services that involve early market engagement, (ii) goods to be manufactured by qualified start up businesses",
                         next: "result_under_construction"
                     }
                 }
