@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Decision Tree</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('Goods, Infra, Consulting (1).png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .decision-container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 35px 65px rgba(0.25,0.25,0.25,0.25);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-family: 'Bricolage Grotesque', 'Arial', sans-serif;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .question {
+            font-size: 2em;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .options.horizontal {
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .option-btn {
+            background: linear-gradient(135deg, #1e3888, #3a6ea5);
+            color: white;
+            border: none;
+            padding: 18px 25px;
+            border-radius: 12px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            width: 100%;
+            max-width: 450px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.3;
+        }
+        .option-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .option-btn:active {
+            transform: translateY(0);
+        }
+
+        .image-option {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 20px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+            max-width: 280px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .image-option:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        }
+
+        .image-option h3 {
+            margin: 12px 0 6px 0;
+            color: #333;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .image-option p {
+            margin: 0;
+            color: #666;
+            font-size: 0.85em;
+            line-height: 1.3;
+        }
+
+        .result {
+            background: linear-gradient(135deg, #1e3888, #3a6ea5);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3);
+        }
+
+        .path-display {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3);
+        }
+
+        .path-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .path-steps {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .restart-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .restart-btn:hover {
+            background: #218838;
+            transform: translateY(-1px);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .definition-word {
+            position: relative;
+            cursor: help;
+            color: #667eea;
+            font-weight: 500;
+            border-bottom: 1px dotted #667eea;
+        }
+
+        .definition-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            white-space: nowrap;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: 5px;
+            width: 300px;
+            white-space: normal;
+            text-align: center;
+            line-height: 1.2;
+            max-height: 80px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .definition-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #333;
+        }
+
+        .definition-word:hover .definition-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Modes Display Styles */
+        .modes-display {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #ffd700;
+        }
+
+        .modes-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .modes-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .mode-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .recommended-mode {
+            background: rgba(255, 215, 0, 0.3);
+            border: 2px solid #ffd700;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .decision-container {
+                padding: 25px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .question {
+                font-size: 1.1em;
+            }
+            
+            .modes-list {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decision-container">
+        <h1>Decision Tree for Modes of Procurement</h1>
+
+        <div class="progress-bar" id="progressBarContainer" style="display: none;">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        
+        <div id="homeContainer">
+            <div class="question" style="font-size: 1.1em; text-align: justify; margin-bottom: 30px;">
+                This decision tree for modes of procurement is a step-by-step guide that uses yes/no or conditional questions to determine the most appropriate procurement method based on thresholds, conditions, and justifications. It ensures Procuring Entities choose which mode of procurement is the most fit for their desired purpose, in accordance with the <span class="definition-word">Fit-for-Purpose<span class="definition-tooltip">Fit-for-Purpose refers to an approach to procurement that applies the most suitable mechanism or strategy designed to address the specific needs of the Procuring Entity and each project, while promoting flexibility and responsiveness to different conditions and scenarios, based on factors or situations, such as, but not limited to, the nature and complexity of the project, market condition and readiness, urgency or risks, in order to ensure and achieve value for money.</span></span> Approach under Republic Act No. 12009 or the New Government Procurement Act.
+            </div>
+            
+            <div class="options">
+                <img src="START.png" onclick="startDecisionTree()" style="width: 280px; height: 90px; object-fit: cover; border-radius: 15px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: block; margin: 0 auto;" alt="Start icon" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onmousedown="this.style.transform='scale(0.95)'" onmouseup="this.style.transform='scale(1.05)'" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+            </div>
+        </div>
+
+        <div id="questionContainer" style="display: none;">
+            <div class="question" id="questionText">
+                What are you procuring?
+            </div>
+            
+            <div class="options" id="optionsContainer">
+                <div class="image-option" onclick="makeChoice('goods')">
+                    <img src="Billy Goods.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Goods icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    <h3><span class="definition-word">Goods<span class="definition-tooltip">Goods refer to (i) all items, supplies, and  materials, whether in the nature of equipment, furniture, stationery, materials for construction, or personal property of any kind, needed in the transaction of public businesses or in the pursuit of any government undertaking, project or activity; or (ii) general support services which pertain to all types of services except Consulting Services and Infrastructure Projects, such as the repair and maintenance of equipment and furniture, as well as trucking, hauling, janitorial, security, and related or analogous services. Personnel Services or individual COS or JO engagements do not fall under this definition.</span></span></h3>
+                </div>
+                <div class="image-option" onclick="makeChoice('infrastructure')">
+                    <img src="Billy Infra.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Infrastructure icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    <h3>Infrastructure Projects</h3>
+                </div>
+                <div class="image-option" onclick="makeChoice('consulting')">
+                    <img src="Billy Consulting.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Consulting icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                    <h3>Consulting Services</h3>
+                </div>
+            </div>
+        </div>
+        
+        <div id="resultContainer" style="display: none;">
+            <div class="result" id="resultText"></div>
+            <div class="modes-display" id="modesDisplay" style="display: none;">
+                <div class="modes-title">Recommended Procurement Modes:</div>
+                <div class="modes-list" id="modesList"></div>
+            </div>
+            <div class="path-display">
+                <div class="path-title">Your Decision Path:</div>
+                <div class="path-steps" id="pathSteps"></div>
+            </div>
+            <button class="restart-btn" onclick="restart()">
+                🔄 Start Over
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const decisionTree = {
+            start: {
+                question: "What are you procuring?",
+                options: {
+                    goods: {
+                        text: "📦 Goods",
+                        next: "highlyspecialized_goods"
+                    },
+                    infrastructure: {
+                        text: "🏗️ Infrastructure Projects",
+                        next: "result_under_construction"
+                    },
+                    consulting: {
+                        text: "🤝 Consulting Services",
+                        next: "result_under_construction"
+                    }
+                }
+            },
+            highlyspecialized_goods: {
+                question: "Is the procurement project highly specialized or complex in nature?",
+                options: {
+                    yes: {
+                        text: "✅ Yes - Highly Specialized",
+                        next: "previously_procured_goods"
+                    },
+                    no: {
+                        text: "❌ No - Standard Procurement",
+                        next: "abc_threshold_goods"
+                    }
+                }
+            },
+            previously_procured_goods: {
+                question: "Was the Good procured previously?",
+                options: {
+                    yes: {
+                        text: "✅ Yes - Previously Procured",
+                        next: "need_goods_A"
+                    },
+                    no: {
+                        text: "❌ No - New Procurement",
+                        next: "emergency_situation_goods"
+                    }
+                }
+            },
+            abc_threshold_goods: {
+                question: "Is the ABC (Approved Budget for Contract) more than ₱2 million?",
+                options: {
+                    yes: {
+                        text: "✅ Yes - ABC > ₱2M",
+                        next: "competitive_bidding_capacity"
+                    },
+                    no: {
+                        text: "❌ No - ABC ≤ ₱2M",
+                        next: "result_smallvalue"
+                    }
+                }
+            },
+            emergency_situation_goods: {
+                question: "Is this an emergency situation requiring immediate action?",
+                options: {
+                    yes: {
+                        text: "✅ Yes - Emergency Situation",
+                        next: "result_emergency"
+                    },
+                    no: {
+                        text: "❌ No - Standard Situation",
+                        next: "limited_sources_goods"
+                    }
+                }
+            },
+            competitive_bidding_capacity: {
+                question: "Do you have the capacity to undertake competitive bidding?",
+                options: {
+                    yes: {
+                        text: "✅ Yes - Can do Competitive Bidding",
+                        next: "result_competitive"
+                    },
+                    no: {
+                        text: "❌ No - Need Alternative Methods",
+                        next: "result_alternative"
+                    }
+                }
+            },
+            limited_sources_goods: {
+                question: "Is the good available from limited sources only?",
+                options: {
+                    yes: {
+                        text: "✅ Yes - Limited Sources",
+                        next: "result_limited"
+                    },
+                    no: {
+                        text: "❌ No - Multiple Sources Available",
+                        next: "direct_negotiation_goods"
+                    }
+                }
+            },
+            direct_negotiation_goods: {
+                question: "Is direct negotiation necessary for compatibility or specialized requirements?",
+                options: {
+                    yes: {
+                        text: "✅ Yes - Direct Negotiation Needed",
+                        next: "result_direct"
+                    },
+                    no: {
+                        text: "❌ No - Standard Process",
+                        next: "result_competitive"
+                    }
+                }
+            },
+            need_goods_A: {
+                question: "Is there a need to:",
+                options: {
+                    immediate_action_goods: {
+                        text: "🚨 Undertake immediate action to prevent damage to or loss of life or property",
+                        next: "result_emergency"
+                    },
+                    failed_bidding_goods: {
+                        text: "🔄 Procure again due to two (2) failures of bidding",
+                        next: "result_negotiated"
+                    },
+                    replenish_goods: {
+                        text: "📋 Replenish Goods from previous contract",
+                        next: "result_repeat"
+                    },
+                    other_goods_A: {
+                        text: "❓ Not among the stated options",
+                        next: "abc_threshold_goods"
+                    }
+                }
+            },
+            // Your specific path nodes
+            prefer_intlagency_goods: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_intlagency_goods: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency",
+                        next: "abc_goods_c"
+                    },
+                    different_prefer_intlagency_goods: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "abc_goods_c"
+                    }
+                }
+            },
+            abc_goods_c: {
+                question: "Is the ABC more than P2 million?",
+                options: {
+                    yes: {
+                        text: "✅ Yes - ABC > ₱2M",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No - ABC ≤ ₱2M",
+                        next: "prefer_publicbidding_goods"
+                    }
+                }
+            },
+            prefer_publicbidding_goods: {
+                question: "Do you prefer/have the capacity to undertake the public bidding process?",
+                options: {
+                    yes: {
+                        text: "✅ Yes - Can do Public Bidding",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No - Cannot do Public Bidding",
+                        next: "result_smallvalueprocurement"
+                    }
+                }
+            }
+        };
+
+        // Simplified procurement mode detection
+        const procurementModes = {
+            competitiveBidding: {
+                name: "Competitive Bidding",
+                description: "Open competitive bidding process with public advertisement and multiple bidders.",
+                triggerAnswers: [
+                    "✅ Yes - Can do Competitive Bidding",
+                    "✅ Yes - Can do Public Bidding",
+                    "❌ No - Standard Process",
+                    "❌ No - Multiple Sources Available"
+                ]
+            },
+            smallValueProcurement: {
+                name: "Small Value Procurement", 
+                description: "Simplified procurement for low-value contracts below threshold amounts.",
+                triggerAnswers: [
+                    "❌ No - ABC ≤ ₱2M",
+                    "❌ No - Cannot do Public Bidding"
+                ]
+            },
+            alternativeMethods: {
+                name: "Alternative Procurement Methods",
+                description: "Other procurement methods subject to approval and justification.",
+                triggerAnswers: [
+                    "🔄 Adopt different procurement mode",
+                    "❌ No - Need Alternative Methods",
+                    "❓ Not among the stated options"
+                ]
+            },
+            negotiatedProcurement: {
+                name: "Negotiated Procurement",
+                description: "Direct negotiation with suppliers due to emergency or failed bidding.",
+                triggerAnswers: [
+                    "✅ Yes - Emergency Situation",
+                    "🔄 Procure again due to two (2) failures of bidding"
+                ]
+            },
+            directContracting: {
+                name: "Direct Contracting",
+                description: "Direct engagement with a specific supplier for technical compatibility.",
+                triggerAnswers: [
+                    "✅ Yes - Direct Negotiation Needed",
+                    "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency"
+                ]
+            },
+            limitedSourceBidding: {
+                name: "Limited Source Bidding",
+                description: "Bidding limited to pre-qualified suppliers for specialized goods.",
+                triggerAnswers: [
+                    "✅ Yes - Limited Sources"
+                ]
+            },
+            repeatOrder: {
+                name: "Repeat Order",
+                description: "Additional procurement from existing contract with same supplier.",
+                triggerAnswers: [
+                    "📋 Replenish Goods from previous contract"
+                ]
+            }
+        };
+
+        // Simplified results - modes will be auto-detected
+        const results = {
+            result_emergency: {
+                title: "🚨 Emergency Situation Detected",
+                description: "Immediate action required to prevent damage or loss.",
+                path: []
+            },
+            result_competitive: {
+                title: "🏆 Procurement Recommendation",
+                description: "Based on your responses, here are the available procurement options:",
+                path: []
+            },
+            result_competitivebidding: {
+                title: "🏆 Procurement Recommendation", 
+                description: "Based on your responses, here are the available procurement options:",
+                path: []
+            },
+            result_smallvalue: {
+                title: "💰 Procurement Recommendation",
+                description: "Based on your responses, here are the available procurement options:",
+                path: []
+            },
+            result_smallvalueprocurement: {
+                title: "💰 Procurement Recommendation",
+                description: "Based on your responses, here are the available procurement options:",
+                path: []
+            },
+            result_negotiated: {
+                title: "🤝 Procurement Recommendation",
+                description: "Based on your responses, here are the available procurement options:",
+                path: []
+            },
+            result_limited: {
+                title: "🎯 Procurement Recommendation",
+                description: "Based on your responses, here are the available procurement options:",
+                path: []
+            },
+            result_direct: {
+                title: "⚡ Procurement Recommendation",
+                description: "Based on your responses, here are the available procurement options:",
+                path: []
+            },
+            result_repeat: {
+                title: "📋 Procurement Recommendation",
+                description: "Based on your responses, here are the available procurement options:",
+                path: []
+            },
+            result_alternative: {
+                title: "🔄 Procurement Recommendation",
+                description: "Based on your responses, here are the available procurement options:",
+                path: []
+            },
+            result_under_construction: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development.",
+                path: []
+            }
+        };
+
+        let currentNode = 'start';
+        let userPath = [];
+        let totalSteps = 0;
+
+        function calculateTotalSteps() {
+            let maxDepth = 0;
+            
+            function findDepth(node, depth = 0) {
+                if (node.startsWith('result_')) {
+                    maxDepth = Math.max(maxDepth, depth);
+                    return;
+                }
+                
+                const nodeData = decisionTree[node];
+                if (nodeData && nodeData.options) {
+                    for (let option in nodeData.options) {
+                        findDepth(nodeData.options[option].next, depth + 1);
+                    }
+                }
+            }
+            
+            findDepth('start');
+            return maxDepth;
+        }
+
+        function updateProgress() {
+            const progress = (userPath.length / totalSteps) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        // Simplified detection function
+        function detectProcurementModes(path) {
+            const applicableModes = [];
+            
+            // Check each answer against all procurement modes
+            path.forEach(answer => {
+                for (const [modeKey, modeData] of Object.entries(procurementModes)) {
+                    if (modeData.triggerAnswers.includes(answer)) {
+                        // Check if this mode is already added
+                        const alreadyAdded = applicableModes.some(mode => mode.name === modeData.name);
+                        if (!alreadyAdded) {
+                            applicableModes.push({
+                                name: modeData.name,
+                                description: modeData.description,
+                                isRecommended: true // All triggered modes are recommended
+                            });
+                        }
+                    }
+                }
+            });
+            
+            // If no specific modes triggered, provide default options
+            if (applicableModes.length === 0) {
+                applicableModes.push({
+                    name: "Competitive Bidding",
+                    description: "Default procurement method for standard requirements.",
+                    isRecommended: true
+                });
+            }
+            
+            return applicableModes;
+        }
+
+        function makeChoice(choice) {
+            const currentNodeData = decisionTree[currentNode];
+            const selectedOption = currentNodeData.options[choice];
+            
+            userPath.push(selectedOption.text);
+            currentNode = selectedOption.next;
+            
+            updateProgress();
+            
+            if (currentNode.startsWith('result_')) {
+                showResult();
+            } else {
+                showQuestion();
+            }
+        }
+
+        function showQuestion() {
+            const nodeData = decisionTree[currentNode];
+            document.getElementById('questionText').textContent = nodeData.question;
+            
+            const optionsContainer = document.getElementById('optionsContainer');
+            
+            if (currentNode === 'start') {
+                optionsContainer.innerHTML = `
+                    <div class="image-option" onclick="makeChoice('goods')">
+                        <img src="Billy Goods.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Goods icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        <h3>Goods</h3>
+                    </div>
+                    <div class="image-option" onclick="makeChoice('infrastructure')">
+                        <img src="Billy Infra.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Infrastructure icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        <h3>Infrastructure Projects</h3>
+                    </div>
+                    <div class="image-option" onclick="makeChoice('consulting')">
+                        <img src="Billy Consulting.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Consulting icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        <h3>Consulting Services</h3>
+                    </div>
+                `;
+            } else {
+                // Use horizontal layout for yes/no questions
+                if (currentNode.includes('_goods') && Object.keys(nodeData.options).length === 2) {
+                    optionsContainer.className = 'options horizontal';
+                    optionsContainer.innerHTML = `
+                        <div class="image-option" onclick="makeChoice('yes')">
+                            <img src="YES.png" style="width: 130px; height: 70px; object-fit: cover; border-radius: 1px;" alt="Yes icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        </div>
+                        <div class="image-option" onclick="makeChoice('no')">
+                            <img src="NO.png" style="width: 130px; height: 70px; object-fit: cover; border-radius: 1px;" alt="No icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        </div>
+                    `;
+                } else {
+                    optionsContainer.className = 'options';
+                    optionsContainer.innerHTML = '';
+                    
+                    for (let optionKey in nodeData.options) {
+                        const option = nodeData.options[optionKey];
+                        const button = document.createElement('button');
+                        button.className = 'option-btn';
+                        button.textContent = option.text;
+                        button.onclick = () => makeChoice(optionKey);
+                        optionsContainer.appendChild(button);
+                    }
+                }
+            }
+        }
+
+        function showResult() {
+            const result = results[currentNode];
+            result.path = [...userPath];
+            
+            document.getElementById('questionContainer').style.display = 'none';
+            document.getElementById('resultContainer').style.display = 'block';
+            
+            const resultText = document.getElementById('resultText');
+            resultText.innerHTML = `
+                <strong>${result.title}</strong><br><br>
+                ${result.description}
+            `;
+            
+            // Automatically detect and display procurement modes
+            const detectedModes = detectProcurementModes(userPath);
+            const modesDisplay = document.getElementById('modesDisplay');
+            const modesList = document.getElementById('modesList');
+            
+            modesList.innerHTML = '';
+            detectedModes.forEach(mode => {
+                const modeTag = document.createElement('div');
+                modeTag.className = `mode-tag ${mode.isRecommended ? 'recommended-mode' : ''}`;
+                modeTag.innerHTML = `
+                    <strong>${mode.name}</strong>
+                    ${mode.isRecommended ? '<br><small>⭐ Recommended</small>' : ''}
+                `;
+                modeTag.title = mode.description;
+                modesList.appendChild(modeTag);
+            });
+            
+            modesDisplay.style.display = 'block';
+            document.getElementById('pathSteps').textContent = result.path.join(' → ');
+            document.getElementById('progressFill').style.width = '100%';
+        }
+
+        function startDecisionTree() {
+            document.getElementById('homeContainer').style.display = 'none';
+            document.getElementById('questionContainer').style.display = 'block';
+            document.getElementById('progressBarContainer').style.display = 'block';
+            showQuestion();
+        }
+
+        function restart() {
+            currentNode = 'start';
+            userPath = [];
+            
+            document.getElementById('homeContainer').style.display = 'block';
+            document.getElementById('questionContainer').style.display = 'none';
+            document.getElementById('resultContainer').style.display = 'none';
+            document.getElementById('progressBarContainer').style.display = 'none';
+            document.getElementById('progressFill').style.width = '0%';
+        }
+
+        totalSteps = calculateTotalSteps();
+    </script>
+</body>
+</html>
