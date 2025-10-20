@@ -766,6 +766,31 @@
                     others_typeofsupplier_goods_C: {
                         text: "❓ Not among the stated options",
                         next: "result_under_construction"
+                        }
+                    }
+                },
+                typeofgood_intlagency: {
+                    question: "Is the Good:",
+                    options: {
+                    advancedinnovation_goods: {
+                        text: "Goods and Consulting Services involving advanced technologies, techniques, and innovations not locally available as certified by the DTI, when it is most advantageous to the PE",
+                        next: "result_under_construction"
+                    },
+                    specializedproducts_goods: {
+                        text: "Specialized products where the number of suppliers is limited, such as vaccines",
+                        next: "result_under_construction"
+                    },
+                    offtheshelf_goods: {
+                        text: "Small quantities of off-the-shelf goods exclusively used in education and health",
+                        next: "result_under_construction"
+                    },
+                    criticalpublichealth_goods: {
+                        text: "Goods for critical public health priorities as determined and certified by the DOH",
+                        next: "result_under_construction"
+                    },
+                    others_typeofgood_intlagency: {
+                        text: "❓ Not among the stated options",
+                        next: "result_under_construction"
                     }
                 }
             }
