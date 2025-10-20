@@ -666,11 +666,11 @@
                 prefer_scholarly_goods: {
                     question: "Do you prefer to:",
                     options: {
-                    yes_ prefer_scholarly_goods: {
+                    yes_prefer_scholarly_goods: {
                         text: "🤝 Directly negotiate with identified supplier or manufacturer",
                         next: "result_under_construction"
                      },
-                    different_ prefer_scholarly_goods: {
+                    different_prefer_scholarly_goods: {
                         text: "🔄 Adopt different procurement mode",
                         next: "typeofsupplier_goods_C"
                         }
@@ -681,7 +681,7 @@
                     options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_under_construction"
+                        next: "typeofgood_unsolicitedoffer"
                     },
                     no: {
                         text: "❌ No",
