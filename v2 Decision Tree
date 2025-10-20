@@ -799,7 +799,7 @@
                     options: {
                     yes_prefer_intlagency_goods: {
                         text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency",
-                        next: "result_under_construction"
+                        next: "result_other_options"
                      },
                     different_prefer_intlagency_goods: {
                         text: "🔄 Adopt different procurement mode",
