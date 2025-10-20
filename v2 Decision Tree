@@ -334,7 +334,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_under_construction"
+                        next: "typeofgood_B"
                     }
                 }
             },
@@ -355,7 +355,7 @@
                     },
                     other_goods_A: {
                         text: "❓ Not among the stated options",
-                        next: "result_other_options"
+                        next: "typeofgood_B"
                     }
                 }
             },
@@ -381,7 +381,7 @@
                     },
                     different_prefer_takeover: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "result_under_construction"
+                        next: "typeofgood_B"
                     }
                 }
             },
@@ -394,7 +394,7 @@
                     },
                     different_prefer_emergencycases_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "result_under_construction"
+                        next: "typeofgood_B"
                     }
                 }
             },
@@ -407,7 +407,7 @@
                     },
                     different_prefer_failedbidding_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "result_under_construction"
+                        next: "typeofgood_B"
                         }
                     }
                 },
@@ -420,7 +420,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_under_construction"
+                        next: "typeofgood_B"
                         }
                     }
                 },
@@ -433,7 +433,7 @@
                      },
                     no: {
                         text: "❌ No",
-                        next: "result_under_construction"
+                        next: "typeofgood_B"
                         }
                     }
                 },
@@ -446,7 +446,7 @@
                      },
                     no: {
                         text: "❌ No",
-                        next: "result_under_construction"
+                        next: "typeofgood_B"
                         }
                     }
                 },
@@ -459,7 +459,7 @@
                      },
                     no: {
                         text: "❌ No",
-                        next: "result_under_construction"
+                        next: "typeofgood_B"
                         }
                     }
                 },
@@ -472,7 +472,20 @@
                      },
                     different_prefer_repeatorder_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "result_under_construction"
+                        next: "typeofgood_B"
+                        }
+                    }
+                },
+                typeofgood_B: {
+                    question: "Is the Good:",
+                    options: {
+                        necessarytopreventdamage_goods: {
+                            text: "Necessary to prevent damage to or loss of life or property OR restore vital public services, etc.",
+                            next: "result_under_construction"
+                        },
+                        limitedsources_plantcomponent_goods: {
+                            text: "Obtainable only from a limited number of sources OR a major plant component",
+                            next: "result_under_construction"
                     }
                 }
             }
