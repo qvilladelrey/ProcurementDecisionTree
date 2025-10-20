@@ -680,11 +680,11 @@
                         next: "result_under_construction"
                     },
                     contractpriornegotiations_goods: {
-                        text: "Entails a contract that requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
+                        text: "🤝 Entails a contract that requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
                         next: "result_under_construction"
                     },
                     undefinedtechspecs_goods: {
-                        text: "have Technical Specifications that cannot be sufficiently established or precisely defined by the PE",
+                        text: "❓ Have Technical Specifications that cannot be sufficiently established or precisely defined by the PE",
                         next: "result_under_construction"
                     }
                 }
