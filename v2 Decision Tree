@@ -434,6 +434,8 @@
                     no: {
                         text: "❌ No",
                         next: "result_under_construction"
+                        }
+                    }
                 },
                 sixmonthsprocurement_goods: {
                     question: "Is the procurement within six (6) months from the date of the Notice to Proceed (NTP) arising from the original contract?",
