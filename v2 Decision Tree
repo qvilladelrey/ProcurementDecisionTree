@@ -425,7 +425,7 @@
                     }
                 },
                 unitprice_goods: {
-                    question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
+                    question: "Is the unit price equal to or lower than that provided in the original contract and the prevailing market price?",
                     options: {
                     yes: {
                         text: "✅ Yes",
