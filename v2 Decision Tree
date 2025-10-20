@@ -325,6 +325,19 @@
                     }
                 }
             },
+            highlyspecialized_goods: {
+                question: "Is the procurement project highly specialized or complex in nature?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "previously_procured_goods"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_under_construction"
+                    }
+                }
+            },
             previously_procured_goods: {
                 question: "Was the Good procured previously?",
                 options: {
@@ -685,7 +698,8 @@
                 `;
             } else {
                 // Use image options for yes/no questions
-                if (currentNode === 'previously_procured_goods' || 
+                if (currentNode === 'highlyspecialized_goods' || 
+                    currentNode === 'previously_procured_goods' || 
                     currentNode === 'contract_rescinded_goods' || 
                     currentNode === 'competitive_contract_goods' || 
                     currentNode === 'unitprice_goods' ||
