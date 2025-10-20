@@ -389,7 +389,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_emergencycases_goods: {
-                        text: "Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
+                        text: "📋 Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
                         next: "result_emergency_cases"
                     },
                     different_prefer_emergencycases_goods: {
@@ -402,7 +402,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_failedbidding_goods: {
-                        text: "Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
+                        text: "📋 Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
                         next: "result_failed_bidding"
                     },
                     different_prefer_failedbidding_goods: {
@@ -480,31 +480,31 @@
                     question: "Is the Good:",
                     options: {
                         necessarytopreventdamage_goods: {
-                            text: "Necessary to prevent damage to or loss of life or property OR restore vital public services, etc.",
+                            text: "🚨 Necessary to prevent damage to or loss of life or property OR restore vital public services, etc.",
                             next: "result_under_construction"
                         },
                         limitedsources_plantcomponent_goods: {
-                            text: "Obtainable only from a limited number of sources OR a major plant component",
+                            text: "🏭 Obtainable only from a limited number of sources OR a major plant component",
                             next: "result_under_construction"
                         },
                         researchanddevelopment_goods: {
-                            text: "To be used actually, exclusively, and directly in the conduct of research and development projects or activities",
+                            text: "🔬 To be used actually, exclusively, and directly in the conduct of research and development projects or activities",
                             next: "result_under_construction"
                         },
                         defenseequipment_goods: {
-                            text: "Major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense (DND)",
+                            text: "🚁 Major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense (DND)",
                             next: "result_under_construction"
                         },
                         scholarlyartisticwork_goods: {
-                            text: "Scientific, Scholarly or Artistic Work, Exclusive Technology, and/or Media Services",
+                            text: "🎓 Scientific, Scholarly or Artistic Work, Exclusive Technology, and/or Media Services",
                             next: "result_under_construction"
                         },
                         newconcept_goods: {
-                            text: "A new concept or technology",
+                            text: "💡 A new concept or technology",
                             next: "result_under_construction"
                         },
                         other_goods_B: {
-                            text: "Not among the stated options",
+                            text: "❓ Not among the stated options",
                             next: "result_under_construction"
                     }
                 }
