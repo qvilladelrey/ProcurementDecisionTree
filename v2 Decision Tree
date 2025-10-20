@@ -502,7 +502,7 @@
                         },
                         researchanddevelopment_goods: {
                             text: "🔬 To be used actually, exclusively, and directly in the conduct of research and development projects or activities",
-                            next: "result_under_construction"
+                            next: "typeofsciencegood"
                         },
                         defenseequipment_goods: {
                             text: "🚁 Major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense (DND)",
