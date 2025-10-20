@@ -434,6 +434,17 @@
                     no: {
                         text: "❌ No",
                         next: "result_under_construction"
+                },
+                sixmonthsprocurement_goods: {
+                    question: "Is the procurement within six (6) months from the date of the Notice to Proceed (NTP) arising from the original contract?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_under_construction"
+                     },
+                    no: {
+                        text: "❌ No",
+                        next: "result_under_construction"
                     }
                 }
             }
@@ -544,7 +555,11 @@
                 `;
             } else {
                 // Use image options for yes/no questions
-                if (currentNode === 'previously_procured_goods' || currentNode === 'contract_rescinded_goods' || currentNode === 'competitive_contract_goods' || currentNode === 'unitprice_goods') {
+                if (currentNode === 'previously_procured_goods' || 
+                    currentNode === 'contract_rescinded_goods' || 
+                    currentNode === 'competitive_contract_goods' || 
+                    currentNode === 'unitprice_goods' ||
+                    currentNode === 'sixmonthsprocurement_goods') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
