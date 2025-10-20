@@ -989,7 +989,7 @@
                     currentNode === 'performancesecurity_goods' ||
                     currentNode === 'unsolicitedoffer_goods' ||
                     currentNode === 'prefer_publicbidding_goods' ||
-                    currentNode === 'abc_goods_c'
+                    currentNode === 'abc_goods_c' ||
                     currentNode === 'ordinancengo_goods'){
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
