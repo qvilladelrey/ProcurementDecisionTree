@@ -557,6 +557,19 @@
                 options: {
                 yes: {
                     text: "✅ Yes",
+                    next: "completecontractdnd_goods"
+                },
+                no: {
+                    text: "❌ No",
+                    next: "result_under_construction"
+                        }
+                    }
+                },
+                completecontractdnd_goods: {
+                question: "Has the supplier or manufacturer fully & satisfactorily implemented a contract of the same item with the DND, any of its bureaus or attached agencies, or law enforcement agencies?",
+                options: {
+                yes: {
+                    text: "✅ Yes",
                     next: "result_under_construction"
                 },
                 no: {
@@ -680,7 +693,8 @@
                     currentNode === 'quantifiable_goods' ||
                     currentNode === 'preselectedsupplier_goods' ||
                     currentNode === 'afpmodernizationprogram_goods' ||
-                    currentNode === 'directnegotiationcompatibility_goods'){
+                    currentNode === 'directnegotiationcompatibility_goods' ||
+                    currentNode === 'completecontractdnd_goods'){
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
