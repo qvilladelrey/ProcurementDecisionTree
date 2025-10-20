@@ -514,7 +514,7 @@
                         },
                         newconcept_goods: {
                             text: "💡 A new concept or technology",
-                            next: "result_under_construction"
+                            next: "unsolicitedoffer_goods"
                         },
                         other_goods_B: {
                             text: "❓ Not among the stated options",
@@ -643,6 +643,19 @@
                     others_scholarlygoods: {
                         text: "❓ Not among the stated options",
                         next: "result_under_construction"
+                        }
+                    }
+                },
+                unsolicitedoffer_goods: {
+                    question: "Was an unsolicited offer initially submitted by an entity that was determined by the Procuring Entity as necessary?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_under_construction"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_under_construction"
                     }
                 }
             }
@@ -764,7 +777,8 @@
                     currentNode === 'afpmodernizationprogram_goods' ||
                     currentNode === 'directnegotiationcompatibility_goods' ||
                     currentNode === 'completecontractdnd_goods' ||
-                    currentNode === 'performancesecurity_goods'){
+                    currentNode === 'performancesecurity_goods' ||
+                    currentNode === 'unsolicitedoffer_goods'){
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
