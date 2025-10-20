@@ -544,11 +544,27 @@
                 options: {
                 yes: {
                     text: "✅ Yes",
+                    next: "directnegotiationcompatibility_goods"
+                },
+                no: {
+                    text: "❌ No",
+                    next: "result_under_construction"
+                        }
+                    }
+                },
+                directnegotiationcompatibility_goods: {
+                question: "Will direct negotiation address compatibility, interoperability, and sustainability?",
+                options: {
+                yes: {
+                    text: "✅ Yes",
                     next: "result_under_construction"
                 },
                 no: {
                     text: "❌ No",
-                    next: "result_under_construction"        
+                    next: "result_under_construction"
+                        }
+                    }
+                },
                     }
                 }
             }
@@ -666,7 +682,8 @@
                     currentNode === 'sixmonthsprocurement_goods' ||
                     currentNode === 'quantifiable_goods' ||
                     currentNode === 'preselectedsupplier_goods' ||
-                    currentNode === 'afpmodernizationprogram_goods'){
+                    currentNode === 'afpmodernizationprogram_goods' ||
+                    currentNode === 'directnegotiationcompatibility_goods'){
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
