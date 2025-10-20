@@ -742,7 +742,7 @@
                         text: "🚀 Involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
                         next: "result_under_construction"
                      },
-                    others_competitivedialoguegoods: {
+                    others_unsolicitedoffergoods: {
                         text: "❓ Not among the stated options",
                         next: "result_under_construction"
                         }
