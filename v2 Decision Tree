@@ -414,11 +414,11 @@
                 competitive_contract_goods: {
                     question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
                     options: {
-                    yes_competitive_contract_goods: {
+                    yes: {
                         text: "✅ Yes",
                         next: "unitprice_goods"
                     },
-                    no_competitive_contract_goods: {
+                    no: {
                         text: "❌ No",
                         next: "result_under_construction"
                         }
@@ -427,11 +427,11 @@
                 unitprice_goods: {
                     question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
                     options: {
-                    yes_unitprice_goods: {
+                    yes: {
                         text: "✅ Yes",
                         next: "result_under_construction"
                      },
-                    no_unitprice_goods: {
+                    no: {
                         text: "❌ No",
                         next: "result_under_construction"
                     }
