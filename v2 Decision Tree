@@ -486,6 +486,22 @@
                         limitedsources_plantcomponent_goods: {
                             text: "Obtainable only from a limited number of sources OR a major plant component",
                             next: "result_under_construction"
+                        },
+                        researchanddevelopment_goods: {
+                            text: "To be used actually, exclusively, and directly in the conduct of research and development projects or activities",
+                            next: "result_under_construction"
+                        },
+                        defenseequipment_goods: {
+                            text: "Major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense (DND)",
+                            next: "result_under_construction"
+                        },
+                        scholarlyartisticwork_goods: {
+                            text: "Scientific, Scholarly or Artistic Work, Exclusive Technology, and/or Media Services",
+                            next: "result_under_construction"
+                        },
+                        newconcept_goods: {
+                            text: "A new concept or technology",
+                            next: "result_under_construction"
                     }
                 }
             }
