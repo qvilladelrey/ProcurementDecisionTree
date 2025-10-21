@@ -219,7 +219,6 @@
             visibility: visible;
         }
 
-        /* New styles for breadcrumb trail */
         .breadcrumb-container {
             background: #f0f4fa;
             border-radius: 10px;
@@ -1701,8 +1700,6 @@
         }
 
         // Initialize
-        totalSteps = calculateTotalSteps();
-        showQuestion();
     </script>
 </body>
 </html>
