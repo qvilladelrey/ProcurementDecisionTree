@@ -212,24 +212,24 @@
         /* New styles for breadcrumb trail */
         .breadcrumb-container {
             background: #f0f4fa;
-            border-radius: 10px;
-            padding: 18px 16px;
-            margin-bottom: 18px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .breadcrumb-title {
             font-weight: bold;
             color: #1e3888;
-            font-size: 1.12em;
-            margin-bottom: 8px;
+            font-size: 1em;
+            margin-bottom: 6px;
         }
 
         .breadcrumb-trail {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 8px;
+            gap: 5px;
         }
 
         .breadcrumb-btn {
@@ -238,21 +238,22 @@
             color: #1e3888;
             cursor: pointer;
             text-decoration: underline;
-            font-size: 0.9em;
-            padding: 4px 8px;
-            border-radius: 4px;
+            font-size: 0.85em;
+            padding: 3px 6px;
+            border-radius: 3px;
             transition: all 0.2s ease;
         }
-
+        
         .breadcrumb-btn:hover {
             color: #3a6ea5;
             background: rgba(58, 110, 165, 0.1);
         }
-
+        
         .breadcrumb-current {
             color: #333;
             font-weight: 600;
-            padding: 4px 8px;
+            padding: 3px 6px;
+            font-size: 0.85em;
         }
 
         /* New styles for hierarchical recommendations */
