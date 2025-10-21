@@ -212,24 +212,24 @@
         /* New styles for breadcrumb trail */
         .breadcrumb-container {
             background: #f0f4fa;
-            border-radius: 10px;
-            padding: 18px 16px;
-            margin-bottom: 18px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .breadcrumb-title {
             font-weight: bold;
             color: #1e3888;
-            font-size: 1.12em;
-            margin-bottom: 8px;
+            font-size: 1em;
+            margin-bottom: 6px;
         }
 
         .breadcrumb-trail {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 8px;
+            gap: 5px;
         }
 
         .breadcrumb-btn {
@@ -238,21 +238,30 @@
             color: #1e3888;
             cursor: pointer;
             text-decoration: underline;
-            font-size: 0.9em;
-            padding: 4px 8px;
-            border-radius: 4px;
+            font-size: 0.85em;
+            padding: 3px 6px;
+            border-radius: 3px;
             transition: all 0.2s ease;
+            max-width: 150px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-
+        
         .breadcrumb-btn:hover {
             color: #3a6ea5;
             background: rgba(58, 110, 165, 0.1);
         }
-
+        
         .breadcrumb-current {
             color: #333;
             font-weight: 600;
-            padding: 4px 8px;
+            padding: 3px 6px;
+            font-size: 0.85em;
+            max-width: 150px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         /* New styles for hierarchical recommendations */
@@ -397,6 +406,16 @@
                 width: 100%;
                 margin: 5px 0;
             }
+            
+            .breadcrumb-btn, .breadcrumb-current {
+                max-width: 120px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .breadcrumb-btn, .breadcrumb-current {
+                max-width: 100px;
+            }
         }
     </style>
 </head>
@@ -481,6 +500,7 @@
                     goods: {
                         text: "📦 Goods",
                         next: "highlyspecialized_goods",
+                        triggers: ["Competitive Bidding"]
                     },
                     infrastructure: {
                         text: "🏗️ Infrastructure Projects",
@@ -501,7 +521,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_under_construction"
+                        next: "cse_goods_e"
                     }
                 }
             },
@@ -510,15 +530,15 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "need_goods_A"
+                        next: "need_goods_a"
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_B"
+                        next: "typeofgood_b"
                     }
                 }
             },
-            need_goods_A: {
+            need_goods_a: {
                 question: "Is there a need to:",
                 options: {
                     immediate_action_goods: {
@@ -535,7 +555,7 @@
                     },
                     other_goods_A: {
                         text: "❓ Not among the stated options",
-                        next: "typeofgood_B"
+                        next: "typeofgood_b"
                     }
                 }
             },
@@ -561,7 +581,7 @@
                     },
                     different_prefer_takeover: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
+                        next: "typeofgood_b"
                     }
                 }
             },
@@ -574,7 +594,7 @@
                     },
                     different_prefer_emergencycases_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
+                        next: "typeofgood_b"
                     }
                 }
             },
@@ -584,394 +604,954 @@
                     yes_prefer_failedbidding_goods: {
                         text: "📋 Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
                         next: "result_failed_bidding"
-                        triggers: ["Failed Bidding Procurement", "Negotiated Procurement"]
                     },
                     different_prefer_failedbidding_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
-                        triggers: ["Competitive Bidding", "Request for Proposals"]
+                        next: "typeofgood_b"
+                        }
                     }
-                }
-            },
-            typeofgood_B: {
+                },
+                competitive_contract_goods: {
+                    question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "unitprice_goods"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "typeofgood_b"
+                        }
+                    }
+                },
+                unitprice_goods: {
+                    question: "Is the unit price equal to or lower than that provided in the original contract and the prevailing market price?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "sixmonthsprocurement_goods"
+                     },
+                    no: {
+                        text: "❌ No",
+                        next: "typeofgood_b"
+                        }
+                    }
+                },
+                sixmonthsprocurement_goods: {
+                    question: "Is the procurement within six (6) months from the date of the Notice to Proceed (NTP) arising from the original contract?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "quantifiable_goods"
+                     },
+                    no: {
+                        text: "❌ No",
+                        next: "typeofgood_b"
+                        }
+                    }
+                },
+                quantifiable_goods: {
+                    question: "Is the Good quantifiable, divisible, and consisting of at least four (4) units per item, and does not exceed 25% of the quantity of each item in the original contract?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_under_construction"
+                     },
+                    no: {
+                        text: "❌ No",
+                        next: "typeofgood_b"
+                        }
+                    }
+                },
+                prefer_repeatorder_goods: {
+                    question: "Do you prefer:",
+                    options: {
+                    yes_prefer_repeatorder_goods: {
+                        text: "📋 Prepare Purchase Order and adopt Repeat Order",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_repeatorder_goods: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofgood_b"
+                        }
+                    }
+                },
+                typeofgood_b: {
+                    question: "Is the Good:",
+                    options: {
+                        necessarytopreventdamage_goods: {
+                            text: "🚨 Necessary to prevent damage to or loss of life or property OR restore vital public services, etc.",
+                            next: "result_emergency_cases"
+                        },
+                        limitedsources_plantcomponent_goods: {
+                            text: "🏭 Obtainable only from a limited number of sources OR a major plant component",
+                            next: "preselectedsupplier_goods"
+                        },
+                        researchanddevelopment_goods: {
+                            text: "🔬 To be used actually, exclusively, and directly in the conduct of research and development projects or activities",
+                            next: "typeofsciencegood"
+                        },
+                        defenseequipment_goods: {
+                            text: "🚁 Major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense (DND)",
+                            next: "afpmodernizationprogram_goods"
+                        },
+                        scholarlyartisticwork_goods: {
+                            text: "🎓 Scientific, Scholarly or Artistic Work, Exclusive Technology, and/or Media Services",
+                            next: "typeofscholarly_goods"
+                        },
+                        newconcept_goods: {
+                            text: "💡 A new concept or technology",
+                            next: "unsolicitedoffer_goods"
+                        },
+                        other_goods_b: {
+                            text: "❓ Not among the stated options",
+                            next: "typeofsupplier_goods_c"
+                            }
+                        }
+                },
+                preselectedsupplier_goods: {
+                question: "Do you have a set of pre-selected suppliers included in the government-approved or self-generated supplier list?",
+                options: {
+                yes: {
+                    text: "✅ Yes",
+                    next: "typeofsupplier_goods_d"
+                },
+                no: {
+                    text: "❌ No",
+                    next: "typeofsupplier_goods_c"
+                        }
+                    }
+                },
+                typeofsciencegood: {
                 question: "Is the Good:",
                 options: {
-                    necessarytopreventdamage_goods: {
-                        text: "🚨 Necessary to prevent damage to or loss of life or property OR restore vital public services, etc.",
-                        next: "result_emergency_cases"
+                    actualuseforscience: {
+                        text: "🔬 Supplies, materials, equipment and related services to be used actually, exclusively, and directly in the conduct of research and development projects or activities",
+                        next: "result_under_construction"
                     },
-                    limitedsources_plantcomponent_goods: {
-                        text: "🏭 Obtainable only from a limited number of sources OR a major plant component",
-                        next: "preselectedsupplier_goods"
+                    commissionedgoods:{ 
+                        text: "🔧 Goods which include products of a commissioned task by a PE which where processed, developed, and manufactured in satisfaction of its needs and requirements, which include: (i) pre-commercial goods and services that involve early market engagement, (ii) goods to be manufactured by qualified start up businesses",
+                        next: "result_under_construction"
                     },
-                    researchanddevelopment_goods: {
-                        text: "🔬 To be used actually, exclusively, and directly in the conduct of research and development projects or activities",
-                        next: "typeofsciencegood"
+                    analogousgoods: {
+                        text: "🧪 Other analogous goods",
+                        next: "result_under_construction"
                     },
-                    defenseequipment_goods: {
-                        text: "🚁 Major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense (DND)",
-                        next: "afpmodernizationprogram_goods"
-                    },
-                    scholarlyartisticwork_goods: {
-                        text: "🎓 Scientific, Scholarly or Artistic Work, Exclusive Technology, and/or Media Services",
-                        next: "typeofscholarly_goods"
-                    },
-                    newconcept_goods: {
-                        text: "💡 A new concept or technology",
-                        next: "unsolicitedoffer_goods"
-                    },
-                    other_goods_B: {
+                    others_typeofsciencegood: {
                         text: "❓ Not among the stated options",
-                        next: "typeofsupplier_goods_C"
+                        next: "typeofsupplier_goods_c"
+                        }
                     }
+                },
+                prefer_science_goods: {
+                    question: "Do you prefer:",
+                    options: {
+                    yes_prefer_science_goods: {
+                        text: "📋 Direct Procurement",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_science_goods: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofsupplier_goods_c"
+                        }
+                    }
+                },
+                afpmodernizationprogram_goods: {
+                question: "Is the Good included in the AFP Modernization Program previously approved by the President of the Philippines?",
+                options: {
+                yes: {
+                    text: "✅ Yes",
+                    next: "prefer_defensecooperationagreement_goods"
+                },
+                no: {
+                    text: "❌ No",
+                    next: "directnegotiationcompatibility_goods"
+                        }
+                    }
+                },
+                directnegotiationcompatibility_goods: {
+                question: "Will direct negotiation address compatibility, interoperability, and sustainability?",
+                options: {
+                yes: {
+                    text: "✅ Yes",
+                    next: "completecontractdnd_goods"
+                },
+                no: {
+                    text: "❌ No",
+                    next: "typeofsupplier_goods_c"
+                        }
+                    }
+                },
+                completecontractdnd_goods: {
+                question: "Has the supplier or manufacturer fully & satisfactorily implemented a contract of the same item with the DND, any of its bureaus or attached agencies, or law enforcement agencies?",
+                options: {
+                yes: {
+                    text: "✅ Yes",
+                    next: "performancesecurity_goods"
+                },
+                no: {
+                    text: "❌ No",
+                    next: "typeofsupplier_goods_c"
+                        }
+                    }
+                },
+                performancesecurity_goods: {
+                question: "Will the supplier or manufacturer provide performance security in accordance with Republic Act No. 12009?",
+                options: {
+                yes: {
+                    text: "✅ Yes",
+                    next: "prefer_defensecooperationagreement_goods"
+                },
+                no: {
+                    text: "❌ No",
+                    next: "typeofsupplier_goods_c"
+                        }
+                    }
+                },
+                prefer_defensecooperationagreement_goods: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_defensecooperationagreement_goods: {
+                        text: "🤝 Directly negotiate with identified supplier or manufacturer",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_defensecooperationagreement_goods: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofsupplier_goods_c"
+                       }
+                    }
+                },
+                typeofscholarly_goods: {
+                    question: "Is the Good:",
+                    options: {
+                    workofart: {
+                        text: "🎨 Work of art; commissioned work or services for creative design or a specific artist skill (e.g., singer, performer, poet, writer, painter, sculptor, etc.)",
+                        next: "result_under_construction"
+                     },
+                    scientificjournal: {
+                        text: "📝 Scientific, technical, economic, business, trade or legal journal, magazine, paper, subscription, or other exclusive statistical publications and references",
+                        next: "result_under_construction"
+                     },
+                    communicationmedia: {
+                        text: "🎬 Media documentation, advertisement, or announcement through television, radio, newspaper, internet, and other communication media",
+                        next: "result_under_construction"
+                     },
+                    biotechequipment: {
+                        text: "Highly specialized life-saving medical and biotech equipment and devices, medicine, supplies, materials, tools and consumables, as certified by the Department of Health (DOH)",
+                        next: "result_under_construction"
+                     },
+                    stateofthearttechnology_goods: {
+                        text: "🚀 Involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
+                        next: "result_under_construction"
+                     },
+                    others_scholarlygoods: {
+                        text: "❓ Not among the stated options",
+                        next: "typeofsupplier_goods_c"
+                        }
+                    }
+                },
+                prefer_scholarly_goods: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_scholarly_goods: {
+                        text: "🤝 Directly negotiate with identified supplier or manufacturer",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_scholarly_goods: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofsupplier_goods_c"
+                        }
+                    }
+                },
+                unsolicitedoffer_goods: {
+                    question: "Was an unsolicited offer initially submitted by an entity that was determined by the Procuring Entity as necessary?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "typeofgood_unsolicitedoffer"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "typeofgood_competitivedialogue"
+                        }
+                    }
+                },
+                typeofgood_competitivedialogue: {
+                    question: "Does the Good:",
+                    options: {
+                    innovativedesign_goods: {
+                        text: "🛠️ Include innovative design or solutions involving procurement of complex purchases",
+                        next: "prefer_competitivedialogue_goods"
+                    },
+                    contractpriornegotiations_goods: {
+                        text: "🤝 Entails a contract that requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
+                        next: "prefer_competitivedialogue_goods"
+                    },
+                    undefinedtechspecs_goods: {
+                        text: "💭 Have Technical Specifications that cannot be sufficiently established or precisely defined by the PE",
+                        next: "prefer_competitivedialogue_goods"
+                     },
+                    others_competitivedialoguegoods: {
+                        text: "❓ Not among the stated options",
+                        next: "typeofsupplier_goods_c"
+                        }
+                    }
+                },
+                prefer_competitivedialogue_goods: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_competitivedialogue_goods: {
+                        text: "🤝 Employ a 2-stage bidding process where the PE invites suppliers etc., to propose solutions to address its needs and requirements",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_competitivedialogue_goods: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofsupplier_goods_c"
+                        }
+                    }
+                },
+                typeofgood_unsolicitedoffer: {
+                    question: "Does the Good:",
+                    options: {
+                    significantbenefits_goods: {
+                        text: "📊 Provide significant benefits to the procuring entity in terms of efficiency, cost, or outcome",
+                        next: "result_under_construction"
+                    },
+                    substantialimprovement_goods: {
+                        text: "⭐ Offer a substantial improvement over existing solutions, demonstrated through verifiable data, proof of concept, or technical studies",
+                        next: "result_under_construction"
+                    },
+                    emergingtechnologies_goods: {
+                        text: "🔋 Incorporate features promoting emerging technology and sustainable solutions",
+                        next: "result_under_construction"
+                    },
+                    stateofthearttechnology_goods: {
+                        text: "🚀 Involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
+                        next: "result_under_construction"
+                     },
+                    others_unsolicitedoffergoods: {
+                        text: "❓ Not among the stated options",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                typeofsupplier_goods_c: {
+                    question: "Is the supplier:",
+                    options: {
+                    intlagency_goods: {
+                        text: "A United Nations Agency, International Organization, or International Financing Organization",
+                        next: "typeofgood_intlagency_c"
+                    },
+                    ngo_goods: {
+                        text: "SEC registered non-stock, non-profit domestic corporation OR CDA-registered cooperative",
+                        next: "ordinancengo_goods_c"
+                    },
+                    anotheragency_goods: {
+                        text: "Another agency that has the mandate and absorptive capacity to undertake the project",
+                        next: "necessarytools_goods_c"
+                    },
+                    others_typeofsupplier_goods_c: {
+                        text: "❓ Not among the stated options",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                typeofgood_intlagency_c: {
+                    question: "Is the Good:",
+                    options: {
+                    advancedinnovation_goods: {
+                        text: "Goods and Consulting Services involving advanced technologies, techniques, and innovations not locally available as certified by the DTI, when it is most advantageous to the PE",
+                        next: "prefer_intlagency_goods_c"
+                    },
+                    specializedproducts_goods: {
+                        text: "Specialized products where the number of suppliers is limited, such as vaccines",
+                        next: "prefer_intlagency_goods_c"
+                    },
+                    offtheshelf_goods: {
+                        text: "Small quantities of off-the-shelf goods exclusively used in education and health",
+                        next: "prefer_intlagency_goods_c"
+                    },
+                    criticalpublichealth_goods: {
+                        text: "Goods for critical public health priorities as determined and certified by the DOH",
+                        next: "prefer_intlagency_goods_c"
+                    },
+                    others_typeofgood_intlagency_c: {
+                        text: "❓ Not among the stated options",
+                        next: "typeofgood_directcontracting_c"
+                        }
+                    }
+                },
+                prefer_intlagency_goods_c: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_intlagency_goods_c: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified supplier and adopt Direct Contracting",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_intlagency_goods_c: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofgood_directcontracting_c"
+                        }
+                    }
+                },
+                ordinancengo_goods_c: {
+                    question: "Is the NGO or Cooperative accredited by the PE or by the local government unit (LGU) where the project is located?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_ngo_goods_c"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "typeofgood_directcontracting_c"
+                        }
+                    }
+                },
+                prefer_ngo_goods_c: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_ngo_goods_c: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified supplier and adopt Direct Contracting",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_ngo_goods_c: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofgood_directcontracting_c"
+                        }
+                    }
+                },
+                necessarytools_goods_c: {
+                    question: "Does the PE lack the necessary tools, equipment, and manpower to undertake the project?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_anotheragency_goods_c"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "typeofgood_directcontracting_c"
+                        }
+                    }
+                },
+                prefer_anotheragency_goods_c: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_anotheragency_goods_c: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified supplier and adopt Direct Contracting",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_anotheragency_goods_c: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofgood_directcontracting_c"
+                        }
+                    }
+                },
+                typeofgood_directcontracting_c: {
+                    question: "Is the Good:",
+                    options: {
+                    advancedinnovation_goods: {
+                        text: "Goods and Consulting Services involving advanced technologies, techniques, and innovations not locally available as certified by the DTI, when it is most advantageous to the PE",
+                        next: "prefer_directcontracting_goods_c"
+                    },
+                    specializedproducts_goods: {
+                        text: "Specialized products where the number of suppliers is limited, such as vaccines",
+                        next: "prefer_directcontracting_goods_c"
+                    },
+                    offtheshelf_goods: {
+                        text: "Small quantities of off-the-shelf goods exclusively used in education and health",
+                        next: "prefer_directcontracting_goods_c"
+                    },
+                    criticalpublichealth_goods: {
+                        text: "Goods for critical public health priorities as determined and certified by the DOH",
+                        next: "prefer_directcontracting_goods_c"
+                    },
+                    others_typeofgood_directcontracting_c: {
+                        text: "❓ Not among the stated options",
+                        next: "typeofsupplier_goods_d"
+                        }
+                    }
+                },
+                prefer_directcontracting_goods_c: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_directcontracting_goods_c: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified supplier and adopt Direct Contracting",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_directcontracting_goods_c: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofsupplier_goods_d"
+                        }
+                    }
+                },
+                typeofsupplier_goods_d: {
+                    question: "Is the supplier:",
+                    options: {
+                    intlagency_goods: {
+                        text: "A United Nations Agency, International Organization, or International Financing Organization",
+                        next: "typeofgood_intlagency_d"
+                    },
+                    ngo_goods: {
+                        text: "SEC registered non-stock, non-profit domestic corporation OR CDA-registered cooperative",
+                        next: "ordinancengo_goods_d"
+                    },
+                    anotheragency_goods: {
+                        text: "Another agency that has the mandate and absorptive capacity to undertake the project",
+                        next: "necessarytools_goods_d"
+                    },
+                    others_typeofsupplier_goods_d: {
+                        text: "❓ Not among the stated options",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                typeofgood_intlagency_d: {
+                    question: "Is the Good:",
+                    options: {
+                    advancedinnovation_goods: {
+                        text: "Goods and Consulting Services involving advanced technologies, techniques, and innovations not locally available as certified by the DTI, when it is most advantageous to the PE",
+                        next: "prefer_intlagency_goods_d"
+                    },
+                    specializedproducts_goods: {
+                        text: "Specialized products where the number of suppliers is limited, such as vaccines",
+                        next: "prefer_intlagency_goods_d"
+                    },
+                    offtheshelf_goods: {
+                        text: "Small quantities of off-the-shelf goods exclusively used in education and health",
+                        next: "prefer_intlagency_goods_d"
+                    },
+                    criticalpublichealth_goods: {
+                        text: "Goods for critical public health priorities as determined and certified by the DOH",
+                        next: "prefer_intlagency_goods_d"
+                    },
+                    others_typeofgood_intlagency_d: {
+                        text: "❓ Not among the stated options",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                prefer_intlagency_goods_d: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_intlagency_goods_d: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified supplier and adopt Direct Contracting",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_intlagency_goods_d: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                ordinancengo_goods_d: {
+                    question: "Is the NGO or Cooperative accredited by the PE or by the local government unit (LGU) where the project is located?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_ngo_goods_d"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                prefer_ngo_goods_d: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_ngo_goods_d: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified supplier and adopt Direct Contracting",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_ngo_goods_d: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                necessarytools_goods_d: {
+                    question: "Does the PE lack the necessary tools, equipment, and manpower to undertake the project?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_anotheragency_goods_d"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                prefer_anotheragency_goods_d: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_anotheragency_goods_d: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified supplier and adopt Direct Contracting",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_anotheragency_goods_d: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                cse_goods_e: {
+                    question: "Is the procurement project a Common-use Supplies or Equipment (CSE) under the PS-DBM?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_under_construction"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                result_under_construction: {
+                    question: "This decision path is still under development",
+                    options: {
+                        restart: {
+                            text: "🔄 Start Over",
+                            next: "start"
+                        }
+                    }
+                },
+                result_takeover: {
+                    question: "Recommended Procurement Mode:",
+                    options: {
+                        restart: {
+                            text: "🔄 Start Over",
+                            next: "start"
+                        }
+                    },
+                    primaryRecommendation: "Negotiated Procurement",
+                    recommendationDescription: "Post-Qualify and negotiate with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
+                    alternativeRecommendations: [
+                        "Competitive Bidding",
+                        "Limited Source Bidding",
+                        "Direct Contracting"
+                    ]
+                },
+                result_emergency_cases: {
+                    question: "Recommended Procurement Mode:",
+                    options: {
+                        restart: {
+                            text: "🔄 Start Over",
+                            next: "start"
+                        }
+                    },
+                    primaryRecommendation: "Negotiated Procurement",
+                    recommendationDescription: "Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
+                    alternativeRecommendations: [
+                        "Competitive Bidding",
+                        "Limited Source Bidding",
+                        "Direct Contracting"
+                    ]
+                },
+                result_failed_bidding: {
+                    question: "Recommended Procurement Mode:",
+                    options: {
+                        restart: {
+                            text: "🔄 Start Over",
+                            next: "start"
+                        }
+                    },
+                    primaryRecommendation: "Negotiated Procurement",
+                    recommendationDescription: "Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
+                    alternativeRecommendations: [
+                        "Competitive Bidding",
+                        "Limited Source Bidding",
+                        "Direct Contracting"
+                    ]
                 }
-            }
-        };
+            };
 
-        const results = {
-            result_emergency_cases: {
-                title: "🚨 Negotiated Procurement: Emergency Cases",
-                description: "This is a mode of procurement that can be adopted in case of imminent danger to life or property during a state of calamity, or when time is of the essence arising from natural or man-made calamities or other causes where immediate action is necessary to prevent damage to or loss of life or property, or to restore vital public services, infrastructure facilities, and other public utilities."
-            },
-            result_failed_bidding: {
-                title: "🔄 Failed Bidding Procurement",
-                description: "After two failed bidding attempts, you may proceed with alternative procurement methods such as negotiated procurement or direct contracting. Review the reasons for previous failures and adjust specifications, terms, or market approach as needed to ensure successful procurement."
-            },
-            result_takeover: {
-                title: "📋 Takeover Procurement",
-                description: "When a contract is rescinded or terminated, you may negotiate with the second lowest bidder from the original bidding process. Ensure that the second bidder is still willing and able to perform the contract at their previously quoted price."
-            },
-            result_under_construction: {
-                title: "🚧 Decision Path Under Construction",
-                description: "This decision path is still being developed in the decision tree. Please consult your procurement manual or legal department for guidance on the appropriate procurement method for your specific situation."
-            }
-        };
+        let currentState = "start";
+        let breadcrumbHistory = [];
+        let breadcrumbTextHistory = [];
 
-        // Emoji mapping for procurement modes
-        const procurementModeEmojis = {
-            "Direct Procurement": "🤝",
-            "Competitive Bidding": "🏆",
-            "Public-Private Partnership": "🤝",
-            "Request for Proposals": "📋",
-            "Alternative Procurement": "🌟",
-            "Small Value Procurement": "💰",
-            "Repeat Order": "📋",
-            "Emergency Procurement": "🚨",
-            "Negotiated Procurement": "🤝",
-            "Takeover Procurement": "📋",
-            "Failed Bidding Procurement": "🔄",
-            "Limited Source Bidding": "🎯"
-        };
-
-        let currentNode = 'start';
-        let userPath = [];
-        let breadcrumbPath = [];
-        let availableModes = new Set();
-        let history = [];
-
-        function updateBreadcrumb() {
-            const breadcrumbContainer = document.getElementById('breadcrumbContainer');
-            const breadcrumbTrail = document.getElementById('breadcrumbTrail');
+        function startDecisionTree() {
+            document.getElementById("homeContainer").style.display = "none";
+            document.getElementById("questionContainer").style.display = "block";
+            document.getElementById("resultContainer").style.display = "none";
+            document.getElementById("backButton").style.display = "none";
             
-            breadcrumbTrail.innerHTML = '';
-            
-            // Add home button
-            const homeButton = document.createElement('button');
-            homeButton.className = 'breadcrumb-btn';
-            homeButton.textContent = '🏠 Home';
-            homeButton.onclick = () => restart();
-            breadcrumbTrail.appendChild(homeButton);
-            
-            // Add breadcrumb items
-            breadcrumbPath.forEach((item, index) => {
-                // Separator
-                const separator = document.createElement('span');
-                separator.textContent = ' / ';
-                separator.style.color = '#999';
-                breadcrumbTrail.appendChild(separator);
-                
-                // Breadcrumb item (clickable except current)
-                if (index < breadcrumbPath.length - 1) {
-                    const breadcrumbBtn = document.createElement('button');
-                    breadcrumbBtn.className = 'breadcrumb-btn';
-                    breadcrumbBtn.textContent = item;
-                    breadcrumbBtn.onclick = () => navigateToStep(index);
-                    breadcrumbTrail.appendChild(breadcrumbBtn);
-                } else {
-                    const breadcrumbItem = document.createElement('span');
-                    breadcrumbItem.className = 'breadcrumb-current';
-                    breadcrumbItem.textContent = item;
-                    breadcrumbTrail.appendChild(breadcrumbItem);
-                }
-            });
-            
-            // Show breadcrumb if we have items
-            if (breadcrumbPath.length > 0) {
-                breadcrumbContainer.style.display = 'block';
-            } else {
-                breadcrumbContainer.style.display = 'none';
-            }
-        }
-
-        function updateDynamicRecommendations() {
-            const dynamicContainer = document.getElementById('dynamicRecommendations');
-            const badgesContainer = document.getElementById('recommendationBadges');
-            
-            badgesContainer.innerHTML = '';
-            
-            if (availableModes.size > 0) {
-                // Convert Set to Array and create badges
-                Array.from(availableModes).forEach(mode => {
-                    const badge = document.createElement('div');
-                    badge.className = 'recommendation-badge';
-                    badge.innerHTML = `${procurementModeEmojis[mode] || '📋'} ${mode}`;
-                    badgesContainer.appendChild(badge);
-                });
-                
-                dynamicContainer.style.display = 'block';
-            } else {
-                dynamicContainer.style.display = 'none';
-            }
+            currentState = "start";
+            breadcrumbHistory = [];
+            breadcrumbTextHistory = [];
+            updateBreadcrumb();
+            updateQuestionAndOptions();
         }
 
         function makeChoice(choice) {
-            const currentNodeData = decisionTree[currentNode];
-            const selectedOption = currentNodeData.options[choice];
+            const currentQuestion = decisionTree[currentState];
+            const nextState = currentQuestion.options[choice].next;
+            const choiceText = currentQuestion.options[choice].text;
             
-            // Save current state to history
-            history.push({
-                node: currentNode,
-                path: [...breadcrumbPath],
-                modes: new Set(availableModes)
-            });
+            // Add to breadcrumb history
+            breadcrumbHistory.push(currentState);
+            breadcrumbTextHistory.push(choiceText);
             
-            userPath.push(selectedOption.text);
-            breadcrumbPath.push(selectedOption.text);
-            
-            // Add any triggered procurement modes to available modes
-            if (selectedOption.triggers) {
-                selectedOption.triggers.forEach(mode => {
-                    availableModes.add(mode);
-                });
-            }
-            
-            currentNode = selectedOption.next;
-            
+            currentState = nextState;
             updateBreadcrumb();
-            updateDynamicRecommendations();
-            updateBackButton();
-            
-            if (currentNode.startsWith('result_')) {
-                showResult();
-            } else {
-                showQuestion();
-            }
+            updateQuestionAndOptions();
         }
 
         function goBack() {
-            if (history.length === 0) return;
-            
-            // Get previous state from history
-            const previousState = history.pop();
-            
-            // Restore previous state
-            currentNode = previousState.node;
-            breadcrumbPath = previousState.path;
-            availableModes = previousState.modes;
-            
-            updateBreadcrumb();
-            updateDynamicRecommendations();
-            updateBackButton();
-            showQuestion();
+            if (breadcrumbHistory.length > 0) {
+                currentState = breadcrumbHistory.pop();
+                breadcrumbTextHistory.pop();
+                updateBreadcrumb();
+                updateQuestionAndOptions();
+            }
         }
 
-        function navigateToStep(stepIndex) {
-            // Clear history and available modes
-            history = history.slice(0, stepIndex);
-            availableModes.clear();
+        function updateBreadcrumb() {
+            const breadcrumbContainer = document.getElementById("breadcrumbContainer");
+            const breadcrumbTrail = document.getElementById("breadcrumbTrail");
             
-            // Rebuild available modes up to the selected step
-            for (let i = 0; i <= stepIndex; i++) {
-                if (history[i] && history[i].modes) {
-                    history[i].modes.forEach(mode => availableModes.add(mode));
-                }
-            }
+            // Clear the breadcrumb trail
+            breadcrumbTrail.innerHTML = '';
             
-            // Update breadcrumb path
-            breadcrumbPath = breadcrumbPath.slice(0, stepIndex + 1);
-            
-            // Find the node for this step
-            let tempNode = 'start';
-            for (let i = 0; i <= stepIndex; i++) {
-                const step = breadcrumbPath[i];
-                const nodeData = decisionTree[tempNode];
-                for (let optionKey in nodeData.options) {
-                    if (nodeData.options[optionKey].text === step) {
-                        tempNode = nodeData.options[optionKey].next;
-                        break;
+            // Show breadcrumb if we have history
+            if (breadcrumbHistory.length > 0) {
+                breadcrumbContainer.style.display = "block";
+                
+                // Add breadcrumb items
+                for (let i = 0; i < breadcrumbHistory.length; i++) {
+                    const state = breadcrumbHistory[i];
+                    const text = breadcrumbTextHistory[i];
+                    
+                    // Create breadcrumb button
+                    const breadcrumbBtn = document.createElement("button");
+                    breadcrumbBtn.className = "breadcrumb-btn";
+                    breadcrumbBtn.textContent = shortenText(text);
+                    breadcrumbBtn.title = text; // Show full text on hover
+                    breadcrumbBtn.onclick = () => {
+                        // Go back to this state
+                        while (breadcrumbHistory.length > i) {
+                            breadcrumbHistory.pop();
+                            breadcrumbTextHistory.pop();
+                        }
+                        currentState = state;
+                        updateBreadcrumb();
+                        updateQuestionAndOptions();
+                    };
+                    
+                    breadcrumbTrail.appendChild(breadcrumbBtn);
+                    
+                    // Add separator (except after the last item)
+                    if (i < breadcrumbHistory.length - 1) {
+                        const separator = document.createElement("span");
+                        separator.textContent = "›";
+                        separator.style.color = "#666";
+                        separator.style.margin = "0 5px";
+                        breadcrumbTrail.appendChild(separator);
                     }
                 }
+                
+                // Add current question
+                const separator = document.createElement("span");
+                separator.textContent = "›";
+                separator.style.color = "#666";
+                separator.style.margin = "0 5px";
+                breadcrumbTrail.appendChild(separator);
+                
+                const currentBreadcrumb = document.createElement("span");
+                currentBreadcrumb.className = "breadcrumb-current";
+                currentBreadcrumb.textContent = shortenText(decisionTree[currentState].question);
+                currentBreadcrumb.title = decisionTree[currentState].question; // Show full text on hover
+                breadcrumbTrail.appendChild(currentBreadcrumb);
+            } else {
+                breadcrumbContainer.style.display = "none";
             }
-            
-            currentNode = tempNode;
-            
-            updateBreadcrumb();
-            updateDynamicRecommendations();
-            updateBackButton();
-            showQuestion();
         }
 
-        function updateBackButton() {
-            const backButton = document.getElementById('backButton');
-            if (history.length > 0) {
-                backButton.style.display = 'block';
-            } else {
-                backButton.style.display = 'none';
+        function shortenText(text) {
+            // Remove emojis for length calculation
+            const textWithoutEmojis = text.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '');
+            
+            // Shorten text if it's longer than 15 characters
+            if (textWithoutEmojis.length > 15) {
+                return textWithoutEmojis.substring(0, 15) + '...';
             }
+            
+            return text;
         }
 
-        function showQuestion() {
-            document.getElementById('homeContainer').style.display = 'none';
-            document.getElementById('questionContainer').style.display = 'block';
-            document.getElementById('resultContainer').style.display = 'none';
-            document.getElementById('dynamicRecommendations').style.display = 'block';
+        function updateQuestionAndOptions() {
+            const questionText = document.getElementById("questionText");
+            const optionsContainer = document.getElementById("optionsContainer");
+            const backButton = document.getElementById("backButton");
+            const resultContainer = document.getElementById("resultContainer");
+            const questionContainer = document.getElementById("questionContainer");
             
-            const nodeData = decisionTree[currentNode];
-            document.getElementById('questionText').textContent = nodeData.question;
+            const currentQuestion = decisionTree[currentState];
             
-            const optionsContainer = document.getElementById('optionsContainer');
-            
-            // Only replace with image options for the first question
-            if (currentNode === 'start') {
-                optionsContainer.innerHTML = `
-                    <div class="image-option" onclick="makeChoice('goods')">
-                        <img src="Billy Goods.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Goods icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
-                        <h3>Goods</h3>
-                    </div>
-                    <div class="image-option" onclick="makeChoice('infrastructure')">
-                        <img src="Billy Infra.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Infrastructure icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
-                        <h3>Infrastructure Projects</h3>
-                    </div>
-                    <div class="image-option" onclick="makeChoice('consulting')">
-                        <img src="Billy Consulting.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Consulting icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
-                        <h3>Consulting Services</h3>
-                    </div>
-                `;
-            } else {
-                // Use image options for yes/no questions
-                if (currentNode === 'highlyspecialized_goods' || 
-                    currentNode === 'previously_procured_goods' || 
-                    currentNode === 'contract_rescinded_goods') {
-                    optionsContainer.className = 'options horizontal';
-                    optionsContainer.innerHTML = `
-                        <div class="image-option" onclick="makeChoice('yes')">
-                            <img src="YES.png" style="width: 130px; height: 70px; object-fit: cover; border-radius: 1px;" alt="Yes icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+            // Check if we're at a result state
+            if (currentState.startsWith("result_")) {
+                questionContainer.style.display = "none";
+                resultContainer.style.display = "block";
+                
+                // Update recommendations if they exist
+                const recommendationContainer = document.getElementById("recommendationContainer");
+                if (currentQuestion.primaryRecommendation) {
+                    recommendationContainer.innerHTML = `
+                        <div class="primary-recommendation">
+                            <div class="recommendation-title">
+                                <span class="icon">🏆</span>
+                                <span>Primary Recommendation</span>
+                            </div>
+                            <div class="recommendation-description">
+                                <strong>${currentQuestion.primaryRecommendation}</strong>: ${currentQuestion.recommendationDescription}
+                            </div>
                         </div>
-                        <div class="image-option" onclick="makeChoice('no')">
-                            <img src="NO.png" style="width: 130px; height: 70px; object-fit: cover; border-radius: 1px;" alt="No icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
-                        </div>
+                        ${currentQuestion.alternativeRecommendations ? `
+                            <div class="alternative-recommendations">
+                                <div class="alternative-title">
+                                    <span class="icon">💡</span>
+                                    <span>Alternative Procurement Modes</span>
+                                </div>
+                                <div class="alternative-badges">
+                                    ${currentQuestion.alternativeRecommendations.map(rec => `
+                                        <div class="alternative-badge">
+                                            <span class="icon">📋</span>
+                                            <span>${rec}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
                     `;
                 } else {
-                    // Use regular buttons for other questions
+                    recommendationContainer.innerHTML = `
+                        <div class="primary-recommendation">
+                            <div class="recommendation-title">
+                                <span class="icon">🚧</span>
+                                <span>Under Construction</span>
+                            </div>
+                            <div class="recommendation-description">
+                                This decision path is still under development. Please check back later or try a different path.
+                            </div>
+                        </div>
+                    `;
+                }
+            } else {
+                // Update question and options
+                questionText.textContent = currentQuestion.question;
+                
+                // Clear options
+                optionsContainer.innerHTML = '';
+                
+                // Check if we should use horizontal layout for image options
+                const isImageOptions = Object.keys(currentQuestion.options).some(key => 
+                    key === 'goods' || key === 'infrastructure' || key === 'consulting'
+                );
+                
+                if (isImageOptions) {
+                    optionsContainer.className = 'options horizontal';
+                } else {
                     optionsContainer.className = 'options';
-                    optionsContainer.innerHTML = '';
-                    
-                    for (let optionKey in nodeData.options) {
-                        const option = nodeData.options[optionKey];
-                        const button = document.createElement('button');
-                        button.className = 'option-btn';
-                        button.textContent = option.text;
-                        button.onclick = () => makeChoice(optionKey);
-                        optionsContainer.appendChild(button);
+                }
+                
+                // Add options
+                for (const [key, option] of Object.entries(currentQuestion.options)) {
+                    if (isImageOptions) {
+                        // Create image option
+                        const optionDiv = document.createElement("div");
+                        optionDiv.className = "image-option";
+                        optionDiv.onclick = () => makeChoice(key);
+                        
+                        let imageSrc = "";
+                        let altText = "";
+                        
+                        if (key === "goods") {
+                            imageSrc = "Billy Goods.png";
+                            altText = "Goods icon";
+                        } else if (key === "infrastructure") {
+                            imageSrc = "Billy Infra.png";
+                            altText = "Infrastructure icon";
+                        } else if (key === "consulting") {
+                            imageSrc = "Billy Consulting.png";
+                            altText = "Consulting icon";
+                        }
+                        
+                        optionDiv.innerHTML = `
+                            <img src="${imageSrc}" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="${altText}" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                            <h3>${option.text}</h3>
+                        `;
+                        
+                        optionsContainer.appendChild(optionDiv);
+                    } else {
+                        // Create button option
+                        const optionBtn = document.createElement("button");
+                        optionBtn.className = "option-btn";
+                        optionBtn.textContent = option.text;
+                        optionBtn.onclick = () => makeChoice(key);
+                        optionsContainer.appendChild(optionBtn);
                     }
                 }
+                
+                // Show/hide back button
+                backButton.style.display = breadcrumbHistory.length > 0 ? "block" : "none";
+                
+                // Show question container
+                questionContainer.style.display = "block";
+                resultContainer.style.display = "none";
             }
+            
+            // Update dynamic recommendations
+            updateDynamicRecommendations();
         }
 
-        function showResult() {
-            const result = results[currentNode];
+        function updateDynamicRecommendations() {
+            const dynamicRecommendations = document.getElementById("dynamicRecommendations");
+            const recommendationBadges = document.getElementById("recommendationBadges");
             
-            document.getElementById('homeContainer').style.display = 'none';
-            document.getElementById('questionContainer').style.display = 'none';
-            document.getElementById('resultContainer').style.display = 'block';
+            // Collect all triggered recommendations from the current path
+            let recommendations = new Set();
             
-            const recommendationContainer = document.getElementById('recommendationContainer');
-            recommendationContainer.innerHTML = '';
+            // Check current state and all previous states for triggers
+            if (decisionTree[currentState].triggers) {
+                decisionTree[currentState].triggers.forEach(rec => recommendations.add(rec));
+            }
             
-            // Create primary recommendation
-            const primaryRecommendation = document.createElement('div');
-            primaryRecommendation.className = 'primary-recommendation';
-            primaryRecommendation.innerHTML = `
-                <div class="recommendation-title">
-                    <span class="icon">🏆</span>
-                    <span>Primary Recommendation</span>
-                </div>
-                <div class="recommendation-description">
-                    <strong>${result.title}</strong><br><br>
-                    ${result.description}
-                </div>
-            `;
-            recommendationContainer.appendChild(primaryRecommendation);
+            for (let i = 0; i < breadcrumbHistory.length; i++) {
+                const state = breadcrumbHistory[i];
+                if (decisionTree[state] && decisionTree[state].triggers) {
+                    decisionTree[state].triggers.forEach(rec => recommendations.add(rec));
+                }
+            }
             
-            // Create alternative recommendations from triggered modes
-            if (availableModes.size > 0) {
-                const alternativeContainer = document.createElement('div');
-                alternativeContainer.className = 'alternative-recommendations';
+            // Show/hide recommendations panel
+            if (recommendations.size > 0) {
+                dynamicRecommendations.style.display = "block";
                 
-                const alternativeTitle = document.createElement('div');
-                alternativeTitle.className = 'alternative-title';
-                alternativeTitle.innerHTML = '<span class="icon">💡</span> Alternative Procurement Modes:';
-                alternativeContainer.appendChild(alternativeTitle);
-                
-                const alternativeBadges = document.createElement('div');
-                alternativeBadges.className = 'alternative-badges';
-                
-                // Convert Set to Array and create badges
-                Array.from(availableModes).forEach(mode => {
-                    const badge = document.createElement('div');
-                    badge.className = 'alternative-badge';
-                    badge.innerHTML = `${procurementModeEmojis[mode] || '📋'} ${mode}`;
-                    alternativeBadges.appendChild(badge);
+                // Update recommendation badges
+                recommendationBadges.innerHTML = '';
+                recommendations.forEach(rec => {
+                    const badge = document.createElement("div");
+                    badge.className = "recommendation-badge";
+                    badge.innerHTML = `<span class="icon">📋</span><span>${rec}</span>`;
+                    recommendationBadges.appendChild(badge);
                 });
-                
-                alternativeContainer.appendChild(alternativeBadges);
-                recommendationContainer.appendChild(alternativeContainer);
+            } else {
+                dynamicRecommendations.style.display = "none";
             }
-            
-            // Hide dynamic recommendations in final result
-            document.getElementById('dynamicRecommendations').style.display = 'none';
-        }
-
-        function startDecisionTree() {
-            document.getElementById('homeContainer').style.display = 'none';
-            document.getElementById('questionContainer').style.display = 'block';
-            document.getElementById('dynamicRecommendations').style.display = 'block';
-            showQuestion();
         }
 
         function restart() {
-            // Reset all variables completely
-            currentNode = 'start';
-            userPath = [];
-            breadcrumbPath = [];
-            availableModes.clear();
-            history = [];
+            currentState = "start";
+            breadcrumbHistory = [];
+            breadcrumbTextHistory = [];
             
-            // Reset all UI elements
-            document.getElementById('homeContainer').style.display = 'block';
-            document.getElementById('questionContainer').style.display = 'none';
-            document.getElementById('resultContainer').style.display = 'none';
-            document.getElementById('breadcrumbContainer').style.display = 'none';
-            document.getElementById('dynamicRecommendations').style.display = 'none';
-            document.getElementById('backButton').style.display = 'none';
-            
-            // Clear any dynamic content
-            document.getElementById('recommendationBadges').innerHTML = '';
-            document.getElementById('recommendationContainer').innerHTML = '';
+            document.getElementById("homeContainer").style.display = "block";
+            document.getElementById("questionContainer").style.display = "none";
+            document.getElementById("resultContainer").style.display = "none";
+            document.getElementById("breadcrumbContainer").style.display = "none";
+            document.getElementById("dynamicRecommendations").style.display = "none";
         }
-
-        // Initialize
-        showQuestion();
     </script>
 </body>
 </html>
