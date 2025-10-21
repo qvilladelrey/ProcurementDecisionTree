@@ -1,1190 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Decision Tree</title>
-    <style>
-        body {
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-image: url('Goods, Infra, Consulting (1).png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .decision-container {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 35px 65px rgba(0.25,0.25,0.25,0.25);
-            max-width: 700px;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        h1 {
-            font-family: 'Bricolage Grotesque', 'Arial', sans-serif;
-            color: #333;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            font-weight: 600;
-        }
-
-        .question {
-            font-size: 2em;
-            color: #555;
-            margin-bottom: 30px;
-            line-height: 1.5;
-        }
-
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
-            align-items: center;
-        }
-
-        .options.horizontal {
-            flex-direction: row;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .option-btn {
-            background: linear-gradient(135deg, #1e3888, #3a6ea5);
-            color: white;
-            border: none;
-            padding: 18px 25px;
-            border-radius: 12px;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-            width: 100%;
-            max-width: 450px;
-            min-height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            line-height: 1.3;
-        }
-        .option-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        .option-btn:active {
-            transform: translateY(0);
-        }
-
-        .image-option {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 20px 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
-            width: 100%;
-            max-width: 280px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            flex: 1;
-            min-width: 140px;
-        }
-
-        .image-option:hover {
-            border-color: #667eea;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
-        }
-
-        .image-option h3 {
-            margin: 12px 0 6px 0;
-            color: #333;
-            font-size: 1.1em;
-            font-weight: 600;
-        }
-
-        .image-option p {
-            margin: 0;
-            color: #666;
-            font-size: 0.85em;
-            line-height: 1.3;
-        }
-
-        .result {
-            background: linear-gradient(135deg, #1e3888, #3a6ea5);
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3);
-        }
-
-        .path-display {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3);
-        }
-
-        .path-title {
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .path-steps {
-            color: #666;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        .restart-btn {
-            background: #28a745;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .restart-btn:hover {
-            background: #218838;
-            transform: translateY(-1px);
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background: #e9ecef;
-            border-radius: 4px;
-            margin-bottom: 30px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 4px;
-            transition: width 0.5s ease;
-        }
-
-        .definition-word {
-            position: relative;
-            cursor: help;
-            color: #667eea;
-            font-weight: 500;
-            border-bottom: 1px dotted #667eea;
-        }
-
-        .definition-tooltip {
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #333;
-            color: white;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-size: 0.85em;
-            white-space: nowrap;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            margin-bottom: 5px;
-            width: 300px;
-            white-space: normal;
-            text-align: center;
-            line-height: 1.2;
-            max-height: 80px;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        .definition-tooltip::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 5px solid transparent;
-            border-top-color: #333;
-        }
-
-        .definition-word:hover .definition-tooltip {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* New styles for hierarchical recommendations */
-        .recommendation-container {
-            margin-bottom: 20px;
-        }
-
-        .primary-recommendation {
-            background: linear-gradient(135deg, #1e3888, #3a6ea5);
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3);
-            text-align: left;
-        }
-
-        .recommendation-title {
-            font-weight: 700;
-            font-size: 1.3em;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-
-        .recommendation-title .icon {
-            margin-right: 10px;
-            font-size: 1.5em;
-        }
-
-        .recommendation-description {
-            font-size: 1em;
-            line-height: 1.5;
-        }
-
-        .secondary-recommendations {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .secondary-recommendation {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: left;
-            border-left: 4px solid #3a6ea5;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .secondary-title {
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-
-        .secondary-title .icon {
-            margin-right: 8px;
-            font-size: 1.2em;
-        }
-
-        .secondary-description {
-            color: #666;
-            font-size: 0.95em;
-            line-height: 1.5;
-        }
-
-        @media (max-width: 768px) {
-            .decision-container {
-                padding: 25px;
-                margin: 10px;
-            }
-            
-            h1 {
-                font-size: 1.8em;
-            }
-            
-            .question {
-                font-size: 1.1em;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Procurement Decision Tree</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f8fb;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      padding: 36px 28px;
+      max-width: 480px;
+      width: 100%;
+      margin: 24px;
+    }
+    h1 {
+      font-size: 1.6em;
+      margin-bottom: 18px;
+      color: #1e3888;
+      font-weight: 700;
+    }
+    .question {
+      font-size: 1.15em;
+      margin-bottom: 22px;
+      color: #333;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .option-btn {
+      background: linear-gradient(90deg, #1e3888, #3a6ea5);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 0;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-weight: 500;
+    }
+    .option-btn:hover {
+      background: linear-gradient(90deg, #3a6ea5, #1e3888);
+    }
+    .recommendation {
+      background: #f0f4fa;
+      border-radius: 10px;
+      padding: 18px 16px;
+      margin-bottom: 18px;
+      border-left: 5px solid #1e3888;
+    }
+    .primary {
+      font-weight: bold;
+      color: #1e3888;
+      font-size: 1.12em;
+      margin-bottom: 8px;
+    }
+    .secondary {
+      color: #444;
+      margin-left: 16px;
+      margin-bottom: 4px;
+    }
+    .restart-btn {
+      background: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 22px;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+    .restart-btn:hover {
+      background: #218838;
+    }
+  </style>
 </head>
 <body>
-    <div class="decision-container">
-        <h1>Decision Tree for Modes of Procurement</h1>
-
-        <div class="progress-bar" id="progressBarContainer" style="display: none;">
-            <div class="progress-fill" id="progressFill"></div>
-        </div>
-        
-        <div id="homeContainer">
-            <div class="question" style="font-size: 1.1em; text-align: justified; margin-bottom: 30px;">
-                This decision tree for modes of procurement is a step-by-step guide that uses yes/no or conditional questions to determine the most appropriate procurement method based on thresholds, conditions, and justifications. It ensures Procuring Entities choose which mode of procurement is the most fit for their desired purpose, in accordance with the <span class="definition-word">Fit-for-Purpose<span class="definition-tooltip">Fit-for-Purpose refers to an approach to procurement that applies the most suitable mechanism or strategy designed to address the specific needs of the Procuring Entity and each project, while promoting flexibility and responsiveness to different conditions and scenarios, based on factors or situations, such as, but not limited to, the nature and complexity of the project, market condition and readiness, urgency or risks, in order to ensure and achieve value for money.</span></span> Approach under Republic Act No. 12009 or the New Government Procurement Act.
-            </div>
-            
-            <div class="options">
-                <img src="START.png" onclick="startDecisionTree()" style="width: 280px; height: 90px; object-fit: cover; border-radius: 15px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: block; margin: 0 auto;" alt="Start icon" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onmousedown="this.style.transform='scale(0.95)'" onmouseup="this.style.transform='scale(1.05)'" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
-            </div>
-        </div>
-
-        <div id="questionContainer" style="display: none;">
-            <div class="question" id="questionText">
-                What are you procuring?
-            </div>
-            
-            <div class="options" id="optionsContainer">
-                <div class="image-option" onclick="makeChoice('goods')">
-                    <img src="Billy Goods.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Goods icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
-                    <h3><span class="definition-word">Goods<span class="definition-tooltip">Goods refer to (i) all items, supplies, and  materials, whether in the nature of equipment, furniture, stationery, materials for construction, or personal property of any kind, needed in the transaction of public businesses or in the pursuit of any government undertaking, project or activity; or (ii) general support services which pertain to all types of services except Consulting Services and Infrastructure Projects, such as the repair and maintenance of equipment and furniture, as well as trucking, hauling, janitorial, security, and related or analogous services. Personnel Services or individual COS or JO engagements do not fall under this definition.</span></span></h3>
-                </div>
-                <div class="image-option" onclick="makeChoice('infrastructure')">
-                    <img src="Billy Infra.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Infrastructure icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
-                    <h3>Infrastructure Projects</h3>
-                </div>
-                <div class="image-option" onclick="makeChoice('consulting')">
-                    <img src="Billy Consulting.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Consulting icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
-                    <h3>Consulting Services</h3>
-                </div>
-            </div>
-        </div>
-        
-        <div id="resultContainer" style="display: none;">
-            <div class="recommendation-container" id="recommendationContainer">
-                <!-- Primary and secondary recommendations will be inserted here -->
-            </div>
-            
-            <div class="path-display">
-                <div class="path-title">Your Decision Path:</div>
-                <div class="path-steps" id="pathSteps"></div>
-            </div>
-            <button class="restart-btn" onclick="restart()">
-                🔄 Start Over
-            </button>
-        </div>
+  <div class="container">
+    <h1>Procurement Decision Tree</h1>
+    <div id="treeArea">
+      <!-- Dynamic content goes here -->
     </div>
-
-    <script>
-        const decisionTree = {
-            start: {
-                question: "What are you procuring?",
-                options: {
-                    goods: {
-                        text: "📦 Goods",
-                        next: "highlyspecialized_goods"
-                    },
-                    infrastructure: {
-                        text: "🏗️ Infrastructure Projects",
-                        next: "result_under_construction"
-                    },
-                    consulting: {
-                        text: "🤝 Consulting Services",
-                        next: "result_under_construction"
-                    }
-                }
-            },
-            highlyspecialized_goods: {
-                question: "Is the procurement project highly specialized or complex in nature?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "previously_procured_goods"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "result_under_construction"
-                    }
-                }
-            },
-            previously_procured_goods: {
-                question: "Was the Good procured previously?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "need_goods_A"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "typeofgood_B"
-                    }
-                }
-            },
-            need_goods_A: {
-                question: "Is there a need to:",
-                options: {
-                    immediate_action_goods: {
-                        text: "🚨 Undertake immediate action to prevent damage to or loss of life or property or restore vital public services",
-                        next: "contract_rescinded_goods"
-                    },
-                    failed_bidding_goods: {
-                        text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
-                        next: "prefer_failedbidding_goods"
-                    },
-                    replenish_goods: {
-                        text: "📋 Replenish Goods procured under a previously awarded contract",
-                        next: "competitive_contract_goods"
-                    },
-                    other_goods_A: {
-                        text: "❓ Not among the stated options",
-                        next: "typeofgood_B"
-                    }
-                }
-            },
-            contract_rescinded_goods: {
-                question: "Was the contract of the previous bidder rescinded or terminated?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "prefer_takeover_goods"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "prefer_emergencycases_goods"
-                    }
-                }
-            },
-            prefer_takeover_goods: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_takeover: {
-                        text: "📋 Post-Qualify and negotiate with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
-                        next: "result_takeover"
-                    },
-                    different_prefer_takeover: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
-                    }
-                }
-            },
-            prefer_emergencycases_goods: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_emergencycases_goods: {
-                        text: "📋 Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
-                        next: "result_emergency_cases"
-                    },
-                    different_prefer_emergencycases_goods: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
-                    }
-                }
-            },
-            prefer_failedbidding_goods: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_failedbidding_goods: {
-                        text: "📋 Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
-                        next: "result_failed_bidding"
-                    },
-                    different_prefer_failedbidding_goods: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
-                        }
-                    }
-                },
-                competitive_contract_goods: {
-                    question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "unitprice_goods"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "typeofgood_B"
-                        }
-                    }
-                },
-                unitprice_goods: {
-                    question: "Is the unit price equal to or lower than that provided in the original contract and the prevailing market price?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "sixmonthsprocurement_goods"
-                     },
-                    no: {
-                        text: "❌ No",
-                        next: "typeofgood_B"
-                        }
-                    }
-                },
-                sixmonthsprocurement_goods: {
-                    question: "Is the procurement within six (6) months from the date of the Notice to Proceed (NTP) arising from the original contract?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "quantifiable_goods"
-                     },
-                    no: {
-                        text: "❌ No",
-                        next: "typeofgood_B"
-                        }
-                    }
-                },
-                quantifiable_goods: {
-                    question: "Is the Good quantifiable, divisible, and consisting of at least four (4) units per item, and does not exceed 25% of the quantity of each item in the original contract?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "result_under_construction"
-                     },
-                    no: {
-                        text: "❌ No",
-                        next: "typeofgood_B"
-                        }
-                    }
-                },
-                prefer_repeatorder_goods: {
-                    question: "Do you prefer:",
-                    options: {
-                    yes_prefer_repeatorder_goods: {
-                        text: "📋 Prepare Purchase Order and adopt Repeat Order",
-                        next: "result_under_construction"
-                     },
-                    different_prefer_repeatorder_goods: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
-                        }
-                    }
-                },
-                typeofgood_B: {
-                    question: "Is the Good:",
-                    options: {
-                        necessarytopreventdamage_goods: {
-                            text: "🚨 Necessary to prevent damage to or loss of life or property OR restore vital public services, etc.",
-                            next: "result_emergency_cases"
-                        },
-                        limitedsources_plantcomponent_goods: {
-                            text: "🏭 Obtainable only from a limited number of sources OR a major plant component",
-                            next: "preselectedsupplier_goods"
-                        },
-                        researchanddevelopment_goods: {
-                            text: "🔬 To be used actually, exclusively, and directly in the conduct of research and development projects or activities",
-                            next: "typeofsciencegood"
-                        },
-                        defenseequipment_goods: {
-                            text: "🚁 Major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense (DND)",
-                            next: "afpmodernizationprogram_goods"
-                        },
-                        scholarlyartisticwork_goods: {
-                            text: "🎓 Scientific, Scholarly or Artistic Work, Exclusive Technology, and/or Media Services",
-                            next: "typeofscholarly_goods"
-                        },
-                        newconcept_goods: {
-                            text: "💡 A new concept or technology",
-                            next: "unsolicitedoffer_goods"
-                        },
-                        other_goods_B: {
-                            text: "❓ Not among the stated options",
-                            next: "typeofsupplier_goods_C"
-                            }
-                        }
-                },
-                preselectedsupplier_goods: {
-                question: "Do you have a set of pre-selected suppliers included in the government-approved or self-generated supplier list?",
-                options: {
-                yes: {
-                    text: "✅ Yes",
-                    next: "result_under_construction"
-                },
-                no: {
-                    text: "❌ No",
-                    next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                typeofsciencegood: {
-                question: "Is the Good:",
-                options: {
-                    actualuseforscience: {
-                        text: "🔬 Supplies, materials, equipment and related services to be used actually, exclusively, and directly in the conduct of research and development projects or activities",
-                        next: "result_under_construction"
-                    },
-                    commissionedgoods:{ 
-                        text: "🔧 Goods which include products of a commissioned task by a PE which where processed, developed, and manufactured in satisfaction of its needs and requirements, which include: (i) pre-commercial goods and services that involve early market engagement, (ii) goods to be manufactured by qualified start up businesses",
-                        next: "result_under_construction"
-                    },
-                    analogousgoods: {
-                        text: "🧪 Other analogous goods",
-                        next: "result_under_construction"
-                    },
-                    others_typeofsciencegood: {
-                        text: "❓ Not among the stated options",
-                        next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                prefer_science_goods: {
-                    question: "Do you prefer:",
-                    options: {
-                    yes_prefer_science_goods: {
-                        text: "📋 Direct Procurement",
-                        next: "result_under_construction"
-                     },
-                    different_prefer_science_goods: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                afpmodernizationprogram_goods: {
-                question: "Is the Good included in the AFP Modernization Program previously approved by the President of the Philippines?",
-                options: {
-                yes: {
-                    text: "✅ Yes",
-                    next: "prefer_defensecooperationagreement_goods"
-                },
-                no: {
-                    text: "❌ No",
-                    next: "directnegotiationcompatibility_goods"
-                        }
-                    }
-                },
-                directnegotiationcompatibility_goods: {
-                question: "Will direct negotiation address compatibility, interoperability, and sustainability?",
-                options: {
-                yes: {
-                    text: "✅ Yes",
-                    next: "completecontractdnd_goods"
-                },
-                no: {
-                    text: "❌ No",
-                    next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                completecontractdnd_goods: {
-                question: "Has the supplier or manufacturer fully & satisfactorily implemented a contract of the same item with the DND, any of its bureaus or attached agencies, or law enforcement agencies?",
-                options: {
-                yes: {
-                    text: "✅ Yes",
-                    next: "performancesecurity_goods"
-                },
-                no: {
-                    text: "❌ No",
-                    next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                performancesecurity_goods: {
-                question: "Will the supplier or manufacturer provide performance security in accordance with Republic Act No. 12009?",
-                options: {
-                yes: {
-                    text: "✅ Yes",
-                    next: "prefer_defensecooperationagreement_goods"
-                },
-                no: {
-                    text: "❌ No",
-                    next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                prefer_defensecooperationagreement_goods: {
-                    question: "Do you prefer to:",
-                    options: {
-                    yes_prefer_defensecooperationagreement_goods: {
-                        text: "🤝 Directly negotiate with identified supplier or manufacturer",
-                        next: "result_under_construction"
-                     },
-                    different_prefer_defensecooperationagreement_goods: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "typeofsupplier_goods_C"
-                       }
-                    }
-                },
-                typeofscholarly_goods: {
-                    question: "Is the Good:",
-                    options: {
-                    workofart: {
-                        text: "🎨 Work of art; commissioned work or services for creative design or a specific artist skill (e.g., singer, performer, poet, writer, painter, sculptor, etc.)",
-                        next: "result_under_construction"
-                     },
-                    scientificjournal: {
-                        text: "📝 Scientific, technical, economic, business, trade or legal journal, magazine, paper, subscription, or other exclusive statistical publications and references",
-                        next: "result_under_construction"
-                     },
-                    communicationmedia: {
-                        text: "🎬 Media documentation, advertisement, or announcement through television, radio, newspaper, internet, and other communication media",
-                        next: "result_under_construction"
-                     },
-                    biotechequipment: {
-                        text: "Highly specialized life-saving medical and biotech equipment and devices, medicine, supplies, materials, tools and consumables, as certified by the Department of Health (DOH)",
-                        next: "result_under_construction"
-                     },
-                    stateofthearttechnology_goods: {
-                        text: "🚀 Involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
-                        next: "result_under_construction"
-                     },
-                    others_scholarlygoods: {
-                        text: "❓ Not among the stated options",
-                        next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                prefer_scholarly_goods: {
-                    question: "Do you prefer to:",
-                    options: {
-                    yes_prefer_scholarly_goods: {
-                        text: "🤝 Directly negotiate with identified supplier or manufacturer",
-                        next: "result_under_construction"
-                     },
-                    different_prefer_scholarly_goods: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                unsolicitedoffer_goods: {
-                    question: "Was an unsolicited offer initially submitted by an entity that was determined by the Procuring Entity as necessary?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "typeofgood_unsolicitedoffer"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "typeofgood_competitivedialogue"
-                        }
-                    }
-                },
-                typeofgood_competitivedialogue: {
-                    question: "Does the Good:",
-                    options: {
-                    innovativedesign_goods: {
-                        text: "🛠️ Include innovative design or solutions involving procurement of complex purchases",
-                        next: "prefer_competitivedialogue_goods"
-                    },
-                    contractpriornegotiations_goods: {
-                        text: "🤝 Entails a contract that requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
-                        next: "prefer_competitivedialogue_goods"
-                    },
-                    undefinedtechspecs_goods: {
-                        text: "💭 Have Technical Specifications that cannot be sufficiently established or precisely defined by the PE",
-                        next: "prefer_competitivedialogue_goods"
-                     },
-                    others_competitivedialoguegoods: {
-                        text: "❓ Not among the stated options",
-                        next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                prefer_competitivedialogue_goods: {
-                    question: "Do you prefer to:",
-                    options: {
-                    yes_prefer_competitivedialogue_goods: {
-                        text: "🤝 Employ a 2-stage bidding process where the PE invites suppliers etc., to propose solutions to address its needs and requirements",
-                        next: "result_under_construction"
-                     },
-                    different_prefer_competitivedialogue_goods: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                typeofgood_unsolicitedoffer: {
-                    question: "Does the Good:",
-                    options: {
-                    significantbenefits_goods: {
-                        text: "📊 Provide significant benefits to the procuring entity in terms of efficiency, cost, or outcome",
-                        next: "result_under_construction"
-                    },
-                    substantialimprovement_goods: {
-                        text: "⭐ Offer a substantial improvement over existing solutions, demonstrated through verifiable data, proof of concept, or technical studies",
-                        next: "result_under_construction"
-                    },
-                    emergingtechnologies_goods: {
-                        text: "🔋 Incorporate features promoting emerging technology and sustainable solutions",
-                        next: "result_under_construction"
-                    },
-                    stateofthearttechnology_goods: {
-                        text: "🚀 Involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
-                        next: "result_under_construction"
-                     },
-                    others_unsolicitedoffergoods: {
-                        text: "❓ Not among the stated options",
-                        next: "result_under_construction"
-                        }
-                    }
-                },
-                typeofsupplier_goods_C: {
-                    question: "Is the supplier:",
-                    options: {
-                    intlagency_goods: {
-                        text: "A United Nations Agency, International Organization, or International Financing Organization",
-                        next: "typeofgood_intlagency"
-                    },
-                    ngo_goods: {
-                        text: "SEC registered non-stock, non-profit domestic corporation OR CDA-registered cooperative",
-                        next: "result_under_construction"
-                    },
-                    anotheragency_goods: {
-                        text: "Another agency that has the mandate and absorptive capacity to undertake the project",
-                        next: "result_under_construction"
-                    },
-                    others_typeofsupplier_goods_C: {
-                        text: "❓ Not among the stated options",
-                        next: "result_under_construction"
-                        }
-                    }
-                },
-                typeofgood_intlagency: {
-                    question: "Is the Good:",
-                    options: {
-                    advancedinnovation_goods: {
-                        text: "Goods and Consulting Services involving advanced technologies, techniques, and innovations not locally available as certified by the DTI, when it is most advantageous to the PE",
-                        next: "prefer_intlagency_goods"
-                    },
-                    specializedproducts_goods: {
-                        text: "Specialized products where the number of suppliers is limited, such as vaccines",
-                        next: "prefer_intlagency_goods"
-                    },
-                    offtheshelf_goods: {
-                        text: "Small quantities of off-the-shelf goods exclusively used in education and health",
-                        next: "prefer_intlagency_goods"
-                    },
-                    criticalpublichealth_goods: {
-                        text: "Goods for critical public health priorities as determined and certified by the DOH",
-                        next: "prefer_intlagency_goods"
-                    },
-                    others_typeofgood_intlagency: {
-                        text: "❓ Not among the stated options",
-                        next: "result_under_construction"
-                        }
-                    }
-                },
-                prefer_intlagency_goods: {
-                    question: "Do you prefer to:",
-                    options: {
-                    yes_prefer_intlagency_goods: {
-                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency",
-                        next: "result_other_options"
-                     },
-                    different_prefer_intlagency_goods: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "abc_goods_c"
-                        }
-                    }
-                },
-                abc_goods_c: {
-                    question: "Is the ABC more than P2 million?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "result_competitivebidding"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "prefer_publicbidding_goods"
-                       }
-                    }
-                },
-                prefer_publicbidding_goods: {
-                    question: "Do you prefer/have the capacity to undertake the public bidding process?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "result_competitivebidding"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "result_smallvalueprocurement"
-                    }
-                }
-            }
-        };
-
-        const results = {
-            result_emergency_cases: {
-                title: "🚨 Negotiated Procurement: Emergency Cases",
-                description: "This is a mode of procurement that can be adopted in case of imminent danger to life or property during a state of calamity, or when time is of the essence arising from natural or man-made calamities or other causes where immediate action is necessary to prevent damage to or loss of life or property, or to restore vital public services, infrastructure facilities, and other public utilities.",
-                secondary: [
-                    {
-                        title: "🔄 Competitive Bidding",
-                        description: "If time permits and the situation allows, competitive bidding may still be considered for long-term solutions after the emergency is addressed."
-                    },
-                    {
-                        title: "📋 Direct Contracting",
-                        description: "For specific emergency supplies that are only available from a single source, direct contracting may be appropriate."
-                    }
-                ],
-                path: []
-            },
-            result_failed_bidding: {
-                title: "🔄 Failed Bidding Procurement",
-                description: "After two failed bidding attempts, you may proceed with alternative procurement methods such as negotiated procurement or direct contracting. Review the reasons for previous failures and adjust specifications, terms, or market approach as needed to ensure successful procurement.",
-                secondary: [
-                    {
-                        title: "🤝 Negotiated Procurement",
-                        description: "Directly negotiate with potential suppliers who participated in the previous bidding process."
-                    },
-                    {
-                        title: "📋 Direct Contracting",
-                        description: "Consider direct contracting if there is only one possible supplier for the required goods or services."
-                    }
-                ],
-                path: []
-            },
-            result_replenish: {
-                title: "📋 Replenishment Procurement",
-                description: "For goods procured under existing agreements, you may use simplified replenishment procedures. Verify that the original contract terms allow for replenishment, check remaining quantities and budget allocations, and follow the established replenishment process.",
-                secondary: [
-                    {
-                        title: "🔄 Competitive Bidding",
-                        description: "If the quantity exceeds the replenishment threshold, consider competitive bidding for the additional requirements."
-                    },
-                    {
-                        title: "📊 Market Research",
-                        description: "Conduct market research to ensure current prices are still competitive with the original contract."
-                    }
-                ],
-                path: []
-            },
-            result_other_options: {
-                title: "❓ Alternative Procurement Path",
-                description: "Your situation doesn't fall under the standard exceptions. You will need to follow regular competitive bidding procedures unless you can identify specific circumstances that match other procurement exceptions. Consider consulting with your procurement unit for guidance on the most appropriate approach.",
-                secondary: [
-                    {
-                        title: "🔄 Competitive Bidding",
-                        description: "The default procurement method that ensures transparency and competition."
-                    },
-                    {
-                        title: "📊 Market Research",
-                        description: "Conduct thorough market research to better understand available options and suppliers."
-                    }
-                ],
-                path: []
-            },
-            result_competitivebidding: {
-                title: "🏆 Competitive Bidding",
-                description: "This is the default mode of procurement for government projects. It involves publishing an invitation to bid, evaluating bids, and awarding the contract to the bidder with the lowest calculated responsive bid or the bid offering the most advantageous proposal.",
-                secondary: [
-                    {
-                        title: "📋 Limited Source Bidding",
-                        description: "If there are only a limited number of suppliers, consider limited source bidding as an alternative."
-                    },
-                    {
-                        title: "🤝 Negotiated Procurement",
-                        description: "For highly specialized items, negotiated procurement may be more appropriate."
-                    }
-                ],
-                path: []
-            },
-            result_smallvalueprocurement: {
-                title: "💰 Small Value Procurement",
-                description: "For procurement below the threshold amount, you may use simplified procedures such as shopping or direct purchase. Ensure proper documentation and justification for the selected supplier.",
-                secondary: [
-                    {
-                        title: "🛒 Shopping",
-                        description: "Compare prices from at least three suppliers for the best value."
-                    },
-                    {
-                        title: "📋 Direct Purchase",
-                        description: "For very small amounts, direct purchase from a single supplier may be appropriate."
-                    }
-                ],
-                path: []
-            },
-            result_under_construction: {
-                title: "🚧 Decision Path Under Construction",
-                description: "This decision path is still being developed in the decision tree. Please consult your procurement manual or legal department for guidance on the appropriate procurement method for your specific situation.",
-                secondary: [
-                    {
-                        title: "📚 Consult Procurement Manual",
-                        description: "Refer to your organization's procurement manual for detailed guidance."
-                    },
-                    {
-                        title: "👥 Contact Procurement Office",
-                        description: "Reach out to your procurement office for specific advice on your situation."
-                    }
-                ],
-                path: []
-            },
-            result_takeover: {
-                title: "📋 Takeover Procurement",
-                description: "When a contract is rescinded or terminated, you may negotiate with the second lowest bidder from the original bidding process. Ensure that the second bidder is still willing and able to perform the contract at their previously quoted price.",
-                secondary: [
-                    {
-                        title: "🔄 New Bidding Process",
-                        description: "If the second bidder is no longer available, consider initiating a new bidding process."
-                    },
-                    {
-                        title: "📊 Market Survey",
-                        description: "Conduct a new market survey to assess current market conditions and prices."
-                    }
-                ],
-                path: []
-            }
-        };
-
-        let currentStep = 'start';
-        let pathHistory = [];
-
-        function startDecisionTree() {
-            document.getElementById('homeContainer').style.display = 'none';
-            document.getElementById('questionContainer').style.display = 'block';
-            document.getElementById('progressBarContainer').style.display = 'block';
-            updateQuestion();
+  </div>
+  <script>
+    // Sample decision tree structure
+    const decisionTree = {
+      start: {
+        question: "What are you procuring?",
+        options: [
+          { text: "Goods", next: "goods" },
+          { text: "Infrastructure Projects", next: "infra" },
+          { text: "Consulting Services", next: "consulting" }
+        ]
+      },
+      goods: {
+        question: "Is the value above ₱2,000,000?",
+        options: [
+          { text: "Yes", next: "goods_high" },
+          { text: "No", next: "goods_low" }
+        ]
+      },
+      goods_high: {
+        recommendation: {
+          primary: "Competitive Bidding",
+          secondary: [
+            "Alternative: Limited Source Bidding",
+            "Alternative: Negotiated Procurement (in special cases)"
+          ]
         }
-
-        function makeChoice(choice) {
-            pathHistory.push({
-                step: currentStep,
-                choice: decisionTree[currentStep].options[choice].text
-            });
-            
-            const nextStep = decisionTree[currentStep].options[choice].next;
-            
-            if (nextStep.startsWith('result_')) {
-                showResult(nextStep);
-            } else {
-                currentStep = nextStep;
-                updateQuestion();
-            }
+      },
+      goods_low: {
+        recommendation: {
+          primary: "Small Value Procurement",
+          secondary: [
+            "Alternative: Shopping",
+            "Alternative: Direct Contracting"
+          ]
         }
-
-        function updateQuestion() {
-            document.getElementById('questionText').textContent = decisionTree[currentStep].question;
-            
-            const optionsContainer = document.getElementById('optionsContainer');
-            optionsContainer.innerHTML = '';
-            
-            const options = decisionTree[currentStep].options;
-            
-            // Check if we should display horizontal layout for image options
-            const isImageOptions = Object.keys(options).some(key => 
-                key.includes('goods') || key.includes('infrastructure') || key.includes('consulting'));
-            
-            if (isImageOptions) {
-                optionsContainer.classList.add('horizontal');
-            } else {
-                optionsContainer.classList.remove('horizontal');
-            }
-            
-            for (const key in options) {
-                const option = options[key];
-                
-                if (isImageOptions) {
-                    // Create image option
-                    const optionDiv = document.createElement('div');
-                    optionDiv.className = 'image-option';
-                    optionDiv.onclick = () => makeChoice(key);
-                    
-                    // Determine which image to use based on the option
-                    let imageSrc = '';
-                    let altText = '';
-                    
-                    if (key.includes('goods')) {
-                        imageSrc = 'Billy Goods.png';
-                        altText = 'Goods icon';
-                    } else if (key.includes('infrastructure')) {
-                        imageSrc = 'Billy Infra.png';
-                        altText = 'Infrastructure icon';
-                    } else if (key.includes('consulting')) {
-                        imageSrc = 'Billy Consulting.png';
-                        altText = 'Consulting icon';
-                    }
-                    
-                    optionDiv.innerHTML = `
-                        <img src="${imageSrc}" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="${altText}" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
-                        <h3>${option.text}</h3>
-                    `;
-                    
-                    optionsContainer.appendChild(optionDiv);
-                } else {
-                    // Create regular button option
-                    const button = document.createElement('button');
-                    button.className = 'option-btn';
-                    button.textContent = option.text;
-                    button.onclick = () => makeChoice(key);
-                    optionsContainer.appendChild(button);
-                }
-            }
-            
-            // Update progress bar
-            updateProgressBar();
+      },
+      infra: {
+        recommendation: {
+          primary: "Competitive Bidding (Infrastructure)",
+          secondary: [
+            "Alternative: Negotiated Procurement (Emergency Cases)",
+            "Alternative: Design and Build"
+          ]
         }
-
-        function updateProgressBar() {
-            const totalSteps = Object.keys(decisionTree).length;
-            const currentStepIndex = Object.keys(decisionTree).indexOf(currentStep);
-            const progressPercentage = (currentStepIndex / totalSteps) * 100;
-            
-            document.getElementById('progressFill').style.width = `${progressPercentage}%`;
+      },
+      consulting: {
+        recommendation: {
+          primary: "Quality-Based Selection (QBS)",
+          secondary: [
+            "Alternative: Least-Cost Selection",
+            "Alternative: Negotiated Procurement"
+          ]
         }
+      }
+    };
 
-        function showResult(resultKey) {
-            document.getElementById('questionContainer').style.display = 'none';
-            document.getElementById('resultContainer').style.display = 'block';
-            
-            const result = results[resultKey];
-            const recommendationContainer = document.getElementById('recommendationContainer');
-            const pathSteps = document.getElementById('pathSteps');
-            
-            // Display primary recommendation
-            recommendationContainer.innerHTML = `
-                <div class="primary-recommendation">
-                    <div class="recommendation-title">
-                        <span class="icon">🏆</span>
-                        <span>Primary Recommendation</span>
-                    </div>
-                    <div class="recommendation-description">
-                        <strong>${result.title}</strong><br><br>
-                        ${result.description}
-                    </div>
-                </div>
-            `;
-            
-            // Display secondary recommendations if available
-            if (result.secondary && result.secondary.length > 0) {
-                const secondaryContainer = document.createElement('div');
-                secondaryContainer.className = 'secondary-recommendations';
-                
-                secondaryContainer.innerHTML = `
-                    <div style="font-weight: 600; color: #333; margin-bottom: 10px;">Alternative Options:</div>
-                `;
-                
-                result.secondary.forEach(secondary => {
-                    const secondaryDiv = document.createElement('div');
-                    secondaryDiv.className = 'secondary-recommendation';
-                    secondaryDiv.innerHTML = `
-                        <div class="secondary-title">
-                            <span class="icon">💡</span>
-                            <span>${secondary.title}</span>
-                        </div>
-                        <div class="secondary-description">${secondary.description}</div>
-                    `;
-                    secondaryContainer.appendChild(secondaryDiv);
-                });
-                
-                recommendationContainer.appendChild(secondaryContainer);
-            }
-            
-            // Display path history
-            let pathHTML = '';
-            pathHistory.forEach((step, index) => {
-                pathHTML += `${index + 1}. ${step.choice}<br>`;
-            });
-            pathSteps.innerHTML = pathHTML;
-        }
+    // Render logic
+    function renderNode(nodeKey) {
+      const area = document.getElementById('treeArea');
+      area.innerHTML = '';
+      const node = decisionTree[nodeKey];
 
-        function restart() {
-            currentStep = 'start';
-            pathHistory = [];
-            document.getElementById('resultContainer').style.display = 'none';
-            document.getElementById('homeContainer').style.display = 'block';
-            document.getElementById('progressBarContainer').style.display = 'none';
-        }
-    </script>
+      // If node has a question, show question and options
+      if (node.question) {
+        const q = document.createElement('div');
+        q.className = 'question';
+        q.textContent = node.question;
+        area.appendChild(q);
+
+        const opts = document.createElement('div');
+        opts.className = 'options';
+        node.options.forEach((opt, idx) => {
+          const btn = document.createElement('button');
+          btn.className = 'option-btn';
+          btn.textContent = opt.text;
+          btn.onclick = () => renderNode(opt.next);
+          opts.appendChild(btn);
+        });
+        area.appendChild(opts);
+      }
+      // If node has a recommendation, show it
+      else if (node.recommendation) {
+        const rec = node.recommendation;
+        const recDiv = document.createElement('div');
+        recDiv.className = 'recommendation';
+
+        const primary = document.createElement('div');
+        primary.className = 'primary';
+        primary.textContent = `Primary: ${rec.primary}`;
+        recDiv.appendChild(primary);
+
+        rec.secondary.forEach(sec => {
+          const secDiv = document.createElement('div');
+          secDiv.className = 'secondary';
+          secDiv.textContent = sec;
+          recDiv.appendChild(secDiv);
+        });
+
+        area.appendChild(recDiv);
+
+        const restartBtn = document.createElement('button');
+        restartBtn.className = 'restart-btn';
+        restartBtn.textContent = '🔄 Start Over';
+        restartBtn.onclick = () => renderNode('start');
+        area.appendChild(restartBtn);
+      }
+    }
+
+    // Initialize
+    renderNode('start');
+  </script>
 </body>
 </html>
