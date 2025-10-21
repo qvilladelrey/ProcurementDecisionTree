@@ -136,26 +136,6 @@
             box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3);
         }
 
-        .path-display {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3);
-        }
-
-        .path-title {
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .path-steps {
-            color: #666;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
         .restart-btn {
             background: #28a745;
             color: white;
@@ -346,6 +326,46 @@
             line-height: 1.5;
         }
 
+        /* New styles for dynamic recommendations panel */
+        .dynamic-recommendations {
+            background: #e8f4fd;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #1e3888;
+        }
+
+        .dynamic-title {
+            font-weight: bold;
+            color: #1e3888;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .dynamic-title .icon {
+            margin-right: 8px;
+        }
+
+        .recommendation-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .recommendation-badge {
+            background: #1e3888;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
         @media (max-width: 768px) {
             .decision-container {
                 padding: 25px;
@@ -376,6 +396,17 @@
             <nav id="breadcrumbTrail" class="breadcrumb-trail">
                 <!-- Breadcrumb items will be dynamically added here -->
             </nav>
+        </div>
+
+        <!-- Dynamic Recommendations Panel -->
+        <div id="dynamicRecommendations" class="dynamic-recommendations" style="display: none;">
+            <div class="dynamic-title">
+                <span class="icon">💡</span>
+                <span>Available Procurement Modes:</span>
+            </div>
+            <div id="recommendationBadges" class="recommendation-badges">
+                <!-- Recommendation badges will be dynamically added here -->
+            </div>
         </div>
         
         <div id="homeContainer">
@@ -413,11 +444,6 @@
             <div class="recommendation-container" id="recommendationContainer">
                 <!-- Primary and secondary recommendations will be inserted here -->
             </div>
-            
-            <div class="path-display">
-                <div class="path-title">Your Decision Path:</div>
-                <div class="path-steps" id="pathSteps"></div>
-            </div>
             <button class="restart-btn" onclick="restart()">
                 🔄 Start Over
             </button>
@@ -431,15 +457,18 @@
                 options: {
                     goods: {
                         text: "📦 Goods",
-                        next: "highlyspecialized_goods"
+                        next: "highlyspecialized_goods",
+                        triggers: ["Direct Procurement", "Competitive Bidding"]
                     },
                     infrastructure: {
                         text: "🏗️ Infrastructure Projects",
-                        next: "result_under_construction"
+                        next: "result_under_construction",
+                        triggers: ["Competitive Bidding", "Public-Private Partnership"]
                     },
                     consulting: {
                         text: "🤝 Consulting Services",
-                        next: "result_under_construction"
+                        next: "result_under_construction",
+                        triggers: ["Request for Proposals", "Direct Procurement"]
                     }
                 }
             },
@@ -448,11 +477,13 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "previously_procured_goods"
+                        next: "previously_procured_goods",
+                        triggers: ["Direct Procurement", "Alternative Procurement"]
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_under_construction"
+                        next: "result_under_construction",
+                        triggers: ["Competitive Bidding", "Small Value Procurement"]
                     }
                 }
             },
@@ -461,11 +492,13 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "need_goods_A"
+                        next: "need_goods_A",
+                        triggers: ["Repeat Order", "Direct Procurement"]
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_B"
+                        next: "typeofgood_B",
+                        triggers: ["Competitive Bidding", "Request for Proposals"]
                     }
                 }
             },
@@ -474,19 +507,23 @@
                 options: {
                     immediate_action_goods: {
                         text: "🚨 Undertake immediate action to prevent damage to or loss of life or property or restore vital public services",
-                        next: "contract_rescinded_goods"
+                        next: "contract_rescinded_goods",
+                        triggers: ["Emergency Procurement", "Direct Procurement"]
                     },
                     failed_bidding_goods: {
                         text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
-                        next: "prefer_failedbidding_goods"
+                        next: "prefer_failedbidding_goods",
+                        triggers: ["Negotiated Procurement", "Direct Procurement"]
                     },
                     replenish_goods: {
                         text: "📋 Replenish Goods procured under a previously awarded contract",
-                        next: "competitive_contract_goods"
+                        next: "competitive_contract_goods",
+                        triggers: ["Repeat Order", "Direct Procurement"]
                     },
                     other_goods_A: {
                         text: "❓ Not among the stated options",
-                        next: "typeofgood_B"
+                        next: "typeofgood_B",
+                        triggers: ["Competitive Bidding", "Request for Proposals"]
                     }
                 }
             },
@@ -495,11 +532,13 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_takeover_goods"
+                        next: "prefer_takeover_goods",
+                        triggers: ["Takeover Procurement", "Negotiated Procurement"]
                     },
                     no: {
                         text: "❌ No",
-                        next: "prefer_emergencycases_goods"
+                        next: "prefer_emergencycases_goods",
+                        triggers: ["Emergency Procurement", "Direct Procurement"]
                     }
                 }
             },
@@ -508,11 +547,13 @@
                 options: {
                     yes_prefer_takeover: {
                         text: "📋 Post-Qualify and negotiate with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
-                        next: "result_takeover"
+                        next: "result_takeover",
+                        triggers: ["Negotiated Procurement", "Takeover Procurement"]
                     },
                     different_prefer_takeover: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
+                        next: "typeofgood_B",
+                        triggers: ["Competitive Bidding", "Request for Proposals"]
                     }
                 }
             },
@@ -521,11 +562,13 @@
                 options: {
                     yes_prefer_emergencycases_goods: {
                         text: "📋 Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
-                        next: "result_emergency_cases"
+                        next: "result_emergency_cases",
+                        triggers: ["Emergency Procurement", "Negotiated Procurement"]
                     },
                     different_prefer_emergencycases_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
+                        next: "typeofgood_B",
+                        triggers: ["Competitive Bidding", "Request for Proposals"]
                     }
                 }
             },
@@ -534,420 +577,53 @@
                 options: {
                     yes_prefer_failedbidding_goods: {
                         text: "📋 Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
-                        next: "result_failed_bidding"
+                        next: "result_failed_bidding",
+                        triggers: ["Failed Bidding Procurement", "Negotiated Procurement"]
                     },
                     different_prefer_failedbidding_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
-                        }
+                        next: "typeofgood_B",
+                        triggers: ["Competitive Bidding", "Request for Proposals"]
                     }
-                },
-                competitive_contract_goods: {
-                    question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "unitprice_goods"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "typeofgood_B"
-                        }
-                    }
-                },
-                unitprice_goods: {
-                    question: "Is the unit price equal to or lower than that provided in the original contract and the prevailing market price?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "sixmonthsprocurement_goods"
-                     },
-                    no: {
-                        text: "❌ No",
-                        next: "typeofgood_B"
-                        }
-                    }
-                },
-                sixmonthsprocurement_goods: {
-                    question: "Is the procurement within six (6) months from the date of the Notice to Proceed (NTP) arising from the original contract?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "quantifiable_goods"
-                     },
-                    no: {
-                        text: "❌ No",
-                        next: "typeofgood_B"
-                        }
-                    }
-                },
-                quantifiable_goods: {
-                    question: "Is the Good quantifiable, divisible, and consisting of at least four (4) units per item, and does not exceed 25% of the quantity of each item in the original contract?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "result_under_construction"
-                     },
-                    no: {
-                        text: "❌ No",
-                        next: "typeofgood_B"
-                        }
-                    }
-                },
-                prefer_repeatorder_goods: {
-                    question: "Do you prefer:",
-                    options: {
-                    yes_prefer_repeatorder_goods: {
-                        text: "📋 Prepare Purchase Order and adopt Repeat Order",
-                        next: "result_under_construction"
-                     },
-                    different_prefer_repeatorder_goods: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
-                        }
-                    }
-                },
-                typeofgood_B: {
-                    question: "Is the Good:",
-                    options: {
-                        necessarytopreventdamage_goods: {
-                            text: "🚨 Necessary to prevent damage to or loss of life or property OR restore vital public services, etc.",
-                            next: "result_emergency_cases"
-                        },
-                        limitedsources_plantcomponent_goods: {
-                            text: "🏭 Obtainable only from a limited number of sources OR a major plant component",
-                            next: "preselectedsupplier_goods"
-                        },
-                        researchanddevelopment_goods: {
-                            text: "🔬 To be used actually, exclusively, and directly in the conduct of research and development projects or activities",
-                            next: "typeofsciencegood"
-                        },
-                        defenseequipment_goods: {
-                            text: "🚁 Major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense (DND)",
-                            next: "afpmodernizationprogram_goods"
-                        },
-                        scholarlyartisticwork_goods: {
-                            text: "🎓 Scientific, Scholarly or Artistic Work, Exclusive Technology, and/or Media Services",
-                            next: "typeofscholarly_goods"
-                        },
-                        newconcept_goods: {
-                            text: "💡 A new concept or technology",
-                            next: "unsolicitedoffer_goods"
-                        },
-                        other_goods_B: {
-                            text: "❓ Not among the stated options",
-                            next: "typeofsupplier_goods_C"
-                            }
-                        }
-                },
-                preselectedsupplier_goods: {
-                question: "Do you have a set of pre-selected suppliers included in the government-approved or self-generated supplier list?",
-                options: {
-                yes: {
-                    text: "✅ Yes",
-                    next: "result_under_construction"
-                },
-                no: {
-                    text: "❌ No",
-                    next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                typeofsciencegood: {
+                }
+            },
+            typeofgood_B: {
                 question: "Is the Good:",
                 options: {
-                    actualuseforscience: {
-                        text: "🔬 Supplies, materials, equipment and related services to be used actually, exclusively, and directly in the conduct of research and development projects or activities",
-                        next: "result_under_construction"
+                    necessarytopreventdamage_goods: {
+                        text: "🚨 Necessary to prevent damage to or loss of life or property OR restore vital public services, etc.",
+                        next: "result_emergency_cases",
+                        triggers: ["Emergency Procurement", "Direct Procurement"]
                     },
-                    commissionedgoods:{ 
-                        text: "🔧 Goods which include products of a commissioned task by a PE which where processed, developed, and manufactured in satisfaction of its needs and requirements, which include: (i) pre-commercial goods and services that involve early market engagement, (ii) goods to be manufactured by qualified start up businesses",
-                        next: "result_under_construction"
+                    limitedsources_plantcomponent_goods: {
+                        text: "🏭 Obtainable only from a limited number of sources OR a major plant component",
+                        next: "preselectedsupplier_goods",
+                        triggers: ["Limited Source Bidding", "Direct Procurement"]
                     },
-                    analogousgoods: {
-                        text: "🧪 Other analogous goods",
-                        next: "result_under_construction"
+                    researchanddevelopment_goods: {
+                        text: "🔬 To be used actually, exclusively, and directly in the conduct of research and development projects or activities",
+                        next: "typeofsciencegood",
+                        triggers: ["Direct Procurement", "Alternative Procurement"]
                     },
-                    others_typeofsciencegood: {
+                    defenseequipment_goods: {
+                        text: "🚁 Major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense (DND)",
+                        next: "afpmodernizationprogram_goods",
+                        triggers: ["Direct Procurement", "Alternative Procurement"]
+                    },
+                    scholarlyartisticwork_goods: {
+                        text: "🎓 Scientific, Scholarly or Artistic Work, Exclusive Technology, and/or Media Services",
+                        next: "typeofscholarly_goods",
+                        triggers: ["Direct Procurement", "Alternative Procurement"]
+                    },
+                    newconcept_goods: {
+                        text: "💡 A new concept or technology",
+                        next: "unsolicitedoffer_goods",
+                        triggers: ["Alternative Procurement", "Request for Proposals"]
+                    },
+                    other_goods_B: {
                         text: "❓ Not among the stated options",
-                        next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                prefer_science_goods: {
-                    question: "Do you prefer:",
-                    options: {
-                    yes_prefer_science_goods: {
-                        text: "📋 Direct Procurement",
-                        next: "result_under_construction"
-                     },
-                    different_prefer_science_goods: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                afpmodernizationprogram_goods: {
-                question: "Is the Good included in the AFP Modernization Program previously approved by the President of the Philippines?",
-                options: {
-                yes: {
-                    text: "✅ Yes",
-                    next: "prefer_defensecooperationagreement_goods"
-                },
-                no: {
-                    text: "❌ No",
-                    next: "directnegotiationcompatibility_goods"
-                        }
-                    }
-                },
-                directnegotiationcompatibility_goods: {
-                question: "Will direct negotiation address compatibility, interoperability, and sustainability?",
-                options: {
-                yes: {
-                    text: "✅ Yes",
-                    next: "completecontractdnd_goods"
-                },
-                no: {
-                    text: "❌ No",
-                    next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                completecontractdnd_goods: {
-                question: "Has the supplier or manufacturer fully & satisfactorily implemented a contract of the same item with the DND, any of its bureaus or attached agencies, or law enforcement agencies?",
-                options: {
-                yes: {
-                    text: "✅ Yes",
-                    next: "performancesecurity_goods"
-                },
-                no: {
-                    text: "❌ No",
-                    next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                performancesecurity_goods: {
-                question: "Will the supplier or manufacturer provide performance security in accordance with Republic Act No. 12009?",
-                options: {
-                yes: {
-                    text: "✅ Yes",
-                    next: "prefer_defensecooperationagreement_goods"
-                },
-                no: {
-                    text: "❌ No",
-                    next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                prefer_defensecooperationagreement_goods: {
-                    question: "Do you prefer to:",
-                    options: {
-                    yes_prefer_defensecooperationagreement_goods: {
-                        text: "🤝 Directly negotiate with identified supplier or manufacturer",
-                        next: "result_under_construction"
-                     },
-                    different_prefer_defensecooperationagreement_goods: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "typeofsupplier_goods_C"
-                       }
-                    }
-                },
-                typeofscholarly_goods: {
-                    question: "Is the Good:",
-                    options: {
-                    workofart: {
-                        text: "🎨 Work of art; commissioned work or services for creative design or a specific artist skill (e.g., singer, performer, poet, writer, painter, sculptor, etc.)",
-                        next: "result_under_construction"
-                     },
-                    scientificjournal: {
-                        text: "📝 Scientific, technical, economic, business, trade or legal journal, magazine, paper, subscription, or other exclusive statistical publications and references",
-                        next: "result_under_construction"
-                     },
-                    communicationmedia: {
-                        text: "🎬 Media documentation, advertisement, or announcement through television, radio, newspaper, internet, and other communication media",
-                        next: "result_under_construction"
-                     },
-                    biotechequipment: {
-                        text: "Highly specialized life-saving medical and biotech equipment and devices, medicine, supplies, materials, tools and consumables, as certified by the Department of Health (DOH)",
-                        next: "result_under_construction"
-                     },
-                    stateofthearttechnology_goods: {
-                        text: "🚀 Involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
-                        next: "result_under_construction"
-                     },
-                    others_scholarlygoods: {
-                        text: "❓ Not among the stated options",
-                        next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                prefer_scholarly_goods: {
-                    question: "Do you prefer to:",
-                    options: {
-                    yes_prefer_scholarly_goods: {
-                        text: "🤝 Directly negotiate with identified supplier or manufacturer",
-                        next: "result_under_construction"
-                     },
-                    different_prefer_scholarly_goods: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                unsolicitedoffer_goods: {
-                    question: "Was an unsolicited offer initially submitted by an entity that was determined by the Procuring Entity as necessary?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "typeofgood_unsolicitedoffer"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "typeofgood_competitivedialogue"
-                        }
-                    }
-                },
-                typeofgood_competitivedialogue: {
-                    question: "Does the Good:",
-                    options: {
-                    innovativedesign_goods: {
-                        text: "🛠️ Include innovative design or solutions involving procurement of complex purchases",
-                        next: "prefer_competitivedialogue_goods"
-                    },
-                    contractpriornegotiations_goods: {
-                        text: "🤝 Entails a contract that requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
-                        next: "prefer_competitivedialogue_goods"
-                    },
-                    undefinedtechspecs_goods: {
-                        text: "💭 Have Technical Specifications that cannot be sufficiently established or precisely defined by the PE",
-                        next: "prefer_competitivedialogue_goods"
-                     },
-                    others_competitivedialoguegoods: {
-                        text: "❓ Not among the stated options",
-                        next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                prefer_competitivedialogue_goods: {
-                    question: "Do you prefer to:",
-                    options: {
-                    yes_prefer_competitivedialogue_goods: {
-                        text: "🤝 Employ a 2-stage bidding process where the PE invites suppliers etc., to propose solutions to address its needs and requirements",
-                        next: "result_under_construction"
-                     },
-                    different_prefer_competitivedialogue_goods: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "typeofsupplier_goods_C"
-                        }
-                    }
-                },
-                typeofgood_unsolicitedoffer: {
-                    question: "Does the Good:",
-                    options: {
-                    significantbenefits_goods: {
-                        text: "📊 Provide significant benefits to the procuring entity in terms of efficiency, cost, or outcome",
-                        next: "result_under_construction"
-                    },
-                    substantialimprovement_goods: {
-                        text: "⭐ Offer a substantial improvement over existing solutions, demonstrated through verifiable data, proof of concept, or technical studies",
-                        next: "result_under_construction"
-                    },
-                    emergingtechnologies_goods: {
-                        text: "🔋 Incorporate features promoting emerging technology and sustainable solutions",
-                        next: "result_under_construction"
-                    },
-                    stateofthearttechnology_goods: {
-                        text: "🚀 Involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
-                        next: "result_under_construction"
-                     },
-                    others_unsolicitedoffergoods: {
-                        text: "❓ Not among the stated options",
-                        next: "result_under_construction"
-                        }
-                    }
-                },
-                typeofsupplier_goods_C: {
-                    question: "Is the supplier:",
-                    options: {
-                    intlagency_goods: {
-                        text: "A United Nations Agency, International Organization, or International Financing Organization",
-                        next: "typeofgood_intlagency"
-                    },
-                    ngo_goods: {
-                        text: "SEC registered non-stock, non-profit domestic corporation OR CDA-registered cooperative",
-                        next: "result_under_construction"
-                    },
-                    anotheragency_goods: {
-                        text: "Another agency that has the mandate and absorptive capacity to undertake the project",
-                        next: "result_under_construction"
-                    },
-                    others_typeofsupplier_goods_C: {
-                        text: "❓ Not among the stated options",
-                        next: "result_under_construction"
-                        }
-                    }
-                },
-                typeofgood_intlagency: {
-                    question: "Is the Good:",
-                    options: {
-                    advancedinnovation_goods: {
-                        text: "Goods and Consulting Services involving advanced technologies, techniques, and innovations not locally available as certified by the DTI, when it is most advantageous to the PE",
-                        next: "prefer_intlagency_goods"
-                    },
-                    specializedproducts_goods: {
-                        text: "Specialized products where the number of suppliers is limited, such as vaccines",
-                        next: "prefer_intlagency_goods"
-                    },
-                    offtheshelf_goods: {
-                        text: "Small quantities of off-the-shelf goods exclusively used in education and health",
-                        next: "prefer_intlagency_goods"
-                    },
-                    criticalpublichealth_goods: {
-                        text: "Goods for critical public health priorities as determined and certified by the DOH",
-                        next: "prefer_intlagency_goods"
-                    },
-                    others_typeofgood_intlagency: {
-                        text: "❓ Not among the stated options",
-                        next: "result_under_construction"
-                        }
-                    }
-                },
-                prefer_intlagency_goods: {
-                    question: "Do you prefer to:",
-                    options: {
-                    yes_prefer_intlagency_goods: {
-                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency",
-                        next: "result_other_options"
-                     },
-                    different_prefer_intlagency_goods: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "abc_goods_c"
-                        }
-                    }
-                },
-                abc_goods_c: {
-                    question: "Is the ABC more than P2 million?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "result_competitivebidding"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "prefer_publicbidding_goods"
-                       }
-                    }
-                },
-                prefer_publicbidding_goods: {
-                    question: "Do you prefer/have the capacity to undertake the public bidding process?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "result_competitivebidding"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "result_smallvalueprocurement"
+                        next: "typeofsupplier_goods_C",
+                        triggers: ["Competitive Bidding", "Request for Proposals"]
                     }
                 }
             }
@@ -966,8 +642,7 @@
                         title: "📋 Direct Contracting",
                         description: "For specific emergency supplies that are only available from a single source, direct contracting may be appropriate."
                     }
-                ],
-                path: []
+                ]
             },
             result_failed_bidding: {
                 title: "🔄 Failed Bidding Procurement",
@@ -981,83 +656,7 @@
                         title: "📋 Direct Contracting",
                         description: "Consider direct contracting if there is only one possible supplier for the required goods or services."
                     }
-                ],
-                path: []
-            },
-            result_replenish: {
-                title: "📋 Replenishment Procurement",
-                description: "For goods procured under existing agreements, you may use simplified replenishment procedures. Verify that the original contract terms allow for replenishment, check remaining quantities and budget allocations, and follow the established replenishment process.",
-                secondary: [
-                    {
-                        title: "🔄 Competitive Bidding",
-                        description: "If the quantity exceeds the replenishment threshold, consider competitive bidding for the additional requirements."
-                    },
-                    {
-                        title: "📊 Market Research",
-                        description: "Conduct market research to ensure current prices are still competitive with the original contract."
-                    }
-                ],
-                path: []
-            },
-            result_other_options: {
-                title: "❓ Alternative Procurement Path",
-                description: "Your situation doesn't fall under the standard exceptions. You will need to follow regular competitive bidding procedures unless you can identify specific circumstances that match other procurement exceptions. Consider consulting with your procurement unit for guidance on the most appropriate approach.",
-                secondary: [
-                    {
-                        title: "🔄 Competitive Bidding",
-                        description: "The default procurement method that ensures transparency and competition."
-                    },
-                    {
-                        title: "📊 Market Research",
-                        description: "Conduct thorough market research to better understand available options and suppliers."
-                    }
-                ],
-                path: []
-            },
-            result_competitivebidding: {
-                title: "🏆 Competitive Bidding",
-                description: "This is the default mode of procurement for government projects. It involves publishing an invitation to bid, evaluating bids, and awarding the contract to the bidder with the lowest calculated responsive bid or the bid offering the most advantageous proposal.",
-                secondary: [
-                    {
-                        title: "📋 Limited Source Bidding",
-                        description: "If there are only a limited number of suppliers, consider limited source bidding as an alternative."
-                    },
-                    {
-                        title: "🤝 Negotiated Procurement",
-                        description: "For highly specialized items, negotiated procurement may be more appropriate."
-                    }
-                ],
-                path: []
-            },
-            result_smallvalueprocurement: {
-                title: "💰 Small Value Procurement",
-                description: "For procurement below the threshold amount, you may use simplified procedures such as shopping or direct purchase. Ensure proper documentation and justification for the selected supplier.",
-                secondary: [
-                    {
-                        title: "🛒 Shopping",
-                        description: "Compare prices from at least three suppliers for the best value."
-                    },
-                    {
-                        title: "📋 Direct Purchase",
-                        description: "For very small amounts, direct purchase from a single supplier may be appropriate."
-                    }
-                ],
-                path: []
-            },
-            result_under_construction: {
-                title: "🚧 Decision Path Under Construction",
-                description: "This decision path is still being developed in the decision tree. Please consult your procurement manual or legal department for guidance on the appropriate procurement method for your specific situation.",
-                secondary: [
-                    {
-                        title: "📚 Consult Procurement Manual",
-                        description: "Refer to your organization's procurement manual for detailed guidance."
-                    },
-                    {
-                        title: "👥 Contact Procurement Office",
-                        description: "Reach out to your procurement office for specific advice on your situation."
-                    }
-                ],
-                path: []
+                ]
             },
             result_takeover: {
                 title: "📋 Takeover Procurement",
@@ -1071,15 +670,45 @@
                         title: "📊 Market Survey",
                         description: "Conduct a new market survey to assess current market conditions and prices."
                     }
-                ],
-                path: []
+                ]
+            },
+            result_under_construction: {
+                title: "🚧 Decision Path Under Construction",
+                description: "This decision path is still being developed in the decision tree. Please consult your procurement manual or legal department for guidance on the appropriate procurement method for your specific situation.",
+                secondary: [
+                    {
+                        title: "📚 Consult Procurement Manual",
+                        description: "Refer to your organization's procurement manual for detailed guidance."
+                    },
+                    {
+                        title: "👥 Contact Procurement Office",
+                        description: "Reach out to your procurement office for specific advice on your situation."
+                    }
+                ]
             }
+        };
+
+        // Emoji mapping for procurement modes
+        const procurementModeEmojis = {
+            "Direct Procurement": "🤝",
+            "Competitive Bidding": "🏆",
+            "Public-Private Partnership": "🤝",
+            "Request for Proposals": "📋",
+            "Alternative Procurement": "🌟",
+            "Small Value Procurement": "💰",
+            "Repeat Order": "📋",
+            "Emergency Procurement": "🚨",
+            "Negotiated Procurement": "🤝",
+            "Takeover Procurement": "📋",
+            "Failed Bidding Procurement": "🔄",
+            "Limited Source Bidding": "🎯"
         };
 
         let currentNode = 'start';
         let userPath = [];
         let totalSteps = 0;
         let breadcrumbPath = [];
+        let availableModes = new Set();
 
         function calculateTotalSteps() {
             // Calculate the maximum depth of the decision tree
@@ -1144,16 +773,46 @@
             }
         }
 
+        function updateDynamicRecommendations() {
+            const dynamicContainer = document.getElementById('dynamicRecommendations');
+            const badgesContainer = document.getElementById('recommendationBadges');
+            
+            badgesContainer.innerHTML = '';
+            
+            if (availableModes.size > 0) {
+                // Convert Set to Array and create badges
+                Array.from(availableModes).forEach(mode => {
+                    const badge = document.createElement('div');
+                    badge.className = 'recommendation-badge';
+                    badge.innerHTML = `${procurementModeEmojis[mode] || '📋'} ${mode}`;
+                    badgesContainer.appendChild(badge);
+                });
+                
+                dynamicContainer.style.display = 'block';
+            } else {
+                dynamicContainer.style.display = 'none';
+            }
+        }
+
         function makeChoice(choice) {
             const currentNodeData = decisionTree[currentNode];
             const selectedOption = currentNodeData.options[choice];
             
             userPath.push(selectedOption.text);
             breadcrumbPath.push(selectedOption.text);
+            
+            // Add any triggered procurement modes to available modes
+            if (selectedOption.triggers) {
+                selectedOption.triggers.forEach(mode => {
+                    availableModes.add(mode);
+                });
+            }
+            
             currentNode = selectedOption.next;
             
             updateProgress();
             updateBreadcrumb();
+            updateDynamicRecommendations();
             
             if (currentNode.startsWith('result_')) {
                 showResult();
@@ -1188,19 +847,7 @@
                 // Use image options for yes/no questions
                 if (currentNode === 'highlyspecialized_goods' || 
                     currentNode === 'previously_procured_goods' || 
-                    currentNode === 'contract_rescinded_goods' || 
-                    currentNode === 'competitive_contract_goods' || 
-                    currentNode === 'unitprice_goods' ||
-                    currentNode === 'sixmonthsprocurement_goods' ||
-                    currentNode === 'quantifiable_goods' ||
-                    currentNode === 'preselectedsupplier_goods' ||
-                    currentNode === 'afpmodernizationprogram_goods' ||
-                    currentNode === 'directnegotiationcompatibility_goods' ||
-                    currentNode === 'completecontractdnd_goods' ||
-                    currentNode === 'performancesecurity_goods' ||
-                    currentNode === 'unsolicitedoffer_goods' ||
-                    currentNode === 'prefer_publicbidding_goods' ||
-                    currentNode === 'abc_goods_c'){
+                    currentNode === 'contract_rescinded_goods') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
@@ -1229,7 +876,6 @@
 
         function showResult() {
             const result = results[currentNode];
-            result.path = [...userPath];
             
             document.getElementById('questionContainer').style.display = 'none';
             document.getElementById('resultContainer').style.display = 'block';
@@ -1278,16 +924,15 @@
                 recommendationContainer.appendChild(secondaryContainer);
             }
             
-            document.getElementById('pathSteps').textContent = result.path.join(' → ');
-            
-            // Complete the progress bar
-            document.getElementById('progressFill').style.width = '100%';
+            // Hide dynamic recommendations in final result
+            document.getElementById('dynamicRecommendations').style.display = 'none';
         }
 
         function startDecisionTree() {
             document.getElementById('homeContainer').style.display = 'none';
             document.getElementById('questionContainer').style.display = 'block';
             document.getElementById('progressBarContainer').style.display = 'block';
+            document.getElementById('dynamicRecommendations').style.display = 'block';
             showQuestion();
         }
 
@@ -1295,12 +940,14 @@
             currentNode = 'start';
             userPath = [];
             breadcrumbPath = [];
+            availableModes.clear();
             
             document.getElementById('homeContainer').style.display = 'block';
             document.getElementById('questionContainer').style.display = 'none';
             document.getElementById('resultContainer').style.display = 'none';
             document.getElementById('progressBarContainer').style.display = 'none';
             document.getElementById('breadcrumbContainer').style.display = 'none';
+            document.getElementById('dynamicRecommendations').style.display = 'none';
             document.getElementById('progressFill').style.width = '0%';
         }
 
