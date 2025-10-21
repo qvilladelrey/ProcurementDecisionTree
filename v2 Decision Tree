@@ -902,7 +902,7 @@
                     },
                     others_typeofgood_directcontracting_c: {
                         text: "❓ Not among the stated options",
-                        next: "prefer_publicbidding_goods"
+                        next: "prefer_publicbidding_goods_c"
                        }
                     }
                 },
