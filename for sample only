@@ -481,17 +481,14 @@
                     goods: {
                         text: "📦 Goods",
                         next: "highlyspecialized_goods",
-                        triggers: ["Direct Procurement", "Competitive Bidding"]
                     },
                     infrastructure: {
                         text: "🏗️ Infrastructure Projects",
-                        next: "result_under_construction",
-                        triggers: ["Competitive Bidding", "Public-Private Partnership"]
+                        next: "result_under_construction"
                     },
                     consulting: {
                         text: "🤝 Consulting Services",
-                        next: "result_under_construction",
-                        triggers: ["Request for Proposals", "Direct Procurement"]
+                        next: "result_under_construction"
                     }
                 }
             },
@@ -500,13 +497,11 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "previously_procured_goods",
-                        triggers: ["Direct Procurement", "Alternative Procurement"]
+                        next: "previously_procured_goods"
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_under_construction",
-                        triggers: ["Competitive Bidding", "Small Value Procurement"]
+                        next: "result_under_construction"
                     }
                 }
             },
@@ -515,13 +510,11 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "need_goods_A",
-                        triggers: ["Repeat Order", "Direct Procurement"]
+                        next: "need_goods_A"
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_B",
-                        triggers: ["Competitive Bidding", "Request for Proposals"]
+                        next: "typeofgood_B"
                     }
                 }
             },
@@ -530,23 +523,19 @@
                 options: {
                     immediate_action_goods: {
                         text: "🚨 Undertake immediate action to prevent damage to or loss of life or property or restore vital public services",
-                        next: "contract_rescinded_goods",
-                        triggers: ["Emergency Procurement", "Direct Procurement"]
+                        next: "contract_rescinded_goods"
                     },
                     failed_bidding_goods: {
                         text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
-                        next: "prefer_failedbidding_goods",
-                        triggers: ["Negotiated Procurement", "Direct Procurement"]
+                        next: "prefer_failedbidding_goods"
                     },
                     replenish_goods: {
                         text: "📋 Replenish Goods procured under a previously awarded contract",
-                        next: "competitive_contract_goods",
-                        triggers: ["Repeat Order", "Direct Procurement"]
+                        next: "competitive_contract_goods"
                     },
                     other_goods_A: {
                         text: "❓ Not among the stated options",
-                        next: "typeofgood_B",
-                        triggers: ["Competitive Bidding", "Request for Proposals"]
+                        next: "typeofgood_B"
                     }
                 }
             },
@@ -555,13 +544,11 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_takeover_goods",
-                        triggers: ["Takeover Procurement", "Negotiated Procurement"]
+                        next: "prefer_takeover_goods"
                     },
                     no: {
                         text: "❌ No",
-                        next: "prefer_emergencycases_goods",
-                        triggers: ["Emergency Procurement", "Direct Procurement"]
+                        next: "prefer_emergencycases_goods"
                     }
                 }
             },
@@ -570,13 +557,11 @@
                 options: {
                     yes_prefer_takeover: {
                         text: "📋 Post-Qualify and negotiate with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
-                        next: "result_takeover",
-                        triggers: ["Negotiated Procurement", "Takeover Procurement"]
+                        next: "result_takeover"
                     },
                     different_prefer_takeover: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B",
-                        triggers: ["Competitive Bidding", "Request for Proposals"]
+                        next: "typeofgood_B"
                     }
                 }
             },
@@ -585,13 +570,11 @@
                 options: {
                     yes_prefer_emergencycases_goods: {
                         text: "📋 Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
-                        next: "result_emergency_cases",
-                        triggers: ["Emergency Procurement", "Negotiated Procurement"]
+                        next: "result_emergency_cases"
                     },
                     different_prefer_emergencycases_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B",
-                        triggers: ["Competitive Bidding", "Request for Proposals"]
+                        next: "typeofgood_B"
                     }
                 }
             },
@@ -600,12 +583,12 @@
                 options: {
                     yes_prefer_failedbidding_goods: {
                         text: "📋 Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
-                        next: "result_failed_bidding",
+                        next: "result_failed_bidding"
                         triggers: ["Failed Bidding Procurement", "Negotiated Procurement"]
                     },
                     different_prefer_failedbidding_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B",
+                        next: "typeofgood_B"
                         triggers: ["Competitive Bidding", "Request for Proposals"]
                     }
                 }
@@ -615,38 +598,31 @@
                 options: {
                     necessarytopreventdamage_goods: {
                         text: "🚨 Necessary to prevent damage to or loss of life or property OR restore vital public services, etc.",
-                        next: "result_emergency_cases",
-                        triggers: ["Emergency Procurement", "Direct Procurement"]
+                        next: "result_emergency_cases"
                     },
                     limitedsources_plantcomponent_goods: {
                         text: "🏭 Obtainable only from a limited number of sources OR a major plant component",
-                        next: "preselectedsupplier_goods",
-                        triggers: ["Limited Source Bidding", "Direct Procurement"]
+                        next: "preselectedsupplier_goods"
                     },
                     researchanddevelopment_goods: {
                         text: "🔬 To be used actually, exclusively, and directly in the conduct of research and development projects or activities",
-                        next: "typeofsciencegood",
-                        triggers: ["Direct Procurement", "Alternative Procurement"]
+                        next: "typeofsciencegood"
                     },
                     defenseequipment_goods: {
                         text: "🚁 Major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense (DND)",
-                        next: "afpmodernizationprogram_goods",
-                        triggers: ["Direct Procurement", "Alternative Procurement"]
+                        next: "afpmodernizationprogram_goods"
                     },
                     scholarlyartisticwork_goods: {
                         text: "🎓 Scientific, Scholarly or Artistic Work, Exclusive Technology, and/or Media Services",
-                        next: "typeofscholarly_goods",
-                        triggers: ["Direct Procurement", "Alternative Procurement"]
+                        next: "typeofscholarly_goods"
                     },
                     newconcept_goods: {
                         text: "💡 A new concept or technology",
-                        next: "unsolicitedoffer_goods",
-                        triggers: ["Alternative Procurement", "Request for Proposals"]
+                        next: "unsolicitedoffer_goods"
                     },
                     other_goods_B: {
                         text: "❓ Not among the stated options",
-                        next: "typeofsupplier_goods_C",
-                        triggers: ["Competitive Bidding", "Request for Proposals"]
+                        next: "typeofsupplier_goods_C"
                     }
                 }
             }
