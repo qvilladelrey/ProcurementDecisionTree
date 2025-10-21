@@ -1742,21 +1742,26 @@
             availableModes.clear();
             history = [];
     
-            // Reset all UI elements
-            document.getElementById('homeContainer').style.display = 'block';
-            document.getElementById('questionContainer').style.display = 'none';
+            // Reset all UI elements - GO TO FIRST QUESTION INSTEAD OF HOME
+            document.getElementById('homeContainer').style.display = 'none';
+            document.getElementById('questionContainer').style.display = 'block';
             document.getElementById('resultContainer').style.display = 'none';
             document.getElementById('breadcrumbContainer').style.display = 'none';
-            document.getElementById('dynamicRecommendations').style.display = 'none';
+            document.getElementById('dynamicRecommendations').style.display = 'block';
             document.getElementById('backButton').style.display = 'none';
             
             // Clear any dynamic content
             document.getElementById('recommendationBadges').innerHTML = '';
             document.getElementById('recommendationContainer').innerHTML = '';
+            
+            // Show the first question
+            showQuestion();
         }
 
-        // Initialize
-        showQuestion();
+        // Initialize - FIXED: Show home screen instead of first question
+        document.getElementById('homeContainer').style.display = 'block';
+        document.getElementById('questionContainer').style.display = 'none';
+        document.getElementById('resultContainer').style.display = 'none';
+        document.getElementById('breadcrumbContainer').style.display = 'none';
+        document.getElementById('dynamicRecommendations').style.display = 'none';
     </script>
-</body>
-</html>
