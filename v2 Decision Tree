@@ -1145,15 +1145,15 @@
                 typeofgood_directacquisition_e: {
                     question: "Is the Good:",
                     options: {
-                    services_direct acquisition_e: {
+                    services_directacquisition_e: {
                         text: "Services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
                         next: "typeofgood_directacquisition_e_two"
                     },
-                    procuredfromstores_direct acquisition_e: {
+                    procuredfromstores_directacquisition_e: {
                         text: "Prepare Bidding Documents",
                         next: "typeofgood_directacquisition_e_two"
                     },
-                    others_direct acquisition_e: {
+                    others_directacquisition_e: {
                         text: "Not among the stated options",
                         next: "result_under_construction"
                        }
@@ -1162,19 +1162,19 @@
                 typeofgood_directacquisition_e_two: {
                     question: "Is the Good:",
                     options: {
-                    philgepsregistered_direct acquisition_e: {
+                    philgepsregistered_directacquisition_e: {
                         text: "supplied by a supplier registered with the PhilGEPS as verified from the PhilGEPS website",
                         next: "coainvoice_goods_e"
                     },
-                    ecommerce_direct acquisition_e: {
+                    ecommerce_directacquisition_e: {
                         text: "Available in electronic commerce platforms for delivery or pick up at such date and time identified by the PE",
                         next: "coainvoice_goods_e"
                     },
-                    pickupdelivery_direct acquisition_e: {
+                    pickupdelivery_directacquisition_e: {
                         text: "Readily available off-the-shelf and can be picked up or delivered immediately",
                         next: "coainvoice_goods_e"
                     },
-                    others_direct acquisition_e_two: {
+                    others_directacquisition_e_two: {
                         text: "Not among the stated options",
                         next: "result_under_construction"
                        }
