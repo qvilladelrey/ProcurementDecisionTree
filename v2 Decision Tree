@@ -1112,7 +1112,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_under_construction"
+                        next: "noncse_procured_previously_e"
                        }
                     }
                 },
@@ -1202,6 +1202,19 @@
                     },
                     different_prefer_directacquisition_goods_e: {
                         text: "🔄 Adopt different procurement mode",
+                        next: "result_under_construction"
+                       }
+                    }
+                },
+                noncse_procured_previously_e: {
+                    question: "Was it procured previously?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_under_construction"
+                    },
+                    no: {
+                        text: "❌ No",
                         next: "result_under_construction"
                     }
                 }
@@ -1346,7 +1359,8 @@
                     currentNode === 'cse_goods_e' ||
                     currentNode === 'psdbm_available_goods_e' ||
                     currentNode === 'coainvoice_goods_e' ||
-                    currentNode === 'abc_twohundredthousand_goods_e'){
+                    currentNode === 'abc_twohundredthousand_goods_e' ||
+                    currentNode === 'noncse_procured_previously_e'){
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
