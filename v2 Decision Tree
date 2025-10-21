@@ -334,7 +334,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_under_construction"
+                        next: "cse_goods_e"
                     }
                 }
             },
