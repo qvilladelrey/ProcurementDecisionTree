@@ -1345,7 +1345,8 @@
                     currentNode === 'prefer_publishinvitation_goods_d' ||
                     currentNode === 'cse_goods_e' ||
                     currentNode === 'psdbm_available_goods_e' ||
-                    currentNode === 'coainvoice_goods_e'){
+                    currentNode === 'coainvoice_goods_e' ||
+                    currentNode === 'abc_twohundredthousand_goods_e'){
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
