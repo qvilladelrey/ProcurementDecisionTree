@@ -434,17 +434,14 @@
                     goods: {
                         text: "📦 Goods",
                         next: "highlyspecialized_goods",
-                        triggers: ["Direct Procurement", "Competitive Bidding"]
                     },
                     infrastructure: {
                         text: "🏗️ Infrastructure Projects",
                         next: "result_under_construction",
-                        triggers: ["Competitive Bidding", "Public-Private Partnership"]
                     },
                     consulting: {
                         text: "🤝 Consulting Services",
                         next: "result_under_construction",
-                        triggers: ["Request for Proposals", "Direct Procurement"]
                     }
                 }
             },
@@ -454,12 +451,10 @@
                     yes: {
                         text: "✅ Yes",
                         next: "previously_procured_goods",
-                        triggers: ["Direct Procurement", "Alternative Procurement"]
                     },
                     no: {
                         text: "❌ No",
                         next: "result_under_construction",
-                        triggers: ["Competitive Bidding", "Small Value Procurement"]
                     }
                 }
             },
@@ -469,12 +464,10 @@
                     yes: {
                         text: "✅ Yes",
                         next: "need_goods_A",
-                        triggers: ["Repeat Order", "Direct Procurement"]
                     },
                     no: {
                         text: "❌ No",
                         next: "typeofgood_B",
-                        triggers: ["Competitive Bidding", "Request for Proposals"]
                     }
                 }
             },
