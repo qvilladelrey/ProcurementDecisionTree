@@ -1676,9 +1676,9 @@
         function showResult() {
             const result = results[currentNode];
             
-            document.getElementById('homeContainer').style.display = 'block';
+            document.getElementById('homeContainer').style.display = 'none';
             document.getElementById('questionContainer').style.display = 'none';
-            document.getElementById('resultContainer').style.display = 'none';
+            document.getElementById('resultContainer').style.display = 'block';
             
             const recommendationContainer = document.getElementById('recommendationContainer');
             recommendationContainer.innerHTML = '';
@@ -1741,7 +1741,7 @@
             breadcrumbPath = [];
             availableModes.clear();
             history = [];
-            
+    
             // Reset all UI elements
             document.getElementById('homeContainer').style.display = 'block';
             document.getElementById('questionContainer').style.display = 'none';
