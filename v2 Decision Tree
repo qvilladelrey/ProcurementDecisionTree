@@ -1706,7 +1706,7 @@
                 
                 const alternativeTitle = document.createElement('div');
                 alternativeTitle.className = 'alternative-title';
-                alternativeTitle.innerHTML = '<span class="icon">💡</span> Alternative Procurement Modes:';
+                alternativeTitle.innerHTML = '<span class="icon">💡</span> Other Recommended Procurement Modes:';
                 alternativeContainer.appendChild(alternativeTitle);
                 
                 const alternativeBadges = document.createElement('div');
