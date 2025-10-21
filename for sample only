@@ -126,16 +126,6 @@
             line-height: 1.3;
         }
 
-        .result {
-            background: linear-gradient(135deg, #1e3888, #3a6ea5);
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3);
-        }
-
         .restart-btn {
             background: #28a745;
             color: white;
@@ -151,22 +141,6 @@
         .restart-btn:hover {
             background: #218838;
             transform: translateY(-1px);
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background: #e9ecef;
-            border-radius: 4px;
-            margin-bottom: 30px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 4px;
-            transition: width 0.5s ease;
         }
 
         .definition-word {
@@ -224,7 +198,7 @@
             border-radius: 10px;
             padding: 18px 16px;
             margin-bottom: 18px;
-            border-left: 5px solid #1e3888;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .breadcrumb-title {
@@ -270,7 +244,7 @@
             padding: 25px;
             border-radius: 15px;
             margin-bottom: 15px;
-            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             text-align: left;
         }
 
@@ -292,38 +266,44 @@
             line-height: 1.5;
         }
 
-        .secondary-recommendations {
+        .alternative-recommendations {
             display: flex;
             flex-direction: column;
             gap: 10px;
+            margin-top: 20px;
         }
 
-        .secondary-recommendation {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: left;
-            border-left: 4px solid #3a6ea5;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .secondary-title {
+        .alternative-title {
             font-weight: 600;
             color: #333;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
+            font-size: 1.1em;
         }
 
-        .secondary-title .icon {
+        .alternative-title .icon {
             margin-right: 8px;
             font-size: 1.2em;
         }
 
-        .secondary-description {
-            color: #666;
-            font-size: 0.95em;
-            line-height: 1.5;
+        .alternative-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .alternative-badge {
+            background: #f8f9fa;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         /* New styles for dynamic recommendations panel */
@@ -332,7 +312,7 @@
             border-radius: 12px;
             padding: 15px;
             margin-bottom: 20px;
-            border: 2px solid #1e3888;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
         }
 
         .dynamic-title {
@@ -385,10 +365,6 @@
 <body>
     <div class="decision-container">
         <h1>Decision Tree for Modes of Procurement</h1>
-
-        <div class="progress-bar" id="progressBarContainer" style="display: none;">
-            <div class="progress-fill" id="progressFill"></div>
-        </div>
         
         <!-- Breadcrumb Trail -->
         <div id="breadcrumbContainer" class="breadcrumb-container" style="display: none;">
@@ -442,7 +418,7 @@
         
         <div id="resultContainer" style="display: none;">
             <div class="recommendation-container" id="recommendationContainer">
-                <!-- Primary and secondary recommendations will be inserted here -->
+                <!-- Primary and alternative recommendations will be inserted here -->
             </div>
             <button class="restart-btn" onclick="restart()">
                 🔄 Start Over
@@ -632,59 +608,19 @@
         const results = {
             result_emergency_cases: {
                 title: "🚨 Negotiated Procurement: Emergency Cases",
-                description: "This is a mode of procurement that can be adopted in case of imminent danger to life or property during a state of calamity, or when time is of the essence arising from natural or man-made calamities or other causes where immediate action is necessary to prevent damage to or loss of life or property, or to restore vital public services, infrastructure facilities, and other public utilities.",
-                secondary: [
-                    {
-                        title: "🔄 Competitive Bidding",
-                        description: "If time permits and the situation allows, competitive bidding may still be considered for long-term solutions after the emergency is addressed."
-                    },
-                    {
-                        title: "📋 Direct Contracting",
-                        description: "For specific emergency supplies that are only available from a single source, direct contracting may be appropriate."
-                    }
-                ]
+                description: "This is a mode of procurement that can be adopted in case of imminent danger to life or property during a state of calamity, or when time is of the essence arising from natural or man-made calamities or other causes where immediate action is necessary to prevent damage to or loss of life or property, or to restore vital public services, infrastructure facilities, and other public utilities."
             },
             result_failed_bidding: {
                 title: "🔄 Failed Bidding Procurement",
-                description: "After two failed bidding attempts, you may proceed with alternative procurement methods such as negotiated procurement or direct contracting. Review the reasons for previous failures and adjust specifications, terms, or market approach as needed to ensure successful procurement.",
-                secondary: [
-                    {
-                        title: "🤝 Negotiated Procurement",
-                        description: "Directly negotiate with potential suppliers who participated in the previous bidding process."
-                    },
-                    {
-                        title: "📋 Direct Contracting",
-                        description: "Consider direct contracting if there is only one possible supplier for the required goods or services."
-                    }
-                ]
+                description: "After two failed bidding attempts, you may proceed with alternative procurement methods such as negotiated procurement or direct contracting. Review the reasons for previous failures and adjust specifications, terms, or market approach as needed to ensure successful procurement."
             },
             result_takeover: {
                 title: "📋 Takeover Procurement",
-                description: "When a contract is rescinded or terminated, you may negotiate with the second lowest bidder from the original bidding process. Ensure that the second bidder is still willing and able to perform the contract at their previously quoted price.",
-                secondary: [
-                    {
-                        title: "🔄 New Bidding Process",
-                        description: "If the second bidder is no longer available, consider initiating a new bidding process."
-                    },
-                    {
-                        title: "📊 Market Survey",
-                        description: "Conduct a new market survey to assess current market conditions and prices."
-                    }
-                ]
+                description: "When a contract is rescinded or terminated, you may negotiate with the second lowest bidder from the original bidding process. Ensure that the second bidder is still willing and able to perform the contract at their previously quoted price."
             },
             result_under_construction: {
                 title: "🚧 Decision Path Under Construction",
-                description: "This decision path is still being developed in the decision tree. Please consult your procurement manual or legal department for guidance on the appropriate procurement method for your specific situation.",
-                secondary: [
-                    {
-                        title: "📚 Consult Procurement Manual",
-                        description: "Refer to your organization's procurement manual for detailed guidance."
-                    },
-                    {
-                        title: "👥 Contact Procurement Office",
-                        description: "Reach out to your procurement office for specific advice on your situation."
-                    }
-                ]
+                description: "This decision path is still being developed in the decision tree. Please consult your procurement manual or legal department for guidance on the appropriate procurement method for your specific situation."
             }
         };
 
@@ -706,36 +642,8 @@
 
         let currentNode = 'start';
         let userPath = [];
-        let totalSteps = 0;
         let breadcrumbPath = [];
         let availableModes = new Set();
-
-        function calculateTotalSteps() {
-            // Calculate the maximum depth of the decision tree
-            let maxDepth = 0;
-            
-            function findDepth(node, depth = 0) {
-                if (node.startsWith('result_')) {
-                    maxDepth = Math.max(maxDepth, depth);
-                    return;
-                }
-                
-                const nodeData = decisionTree[node];
-                if (nodeData && nodeData.options) {
-                    for (let option in nodeData.options) {
-                        findDepth(nodeData.options[option].next, depth + 1);
-                    }
-                }
-            }
-            
-            findDepth('start');
-            return maxDepth;
-        }
-
-        function updateProgress() {
-            const progress = (userPath.length / totalSteps) * 100;
-            document.getElementById('progressFill').style.width = progress + '%';
-        }
 
         function updateBreadcrumb() {
             const breadcrumbContainer = document.getElementById('breadcrumbContainer');
@@ -810,7 +718,6 @@
             
             currentNode = selectedOption.next;
             
-            updateProgress();
             updateBreadcrumb();
             updateDynamicRecommendations();
             
@@ -898,30 +805,29 @@
             `;
             recommendationContainer.appendChild(primaryRecommendation);
             
-            // Create secondary recommendations if available
-            if (result.secondary && result.secondary.length > 0) {
-                const secondaryContainer = document.createElement('div');
-                secondaryContainer.className = 'secondary-recommendations';
+            // Create alternative recommendations from triggered modes
+            if (availableModes.size > 0) {
+                const alternativeContainer = document.createElement('div');
+                alternativeContainer.className = 'alternative-recommendations';
                 
-                const secondaryTitle = document.createElement('div');
-                secondaryTitle.className = 'secondary-title';
-                secondaryTitle.innerHTML = '<span class="icon">💡</span> Alternative Options:';
-                secondaryContainer.appendChild(secondaryTitle);
+                const alternativeTitle = document.createElement('div');
+                alternativeTitle.className = 'alternative-title';
+                alternativeTitle.innerHTML = '<span class="icon">💡</span> Alternative Procurement Modes:';
+                alternativeContainer.appendChild(alternativeTitle);
                 
-                result.secondary.forEach(secondary => {
-                    const secondaryRec = document.createElement('div');
-                    secondaryRec.className = 'secondary-recommendation';
-                    secondaryRec.innerHTML = `
-                        <div class="secondary-title">
-                            <span class="icon">📋</span>
-                            <span>${secondary.title}</span>
-                        </div>
-                        <div class="secondary-description">${secondary.description}</div>
-                    `;
-                    secondaryContainer.appendChild(secondaryRec);
+                const alternativeBadges = document.createElement('div');
+                alternativeBadges.className = 'alternative-badges';
+                
+                // Convert Set to Array and create badges
+                Array.from(availableModes).forEach(mode => {
+                    const badge = document.createElement('div');
+                    badge.className = 'alternative-badge';
+                    badge.innerHTML = `${procurementModeEmojis[mode] || '📋'} ${mode}`;
+                    alternativeBadges.appendChild(badge);
                 });
                 
-                recommendationContainer.appendChild(secondaryContainer);
+                alternativeContainer.appendChild(alternativeBadges);
+                recommendationContainer.appendChild(alternativeContainer);
             }
             
             // Hide dynamic recommendations in final result
@@ -931,7 +837,6 @@
         function startDecisionTree() {
             document.getElementById('homeContainer').style.display = 'none';
             document.getElementById('questionContainer').style.display = 'block';
-            document.getElementById('progressBarContainer').style.display = 'block';
             document.getElementById('dynamicRecommendations').style.display = 'block';
             showQuestion();
         }
@@ -945,14 +850,11 @@
             document.getElementById('homeContainer').style.display = 'block';
             document.getElementById('questionContainer').style.display = 'none';
             document.getElementById('resultContainer').style.display = 'none';
-            document.getElementById('progressBarContainer').style.display = 'none';
             document.getElementById('breadcrumbContainer').style.display = 'none';
             document.getElementById('dynamicRecommendations').style.display = 'none';
-            document.getElementById('progressFill').style.width = '0%';
         }
 
         // Initialize
-        totalSteps = calculateTotalSteps();
         showQuestion();
     </script>
 </body>
