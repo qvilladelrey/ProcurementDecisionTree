@@ -1676,9 +1676,9 @@
         function showResult() {
             const result = results[currentNode];
             
-            document.getElementById('homeContainer').style.display = 'none';
+            document.getElementById('homeContainer').style.display = 'block';
             document.getElementById('questionContainer').style.display = 'none';
-            document.getElementById('resultContainer').style.display = 'block';
+            document.getElementById('resultContainer').style.display = 'none';
             
             const recommendationContainer = document.getElementById('recommendationContainer');
             recommendationContainer.innerHTML = '';
