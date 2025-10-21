@@ -343,15 +343,15 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "need_goods_A"
+                        next: "need_goods_a"
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_B"
+                        next: "typeofgood_b"
                     }
                 }
             },
-            need_goods_A: {
+            need_goods_a: {
                 question: "Is there a need to:",
                 options: {
                     immediate_action_goods: {
@@ -368,7 +368,7 @@
                     },
                     other_goods_A: {
                         text: "❓ Not among the stated options",
-                        next: "typeofgood_B"
+                        next: "typeofgood_b"
                     }
                 }
             },
@@ -394,7 +394,7 @@
                     },
                     different_prefer_takeover: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
+                        next: "typeofgood_b"
                     }
                 }
             },
@@ -407,7 +407,7 @@
                     },
                     different_prefer_emergencycases_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
+                        next: "typeofgood_b"
                     }
                 }
             },
@@ -420,7 +420,7 @@
                     },
                     different_prefer_failedbidding_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
+                        next: "typeofgood_b"
                         }
                     }
                 },
@@ -433,7 +433,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_B"
+                        next: "typeofgood_b"
                         }
                     }
                 },
@@ -446,7 +446,7 @@
                      },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_B"
+                        next: "typeofgood_b"
                         }
                     }
                 },
@@ -459,7 +459,7 @@
                      },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_B"
+                        next: "typeofgood_b"
                         }
                     }
                 },
@@ -472,7 +472,7 @@
                      },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_B"
+                        next: "typeofgood_b"
                         }
                     }
                 },
@@ -485,11 +485,11 @@
                      },
                     different_prefer_repeatorder_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_B"
+                        next: "typeofgood_b"
                         }
                     }
                 },
-                typeofgood_B: {
+                typeofgood_b: {
                     question: "Is the Good:",
                     options: {
                         necessarytopreventdamage_goods: {
@@ -516,9 +516,9 @@
                             text: "💡 A new concept or technology",
                             next: "unsolicitedoffer_goods"
                         },
-                        other_goods_B: {
+                        other_goods_b: {
                             text: "❓ Not among the stated options",
-                            next: "typeofsupplier_goods_C"
+                            next: "typeofsupplier_goods_c"
                             }
                         }
                 },
@@ -531,7 +531,7 @@
                 },
                 no: {
                     text: "❌ No",
-                    next: "typeofsupplier_goods_C"
+                    next: "typeofsupplier_goods_c"
                         }
                     }
                 },
@@ -552,7 +552,7 @@
                     },
                     others_typeofsciencegood: {
                         text: "❓ Not among the stated options",
-                        next: "typeofsupplier_goods_C"
+                        next: "typeofsupplier_goods_c"
                         }
                     }
                 },
@@ -565,7 +565,7 @@
                      },
                     different_prefer_science_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofsupplier_goods_C"
+                        next: "typeofsupplier_goods_c"
                         }
                     }
                 },
@@ -591,7 +591,7 @@
                 },
                 no: {
                     text: "❌ No",
-                    next: "typeofsupplier_goods_C"
+                    next: "typeofsupplier_goods_c"
                         }
                     }
                 },
@@ -604,7 +604,7 @@
                 },
                 no: {
                     text: "❌ No",
-                    next: "typeofsupplier_goods_C"
+                    next: "typeofsupplier_goods_c"
                         }
                     }
                 },
@@ -617,7 +617,7 @@
                 },
                 no: {
                     text: "❌ No",
-                    next: "typeofsupplier_goods_C"
+                    next: "typeofsupplier_goods_c"
                         }
                     }
                 },
@@ -630,7 +630,7 @@
                      },
                     different_prefer_defensecooperationagreement_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofsupplier_goods_C"
+                        next: "typeofsupplier_goods_c"
                        }
                     }
                 },
@@ -659,7 +659,7 @@
                      },
                     others_scholarlygoods: {
                         text: "❓ Not among the stated options",
-                        next: "typeofsupplier_goods_C"
+                        next: "typeofsupplier_goods_c"
                         }
                     }
                 },
@@ -672,7 +672,7 @@
                      },
                     different_prefer_scholarly_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofsupplier_goods_C"
+                        next: "typeofsupplier_goods_c"
                         }
                     }
                 },
@@ -706,7 +706,7 @@
                      },
                     others_competitivedialoguegoods: {
                         text: "❓ Not among the stated options",
-                        next: "typeofsupplier_goods_C"
+                        next: "typeofsupplier_goods_c"
                         }
                     }
                 },
@@ -719,7 +719,7 @@
                      },
                     different_prefer_competitivedialogue_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofsupplier_goods_C"
+                        next: "typeofsupplier_goods_c"
                         }
                     }
                 },
@@ -748,20 +748,20 @@
                         }
                     }
                 },
-                typeofsupplier_goods_C: {
+                typeofsupplier_goods_c: {
                     question: "Is the supplier:",
                     options: {
                     intlagency_goods: {
                         text: "A United Nations Agency, International Organization, or International Financing Organization",
-                        next: "typeofgood_intlagency"
+                        next: "typeofgood_intlagency_c"
                     },
                     ngo_goods: {
                         text: "SEC registered non-stock, non-profit domestic corporation OR CDA-registered cooperative",
-                        next: "ordinancengo_goods"
+                        next: "ordinancengo_goods_c"
                     },
                     anotheragency_goods: {
                         text: "Another agency that has the mandate and absorptive capacity to undertake the project",
-                        next: "necessarytools_goods"
+                        next: "necessarytools_goods_c"
                     },
                     others_typeofsupplier_goods_C: {
                         text: "❓ Not among the stated options",
@@ -769,24 +769,24 @@
                         }
                     }
                 },
-                typeofgood_intlagency: {
+                typeofgood_intlagency_c: {
                     question: "Is the Good:",
                     options: {
                     advancedinnovation_goods: {
                         text: "Goods and Consulting Services involving advanced technologies, techniques, and innovations not locally available as certified by the DTI, when it is most advantageous to the PE",
-                        next: "prefer_intlagency_goods"
+                        next: "prefer_intlagency_goods_c"
                     },
                     specializedproducts_goods: {
                         text: "Specialized products where the number of suppliers is limited, such as vaccines",
-                        next: "prefer_intlagency_goods"
+                        next: "prefer_intlagency_goods_c"
                     },
                     offtheshelf_goods: {
                         text: "Small quantities of off-the-shelf goods exclusively used in education and health",
-                        next: "prefer_intlagency_goods"
+                        next: "prefer_intlagency_goods_c"
                     },
                     criticalpublichealth_goods: {
                         text: "Goods for critical public health priorities as determined and certified by the DOH",
-                        next: "prefer_intlagency_goods"
+                        next: "prefer_intlagency_goods_c"
                     },
                     others_typeofgood_intlagency: {
                         text: "❓ Not among the stated options",
@@ -794,14 +794,14 @@
                         }
                     }
                 },
-                prefer_intlagency_goods: {
+                prefer_intlagency_goods_c: {
                     question: "Do you prefer to:",
                     options: {
-                    yes_prefer_intlagency_goods: {
+                    yes_prefer_intlagency_goods_c: {
                         text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency",
                         next: "result_under_construction"
                      },
-                    different_prefer_intlagency_goods: {
+                    different_prefer_intlagency_goods_c: {
                         text: "🔄 Adopt different procurement mode",
                         next: "typeofgood_directcontracting_c"
                         }
@@ -816,11 +816,11 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "prefer_publicbidding_goods"
+                        next: "prefer_publicbidding_goods_c"
                        }
                     }
                 },
-                prefer_publicbidding_goods: {
+                prefer_publicbidding_goods_c: {
                     question: "Do you prefer/have the capacity to undertake the public bidding process?",
                     options: {
                     yes: {
@@ -833,12 +833,12 @@
                        }
                     }
                 },
-                ordinancengo_goods: {
+                ordinancengo_goods_c: {
                     question: "Is there an appropriation law or ordinance earmarking an amount to be specifically contacted out to NGOs?",
                     options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_ngoparticipation_goods"
+                        next: "prefer_ngoparticipation_goods_c"
                     },
                     no: {
                         text: "❌ No",
@@ -846,25 +846,25 @@
                        }
                     }
                 },
-                prefer_ngoparticipation_goods: {
+                prefer_ngoparticipation_goods_c: {
                     question: "Do you prefer:",
                     options: {
-                    yes_prefer_ngoparticipation_goods: {
+                    yes_prefer_ngoparticipation_goods_c: {
                         text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency",
                         next: "result_under_construction"
                     },
-                    different_prefer_ngoparticipation_goods: {
+                    different_prefer_ngoparticipation_goods_c: {
                         text: "🔄 Adopt different procurement mode",
                         next: "typeofgood_directcontracting_c"
                        }
                     }
                 },
-                necessarytools_goods: {
+                necessarytools_goods_c: {
                     question: "Does the Servicing Agency (SA) own or has access to the necessary tools and equipment required for the project?",
                     options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_agencytoagency_goods"
+                        next: "prefer_agencytoagency_goods_c"
                     },
                     no: {
                         text: "❌ No",
@@ -872,14 +872,14 @@
                        }
                     }
                 },
-                prefer_agencytoagency_goods: {
+                prefer_agencytoagency_goods_c: {
                     question: "Do you prefer:",
                     options: {
-                    yes_prefer_agencytoagency_goods: {
+                    yes_prefer_agencytoagency_goods_c: {
                         text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency",
                         next: "result_under_construction"
                     },
-                    different_prefer_agencytoagency_goods: {
+                    different_prefer_agencytoagency_goods_c: {
                         text: "🔄 Adopt different procurement mode",
                         next: "typeofgood_directcontracting_c"
                         }
@@ -888,15 +888,15 @@
                 typeofgood_directcontracting_c: {
                     question: "Is the Good:",
                     options: {
-                    exclusivedealer_goods: {
+                    exclusivedealer_goods_c: {
                         text: "Sold by an exclusive dealer or manufacturer which does not have sub-dealers selling at lower prices and for which no suitable substitute can be obtained at more advantageous terms to the government",
                         next: "prefer_directcontracting_goods_c"
                      },
-                    criticalcomponent_goods: {
+                    criticalcomponent_goods_c: {
                         text: "A critical component from a specific manufacturer, supplier, or distributor that must be used as a requirement for the service provider to guarantee project performance, in accordance with the provisions of the contract, as determined by the EU/IU",
                         next: "prefer_directcontracting_goods_c"
                      },
-                    proprietarysource_goods: {
+                    proprietarysource_goods_c: {
                         text: "Proprietary in nature, which can only be obtained from the proprietary source; or when patents, trade secrets, and copyrights prohibit others from manufacturing the same item, as supported by relevant documentary evidence issued by competent authority",
                         next: "prefer_directcontracting_goods_c"
                     },
@@ -910,12 +910,196 @@
                     question: "Do you prefer to:",
                     options: {
                     yes_prefer_directcontracting_goods_c: {
-                        text: "Prepare Price Quotation or Pro Forma Invoice with Conditions of Sale",
+                        text: "📋 Prepare Price Quotation or Pro Forma Invoice with Conditions of Sale",
                         next: "result_under_construction"
                     },
                     different_prefer_directcontracting_goods_c: {
                         text: "Prepare Bidding Documents",
                         next: "abc_goods_c"
+                        }
+                    }
+                },
+                typeofsupplier_goods_d: {
+                    question: "Is the supplier:",
+                    options: {
+                    intlagency_goods_d: {
+                        text: "A United Nations Agency, International Organization, or International Financing Organization",
+                        next: "typeofgood_intlagency_d"
+                    },
+                    ngo_goods_d: {
+                        text: "SEC registered non-stock, non-profit domestic corporation OR CDA-registered cooperative",
+                        next: "ordinancengo_goods_d"
+                    },
+                    anotheragency_goods_d: {
+                        text: "Another agency that has the mandate and absorptive capacity to undertake the project",
+                        next: "necessarytools_goods_d"
+                    },
+                    others_typeofsupplier_goods_d: {
+                        text: "❓ Not among the stated options",
+                        next: "result_under_construction"
+                        }
+                    }
+                },
+                typeofgood_intlagency_d: {
+                    question: "Is the Good:",
+                    options: {
+                    advancedinnovation_goods_d: {
+                        text: "Goods and Consulting Services involving advanced technologies, techniques, and innovations not locally available as certified by the DTI, when it is most advantageous to the PE",
+                        next: "prefer_intlagency_goods_d"
+                    },
+                    specializedproducts_goods_d: {
+                        text: "Specialized products where the number of suppliers is limited, such as vaccines",
+                        next: "prefer_intlagency_goods_d"
+                    },
+                    offtheshelf_goods_d: {
+                        text: "Small quantities of off-the-shelf goods exclusively used in education and health",
+                        next: "prefer_intlagency_goods_d"
+                    },
+                    criticalpublichealth_goods_d: {
+                        text: "Goods for critical public health priorities as determined and certified by the DOH",
+                        next: "prefer_intlagency_goods_d"
+                    },
+                    others_typeofgood_intlagency_d: {
+                        text: "❓ Not among the stated options",
+                        next: "typeofgood_directcontracting_d"
+                        }
+                    }
+                },
+                prefer_intlagency_goods_d: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_intlagency_goods_d: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency",
+                        next: "result_under_construction"
+                     },
+                    different_prefer_intlagency_goods_d: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofgood_directcontracting_d"
+                        }
+                    }
+                },
+                abc_goods_d: {
+                    question: "Is the ABC more than P2 million?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_publicbidding_goods_d"
+                       }
+                    }
+                },
+                prefer_publicbidding_goods_d: {
+                    question: "Do you prefer/have the capacity to undertake the public bidding process?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_smallvalueprocurement"
+                       }
+                    }
+                },
+                prefer_publishinvitation_goods_d: {
+                    question: "Do you prefer/have the capacity to publish invitation to bid?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_under_construction"
+                       }
+                    }
+                },
+                ordinancengo_goods_d: {
+                    question: "Is there an appropriation law or ordinance earmarking an amount to be specifically contacted out to NGOs?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_ngoparticipation_goods_d"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "typeofgood_directcontracting_d"
+                       }
+                    }
+                },
+                prefer_ngoparticipation_goods_d: {
+                    question: "Do you prefer:",
+                    options: {
+                    yes_prefer_ngoparticipation_goods_d: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency",
+                        next: "result_under_construction"
+                    },
+                    different_prefer_ngoparticipation_goods_d: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofgood_directcontracting_d"
+                       }
+                    }
+                },
+                necessarytools_goods_d: {
+                    question: "Does the Servicing Agency (SA) own or has access to the necessary tools and equipment required for the project?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_agencytoagency_goods_d"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "typeofgood_directcontracting_d"
+                       }
+                    }
+                },
+                prefer_agencytoagency_goods_d: {
+                    question: "Do you prefer:",
+                    options: {
+                    yes_prefer_agencytoagency_goods_d: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with the identified agency",
+                        next: "result_under_construction"
+                    },
+                    different_prefer_agencytoagency_goods_d: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "typeofgood_directcontracting_d"
+                        }
+                    }
+                },
+                typeofgood_directcontracting_d: {
+                    question: "Is the Good:",
+                    options: {
+                    exclusivedealer_goods_d: {
+                        text: "Sold by an exclusive dealer or manufacturer which does not have sub-dealers selling at lower prices and for which no suitable substitute can be obtained at more advantageous terms to the government",
+                        next: "prefer_directcontracting_goods_d"
+                     },
+                    criticalcomponent_goods_d: {
+                        text: "A critical component from a specific manufacturer, supplier, or distributor that must be used as a requirement for the service provider to guarantee project performance, in accordance with the provisions of the contract, as determined by the EU/IU",
+                        next: "prefer_directcontracting_goods_d"
+                     },
+                    proprietarysource_goods_d: {
+                        text: "Proprietary in nature, which can only be obtained from the proprietary source; or when patents, trade secrets, and copyrights prohibit others from manufacturing the same item, as supported by relevant documentary evidence issued by competent authority",
+                        next: "prefer_directcontracting_goods_d"
+                    },
+                    others_typeofgood_directcontracting_d: {
+                        text: "❓ Not among the stated options",
+                        next: "prefer_publicbidding_goods_d"
+                       }
+                    }
+                },
+                prefer_directcontracting_goods_d: {
+                    question: "Do you prefer to:",
+                    options: {
+                    yes_prefer_directcontracting_goods_d: {
+                        text: "📋 Prepare Price Quotation or Pro Forma Invoice with Conditions of Sale",
+                        next: "result_under_construction"
+                    },
+                    different_prefer_directcontracting_goods_d: {
+                        text: "Prepare Bidding Documents",
+                        next: "abc_goods_d"
                     }
                 }
             }
@@ -1051,7 +1235,8 @@
                     currentNode === 'prefer_publicbidding_goods' ||
                     currentNode === 'abc_goods_c' ||
                     currentNode === 'ordinancengo_goods' ||
-                    currentNode === 'necessarytools_goods'){
+                    currentNode === 'necessarytools_goods' ||
+                    currentNode === 'prefer_publishinvitation_goods_d'){
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
