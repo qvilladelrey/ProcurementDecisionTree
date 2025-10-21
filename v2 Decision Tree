@@ -1202,7 +1202,7 @@
                     },
                     different_prefer_directacquisition_goods_e: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_directcontracting_d"
+                        next: "result_under_construction"
                     }
                 }
             }
@@ -1335,10 +1335,13 @@
                     currentNode === 'completecontractdnd_goods' ||
                     currentNode === 'performancesecurity_goods' ||
                     currentNode === 'unsolicitedoffer_goods' ||
-                    currentNode === 'prefer_publicbidding_goods' ||
+                    currentNode === 'prefer_publicbidding_goods_c' ||
                     currentNode === 'abc_goods_c' ||
-                    currentNode === 'ordinancengo_goods' ||
-                    currentNode === 'necessarytools_goods' ||
+                    currentNode === 'ordinancengo_goods_c' ||
+                    currentNode === 'necessarytools_goods_c' ||
+                    currentNode === 'abc_goods_d' ||
+                    currentNode === 'ordinancengo_goods_d' ||
+                    currentNode === 'necessarytools_goods_d' ||
                     currentNode === 'prefer_publishinvitation_goods_d' ||
                     currentNode === 'cse_goods_e' ||
                     currentNode === 'psdbm_available_goods_e' ||
