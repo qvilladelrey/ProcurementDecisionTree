@@ -1380,7 +1380,41 @@
                     options: {
                     yes: {
                         text: "✅ Yes",
+                        next: "need_goods_e"
+                    },
+                    no: {
+                        text: "❌ No",
                         next: "result_under_construction"
+                       }
+                    }
+                },
+                need_goods_e: {
+                    question: "Is there a need to:",
+                    options: {
+                    directpurchase_noncse_e: {
+                        text: "Directly purchase from supplier that has delivered non-CSE to other govt agency",
+                        next: "noncse_competitivecontract_e"
+                    },
+                    failed_bidding_goods_e: {
+                        text: "Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
+                        next: "result_under_construction"
+                    },
+                    replenishgoods_e: {
+                        text: "Replenish Goods procured under a previously awarded contract through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?)",
+                        next: "result_under_construction"
+                    },
+                    others_repeat_e: {
+                        text: "Not among the stated options",
+                        next: "result_under_construction"
+                       }
+                    }
+                },
+                noncse_competitivecontract_e: {
+                    question: "Is original Non-CSE was procured and awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue or Unsolicited Offer with Bid Matching?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "need_goods_e"
                     },
                     no: {
                         text: "❌ No",
@@ -1702,7 +1736,8 @@
                     currentNode === 'psdbm_available_goods_e' ||
                     currentNode === 'abc_twohundredthousand_goods_e' ||
                     currentNode === 'coainvoice_goods_e' ||
-                    currentNode === 'noncse_procured_previously_e') {
+                    currentNode === 'noncse_procured_previously_e' ||
+                    currentNode === 'noncse_competitivecontract_e') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
