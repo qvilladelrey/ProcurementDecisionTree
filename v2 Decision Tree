@@ -1456,47 +1456,79 @@
         let history = [];
 
         function updateBreadcrumb() {
-            const breadcrumbContainer = document.getElementById('breadcrumbContainer');
-            const breadcrumbTrail = document.getElementById('breadcrumbTrail');
-            
-            breadcrumbTrail.innerHTML = '';
-            
-            // Add home button
-            const homeButton = document.createElement('button');
-            homeButton.className = 'breadcrumb-btn';
-            homeButton.textContent = '🏠 Home';
-            homeButton.onclick = () => restart();
-            breadcrumbTrail.appendChild(homeButton);
-            
-            // Add breadcrumb items
-            breadcrumbPath.forEach((item, index) => {
-                // Separator
-                const separator = document.createElement('span');
-                separator.textContent = ' / ';
-                separator.style.color = '#999';
-                breadcrumbTrail.appendChild(separator);
-                
-                // Breadcrumb item (clickable except current)
-                if (index < breadcrumbPath.length - 1) {
-                    const breadcrumbBtn = document.createElement('button');
-                    breadcrumbBtn.className = 'breadcrumb-btn';
-                    breadcrumbBtn.textContent = item;
-                    breadcrumbBtn.onclick = () => navigateToStep(index);
-                    breadcrumbTrail.appendChild(breadcrumbBtn);
-                } else {
-                    const breadcrumbItem = document.createElement('span');
-                    breadcrumbItem.className = 'breadcrumb-current';
-                    breadcrumbItem.textContent = item;
-                    breadcrumbTrail.appendChild(breadcrumbItem);
-                }
-            });
-            
-            // Show breadcrumb if we have items
-            if (breadcrumbPath.length > 0) {
-                breadcrumbContainer.style.display = 'block';
-            } else {
-                breadcrumbContainer.style.display = 'none';
+          const breadcrumbContainer = document.getElementById('breadcrumbContainer');
+          const breadcrumbTrail = document.getElementById('breadcrumbTrail');
+          breadcrumbTrail.innerHTML = '';
+        
+          // Add home button
+          const homeButton = document.createElement('button');
+          homeButton.className = 'breadcrumb-btn';
+          homeButton.textContent = '🏠 Home';
+          homeButton.onclick = () => restart();
+          breadcrumbTrail.appendChild(homeButton);
+        
+          // Helper to truncate text
+          function truncate(text, maxLength = 24) {
+            if (text.length > maxLength) {
+              return text.slice(0, maxLength - 3) + '...';
             }
+            return text;
+          }
+        
+          // Determine which breadcrumbs to show
+          let itemsToShow = [];
+          if (breadcrumbPath.length > 5) {
+            // Show first, ellipsis, last 3
+            itemsToShow = [
+              { text: breadcrumbPath[0], index: 0 },
+              { text: '...', isEllipsis: true },
+              ...breadcrumbPath.slice(-3).map((text, i) => ({
+                text,
+                index: breadcrumbPath.length - 3 + i
+              }))
+            ];
+          } else {
+            itemsToShow = breadcrumbPath.map((text, i) => ({ text, index: i }));
+          }
+        
+          // Render breadcrumbs
+          itemsToShow.forEach((item, idx) => {
+            // Separator
+            const separator = document.createElement('span');
+            separator.textContent = ' / ';
+            separator.style.color = '#999';
+            breadcrumbTrail.appendChild(separator);
+        
+            if (item.isEllipsis) {
+              // Ellipsis, not clickable
+              const ellipsis = document.createElement('span');
+              ellipsis.className = 'breadcrumb-current';
+              ellipsis.textContent = '...';
+              breadcrumbTrail.appendChild(ellipsis);
+            } else if (item.index < breadcrumbPath.length - 1) {
+              // Clickable breadcrumb
+              const breadcrumbBtn = document.createElement('button');
+              breadcrumbBtn.className = 'breadcrumb-btn';
+              breadcrumbBtn.textContent = truncate(item.text);
+              breadcrumbBtn.title = item.text; // Show full text on hover
+              breadcrumbBtn.onclick = () => navigateToStep(item.index);
+              breadcrumbTrail.appendChild(breadcrumbBtn);
+            } else {
+              // Current breadcrumb (not clickable)
+              const breadcrumbItem = document.createElement('span');
+              breadcrumbItem.className = 'breadcrumb-current';
+              breadcrumbItem.textContent = truncate(item.text);
+              breadcrumbItem.title = item.text;
+              breadcrumbTrail.appendChild(breadcrumbItem);
+            }
+          });
+        
+          // Show/hide container
+          if (breadcrumbPath.length > 0) {
+            breadcrumbContainer.style.display = 'block';
+          } else {
+            breadcrumbContainer.style.display = 'none';
+          }
         }
 
         function updateDynamicRecommendations() {
@@ -1647,7 +1679,30 @@
                 // Use image options for yes/no questions
                 if (currentNode === 'highlyspecialized_goods' || 
                     currentNode === 'previously_procured_goods' || 
-                    currentNode === 'contract_rescinded_goods') {
+                    currentNode === 'contract_rescinded_goods' ||
+                    currentNode === 'competitive_contract_goods' ||
+                    currentNode === 'unitprice_goods' ||
+                    currentNode === 'sixmonthsprocurement_goods' ||
+                    currentNode === 'quantifiable_goods' ||
+                    currentNode === 'preselectedsupplier_goods' ||
+                    currentNode === 'afpmodernizationprogram_goods' ||
+                    currentNode === 'directnegotiationcompatibility_goods' ||
+                    currentNode === 'completecontractdnd_goods' ||
+                    currentNode === 'performancesecurity_goods' ||
+                    currentNode === 'unsolicitedoffer_goods' ||
+                    currentNode === 'abc_goods_c' ||
+                    currentNode === 'prefer_publicbidding_goods_c' ||
+                    currentNode === 'ordinancengo_goods_c' ||
+                    currentNode === 'necessarytools_goods_c' ||
+                    currentNode === 'abc_goods_d' ||
+                    currentNode === 'ordinancengo_goods_d' ||
+                    currentNode === 'necessarytools_goods_d' ||
+                    currentNode === 'ordinancengo_goods_d' ||
+                    currentNode === 'cse_goods_e' ||
+                    currentNode === 'psdbm_available_goods_e' ||
+                    currentNode === 'abc_twohundredthousand_goods_e' ||
+                    currentNode === 'coainvoice_goods_e' ||
+                    currentNode === 'noncse_procured_previously_e') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
