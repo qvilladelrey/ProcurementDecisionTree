@@ -209,7 +209,6 @@
             visibility: visible;
         }
 
-        /* New styles for breadcrumb trail */
         .breadcrumb-container {
             background: #f0f4fa;
             border-radius: 8px;
@@ -337,7 +336,6 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        /* New styles for dynamic recommendations panel */
         .dynamic-recommendations {
             background: #e8f4fd;
             border-radius: 12px;
@@ -406,17 +404,19 @@
                 width: 100%;
                 margin: 5px 0;
             }
-            
+
             .breadcrumb-btn, .breadcrumb-current {
                 max-width: 120px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .breadcrumb-btn, .breadcrumb-current {
                 max-width: 100px;
+
             }
         }
+
     </style>
 </head>
 <body>
@@ -1467,45 +1467,11 @@
             "Limited Source Bidding": "🎯"
         };
 
-        let currentState = "start";
-        let breadcrumbHistory = [];
-        let breadcrumbTextHistory = [];
-
-        function startDecisionTree() {
-            document.getElementById("homeContainer").style.display = "none";
-            document.getElementById("questionContainer").style.display = "block";
-            document.getElementById("resultContainer").style.display = "none";
-            document.getElementById("backButton").style.display = "none";
-            
-            currentState = "start";
-            breadcrumbHistory = [];
-            breadcrumbTextHistory = [];
-            updateBreadcrumb();
-            updateQuestionAndOptions();
-        }
-
-        function makeChoice(choice) {
-            const currentQuestion = decisionTree[currentState];
-            const nextState = currentQuestion.options[choice].next;
-            const choiceText = currentQuestion.options[choice].text;
-            
-            // Add to breadcrumb history
-            breadcrumbHistory.push(currentState);
-            breadcrumbTextHistory.push(choiceText);
-            
-            currentState = nextState;
-            updateBreadcrumb();
-            updateQuestionAndOptions();
-        }
-
-        function goBack() {
-            if (breadcrumbHistory.length > 0) {
-                currentState = breadcrumbHistory.pop();
-                breadcrumbTextHistory.pop();
-                updateBreadcrumb();
-                updateQuestionAndOptions();
-            }
-        }
+        let currentNode = 'start';
+        let userPath = [];
+        let breadcrumbPath = [];
+        let availableModes = new Set();
+        let history = [];
 
         function updateBreadcrumb() {
             const breadcrumbContainer = document.getElementById("breadcrumbContainer");
@@ -1568,190 +1534,270 @@
             }
         }
 
-        function shortenText(text) {
-            // Remove emojis for length calculation
-            const textWithoutEmojis = text.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '');
+        function updateDynamicRecommendations() {
+            const dynamicContainer = document.getElementById('dynamicRecommendations');
+            const badgesContainer = document.getElementById('recommendationBadges');
             
-            // Shorten text if it's longer than 15 characters
-            if (textWithoutEmojis.length > 15) {
-                return textWithoutEmojis.substring(0, 15) + '...';
+            badgesContainer.innerHTML = '';
+            
+            if (availableModes.size > 0) {
+                // Convert Set to Array and create badges
+                Array.from(availableModes).forEach(mode => {
+                    const badge = document.createElement('div');
+                    badge.className = 'recommendation-badge';
+                    badge.innerHTML = `${procurementModeEmojis[mode] || '📋'} ${mode}`;
+                    badgesContainer.appendChild(badge);
+                });
+                
+                dynamicContainer.style.display = 'block';
+            } else {
+                dynamicContainer.style.display = 'none';
             }
-            
-            return text;
         }
 
-        function updateQuestionAndOptions() {
-            const questionText = document.getElementById("questionText");
-            const optionsContainer = document.getElementById("optionsContainer");
-            const backButton = document.getElementById("backButton");
-            const resultContainer = document.getElementById("resultContainer");
-            const questionContainer = document.getElementById("questionContainer");
+        function makeChoice(choice) {
+            const currentNodeData = decisionTree[currentNode];
+            const selectedOption = currentNodeData.options[choice];
             
-            const currentQuestion = decisionTree[currentState];
+            // Save current state to history
+            history.push({
+                node: currentNode,
+                path: [...breadcrumbPath],
+                modes: new Set(availableModes)
+            });
             
-            // Check if we're at a result state
-            if (currentState.startsWith("result_")) {
-                questionContainer.style.display = "none";
-                resultContainer.style.display = "block";
-                
-                // Update recommendations if they exist
-                const recommendationContainer = document.getElementById("recommendationContainer");
-                if (currentQuestion.primaryRecommendation) {
-                    recommendationContainer.innerHTML = `
-                        <div class="primary-recommendation">
-                            <div class="recommendation-title">
-                                <span class="icon">🏆</span>
-                                <span>Primary Recommendation</span>
-                            </div>
-                            <div class="recommendation-description">
-                                <strong>${currentQuestion.primaryRecommendation}</strong>: ${currentQuestion.recommendationDescription}
-                            </div>
-                        </div>
-                        ${currentQuestion.alternativeRecommendations ? `
-                            <div class="alternative-recommendations">
-                                <div class="alternative-title">
-                                    <span class="icon">💡</span>
-                                    <span>Alternative Procurement Modes</span>
-                                </div>
-                                <div class="alternative-badges">
-                                    ${currentQuestion.alternativeRecommendations.map(rec => `
-                                        <div class="alternative-badge">
-                                            <span class="icon">📋</span>
-                                            <span>${rec}</span>
-                                        </div>
-                                    `).join('')}
-                                </div>
-                            </div>
-                        ` : ''}
-                    `;
-                } else {
-                    recommendationContainer.innerHTML = `
-                        <div class="primary-recommendation">
-                            <div class="recommendation-title">
-                                <span class="icon">🚧</span>
-                                <span>Under Construction</span>
-                            </div>
-                            <div class="recommendation-description">
-                                This decision path is still under development. Please check back later or try a different path.
-                            </div>
-                        </div>
-                    `;
-                }
+            userPath.push(selectedOption.text);
+            breadcrumbPath.push(selectedOption.text);
+            
+            // Add any triggered procurement modes to available modes
+            if (selectedOption.triggers) {
+                selectedOption.triggers.forEach(mode => {
+                    availableModes.add(mode);
+                });
+            }
+            
+            currentNode = selectedOption.next;
+            
+            updateBreadcrumb();
+            updateDynamicRecommendations();
+            updateBackButton();
+            
+            if (currentNode.startsWith('result_')) {
+                showResult();
             } else {
-                // Update question and options
-                questionText.textContent = currentQuestion.question;
-                
-                // Clear options
-                optionsContainer.innerHTML = '';
-                
-                // Check if we should use horizontal layout for image options
-                const isImageOptions = Object.keys(currentQuestion.options).some(key => 
-                    key === 'goods' || key === 'infrastructure' || key === 'consulting'
-                );
-                
-                if (isImageOptions) {
-                    optionsContainer.className = 'options horizontal';
-                } else {
-                    optionsContainer.className = 'options';
+                showQuestion();
+            }
+        }
+
+        function goBack() {
+            if (history.length === 0) return;
+            
+            // Get previous state from history
+            const previousState = history.pop();
+            
+            // Restore previous state
+            currentNode = previousState.node;
+            breadcrumbPath = previousState.path;
+            availableModes = previousState.modes;
+            
+            updateBreadcrumb();
+            updateDynamicRecommendations();
+            updateBackButton();
+            showQuestion();
+        }
+
+        function navigateToStep(stepIndex) {
+            // Clear history and available modes
+            history = history.slice(0, stepIndex);
+            availableModes.clear();
+            
+            // Rebuild available modes up to the selected step
+            for (let i = 0; i <= stepIndex; i++) {
+                if (history[i] && history[i].modes) {
+                    history[i].modes.forEach(mode => availableModes.add(mode));
                 }
-                
-                // Add options
-                for (const [key, option] of Object.entries(currentQuestion.options)) {
-                    if (isImageOptions) {
-                        // Create image option
-                        const optionDiv = document.createElement("div");
-                        optionDiv.className = "image-option";
-                        optionDiv.onclick = () => makeChoice(key);
-                        
-                        let imageSrc = "";
-                        let altText = "";
-                        
-                        if (key === "goods") {
-                            imageSrc = "Billy Goods.png";
-                            altText = "Goods icon";
-                        } else if (key === "infrastructure") {
-                            imageSrc = "Billy Infra.png";
-                            altText = "Infrastructure icon";
-                        } else if (key === "consulting") {
-                            imageSrc = "Billy Consulting.png";
-                            altText = "Consulting icon";
-                        }
-                        
-                        optionDiv.innerHTML = `
-                            <img src="${imageSrc}" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="${altText}" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
-                            <h3>${option.text}</h3>
-                        `;
-                        
-                        optionsContainer.appendChild(optionDiv);
-                    } else {
-                        // Create button option
-                        const optionBtn = document.createElement("button");
-                        optionBtn.className = "option-btn";
-                        optionBtn.textContent = option.text;
-                        optionBtn.onclick = () => makeChoice(key);
-                        optionsContainer.appendChild(optionBtn);
+            }
+            
+            // Update breadcrumb path
+            breadcrumbPath = breadcrumbPath.slice(0, stepIndex + 1);
+            
+            // Find the node for this step
+            let tempNode = 'start';
+            for (let i = 0; i <= stepIndex; i++) {
+                const step = breadcrumbPath[i];
+                const nodeData = decisionTree[tempNode];
+                for (let optionKey in nodeData.options) {
+                    if (nodeData.options[optionKey].text === step) {
+                        tempNode = nodeData.options[optionKey].next;
+                        break;
                     }
                 }
-                
-                // Show/hide back button
-                backButton.style.display = breadcrumbHistory.length > 0 ? "block" : "none";
-                
-                // Show question container
-                questionContainer.style.display = "block";
-                resultContainer.style.display = "none";
             }
             
-            // Update dynamic recommendations
+            currentNode = tempNode;
+            
+            updateBreadcrumb();
             updateDynamicRecommendations();
+            updateBackButton();
+            showQuestion();
         }
 
-        function updateDynamicRecommendations() {
-            const dynamicRecommendations = document.getElementById("dynamicRecommendations");
-            const recommendationBadges = document.getElementById("recommendationBadges");
-            
-            // Collect all triggered recommendations from the current path
-            let recommendations = new Set();
-            
-            // Check current state and all previous states for triggers
-            if (decisionTree[currentState].triggers) {
-                decisionTree[currentState].triggers.forEach(rec => recommendations.add(rec));
+        function updateBackButton() {
+            const backButton = document.getElementById('backButton');
+            if (history.length > 0) {
+                backButton.style.display = 'block';
+            } else {
+                backButton.style.display = 'none';
             }
+        }
+
+        function showQuestion() {
+            document.getElementById('homeContainer').style.display = 'none';
+            document.getElementById('questionContainer').style.display = 'block';
+            document.getElementById('resultContainer').style.display = 'none';
+            document.getElementById('dynamicRecommendations').style.display = 'block';
             
-            for (let i = 0; i < breadcrumbHistory.length; i++) {
-                const state = breadcrumbHistory[i];
-                if (decisionTree[state] && decisionTree[state].triggers) {
-                    decisionTree[state].triggers.forEach(rec => recommendations.add(rec));
+            const nodeData = decisionTree[currentNode];
+            document.getElementById('questionText').textContent = nodeData.question;
+            
+            const optionsContainer = document.getElementById('optionsContainer');
+            
+            // Only replace with image options for the first question
+            if (currentNode === 'start') {
+                optionsContainer.innerHTML = `
+                    <div class="image-option" onclick="makeChoice('goods')">
+                        <img src="Billy Goods.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Goods icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        <h3>Goods</h3>
+                    </div>
+                    <div class="image-option" onclick="makeChoice('infrastructure')">
+                        <img src="Billy Infra.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Infrastructure icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        <h3>Infrastructure Projects</h3>
+                    </div>
+                    <div class="image-option" onclick="makeChoice('consulting')">
+                        <img src="Billy Consulting.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Consulting icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        <h3>Consulting Services</h3>
+                    </div>
+                `;
+            } else {
+                // Use image options for yes/no questions
+                if (currentNode === 'highlyspecialized_goods' || 
+                    currentNode === 'previously_procured_goods' || 
+                    currentNode === 'contract_rescinded_goods') {
+                    optionsContainer.className = 'options horizontal';
+                    optionsContainer.innerHTML = `
+                        <div class="image-option" onclick="makeChoice('yes')">
+                            <img src="YES.png" style="width: 130px; height: 70px; object-fit: cover; border-radius: 1px;" alt="Yes icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        </div>
+                        <div class="image-option" onclick="makeChoice('no')">
+                            <img src="NO.png" style="width: 130px; height: 70px; object-fit: cover; border-radius: 1px;" alt="No icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                        </div>
+                    `;
+                } else {
+                    // Use regular buttons for other questions
+                    optionsContainer.className = 'options';
+                    optionsContainer.innerHTML = '';
+                    
+                    for (let optionKey in nodeData.options) {
+                        const option = nodeData.options[optionKey];
+                        const button = document.createElement('button');
+                        button.className = 'option-btn';
+                        button.textContent = option.text;
+                        button.onclick = () => makeChoice(optionKey);
+                        optionsContainer.appendChild(button);
+                    }
                 }
             }
+        }
+
+        function showResult() {
+            const result = results[currentNode];
             
-            // Show/hide recommendations panel
-            if (recommendations.size > 0) {
-                dynamicRecommendations.style.display = "block";
+            document.getElementById('homeContainer').style.display = 'none';
+            document.getElementById('questionContainer').style.display = 'none';
+            document.getElementById('resultContainer').style.display = 'block';
+            
+            const recommendationContainer = document.getElementById('recommendationContainer');
+            recommendationContainer.innerHTML = '';
+            
+            // Create primary recommendation
+            const primaryRecommendation = document.createElement('div');
+            primaryRecommendation.className = 'primary-recommendation';
+            primaryRecommendation.innerHTML = `
+                <div class="recommendation-title">
+                    <span class="icon">🏆</span>
+                    <span>Primary Recommendation</span>
+                </div>
+                <div class="recommendation-description">
+                    <strong>${result.title}</strong><br><br>
+                    ${result.description}
+                </div>
+            `;
+            recommendationContainer.appendChild(primaryRecommendation);
+            
+            // Create alternative recommendations from triggered modes
+            if (availableModes.size > 0) {
+                const alternativeContainer = document.createElement('div');
+                alternativeContainer.className = 'alternative-recommendations';
                 
-                // Update recommendation badges
-                recommendationBadges.innerHTML = '';
-                recommendations.forEach(rec => {
-                    const badge = document.createElement("div");
-                    badge.className = "recommendation-badge";
-                    badge.innerHTML = `<span class="icon">📋</span><span>${rec}</span>`;
-                    recommendationBadges.appendChild(badge);
+                const alternativeTitle = document.createElement('div');
+                alternativeTitle.className = 'alternative-title';
+                alternativeTitle.innerHTML = '<span class="icon">💡</span> Other Recommended Procurement Modes:';
+                alternativeContainer.appendChild(alternativeTitle);
+                
+                const alternativeBadges = document.createElement('div');
+                alternativeBadges.className = 'alternative-badges';
+                
+                // Convert Set to Array and create badges
+                Array.from(availableModes).forEach(mode => {
+                    const badge = document.createElement('div');
+                    badge.className = 'alternative-badge';
+                    badge.innerHTML = `${procurementModeEmojis[mode] || '📋'} ${mode}`;
+                    alternativeBadges.appendChild(badge);
                 });
-            } else {
-                dynamicRecommendations.style.display = "none";
+                
+                alternativeContainer.appendChild(alternativeBadges);
+                recommendationContainer.appendChild(alternativeContainer);
             }
+            
+            // Hide dynamic recommendations in final result
+            document.getElementById('dynamicRecommendations').style.display = 'none';
+        }
+
+        function startDecisionTree() {
+            document.getElementById('homeContainer').style.display = 'none';
+            document.getElementById('questionContainer').style.display = 'block';
+            document.getElementById('dynamicRecommendations').style.display = 'block';
+            showQuestion();
         }
 
         function restart() {
-            currentState = "start";
-            breadcrumbHistory = [];
-            breadcrumbTextHistory = [];
+            // Reset all variables completely
+            currentNode = 'start';
+            userPath = [];
+            breadcrumbPath = [];
+            availableModes.clear();
+            history = [];
+    
+            // Reset all UI elements - GO TO FIRST QUESTION INSTEAD OF HOME
+            document.getElementById('homeContainer').style.display = 'none';
+            document.getElementById('questionContainer').style.display = 'block';
+            document.getElementById('resultContainer').style.display = 'none';
+            document.getElementById('breadcrumbContainer').style.display = 'none';
+            document.getElementById('dynamicRecommendations').style.display = 'block';
+            document.getElementById('backButton').style.display = 'none';
             
-            document.getElementById("homeContainer").style.display = "block";
-            document.getElementById("questionContainer").style.display = "none";
-            document.getElementById("resultContainer").style.display = "none";
-            document.getElementById("breadcrumbContainer").style.display = "none";
-            document.getElementById("dynamicRecommendations").style.display = "none";
+            // Clear any dynamic content
+            document.getElementById('recommendationBadges').innerHTML = '';
+            document.getElementById('recommendationContainer').innerHTML = '';
+            
+            // Show the first question
+            showQuestion();
         }
+
+        // Initialize - FIXED: Show home screen instead of first question
+        document.getElementById('homeContainer').style.display = 'block';
+        document.getElementById('questionContainer').style.display = 'none';
+        document.getElementById('resultContainer').style.display = 'none';
+        document.getElementById('breadcrumbContainer').style.display = 'none';
+        document.getElementById('dynamicRecommendations').style.display = 'none';
     </script>
-</body>
-</html>
