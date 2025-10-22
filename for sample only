@@ -209,6 +209,7 @@
             visibility: visible;
         }
 
+        /* New styles for breadcrumb trail */
         .breadcrumb-container {
             background: #f0f4fa;
             border-radius: 8px;
@@ -241,10 +242,6 @@
             padding: 3px 6px;
             border-radius: 3px;
             transition: all 0.2s ease;
-            max-width: 150px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
         
         .breadcrumb-btn:hover {
@@ -257,10 +254,6 @@
             font-weight: 600;
             padding: 3px 6px;
             font-size: 0.85em;
-            max-width: 150px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         /* New styles for hierarchical recommendations */
@@ -336,6 +329,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
+        /* New styles for dynamic recommendations panel */
         .dynamic-recommendations {
             background: #e8f4fd;
             border-radius: 12px;
@@ -404,19 +398,7 @@
                 width: 100%;
                 margin: 5px 0;
             }
-
-            .breadcrumb-btn, .breadcrumb-current {
-                max-width: 120px;
-            }
         }
-
-        @media (max-width: 480px) {
-            .breadcrumb-btn, .breadcrumb-current {
-                max-width: 100px;
-
-            }
-        }
-
     </style>
 </head>
 <body>
@@ -1474,76 +1456,79 @@
         let history = [];
 
         function updateBreadcrumb() {
-            const breadcrumbContainer = document.getElementById("breadcrumbContainer");
-            const breadcrumbTrail = document.getElementById("breadcrumbTrail");
-            
-            // Clear the breadcrumb trail
-            breadcrumbTrail.innerHTML = '';
-            
-            // Show breadcrumb if we have history
-            if (breadcrumbHistory.length > 0) {
-                breadcrumbContainer.style.display = "block";
-                
-                // Add breadcrumb items
-                for (let i = 0; i < breadcrumbHistory.length; i++) {
-                    const state = breadcrumbHistory[i];
-                    const text = breadcrumbTextHistory[i];
-                    
-                    // Create breadcrumb button
-                    const breadcrumbBtn = document.createElement("button");
-                    breadcrumbBtn.className = "breadcrumb-btn";
-                    breadcrumbBtn.textContent = shortenText(text);
-                    breadcrumbBtn.title = text; // Show full text on hover
-                    breadcrumbBtn.onclick = () => {
-                        // Go back to this state
-                        while (breadcrumbHistory.length > i) {
-                            breadcrumbHistory.pop();
-                            breadcrumbTextHistory.pop();
-                        }
-                        currentState = state;
-                        updateBreadcrumb();
-                        updateQuestionAndOptions();
-                    };
-                    
-                    breadcrumbTrail.appendChild(breadcrumbBtn);
-                    
-                    // Add separator (except after the last item)
-                    if (i < breadcrumbHistory.length - 1) {
-                        const separator = document.createElement("span");
-                        separator.textContent = "›";
-                        separator.style.color = "#666";
-                        separator.style.margin = "0 5px";
-                        breadcrumbTrail.appendChild(separator);
-                    }
-                }
-                
-                // Add current question
-                const separator = document.createElement("span");
-                separator.textContent = "›";
-                separator.style.color = "#666";
-                separator.style.margin = "0 5px";
-                breadcrumbTrail.appendChild(separator);
-                
-                const currentBreadcrumb = document.createElement("span");
-                currentBreadcrumb.className = "breadcrumb-current";
-                currentBreadcrumb.textContent = shortenText(decisionTree[currentState].question);
-                currentBreadcrumb.title = decisionTree[currentState].question; // Show full text on hover
-                breadcrumbTrail.appendChild(currentBreadcrumb);
-            } else {
-                breadcrumbContainer.style.display = "none";
+          const breadcrumbContainer = document.getElementById('breadcrumbContainer');
+          const breadcrumbTrail = document.getElementById('breadcrumbTrail');
+          breadcrumbTrail.innerHTML = '';
+        
+          // Add home button
+          const homeButton = document.createElement('button');
+          homeButton.className = 'breadcrumb-btn';
+          homeButton.textContent = '🏠 Home';
+          homeButton.onclick = () => restart();
+          breadcrumbTrail.appendChild(homeButton);
+        
+          // Helper to truncate text
+          function truncate(text, maxLength = 24) {
+            if (text.length > maxLength) {
+              return text.slice(0, maxLength - 3) + '...';
             }
-        }
-
-        function shortenText(text) {
-            // Remove emojis for length calculation
-            const textWithoutEmojis = text.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '');
-            
-            // Shorten text if it's longer than 15 characters
-            if (textWithoutEmojis.length > 15) {
-                return textWithoutEmojis.substring(0, 15) + '...';
-            }
-            
             return text;
+          }
+        
+          // Determine which breadcrumbs to show
+          let itemsToShow = [];
+          if (breadcrumbPath.length > 5) {
+            // Show first, ellipsis, last 3
+            itemsToShow = [
+              { text: breadcrumbPath[0], index: 0 },
+              { text: '...', isEllipsis: true },
+              ...breadcrumbPath.slice(-3).map((text, i) => ({
+                text,
+                index: breadcrumbPath.length - 3 + i
+              }))
+            ];
+          } else {
+            itemsToShow = breadcrumbPath.map((text, i) => ({ text, index: i }));
+          }
+        
+          // Render breadcrumbs
+          itemsToShow.forEach((item, idx) => {
+            // Separator
+            const separator = document.createElement('span');
+            separator.textContent = ' / ';
+            separator.style.color = '#999';
+            breadcrumbTrail.appendChild(separator);
+        
+            if (item.isEllipsis) {
+              // Ellipsis, not clickable
+              const ellipsis = document.createElement('span');
+              ellipsis.className = 'breadcrumb-current';
+              ellipsis.textContent = '...';
+              breadcrumbTrail.appendChild(ellipsis);
+            } else if (item.index < breadcrumbPath.length - 1) {
+              // Clickable breadcrumb
+              const breadcrumbBtn = document.createElement('button');
+              breadcrumbBtn.className = 'breadcrumb-btn';
+              breadcrumbBtn.textContent = truncate(item.text);
+              breadcrumbBtn.title = item.text; // Show full text on hover
+              breadcrumbBtn.onclick = () => navigateToStep(item.index);
+              breadcrumbTrail.appendChild(breadcrumbBtn);
+            } else {
+              // Current breadcrumb (not clickable)
+              const breadcrumbItem = document.createElement('span');
+              breadcrumbItem.className = 'breadcrumb-current';
+              breadcrumbItem.textContent = truncate(item.text);
+              breadcrumbItem.title = item.text;
+              breadcrumbTrail.appendChild(breadcrumbItem);
+            }
+          });
+        
+          // Show/hide container
+          if (breadcrumbPath.length > 0) {
+            breadcrumbContainer.style.display = 'block';
+          } else {
+            breadcrumbContainer.style.display = 'none';
+          }
         }
 
         function updateDynamicRecommendations() {
