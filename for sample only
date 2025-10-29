@@ -1949,10 +1949,17 @@
             const recommendationContainer = document.getElementById('recommendationContainer');
             recommendationContainer.innerHTML = '';
 
-            // Remove the main recommended mode from availableModes to avoid duplication
-            if (availableModes.has(result.title)) {
-                availableModes.delete(result.title);
+            // ✅ Prevent duplication of the main recommendation
+            for (let mode of availableModes) {
+                if (mode.toLowerCase().trim() === result.title.toLowerCase().trim()) {
+                    availableModes.delete(mode);
+                    break;
+                }
             }
+
+                    document.getElementById('homeContainer').style.display = 'none';
+                    document.getElementById('questionContainer').style.display = 'none';
+                    document.getElementById('resultContainer').style.display = 'block';
             
             // Create primary recommendation with clickable link
             const primaryRecommendation = document.createElement('div');
