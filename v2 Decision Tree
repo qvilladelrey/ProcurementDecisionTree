@@ -530,19 +530,23 @@
                 options: {
                     imminentdanger_goods: {
                         text: "Imminent danger to life or property during a state of calamity",
-                        next: "prefer_emergencycases_goods"
+                        next: "prefer_emergencycases_goods",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     timeessence_goods: {
                         text: "A need to undertake action since time is of the essence in situations arising from natural or man-made calamities",
-                        next: "prefer_emergencycases_goods"
+                        next: "prefer_emergencycases_goods",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     immediateaction_goods: {
                         text: "A need to undertake immediate action to prevent damage to or loss of life or property or to restore vital public  services, infrastructure facilities,  and other public utilities",
-                        next: "prefer_emergencycases_goods"
+                        next: "prefer_emergencycases_goods",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     otherinstancesemergency_goods: {
                         text: "Other instances aside from the mentioned situations where the provision of life, injury, disease, and other negative effects on human, physical, mental and social well-being, together with damage to property, destruction of assets, loss of services, social and economic disruption and environmental degradation",
-                        next: "prefer_emergencycases_goods"
+                        next: "prefer_emergencycases_goods",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     othersemergency_goods: {
                         text: "❓ Not among the stated options",
@@ -555,8 +559,7 @@
                 options: {
                     yes_prefer_emergencycases_goods: {
                         text: "📋 Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
-                        next: "result_emergencycases",
-                        triggers: ["Negotiated Procurement: Emergency Cases"]
+                        next: "result_emergencycases"
                     },
                     different_prefer_emergencycases_goods: {
                         text: "🔄 Adopt different procurement mode",
@@ -1503,11 +1506,6 @@
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
-            result_under_construction: {
-                title: "🚧 Under Construction",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
-                path: []
-            },
             result_smallvalueprocurement: {
                 title: "🚧 Under Construction",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
@@ -1518,14 +1516,10 @@
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
-            result_under_construction: {
-                title: "🚧 Under Construction",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
-                path: []
-            },
             result_emergencycases: {
-                title: "🚧 Under Construction",
+                title: "🚨 Negotiated Procurement: Emergency Cases",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                link: "NP-Emergency Cases.pdf",
                 path: []
             },
             result_under_construction: {
