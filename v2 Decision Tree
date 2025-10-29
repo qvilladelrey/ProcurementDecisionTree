@@ -10,7 +10,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 20px;
-            background-image: url('Goods, Infra, Consulting (1).png');
+            background-image: url('Decision Tree Background.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
