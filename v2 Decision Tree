@@ -513,8 +513,7 @@
                 options: {
                     goods: {
                         text: "📦 Goods",
-                        next: "isthereemergency_goods",
-                        triggers: ["Competitive Bidding"]
+                        next: "isthereemergency_goods"
                     },
                     infrastructure: {
                         text: "🏗️ Infrastructure Projects",
@@ -531,22 +530,36 @@
                 options: {
                     imminentdanger_goods: {
                         text: "Imminent danger to life or property during a state of calamity",
-                        next: "result_emergency_cases"
+                        next: "prefer_emergencycases_goods"
+                        triggers: ["Competitive Bidding"]
                     },
                     timeessence_goods: {
                         text: "A need to undertake action since time is of the essence in situations arising from natural or man-made calamities",
-                        next: "prefer_failedbidding_goods"
+                        next: "prefer_emergencycases_goods"
                     },
                     immediateaction_goods: {
                         text: "A need to undertake immediate action to prevent damage to or loss of life or property or to restore vital public  services, infrastructure facilities,  and other public utilities",
-                        next: "competitive_contract_goods"
+                        next: "prefer_emergencycases_goods"
                     },
                     otherinstancesemergency_goods: {
                         text: "Other instances aside from the mentioned situations where the provision of life, injury, disease, and other negative effects on human, physical, mental and social well-being, together with damage to property, destruction of assets, loss of services, social and economic disruption and environmental degradation",
-                        next: "competitive_contract_goods"
+                        next: "prefer_emergencycases_goods"
                     },
                     othersemergency_goods: {
                         text: "❓ Not among the stated options",
+                        next: "typeofgood_b"
+                    }
+                }
+            },
+            prefer_emergencycases_goods: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_emergencycases_goods: {
+                        text: "📋 Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
+                        next: "result_emergency_cases"
+                    },
+                    different_prefer_emergencycases_goods: {
+                        text: "🔄 Adopt different procurement mode",
                         next: "typeofgood_b"
                     }
                 }
@@ -619,19 +632,6 @@
                         next: "result_takeover"
                     },
                     different_prefer_takeover: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_b"
-                    }
-                }
-            },
-            prefer_emergencycases_goods: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_emergencycases_goods: {
-                        text: "📋 Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
-                        next: "result_emergency_cases"
-                    },
-                    different_prefer_emergencycases_goods: {
                         text: "🔄 Adopt different procurement mode",
                         next: "typeofgood_b"
                     }
@@ -1482,30 +1482,34 @@
         };
 
         const results = {
-            result_emergency_cases: {
-                title: "🚨 Negotiated Procurement: Emergency Cases",
-                description: "This is a mode of procurement that can be adopted in case of imminent danger to life or property during a state of calamity, or when time is of the essence arising from natural or man-made calamities or other causes where immediate action is necessary to prevent damage to or loss of life or property, or to restore vital public services, infrastructure facilities, and other public utilities.",
-                link: "NP-Emergency Cases.pdf",
+            result_competitivebidding: {
+                title: "Competitive Bidding",
+                description: "Sample.",
                 path: []
             },
-            result_failed_bidding: {
-                title: "🔄 Failed Bidding Procurement",
-                description: "After two failed bidding attempts, you may proceed with alternative procurement methods such as negotiated procurement or direct contracting. Review the reasons for previous failures and adjust specifications, terms, or market approach as needed to ensure successful procurement.",
+            result_limitedsourcebidding: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
-            result_replenish: {
-                title: "📋 Replenishment Procurement",
-                description: "For goods procured under existing agreements (zzz), you may use simplified replenishment procedures. Verify that the original contract terms allow for replenishment, check remaining quantities and budget allocations, and follow the established replenishment process.",
+            result_unsolicitedofferwithbidmatching: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
-            result_other_options: {
-                title: "❓ Alternative Procurement Path",
-                description: "Your situation doesn't fall under the standard exceptions. You will need to follow regular competitive bidding procedures unless other specific exemptions apply. Consider reviewing procurement regulations for additional applicable exceptions or consult with your procurement office for guidance.",
+            result_directcontracting: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
-            result_takeover: {
-                title: "📋 Negotiated Procurement",
-                description: "This is a mode of procurement that can be adopted to take-over contracts which have been rescinded or terminated for causes provided for in the contract and existing laws, where immediate action is necessary to prevent damage to or loss of life or property, or to restore vital public services, infrastracture facilities, and other public utilities.",
+            result_directacquisition: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_repeatorder: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_under_construction: {
@@ -1513,48 +1517,155 @@
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
-            result_competitivebidding: {
-                title: "Competitive Bidding",
-                description: "Sample.",
+            result_smallvalueprocurement: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
-            result_smallvalueprocurement: {
-                title: "Small Value Procurement",
-                description: "Sample.",
+            result_twofailedbiddings: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_under_construction: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_emergencycases: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_under_construction: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_takeoverofcontracts: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_adjacentorcontiguous: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_agencytoagency: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_scientificscholarlyetc: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_highlytechnicalconsultants: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_defensecooperationagreement: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_under_construction: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_leaseofrealproperty: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_ngoparticipation: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_communityparticipation: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_unagencies: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_directretailofpol: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_directsales: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_directprocurementforsti: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             }
         };
 
         // Emoji mapping for procurement modes
         const procurementModeEmojis = {
-            "Direct Procurement": "🤝",
-            "Competitive Bidding": "🏆",
-            "Public-Private Partnership": "🤝",
-            "Request for Proposals": "📋",
-            "Alternative Procurement": "🌟",
-            "Small Value Procurement": "💰",
+            "Competitive Bidding": "🏆",            
+            "Limited Source Bidding": "🎯",
+            "Competitive Dialogue": "🤝",
+            "Unsolicited Offer with Bid Matching": "⭐",
+            "Direct Contracting": "🤝",
+            "Direct Acquisition": "🤝",
             "Repeat Order": "📋",
-            "Emergency Procurement": "🚨",
-            "Negotiated Procurement": "🤝",
-            "Takeover Procurement": "📋",
-            "Failed Bidding Procurement": "🔄",
-            "Limited Source Bidding": "🎯"
+            "Small Value Procurement": "💰",
+            "Negotiated Procurement: Two-Failed Biddings": "🔄",
+            "Negotiated Procurement: Emergency Cases": "🚨",
+            "Negotiated Procurement: Take-over of Contracts": "📋",
+            "Negotiated Procurement: Adjacent or Contiguous": "📋",
+            "Negotiated Procurement: Agency-to-Agency": "🤝",
+            "Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services": "🎓",
+            "Negotiated Procurement: Highly Technical Consultants": "🌟",
+            "Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items": "🚁",
+            "Negotiated Procurement: Lease of Real Property and Venue": "🤝",
+            "Negotiated Procurement: Non-Government Organization (NGO) Participation": "🤝",
+            "Negotiated Procurement: Community Participation": "🤝",
+            "Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations": "🤝",
+            "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions": "🤝",
+            "Direct Sales": "🔄",
+            "Direct Procurement for Science, Technology, and Innovation": "🔬"
         };
 
         // Emoji mapping for procurement modes
         const procurementModeLinks = {
-            "Direct Procurement": "🤝",
-            "Competitive Bidding": "🏆",
-            "Public-Private Partnership": "🤝",
-            "Request for Proposals": "📋",
-            "Alternative Procurement": "🌟",
-            "Small Value Procurement": "💰",
+            "Competitive Bidding": "🏆",            
+            "Limited Source Bidding": "🎯",
+            "Competitive Dialogue": "🤝",
+            "Unsolicited Offer with Bid Matching": "⭐",
+            "Direct Contracting": "🤝",
+            "Direct Acquisition": "🤝",
             "Repeat Order": "📋",
-            "Emergency Procurement": "NP-Emergency Cases.pdf",
-            "Negotiated Procurement": "🤝",
-            "Takeover Procurement": "📋",
-            "Failed Bidding Procurement": "🔄",
-            "Limited Source Bidding": "🎯"
+            "Small Value Procurement": "💰",
+            "Negotiated Procurement: Two-Failed Biddings": "🔄",
+            "Negotiated Procurement: Emergency Cases": "NP-Emergency Cases.pdf",
+            "Negotiated Procurement: Take-over of Contracts": "📋",
+            "Negotiated Procurement: Adjacent or Contiguous": "📋",
+            "Negotiated Procurement: Agency-to-Agency": "🤝",
+            "Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services": "🎓",
+            "Negotiated Procurement: Highly Technical Consultants": "🌟",
+            "Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items": "🚁",
+            "Negotiated Procurement: Lease of Real Property and Venue": "🤝",
+            "Negotiated Procurement: Non-Government Organization (NGO) Participation": "🤝",
+            "Negotiated Procurement: Community Participation": "🤝",
+            "Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations": "🤝",
+            "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions": "🤝",
+            "Direct Sales": "🔄",
+            "Direct Procurement for Science, Technology, and Innovation": "🔬"
         };
 
         let currentNode = 'start';
