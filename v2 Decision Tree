@@ -1741,23 +1741,30 @@
         }
 
         function updateDynamicRecommendations() {
-            const dynamicContainer = document.getElementById('dynamicRecommendations');
-            const badgesContainer = document.getElementById('recommendationBadges');
-            
-            badgesContainer.innerHTML = '';
-            
-            if (availableModes.size > 0) {
-                // Convert Set to Array and create badges
-                Array.from(availableModes).forEach(mode => {
-                    const badge = document.createElement('div');
-                    badge.className = 'recommendation-badge';
-                    badge.innerHTML = `${procurementModeEmojis[mode] || '📋'} ${mode}`;
-                    badgesContainer.appendChild(badge);
-                });
-                
-                dynamicContainer.style.display = 'block';
-            } else {
-                dynamicContainer.style.display = 'none';
+          const dynamicContainer = document.getElementById('dynamicRecommendations');
+          const badgesContainer = document.getElementById('recommendationBadges');
+          badgesContainer.innerHTML = '';
+        
+          const result = results[currentNode]; // ✅ Add this line
+        
+          if (availableModes.size > 0) {
+            const filteredModes = Array.from(availableModes).filter(
+              mode => mode !== result?.title
+            );
+        
+            filteredModes.forEach(mode => {
+                const badge = document.createElement('a');
+                badge.className = 'alternative-badge';
+                badge.href = procurementModeLinks[mode] || '#';
+                badge.target = '_blank';
+                badge.innerHTML = `${procurementModeEmojis[mode] || '📋'} ${mode}`;
+                alternativeBadges.appendChild(badge);
+            });
+        
+            // Only show if there are remaining alternatives
+            if (filteredModes.length > 0) {
+                alternativeContainer.appendChild(alternativeBadges);
+                recommendationContainer.appendChild(alternativeContainer);
             }
         }
 
