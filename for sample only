@@ -1940,62 +1940,63 @@
         }
 
         function showResult() {
-            const resultData = results[currentNode];
-            const recommendationContainer = document.getElementById('recommendationContainer');
-            recommendationContainer.innerHTML = '';
-        
-            // 🟦 Primary (main) recommendation
-            const mainRecommendation = document.createElement('div');
-            mainRecommendation.className = 'primary-recommendation';
-            mainRecommendation.innerHTML = `
-                <div class="recommendation-title">
-                    <span class="icon">${procurementModeEmojis[resultData.title] || '📋'}</span>
-                    ${resultData.title}
-                </div>
-                <div class="recommendation-description">${resultData.description}</div>
-                ${
-                    resultData.link
-                        ? `<a href="${resultData.link}" target="_blank" class="learn-more-btn">Learn More</a>`
-                        : ''
-                }
-            `;
-            recommendationContainer.appendChild(mainRecommendation);
-        
-            // 🟨 Prevent main recommendation from repeating as an alternative
-            const alternativeModes = Array.from(availableModes).filter(
-                mode => mode !== resultData.title
-            );
-        
-            // 🟩 Show alternative recommendations (if any)
-            if (alternativeModes.length > 0) {
-                const altContainer = document.createElement('div');
-                altContainer.className = 'alternative-recommendations';
-                altContainer.innerHTML = `
-                    <div class="alternative-title">
-                        <span class="icon">📌</span>
-                        Other Recommended Modes:
-                    </div>
-                `;
-        
-                const badgeContainer = document.createElement('div');
-                badgeContainer.className = 'alternative-badges';
-        
-                alternativeModes.forEach(mode => {
-                    const badge = document.createElement('a');
-                    badge.href = procurementModeLinks[mode] || '#';
-                    badge.target = '_blank';
-                    badge.className = 'alternative-badge';
-                    badge.innerHTML = `${procurementModeEmojis[mode] || '📋'} ${mode}`;
-                    badgeContainer.appendChild(badge);
-                });
-        
-                altContainer.appendChild(badgeContainer);
-                recommendationContainer.appendChild(altContainer);
-            }
-        
-            // 🟦 Display result section
+            const result = results[currentNode];
+            
+            document.getElementById('homeContainer').style.display = 'none';
             document.getElementById('questionContainer').style.display = 'none';
             document.getElementById('resultContainer').style.display = 'block';
+            
+            const recommendationContainer = document.getElementById('recommendationContainer');
+            recommendationContainer.innerHTML = '';
+
+            // Remove the main recommended mode from availableModes to avoid duplication
+            if (availableModes.has(result.title)) {
+                availableModes.delete(result.title);
+            }
+            
+            // Create primary recommendation with clickable link
+            const primaryRecommendation = document.createElement('div');
+            primaryRecommendation.className = 'primary-recommendation';
+            primaryRecommendation.innerHTML = `
+                <div class="recommendation-title">
+                    <span class="icon">🏆</span>
+                    <span>Primary Recommendation</span>
+                </div>
+                <div class="recommendation-description">
+                    <strong>${result.title}</strong><br><br>
+                    ${result.description}
+                    ${result.link ? `<br><br><a href="${result.link}" target="_blank" class="learn-more-btn">🔗 Learn more about this mode</a>` : ''}
+                </div>
+            `;
+            recommendationContainer.appendChild(primaryRecommendation);
+            
+            // Create alternative recommendations with clickable badges
+            if (availableModes.size > 0) {
+                const alternativeContainer = document.createElement('div');
+                alternativeContainer.className = 'alternative-recommendations';
+                
+                const alternativeTitle = document.createElement('div');
+                alternativeTitle.className = 'alternative-title';
+                alternativeTitle.innerHTML = '<span class="icon">💡</span> Other Recommended Procurement Modes:';
+                alternativeContainer.appendChild(alternativeTitle);
+                
+                const alternativeBadges = document.createElement('div');
+                alternativeBadges.className = 'alternative-badges';
+                
+                Array.from(availableModes).forEach(mode => {
+                    const badge = document.createElement('a');
+                    badge.className = 'alternative-badge';
+                    badge.href = procurementModeLinks[mode] || '#';
+                    badge.target = '_blank';
+                    badge.innerHTML = `${procurementModeEmojis[mode] || '📋'} ${mode}`;
+                    alternativeBadges.appendChild(badge);
+                });
+                
+                alternativeContainer.appendChild(alternativeBadges);
+                recommendationContainer.appendChild(alternativeContainer);
+            }
+            
+            document.getElementById('dynamicRecommendations').style.display = 'none';
         }
 
         function startDecisionTree() {
