@@ -1966,7 +1966,10 @@
             recommendationContainer.appendChild(primaryRecommendation);
             
             // Create alternative recommendations with clickable badges
-            if (availableModes.size > 0) {
+            // Filter out the primary recommendation from available modes
+            const alternativeModes = Array.from(availableModes).filter(mode => mode !== result.title);
+            
+            if (alternativeModes.length > 0) {
                 const alternativeContainer = document.createElement('div');
                 alternativeContainer.className = 'alternative-recommendations';
                 
@@ -1978,7 +1981,7 @@
                 const alternativeBadges = document.createElement('div');
                 alternativeBadges.className = 'alternative-badges';
                 
-                Array.from(availableModes).forEach(mode => {
+                alternativeModes.forEach(mode => {
                     const badge = document.createElement('a');
                     badge.className = 'alternative-badge';
                     badge.href = procurementModeLinks[mode] || '#';
