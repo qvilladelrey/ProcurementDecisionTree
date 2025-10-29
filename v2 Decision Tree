@@ -1746,18 +1746,36 @@
             
             badgesContainer.innerHTML = '';
             
-            if (availableModes.size > 0) {
-                // Convert Set to Array and create badges
-                Array.from(availableModes).forEach(mode => {
-                    const badge = document.createElement('div');
-                    badge.className = 'recommendation-badge';
-                    badge.innerHTML = `${procurementModeEmojis[mode] || '📋'} ${mode}`;
-                    badgesContainer.appendChild(badge);
-                });
-                
-                dynamicContainer.style.display = 'block';
-            } else {
-                dynamicContainer.style.display = 'none';
+        if (availableModes.size > 0) {
+            const alternativeContainer = document.createElement('div');
+            alternativeContainer.className = 'alternative-recommendations';
+        
+            const alternativeTitle = document.createElement('div');
+            alternativeTitle.className = 'alternative-title';
+            alternativeTitle.innerHTML = '<span class="icon">💡</span> Other Recommended Procurement Modes:';
+            alternativeContainer.appendChild(alternativeTitle);
+        
+            const alternativeBadges = document.createElement('div');
+            alternativeBadges.className = 'alternative-badges';
+        
+            // 🧠 Filter out the primary recommendation title
+            const filteredModes = Array.from(availableModes).filter(
+                mode => mode !== result.title
+            );
+        
+            filteredModes.forEach(mode => {
+                const badge = document.createElement('a');
+                badge.className = 'alternative-badge';
+                badge.href = procurementModeLinks[mode] || '#';
+                badge.target = '_blank';
+                badge.innerHTML = `${procurementModeEmojis[mode] || '📋'} ${mode}`;
+                alternativeBadges.appendChild(badge);
+            });
+        
+            // Only show if there are remaining alternatives
+            if (filteredModes.length > 0) {
+                alternativeContainer.appendChild(alternativeBadges);
+                recommendationContainer.appendChild(alternativeContainer);
             }
         }
 
