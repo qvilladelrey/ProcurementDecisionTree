@@ -530,24 +530,27 @@
                 options: {
                     imminentdanger_goods: {
                         text: "Imminent danger to life or property during a state of calamity",
-                        next: "prefer_emergencycases_goods"
-                        triggers: ["Competitive Bidding"]
+                        next: "prefer_emergencycases_goods",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     timeessence_goods: {
                         text: "A need to undertake action since time is of the essence in situations arising from natural or man-made calamities",
-                        next: "prefer_emergencycases_goods"
+                        next: "prefer_emergencycases_goods",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     immediateaction_goods: {
                         text: "A need to undertake immediate action to prevent damage to or loss of life or property or to restore vital public  services, infrastructure facilities,  and other public utilities",
-                        next: "prefer_emergencycases_goods"
+                        next: "prefer_emergencycases_goods",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     otherinstancesemergency_goods: {
                         text: "Other instances aside from the mentioned situations where the provision of life, injury, disease, and other negative effects on human, physical, mental and social well-being, together with damage to property, destruction of assets, loss of services, social and economic disruption and environmental degradation",
-                        next: "prefer_emergencycases_goods"
+                        next: "prefer_emergencycases_goods",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     othersemergency_goods: {
                         text: "❓ Not among the stated options",
-                        next: "typeofgood_b"
+                        next: "cse_goods"
                     }
                 }
             },
@@ -556,24 +559,24 @@
                 options: {
                     yes_prefer_emergencycases_goods: {
                         text: "📋 Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
-                        next: "result_emergency_cases"
+                        next: "result_emergencycases"
                     },
                     different_prefer_emergencycases_goods: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_b"
+                        next: "cse_goods"
+                       }
                     }
-                }
-            },
-            highlyspecialized_goods: {
-                question: "Is the procurement project highly specialized or complex in nature?",
-                options: {
+                },
+                cse_goods: {
+                    question: "Is it CSE?",
+                    options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "previously_procured_goods"
+                        next: "result_underconstruction"
                     },
                     no: {
                         text: "❌ No",
-                        next: "cse_goods_e"
+                        next: "previously_procured_goods"
                     }
                 }
             },
@@ -586,24 +589,28 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_b"
+                        next: "result_underconstruction"
                     }
                 }
             },
             need_goods_a: {
                 question: "Is there a need to:",
                 options: {
-                    immediate_action_goods: {
-                        text: "🚨 Undertake immediate action to prevent damage to or loss of life or property or restore vital public services",
+                    directpurchasenoncse_a: {
+                        text: "🔄 Directly purchase from supplier that has delivered non-CSE to other government agency",
                         next: "contract_rescinded_goods"
                     },
-                    failed_bidding_goods: {
-                        text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
+                    takeovercontract_a: {
+                        text: "🚨Take-over previously awarded contract that was rescinded or terminated for causes provided for in the contract and existing laws, in order to prevent damage to or loss of life or property or restore vital public services, etc.",
                         next: "prefer_failedbidding_goods"
                     },
-                    replenish_goods: {
-                        text: "📋 Replenish Goods procured under a previously awarded contract",
+                    twofailedbidding_a: {
+                        text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
                         next: "competitive_contract_goods"
+                    },
+                    replenishgoods_a: {
+                        text: "📋 Replenish Goods procured under a previously awarded contract",
+                        next: "typeofgood_b"
                     },
                     other_goods_A: {
                         text: "❓ Not among the stated options",
@@ -1329,19 +1336,6 @@
                        }
                     }
                 },
-                cse_goods_e: {
-                    question: "Is it CSE?",
-                    options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "psdbm_available_goods_e"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "noncse_procured_previously_e"
-                       }
-                    }
-                },
                 psdbm_available_goods_e: {
                     question: "Is it available at PS-DBM?",
                     options: {
@@ -1608,6 +1602,11 @@
                 path: []
             },
             result_directprocurementforsti: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_underconstruction: {
                 title: "🚧 Under Construction",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
