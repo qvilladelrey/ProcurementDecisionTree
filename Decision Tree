@@ -1517,7 +1517,7 @@
                 path: []
             },
             result_emergencycases: {
-                title: "🚨 Negotiated Procurement: Emergency Cases",
+                title: "Negotiated Procurement: Emergency Cases",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 link: "Negotiated Procurement_Emergency Cases.pdf",
                 path: []
@@ -1948,6 +1948,18 @@
             
             const recommendationContainer = document.getElementById('recommendationContainer');
             recommendationContainer.innerHTML = '';
+
+            // ✅ Prevent duplication of the main recommendation
+            for (let mode of availableModes) {
+                if (mode.toLowerCase().trim() === result.title.toLowerCase().trim()) {
+                    availableModes.delete(mode);
+                    break;
+                }
+            }
+
+            document.getElementById('homeContainer').style.display = 'none';
+            document.getElementById('questionContainer').style.display = 'none';
+            document.getElementById('resultContainer').style.display = 'block';
             
             // Create primary recommendation with clickable link
             const primaryRecommendation = document.createElement('div');
