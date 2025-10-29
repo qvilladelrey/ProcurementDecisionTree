@@ -1519,7 +1519,7 @@
             result_emergencycases: {
                 title: "🚨 Negotiated Procurement: Emergency Cases",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
-                link: "NP-Emergency Cases.pdf",
+                link: "Negotiated Procurement_Emergency Cases.pdf",
                 path: []
             },
             result_under_construction: {
@@ -1642,7 +1642,7 @@
             "Repeat Order": "📋",
             "Small Value Procurement": "💰",
             "Negotiated Procurement: Two-Failed Biddings": "🔄",
-            "Negotiated Procurement: Emergency Cases": "NP-Emergency Cases.pdf",
+            "Negotiated Procurement: Emergency Cases": "Negotiated Procurement_Emergency Cases.pdf",
             "Negotiated Procurement: Take-over of Contracts": "📋",
             "Negotiated Procurement: Adjacent or Contiguous": "📋",
             "Negotiated Procurement: Agency-to-Agency": "🤝",
