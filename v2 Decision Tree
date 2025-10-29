@@ -373,6 +373,41 @@
             margin-top: 20px;
         }
 
+        .learn-more-btn {
+            display: inline-block;
+            margin-top: 12px;
+            background: #1e3888;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        .learn-more-btn:hover {
+            background: #3a6ea5;
+        }
+        
+        .alternative-badge {
+            background: #f8f9fa;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .alternative-badge:hover {
+            background: #e8f0ff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
+
         @media (max-width: 768px) {
             .decision-container {
                 padding: 25px;
@@ -496,7 +531,7 @@
                 options: {
                     imminentdanger_goods: {
                         text: "Imminent danger to life or property during a state of calamity",
-                        next: "contract_rescinded_goods"
+                        next: "result_emergency_cases"
                     },
                     timeessence_goods: {
                         text: "A need to undertake action since time is of the essence in situations arising from natural or man-made calamities",
@@ -1450,6 +1485,7 @@
             result_emergency_cases: {
                 title: "🚨 Negotiated Procurement: Emergency Cases",
                 description: "This is a mode of procurement that can be adopted in case of imminent danger to life or property during a state of calamity, or when time is of the essence arising from natural or man-made calamities or other causes where immediate action is necessary to prevent damage to or loss of life or property, or to restore vital public services, infrastructure facilities, and other public utilities.",
+                link: "Decision Tree Background.png"
                 path: []
             },
             result_failed_bidding: {
@@ -1499,6 +1535,22 @@
             "Small Value Procurement": "💰",
             "Repeat Order": "📋",
             "Emergency Procurement": "🚨",
+            "Negotiated Procurement": "🤝",
+            "Takeover Procurement": "📋",
+            "Failed Bidding Procurement": "🔄",
+            "Limited Source Bidding": "🎯"
+        };
+
+        // Emoji mapping for procurement modes
+        const procurementModeLinks = {
+            "Direct Procurement": "🤝",
+            "Competitive Bidding": "🏆",
+            "Public-Private Partnership": "🤝",
+            "Request for Proposals": "📋",
+            "Alternative Procurement": "🌟",
+            "Small Value Procurement": "💰",
+            "Repeat Order": "📋",
+            "Emergency Procurement": "Decision Tree Background.png",
             "Negotiated Procurement": "🤝",
             "Takeover Procurement": "📋",
             "Failed Bidding Procurement": "🔄",
@@ -1796,7 +1848,7 @@
             const recommendationContainer = document.getElementById('recommendationContainer');
             recommendationContainer.innerHTML = '';
             
-            // Create primary recommendation
+            // Create primary recommendation with clickable link
             const primaryRecommendation = document.createElement('div');
             primaryRecommendation.className = 'primary-recommendation';
             primaryRecommendation.innerHTML = `
@@ -1807,11 +1859,12 @@
                 <div class="recommendation-description">
                     <strong>${result.title}</strong><br><br>
                     ${result.description}
+                    ${result.link ? `<br><br><a href="${result.link}" target="_blank" class="learn-more-btn">🔗 Learn more about this mode</a>` : ''}
                 </div>
             `;
             recommendationContainer.appendChild(primaryRecommendation);
             
-            // Create alternative recommendations from triggered modes
+            // Create alternative recommendations with clickable badges
             if (availableModes.size > 0) {
                 const alternativeContainer = document.createElement('div');
                 alternativeContainer.className = 'alternative-recommendations';
@@ -1824,10 +1877,11 @@
                 const alternativeBadges = document.createElement('div');
                 alternativeBadges.className = 'alternative-badges';
                 
-                // Convert Set to Array and create badges
                 Array.from(availableModes).forEach(mode => {
-                    const badge = document.createElement('div');
+                    const badge = document.createElement('a');
                     badge.className = 'alternative-badge';
+                    badge.href = procurementModeLinks[mode] || '#';
+                    badge.target = '_blank';
                     badge.innerHTML = `${procurementModeEmojis[mode] || '📋'} ${mode}`;
                     alternativeBadges.appendChild(badge);
                 });
@@ -1836,7 +1890,6 @@
                 recommendationContainer.appendChild(alternativeContainer);
             }
             
-            // Hide dynamic recommendations in final result
             document.getElementById('dynamicRecommendations').style.display = 'none';
         }
 
