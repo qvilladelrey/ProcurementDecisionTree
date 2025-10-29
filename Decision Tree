@@ -30,7 +30,7 @@
             width: 100%;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
         }
 
         h1 {
@@ -169,7 +169,7 @@
         }
 
         .definition-tooltip {
-            position: absolute;
+            position: absolute; /* or fixed if you prefer */
             bottom: 100%;
             left: 50%;
             transform: translateX(-50%);
@@ -178,20 +178,18 @@
             padding: 10px 16px;
             border-radius: 8px;
             font-size: 0.85em;
-            white-space: nowrap;
-            z-index: 1000;
+            white-space: normal;
+            z-index: 9999; /* ensure it's on top */
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             margin-bottom: 5px;
             width: 300px;
-            white-space: normal;
             text-align: center;
             line-height: 1.2;
             max-height: 80px;
             overflow-y: auto;
-            overflow-x: hidden;
         }
 
         .definition-tooltip::after {
