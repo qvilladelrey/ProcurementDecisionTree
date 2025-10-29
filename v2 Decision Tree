@@ -1485,7 +1485,7 @@
             result_emergency_cases: {
                 title: "🚨 Negotiated Procurement: Emergency Cases",
                 description: "This is a mode of procurement that can be adopted in case of imminent danger to life or property during a state of calamity, or when time is of the essence arising from natural or man-made calamities or other causes where immediate action is necessary to prevent damage to or loss of life or property, or to restore vital public services, infrastructure facilities, and other public utilities.",
-                link: "Decision Tree Background.png"
+                link: "Decision Tree Background.png",
                 path: []
             },
             result_failed_bidding: {
