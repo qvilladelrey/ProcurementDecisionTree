@@ -520,11 +520,6 @@
                     🔄 Start Over
                 </button>
             </div>
-
-        <div class="button-container">
-          <button class="restart-btn" onclick="restart()">
-            🔄 Start Over
-          </button>
         
         <!-- ✨ New Feedback Button -->
         <button class="feedback-btn" onclick="openFeedbackForm()">
@@ -2072,6 +2067,4 @@
         document.getElementById('breadcrumbContainer').style.display = 'none';
         document.getElementById('dynamicRecommendations').style.display = 'none';
         window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=t4cJLfDqkEG0q9B_9ONFBILVbW3cIK9Grl4vnQmaLbpUNFZaSkMwOUUyR0MyQ0pRMUVUSFVNN080UCQlQCN0PWcu', '_blank');
-
-
     </script>
