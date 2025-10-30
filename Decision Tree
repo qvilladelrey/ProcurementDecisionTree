@@ -644,7 +644,7 @@
                 options: {
                     directpurchase_noncse: {
                         text: "🔄 Directly purchase from supplier that has delivered non-CSE to other government agency",
-                        next: "result_underconstruction"
+                        next: "directsales_previousprocurement_competitive"
                     },
                     takeovercontract_noncse: {
                         text: "🚨Take-over previously awarded contract that was rescinded or terminated for causes provided for in the contract and existing laws, in order to prevent damage to or loss of life or property or restore vital public services, etc.",
@@ -652,7 +652,7 @@
                     },
                     twofailedbidding_noncse: {
                         text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
-                        next: "result_underconstruction"
+                        next: "prefer_twofailedbidding_noncse"
                     },
                     replenishgoods_noncse: {
                         text: "📋 Replenish Goods procured under a previously awarded contract",
@@ -758,6 +758,19 @@
                 }
             },
             prefer_directsales: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_directsales: {
+                        text: "🤝 Coordinate with the government agency that originally procured the non-CSE",
+                        next: "result_directsales"
+                    },
+                    different_prefer_directsales: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            prefer_twofailedbidding_noncse: {
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directsales: {
