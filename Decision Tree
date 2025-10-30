@@ -575,22 +575,22 @@
                 question: "Is there:",
                 options: {
                     imminentdanger_goods: {
-                        text: "Imminent danger to life or property during a state of calamity",
+                        text: "🌪️ Address imminent danger to life or property during a state of calamity",
                         next: "prefer_emergencycases_goods",
                         triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     timeessence_goods: {
-                        text: "A need to undertake action since time is of the essence in situations arising from natural or man-made calamities",
+                        text: "🔥 Implement prompt measures since time is of the essence in situations arising from natural or man-made calamities",
                         next: "prefer_emergencycases_goods",
                         triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     immediateaction_goods: {
-                        text: "A need to undertake immediate action to prevent damage to or loss of life or property or to restore vital public  services, infrastructure facilities,  and other public utilities",
+                        text: "🚨 A need to undertake immediate action to prevent damage to or loss of life or property or to restore vital public  services, infrastructure facilities,  and other public utilities",
                         next: "prefer_emergencycases_goods",
                         triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     otherinstancesemergency_goods: {
-                        text: "Other instances aside from the mentioned situations where the provision of life, injury, disease, and other negative effects on human, physical, mental and social well-being, together with damage to property, destruction of assets, loss of services, social and economic disruption and environmental degradation",
+                        text: "⚠️ Respond to other instances aside from the mentioned situations where the provision of life, injury, disease, and other negative effects on human, physical, mental and social well-being, together with damage to property, destruction of assets, loss of services, social and economic disruption and environmental degradation",
                         next: "prefer_emergencycases_goods",
                         triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
@@ -686,6 +686,85 @@
                         next: "result_takeoverofcontracts"
                     },
                     different_prefer_takeover_noncse: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            directsales_previousprocurement_competitive: {
+                question: "Was the original Non-CSE procured and awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue or Unsolicited Offer with Bid Matching?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "directsales_certificateofsatisfactoryperformance"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            directsales_certificateofsatisfactoryperformance: {
+                question: "Did the original government agency inspect and accept the same, and has issued a certification that the supplier has satisfactorily performed its obligations under the contract?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "directsales_previousprocurement_sixmonths"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            directsales_previousprocurement_sixmonths: {
+                question: "Is the procurement  only initiated once within six (6) months from the acceptance of the Non-CSE by the original government agency?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "directsales_lowerunitprice"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            directsales_lowerunitprice: {
+                question: "Is the  contract to be executed between the PE & the supplier within the amount of the contract executed with the original government agency, and offered to the PE at the same or lower unit price offered to the original govt agency?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_underconstruction"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            directsales_suppliercapability: {
+                question: "Did the supplier agree to the terms offered by the PE and remains legally, technically, and financially capable to undertake the contract with the PE?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_directsales",
+                        triggers: ["Direct Sales"]
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            prefer_directsales: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_directsales: {
+                        text: "🤝 Coordinate with the government agency that originally procured the non-CSE",
+                        next: "result_directsales"
+                    },
+                    different_prefer_directsales: {
                         text: "🔄 Adopt different procurement mode",
                         next: "result_underconstruction"
                     }
@@ -1106,7 +1185,12 @@
                 // Use image options for yes/no questions
                 if (currentNode === 'cse_goods' || 
                     currentNode === 'previouslyprocured_noncse' || 
-                    currentNode === 'contractrescinded_noncse') {
+                    currentNode === 'contractrescinded_noncse' ||
+                    currentNode === 'directsales_previousprocurement_competitive' ||
+                    currentNode === 'directsales_certificateofsatisfactoryperformance' ||
+                    currentNode === 'directsales_previousprocurement_sixmonths' ||
+                    currentNode === 'directsales_lowerunitprice' ||
+                    currentNode === 'directsales_suppliercapability') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
