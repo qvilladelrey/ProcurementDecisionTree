@@ -1406,7 +1406,8 @@
                     currentNode === 'immediateconsumption' ||
                     currentNode === 'directacquisition_abc_noncse' ||
                     currentNode === 'directacquisition_invoicecompliant_noncse' ||
-                    currentNode === 'smallvalueprocurement_abc') {
+                    currentNode === 'smallvalueprocurement_abc' ||
+                    currentNode === 'prefer_competitivebidding_noncse') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
