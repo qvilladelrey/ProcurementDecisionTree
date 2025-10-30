@@ -622,16 +622,16 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "previously_procured_goods"
+                        next: "previouslyprocured_noncse"
                     }
                 }
             },
-            previously_procured_goods: {
+            previouslyprocured_noncse: {
                 question: "Was the Good procured previously?",
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "need_noncsegoods_a"
+                        next: "need_noncsegoods"
                     },
                     no: {
                         text: "❌ No",
@@ -642,37 +642,51 @@
             need_noncsegoods: {
                 question: "Is there a need to:",
                 options: {
-                    directpurchasenoncse_a: {
+                    directpurchase_noncse: {
                         text: "🔄 Directly purchase from supplier that has delivered non-CSE to other government agency",
                         next: "result_underconstruction"
                     },
-                    takeovercontract_a: {
+                    takeovercontract_noncse: {
                         text: "🚨Take-over previously awarded contract that was rescinded or terminated for causes provided for in the contract and existing laws, in order to prevent damage to or loss of life or property or restore vital public services, etc.",
-                        next: "result_underconstruction"
+                        next: "contractrescinded_noncse"
                     },
-                    twofailedbidding_a: {
+                    twofailedbidding_noncse: {
                         text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
                         next: "result_underconstruction"
                     },
-                    replenishgoods_a: {
+                    replenishgoods_noncse: {
                         text: "📋 Replenish Goods procured under a previously awarded contract",
                         next: "result_underconstruction"
                     },
-                    other_goods_A: {
+                    othergoods_noncse: {
                         text: "❓ Not among the stated options",
                         next: "result_underconstruction"
                     }
                 }
             },
-            contract_rescinded_goods: {
+            contractrescinded_noncse: {
                 question: "Was the contract of the previous bidder rescinded or terminated?",
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_underconstruction"
+                        next: "prefer_takeover_noncse",
+                        triggers: ["Negotiated Procurement: Take-Over of Contracts"]
                     },
                     no: {
                         text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            prefer_takeover_noncse: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_takeover_noncse: {
+                        text: "📋 Post-Qualify and negotiate with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
+                        next: "result_takeoverofcontracts"
+                    },
+                    different_prefer_takeover_noncse: {
+                        text: "🔄 Adopt different procurement mode",
                         next: "result_underconstruction"
                     }
                 }
@@ -1090,33 +1104,9 @@
                 `;
             } else {
                 // Use image options for yes/no questions
-                if (currentNode === 'highlyspecialized_goods' || 
-                    currentNode === 'previously_procured_goods' || 
-                    currentNode === 'contract_rescinded_goods' ||
-                    currentNode === 'competitive_contract_goods' ||
-                    currentNode === 'unitprice_goods' ||
-                    currentNode === 'sixmonthsprocurement_goods' ||
-                    currentNode === 'quantifiable_goods' ||
-                    currentNode === 'preselectedsupplier_goods' ||
-                    currentNode === 'afpmodernizationprogram_goods' ||
-                    currentNode === 'directnegotiationcompatibility_goods' ||
-                    currentNode === 'completecontractdnd_goods' ||
-                    currentNode === 'performancesecurity_goods' ||
-                    currentNode === 'unsolicitedoffer_goods' ||
-                    currentNode === 'abc_goods_c' ||
-                    currentNode === 'prefer_publicbidding_goods_c' ||
-                    currentNode === 'ordinancengo_goods_c' ||
-                    currentNode === 'necessarytools_goods_c' ||
-                    currentNode === 'abc_goods_d' ||
-                    currentNode === 'ordinancengo_goods_d' ||
-                    currentNode === 'necessarytools_goods_d' ||
-                    currentNode === 'ordinancengo_goods_d' ||
-                    currentNode === 'cse_goods_e' ||
-                    currentNode === 'psdbm_available_goods_e' ||
-                    currentNode === 'abc_twohundredthousand_goods_e' ||
-                    currentNode === 'coainvoice_goods_e' ||
-                    currentNode === 'noncse_procured_previously_e' ||
-                    currentNode === 'noncse_competitivecontract_e') {
+                if (currentNode === 'cse_goods' || 
+                    currentNode === 'previouslyprocured_noncse' || 
+                    currentNode === 'contractrescinded_noncse') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
