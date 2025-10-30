@@ -848,6 +848,43 @@
                         next: "result_underconstruction"
                     }
                 }
+            },
+            typeofgood_noncse_b: {
+                question: "Is the Good:",
+                options: {
+                    petroleumproducts: {
+                        text: "⛽ Petroleum Fuel, Oil and Lubricant Products",
+                        next: "result_underconstruction"
+                    },
+                    electronicchargingdevice: {
+                        text: "🚗 Electronic charging device intended for electric vehicles",
+                        next: "result_underconstruction"
+                    },
+                    onlinesubscription: {
+                        text: "💻 Online subscription",
+                        next: "result_underconstruction"
+                    },
+                    agriculturalproduct: {
+                        text: "🌾🐟 Agricultural or fishery product",
+                        next: "result_underconstruction"
+                    },
+                    majordefenseequipment: {
+                        text: "🚁 Major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense",
+                        next: "result_underconstruction"
+                    },
+                    scientifcscholarlyetc: {
+                        text: "🔬🎨💻🎥📚 Scientific, scholarly or artistic work, exclusive technology and/or media services",
+                        next: "result_underconstruction"
+                    },
+                    realpropertyorvenue: {
+                        text: "🏢 Lease of Real Property or Venue",
+                        next: "result_underconstruction"
+                    },
+                    othergoods_noncse: {
+                        text: "❓ Not among the stated options",
+                        next: "result_underconstruction"
+                    }
+                }
             }
         };
 
