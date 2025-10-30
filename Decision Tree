@@ -775,7 +775,7 @@
         const results = {
             result_competitivebidding: {
                 title: "Competitive Bidding",
-                description: "Sample.",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_limitedsourcebidding: {
@@ -890,7 +890,7 @@
                 path: []
             },
             result_directprocurementforsti: {
-                title: "🚧 Under Construction",
+                title: "Direct Procurement for Science, Technology, and Innovation",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
