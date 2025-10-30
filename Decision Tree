@@ -735,7 +735,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_underconstruction"
+                        next: "directsales_suppliercapability"
                     },
                     no: {
                         text: "❌ No",
