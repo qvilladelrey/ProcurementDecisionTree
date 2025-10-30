@@ -442,8 +442,7 @@
         
         .user-guide-container:hover {
           background: #3a6ea5;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+          transform: translateY(-1px);
         }
 
         @media (max-width: 768px) {
