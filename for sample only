@@ -30,7 +30,7 @@
             width: 100%;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
         }
 
         h1 {
@@ -169,7 +169,7 @@
         }
 
         .definition-tooltip {
-            position: absolute;
+            position: absolute; /* or fixed if you prefer */
             bottom: 100%;
             left: 50%;
             transform: translateX(-50%);
@@ -178,20 +178,18 @@
             padding: 10px 16px;
             border-radius: 8px;
             font-size: 0.85em;
-            white-space: nowrap;
-            z-index: 1000;
+            white-space: normal;
+            z-index: 9999; /* ensure it's on top */
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             margin-bottom: 5px;
             width: 300px;
-            white-space: normal;
             text-align: center;
             line-height: 1.2;
             max-height: 80px;
             overflow-y: auto;
-            overflow-x: hidden;
         }
 
         .definition-tooltip::after {
@@ -425,40 +423,27 @@
           transform: translateY(-1px);
         }
 
+        /* Floating User Guide Container */
         .user-guide-container {
-          background: #f0f4fa;
-          border-radius: 15px;
-          padding: 25px;
-          margin-top: 30px;
-          text-align: center;
-          box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-        }
-        
-        .user-guide-container h2 {
-          color: #1e3888;
-          font-size: 1.5em;
-          margin-bottom: 10px;
-        }
-        
-        .user-guide-container p {
-          color: #555;
-          font-size: 1em;
-          margin-bottom: 15px;
-        }
-        
-        .user-guide-btn {
-          display: inline-block;
-          background: #1e3888;
+          position: fixed;
+          bottom: 25px;
+          right: 25px;
+          background: linear-gradient(135deg, #1e3888, #3a6ea5);
           color: white;
-          padding: 12px 20px;
-          border-radius: 8px;
-          text-decoration: none;
+          padding: 14px 20px;
+          border-radius: 12px;
+          font-size: 1em;
           font-weight: 500;
-          transition: background 0.3s ease;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+          cursor: pointer;
+          transition: all 0.3s ease;
+          z-index: 9999;
         }
         
-        .user-guide-btn:hover {
+        .user-guide-container:hover {
           background: #3a6ea5;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
 
         @media (max-width: 768px) {
@@ -563,11 +548,9 @@
             </div>
         </div>
 
-        <!-- User Guide Container -->
-        <div class="user-guide-container">
-          <h2>📘 User Guide</h2>
-          <p>Need help understanding how to use this Decision Tree? Access the full User Guide below:</p>
-          <a href="UserGuide.pdf" target="_blank" class="user-guide-btn">🔗 Open User Guide</a>
+        <!-- Floating User Guide Button -->
+        <div class="user-guide-container" onclick="openUserGuide()">
+          📘 User Guide
         </div>
 
     </div>
@@ -2112,6 +2095,11 @@
 
         function openFeedbackForm() {
         window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=t4cJLfDqkEG0q9B_9ONFBILVbW3cIK9Grl4vnQmaLbpUNFZaSkMwOUUyR0MyQ0pRMUVUSFVNN080UCQlQCN0PWcu', '_blank');
+        }
+
+        function openUserGuide() {
+          window.open('User_Guide.pdf', '_blank'); 
+          // Replace 'User_Guide.pdf' with your actual link or URL
         }
 
 </script>
