@@ -700,37 +700,42 @@
                 path: []
             },
             result_limitedsourcebidding: {
-                title: "🚧 Under Construction",
+                title: "Limited Source Bidding",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_competitivedialogue: {
+                title: "Competitive Dialogue",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_unsolicitedofferwithbidmatching: {
-                title: "🚧 Under Construction",
+                title: "Unsolicited Offer with Bid Matching",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_directcontracting: {
-                title: "🚧 Under Construction",
+                title: "Direct Contracting",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_directacquisition: {
-                title: "🚧 Under Construction",
+                title: "Direct Acquisition",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_repeatorder: {
-                title: "🚧 Under Construction",
+                title: "Repeat Order",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_smallvalueprocurement: {
-                title: "🚧 Under Construction",
+                title: "Small Value Procurement",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_twofailedbiddings: {
-                title: "🚧 Under Construction",
+                title: "Negotiated Procurement: Two-Failed Biddings",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
@@ -740,63 +745,53 @@
                 link: "Negotiated Procurement_Emergency Cases.pdf",
                 path: []
             },
-            result_under_construction: {
-                title: "🚧 Under Construction",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
-                path: []
-            },
             result_takeoverofcontracts: {
-                title: "🚧 Under Construction",
+                title: "Negotiated Procurement: Take-Over of Contracts",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_adjacentorcontiguous: {
-                title: "🚧 Under Construction",
+                title: "Negotiated Procurement: Adjacent or Contiguous",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_agencytoagency: {
-                title: "🚧 Under Construction",
+                title: "Negotiated Procurement: Agency-to-Agency",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_scientificscholarlyetc: {
-                title: "🚧 Under Construction",
+                title: "Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_highlytechnicalconsultants: {
-                title: "🚧 Under Construction",
+                title: "Negotiated Procurement: Highly Technical Consultants",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_defensecooperationagreement: {
-                title: "🚧 Under Construction",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
-                path: []
-            },
-            result_under_construction: {
-                title: "🚧 Under Construction",
+                title: "Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_leaseofrealproperty: {
-                title: "🚧 Under Construction",
+                title: "Negotiated Procurement: Lease of Real Property and Venue",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_ngoparticipation: {
-                title: "🚧 Under Construction",
+                title: "Negotiated Procurement: Non-Government Organization (NGO) Participation",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_communityparticipation: {
-                title: "🚧 Under Construction",
+                title: "Negotiated Procurement: Community Participation",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
             result_unagencies: {
-                title: "🚧 Under Construction",
+                title: "Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
@@ -806,7 +801,12 @@
                 path: []
             },
             result_directsales: {
-                title: "🚧 Under Construction",
+                title: "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
+            },
+            result_directsales: {
+                title: "Direct Sales",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             },
