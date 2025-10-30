@@ -854,11 +854,11 @@
                 options: {
                     petroleumproducts: {
                         text: "⛽ Petroleum Fuel, Oil and Lubricant Products",
-                        next: "result_underconstruction"
+                        next: "retailpumpprice"
                     },
                     electronicchargingdevice: {
                         text: "🚗 Electronic charging device intended for electric vehicles",
-                        next: "result_underconstruction"
+                        next: "retailpumpprice"
                     },
                     onlinesubscription: {
                         text: "💻 Online subscription",
@@ -883,6 +883,97 @@
                     othergoods_noncse: {
                         text: "❓ Not among the stated options",
                         next: "result_underconstruction"
+                    }
+                }
+            },
+            retailpumpprice: {
+                question: "Is it available from retailers, dealers, or gas stations at retail pump price?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "immediateconsumption"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            immediateconsumption: {
+                question: "Will it be used for any official government vehicle and equipment for immediate consumption?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "directacquisition_abc_noncse"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            directacquisition_abc_noncse: {
+                question: "Is the ABC less than Php 200,000.00?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "directacquisition_invoicecompliant_noncse"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "smallvalueprocurement_abc"
+                    }
+                }
+            },
+            directacquisition_invoicecompliant_noncse: {
+                question: "Does the supplier issue invoices compliant with the Bureau of Internal Revenue (BIR) and Commission on Audit (COA)?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_directacquisition_noncse"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            prefer_directacquisition_noncse: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_directacquisition_noncse: {
+                        text: "🤝 Adopting Direct Acquisition",
+                        next: "result_directacquisition"
+                    },
+                    different_prefer_directacquisition_noncse: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            smallvalueprocurement_abc: {
+                question: "Is the ABC more than P2 million?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse"
+                    }
+                }
+            },
+            prefer_competitivebidding_noncse: {
+                question: "Do you prefer/have the capacity to undertake the public bidding process?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_smallvalueprocurement"
                     }
                 }
             }
@@ -1310,7 +1401,12 @@
                     currentNode === 'repeatorder_previousprocurement_competitive_noncse' ||
                     currentNode === 'repeatorder_lowerunitprice_noncse' ||
                     currentNode === 'repeatorder_previousprocurement_sixmonths_noncse' ||
-                    currentNode === 'repeatorder_quantifiablegood_noncse') {
+                    currentNode === 'repeatorder_quantifiablegood_noncse' ||
+                    currentNode === 'retailpumpprice' ||
+                    currentNode === 'immediateconsumption' ||
+                    currentNode === 'directacquisition_abc_noncse' ||
+                    currentNode === 'directacquisition_invoicecompliant_noncse' ||
+                    currentNode === 'smallvalueprocurement_abc') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
