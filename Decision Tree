@@ -656,7 +656,7 @@
                     },
                     replenishgoods_noncse: {
                         text: "📋 Replenish Goods procured under a previously awarded contract",
-                        next: "result_underconstruction"
+                        next: "repeatorder_previousprocurement_competitive_noncse"
                     },
                     othergoods_noncse: {
                         text: "❓ Not among the stated options",
@@ -773,11 +773,77 @@
             prefer_twofailedbidding_noncse: {
                 question: "Do you prefer to:",
                 options: {
-                    yes_prefer_directsales: {
-                        text: "🤝 Coordinate with the government agency that originally procured the non-CSE",
+                    yes_prefer_twofailedbidding_noncse: {
+                        text: "📋 To Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
                         next: "result_directsales"
                     },
-                    different_prefer_directsales: {
+                    different_prefer_twofailedbidding_noncse: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            repeatorder_previousprocurement_competitive_noncse: {
+                question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "repeatorder_lowerunitprice_noncse"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            repeatorder_lowerunitprice_noncse: {
+                question: "Is the unit price equal to or lower than that provided in the original contract and the prevailing market price?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "repeatorder_previousprocurement_sixmonths_noncse"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            repeatorder_previousprocurement_sixmonths_noncse: {
+                question: "Is the procurement within six (6) months from the date of the NTP arising from the original contract?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "repeatorder_quantifiablegood_noncse"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            repeatorder_quantifiablegood_noncse: {
+                question: "Is the Good quantifiable, divisible, and consisting of at least four (4) units per item, and does not exceed 25% of the quantity of each item in the original contract?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_repeatorder_noncse",
+                        triggers: ["Repeat Order"]
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            prefer_repeatorder_noncse: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_repeatorder_noncse: {
+                        text: "🤝 Coordinate with the government agency that originally procured the non-CSE",
+                        next: "result_repeatorder"
+                    },
+                    different_prefer_repeatorder_noncse: {
                         text: "🔄 Adopt different procurement mode",
                         next: "result_underconstruction"
                     }
@@ -1203,7 +1269,11 @@
                     currentNode === 'directsales_certificateofsatisfactoryperformance' ||
                     currentNode === 'directsales_previousprocurement_sixmonths' ||
                     currentNode === 'directsales_lowerunitprice' ||
-                    currentNode === 'directsales_suppliercapability') {
+                    currentNode === 'directsales_suppliercapability' ||
+                    currentNode === 'repeatorder_previousprocurement_competitive_noncse' ||
+                    currentNode === 'repeatorder_lowerunitprice_noncse' ||
+                    currentNode === 'repeatorder_previousprocurement_sixmonths_noncse' ||
+                    currentNode === 'repeatorder_quantifiablegood_noncse') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
