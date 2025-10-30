@@ -408,6 +408,23 @@
             box-shadow: 0 6px 16px rgba(0,0,0,0.15);
         }
 
+        .feedback-btn {
+          background: #007bff;
+          color: white;
+          border: none;
+          padding: 15px 30px;
+          border-radius: 10px;
+          font-size: 1em;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-weight: 500;
+        }
+        
+        .feedback-btn:hover {
+          background: #0056b3;
+          transform: translateY(-1px);
+        }
+
         @media (max-width: 768px) {
             .decision-container {
                 padding: 25px;
@@ -502,6 +519,17 @@
                 <button class="restart-btn" onclick="restart()">
                     🔄 Start Over
                 </button>
+            </div>
+
+        <div class="button-container">
+          <button class="restart-btn" onclick="restart()">
+            🔄 Start Over
+          </button>
+        
+        <!-- ✨ New Feedback Button -->
+        <button class="feedback-btn" onclick="openFeedbackForm()">
+            💬 Give Feedback
+            </button>
             </div>
         </div>
     </div>
@@ -2043,4 +2071,7 @@
         document.getElementById('resultContainer').style.display = 'none';
         document.getElementById('breadcrumbContainer').style.display = 'none';
         document.getElementById('dynamicRecommendations').style.display = 'none';
+        window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=t4cJLfDqkEG0q9B_9ONFBILVbW3cIK9Grl4vnQmaLbpUNFZaSkMwOUUyR0MyQ0pRMUVUSFVNN080UCQlQCN0PWcu', '_blank');
+
+
     </script>
