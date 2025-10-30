@@ -423,6 +423,22 @@
           transform: translateY(-1px);
         }
 
+        .user-guide-container {
+          position: fixed;
+          bottom: 25px;
+          right: 25px;
+          background: linear-gradient(135deg, #1e3888, #3a6ea5);
+          color: white;
+          padding: 14px 20px;
+          border-radius: 12px;
+          font-size: 1em;
+          font-weight: 500;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+          cursor: pointer;
+          transition: all 0.3s ease;
+          z-index: 9999;
+        }
+
         @media (max-width: 768px) {
             .decision-container {
                 padding: 25px;
@@ -524,6 +540,11 @@
             </button>
             </div>
         </div>
+
+        <div class="user-guide-container" onclick="openUserGuide()">
+          📘 User Guide
+        </div>
+
     </div>
 
     <script>
@@ -2066,6 +2087,10 @@
 
         function openFeedbackForm() {
         window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=t4cJLfDqkEG0q9B_9ONFBILVbW3cIK9Grl4vnQmaLbpUNFZaSkMwOUUyR0MyQ0pRMUVUSFVNN080UCQlQCN0PWcu', '_blank');
+        }
+
+        function openUserGuide() {
+          window.open('User_Guide.pdf', '_blank'); 
         }
 
 </script>
