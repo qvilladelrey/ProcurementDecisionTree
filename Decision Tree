@@ -529,7 +529,7 @@
                     imminentdanger_goods: {
                         text: "Imminent danger to life or property during a state of calamity",
                         next: "prefer_emergencycases_goods",
-                        triggers: ["Negotiated Procurement: Emergency Cases"]
+                        triggers: ["Negotiated Procurement: Emergency Cases", "Competitive Bidding", "Small Value Procurement"]
                     },
                     timeessence_goods: {
                         text: "A need to undertake action since time is of the essence in situations arising from natural or man-made calamities",
