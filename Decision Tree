@@ -862,7 +862,7 @@
                     },
                     onlinesubscription: {
                         text: "💻 Online subscription",
-                        next: "result_underconstruction"
+                        next: "onlinesubscription_availablepsdbm"
                     },
                     agriculturalproduct: {
                         text: "🌾🐟 Agricultural or fishery product",
@@ -874,11 +874,11 @@
                     },
                     scientifcscholarlyetc: {
                         text: "🔬🎨💻🎥📚 Scientific, scholarly or artistic work, exclusive technology and/or media services",
-                        next: "result_underconstruction"
+                        next: "typeofgood_scientificscholarly_noncse"
                     },
                     realpropertyorvenue: {
                         text: "🏢 Lease of Real Property or Venue",
-                        next: "result_underconstruction"
+                        next: "publicownedvenue"
                     },
                     othergoods_noncse: {
                         text: "❓ Not among the stated options",
@@ -995,7 +995,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_underconstruction"
+                        next: "smallvalueprocurement_abc"
                     },
                     no: {
                         text: "❌ No",
@@ -1073,7 +1073,20 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "afpmodernizationprogram_directnegotiation"
+                        next: "afpmodernizationprogram_directnegotiation_noncse"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_defensecooperation_noncse"
+                    }
+                }
+            },
+            afpmodernizationprogram_directnegotiation_noncse: {
+                question: "Will direct negotiation address compatibility, interoperability, and sustainability?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "afpmodernizationprogram_previouscontract_noncse"
                     },
                     no: {
                         text: "❌ No",
@@ -1081,8 +1094,98 @@
                     }
                 }
             },
-            afpmodernizationprogram_directnegotiation: {
-                question: "Will direct negotiation address compatibility, interoperability, and sustainability?",
+            afpmodernizationprogram_previouscontract_noncse: {
+                question: "Has the supplier/manufacturer fully & satisfactorily implemented a contract of the same item with the DND, any of its bureaus or attached agencies, or law enforcement agencies?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "afpmodernizationprogram_performancesecurity_noncse"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            afpmodernizationprogram_performancesecurity_noncse: {
+                question: "Will the supplier or manufacturer provide performance security in accordance with RA 12009?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_defensecooperation_noncse"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            prefer_defensecooperation_noncse: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_defensecooperation_noncse: {
+                        text: "🤝 Adopting Direct Retail",
+                        next: "result_defensecooperationagreement"
+                    },
+                    different_prefer_defensecooperation_noncse: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            typeofgood_scientificscholarly_noncse: {
+                question: "Is the Good:",
+                options: {
+                    workofart: {
+                        text: "🎨 Work of art; commissioned work or services for creative design or a specific artist skill (e.g., singer, performer, poet, writer, painter, sculptor, etc.)",
+                        next: "prefer_scientificscholarly_noncse"
+                    },
+                    scientificpublication: {
+                        text: "📚 Scientific, technical, economic, business, trade or legal journal, magazine, paper, subscription, or other exclusive statistical publications and references",
+                        next: "prefer_scientificscholarly_noncse"
+                    },
+                    medicalbiotech: {
+                        text: "🔬 Highly specialized life-saving medical and biotech equipment and devices, medicine, supplies, materials, tools and consumables, as certified by the Department of Health",
+                        next: "prefer_scientificscholarly_noncse"
+                    },
+                    mediadocumentation: {
+                        text: "🎥 Media documentation, advertisement, or announcement through television, radio, newspaper, internet, and other communication media",
+                        next: "prefer_scientificscholarly_noncse"
+                    },
+                    othergoods_scientificscholarlyetc_noncse: {
+                        text: "❓ Not among the stated options",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            prefer_scientificscholarly_noncse: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_scientificscholarly_noncse: {
+                        text: "🤝 Adopting Negotiated Procurement",
+                        next: "result_scientificscholarlyetc"
+                    },
+                    different_prefer_scientificscholarly_noncse: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            publicownedvenue: {
+                question: "Is the real property or venue publicly-owned/ from other government agency?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_underconstruction"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "efficientandeconomical_venue"
+                    }
+                }
+            },
+            efficientandeconomical_venue: {
+                question: "Is the offer of the private supplier more efficient and economical to the government?",
                 options: {
                     yes: {
                         text: "✅ Yes",
