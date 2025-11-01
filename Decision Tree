@@ -1016,7 +1016,20 @@
                     }
                 }
             },
-            prefer_directretail_onlinesubscription: {
+            onlinesubscription_abc_hopeapproval: {
+                question: "Is the ABC below 5 million (with HoPE approval)?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_publicbidding_onlinesubscription"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_competitivebidding"
+                    }
+                }
+            },
+            prefer_publicbidding_onlinesubscription: {
                 question: "Do you prefer/have the capacity to undertake the public bidding process?",
                 options: {
                     yes: {
@@ -1029,29 +1042,16 @@
                     }
                 }
             },
-            onlinesubscription_abc_hopeapproval: {
-                question: "Is the ABC below 5 million (with HoPE approval)?",
+            prefer_directretail_onlinesubscription: {
+                question: "Do you prefer/have the capacity to undertake the public bidding process?",
                 options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "result_directretailofpol"
+                    yes_prefer_directacquisition_noncse: {
+                        text: "🤝 Adopting Direct Acquisition",
+                        next: "result_directacquisition"
                     },
-                    no: {
-                        text: "❌ No",
-                        next: "result_competitivebidding"
-                    }
-                }
-            },
-            onlinesubscription_smallvalueprocurement_abc: {
-                question: "Is the ABC more than P2 million?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "result_competitivebidding"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "prefer_competitivebidding_noncse"
+                    different_prefer_directacquisition_noncse: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_underconstruction"
                     }
                 }
             }
