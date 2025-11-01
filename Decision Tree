@@ -1474,7 +1474,7 @@
                         next: "result_limitedsourcebidding"
                     },
                     othergoods_directcontracting_noncse: {
-                        text: "❓ Not among the stated options"
+                        text: "❓ Not among the stated options",
                         next: "typeofsupplier_noncse"
                     }
                 }
@@ -1499,7 +1499,7 @@
                         next: "prefer_localcommunity_noncse"
                     },
                     othersupplier_noncse: {
-                        text: "❓ Not among the stated options"
+                        text: "❓ Not among the stated options",
                         next: "typeofgood_directacquisition_noncse"
                     }
                 }
@@ -1528,7 +1528,7 @@
                         triggers: ["Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations"]
                     },
                     othergoods_unagency_noncse: {
-                        text: "❓ Not among the stated options"
+                        text: "❓ Not among the stated options",
                         next: "typeofgood_directacquisition_noncse"
                     }
                 }
@@ -1638,7 +1638,7 @@
                         next: "availability_directacquisition_noncse"
                     },
                     othergoods_directacquisition_noncse: {
-                        text: "❓ Not among the stated options"
+                        text: "❓ Not among the stated options",
                         next: "smallvalueprocurement_abc"
                     }
                 }
@@ -1659,7 +1659,7 @@
                         next: "directacquisition_invoicecompliant_noncse"
                     },
                     otheravailability_directacquisition_noncse: {
-                        text: "❓ Not among the stated options"
+                        text: "❓ Not among the stated options",
                         next: "smallvalueprocurement_abc"
                     }
                 }
@@ -1870,7 +1870,7 @@
                         next: "availability_directacquisition_cse"
                     },
                     othergoods_directacquisition_cse: {
-                        text: "❓ Not among the stated options"
+                        text: "❓ Not among the stated options",
                         next: "smallvalueprocurement_abc"
                     }
                 }
@@ -1891,7 +1891,7 @@
                         next: "directacquisition_invoicecompliant_cse"
                     },
                     otheravailability_directacquisition_cse: {
-                        text: "❓ Not among the stated options"
+                        text: "❓ Not among the stated options",
                         next: "smallvalueprocurement_abc"
                     }
                 }
@@ -2061,7 +2061,7 @@
             "Small Value Procurement": "💰",
             "Negotiated Procurement: Two-Failed Biddings": "🔄",
             "Negotiated Procurement: Emergency Cases": "🚨",
-            "Negotiated Procurement: Take-over of Contracts": "📋",
+            "Negotiated Procurement: Take-Over of Contracts": "📋",
             "Negotiated Procurement: Adjacent or Contiguous": "📋",
             "Negotiated Procurement: Agency-to-Agency": "🤝",
             "Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services": "🎓",
@@ -2088,7 +2088,7 @@
             "Small Value Procurement": "💰",
             "Negotiated Procurement: Two-Failed Biddings": "🔄",
             "Negotiated Procurement: Emergency Cases": "Negotiated Procurement_Emergency Cases.pdf",
-            "Negotiated Procurement: Take-over of Contracts": "📋",
+            "Negotiated Procurement: Take-Over of Contracts": "📋",
             "Negotiated Procurement: Adjacent or Contiguous": "📋",
             "Negotiated Procurement: Agency-to-Agency": "🤝",
             "Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services": "🎓",
