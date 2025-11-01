@@ -563,11 +563,11 @@
                     },
                     infrastructure: {
                         text: "🏗️ Infrastructure Projects",
-                        next: "result_under_construction"
+                        next: "result_underconstruction"
                     },
                     consulting: {
                         text: "🤝 Consulting Services",
-                        next: "result_under_construction"
+                        next: "result_underconstruction"
                     }
                 }
             },
@@ -806,7 +806,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_noncse_b
+                        next: "typeofgood_noncse_b"
                     }
                 }
             },
@@ -1440,7 +1440,7 @@
                         triggers: ["Direct Contracting"]
                     },
                     othergoods_directcontracting_noncse: {
-                        text: "❓ Not among the stated options"
+                        text: "❓ Not among the stated options",
                         next: "typeofsupplier_noncse"
                     }
                 }
@@ -2028,11 +2028,6 @@
                 path: []
             },
             result_directretailofpol: {
-                title: "🚧 Under Construction",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
-                path: []
-            },
-            result_directsales: {
                 title: "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions",
                 description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
