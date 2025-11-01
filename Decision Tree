@@ -1254,7 +1254,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_underconstruction"
+                        next: "typeofgood_unsolicitedofferwithbidmatching_noncse"
                     },
                     no: {
                         text: "❌ No",
@@ -1339,7 +1339,33 @@
                     },
                     different_prefer_directsti_noncse: {
                         text: "🔄 Adopt different procurement mode",
+                        next: "totalsuppliers_noncse"
+                    }
+                }
+            },
+            totalsuppliers_noncse: {
+                question: "Based on your market scoping, how many capable suppliers are available?",
+                options: {
+                    one_directcontracting_noncse: {
+                        text: "One (1)",
+                        next: "typeofgood_directcontracting_noncse"
+                    },
+                    morethanone_limitedsourcebidding_noncse: {
+                        text: "More than one (1)",
+                        next: "approvedlist_limitedsourcebidding_noncse"
+                    }
+                }
+            },
+            approvedlist_limitedsourcebidding_noncse: {
+                question: "Are the set of pre-selected suppliers included in the govt approved or self-generated supplier list?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
                         next: "typeofgood_limitedsourcebidding_noncse"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
                     }
                 }
             },
@@ -1348,11 +1374,11 @@
                 options: {
                     majorplantcomponent: {
                         text: "A major plant component where it is deemed advantageous to limit the bidding to known eligible bidders in order to maintain an optimum and uniform level of quality and performance of the plant as a whole",
-                        next: "result_underconstruction"
+                        next: "prefer_limitedsourcebidding_noncse"
                     },
                     highlyspecialized_noncse: {
                         text: "Goods which include products of a commissioned task by a PE which where processed, developed, and manufactured in satisfaction of its needs and requirements, which include: (i) pre-commercial goods and services that involve early market engagement to stimulate the development of new goods and services that meet specific government needs; and (ii) goods to be manufactured by qualified start up businesses alongside the thrust to develop and support new businesses",
-                        next: "result_underconstruction"
+                        next: "prefer_limitedsourcebidding_noncse"
                     },
                     othergoods_limitedsourcebidding_noncse: {
                         text: "❓ Not among the stated options",
@@ -1360,15 +1386,94 @@
                     }
                 }
             },
-            approvedsupplierlist_noncse: {
-                question: "Is the Good to be used actually, exclusively, and directly in the conduct of research and development projects or activities?",
+            prefer_limitedsourcebidding_noncse: {
+                question: "Do you prefer to:",
                 options: {
-                    yes: {
-                        text: "✅ Yes",
+                    yes_prefer_limitedsourcebidding_noncse: {
+                        text: "🤝 Direct invitation to bid by the PE to a set of pre-selected suppliers",
+                        next: ""
+                    },
+                    different_prefer_limitedsourcebidding_noncse: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            typeofgood_directcontracting_noncse: {
+                question: "Is the Good:",
+                options: {
+                    exclusivedealer_noncse: {
+                        text: "Sold by an exclusive dealer or manufacturer which does not have sub-dealers selling at lower prices and for which no suitable substitute can be obtained at more advantageous terms to the government",
+                        next: "prefer_directcontracting_noncse"
+                    },
+                    criticalcomponent_noncse: {
+                        text: "A critical component from a specific manufacturer, supplier, or distributor is a condition precedent to hold a service provider to guarantee its project performance, in accordance with the provisions of the contract, as determined by the EU/IU",
+                        next: "prefer_directcontracting_noncse"
+                    },
+                    proprietarygood_noncse: {
+                        text: "Proprietary in nature, which can only be obtained from the proprietary source; or when patents, trade secrets, and copyrights prohibit others from manufacturing the same item, as supported by relevant documentary evidence issued by competent authority",
+                        next: "prefer_directcontracting_noncse"
+                    },
+                    othergoods_directcontracting_noncse: {
+                        text: "❓ Not among the stated options"
+                    }
+                }
+            },
+            prefer_directcontracting_noncse: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_directcontracting_noncse: {
+                        text: "🤝 Adopt Direct Contracting and prepare Price Quotation or Pro Forma Invoice w/ Conditions of Sale",
+                        next: "result_directcontracting"
+                    },
+                    different_prefer_directcontracting_noncse: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            typeofgood_unsolicitedofferwithbidmatching_noncse: {
+                question: "Does the Good:",
+                options: {
+                    exclusivedealer_noncse: {
+                        text: "Sold by an exclusive dealer or manufacturer which does not have sub-dealers selling at lower prices and for which no suitable substitute can be obtained at more advantageous terms to the government",
+                        next: "result_limitedsourcebidding"
+                    },
+                    criticalcomponent_noncse: {
+                        text: "A critical component from a specific manufacturer, supplier, or distributor is a condition precedent to hold a service provider to guarantee its project performance, in accordance with the provisions of the contract, as determined by the EU/IU",
+                        next: "result_limitedsourcebidding"
+                    },
+                    proprietarygood_noncse: {
+                        text: "Proprietary in nature, which can only be obtained from the proprietary source; or when patents, trade secrets, and copyrights prohibit others from manufacturing the same item, as supported by relevant documentary evidence issued by competent authority",
+                        next: "result_limitedsourcebidding"
+                    },
+                    othergoods_directcontracting_noncse: {
+                        text: "❓ Not among the stated options"
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            typeofsupplier_noncse: {
+                question: "Is the supplier:",
+                options: {
+                    unagency_noncse: {
+                        text: "United Nations (UN) Agencies, International Organizations  or International Financing Institutions",
                         next: "result_underconstruction"
                     },
-                    no: {
-                        text: "❌ No",
+                    ngo_noncse: {
+                        text: "SEC registered non-stock, non-profit domestic corporation OR CDA-registered cooperative",
+                        next: "result_underconstruction"
+                    },
+                    governmentagency_noncse: {
+                        text: "Another agency that has the mandate and absorptive capacity to undertake the project, as validated by the PE",
+                        next: "result_underconstruction"
+                    },
+                    community_noncse: {
+                        text: "Part of a local community or social groups  (CSG)",
+                        next: "result_underconstruction"
+                    },
+                    othersupplier_noncse: {
+                        text: "❓ Not among the stated options"
                         next: "result_underconstruction"
                     }
                 }
