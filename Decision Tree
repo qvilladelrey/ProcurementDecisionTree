@@ -1700,7 +1700,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_underconstruction"
+                        next: "previouslyprocured_cse"
                     }
                 }
             },
