@@ -258,7 +258,7 @@
         }
 
         .primary-recommendation {
-            background: linear-gradient(135deg, #1e3888, #3a6ea5);
+            background: linear-gradient(90deg, #D0EBFF, #A2D2FF, #74C0FC);
             color: white;
             padding: 25px;
             border-radius: 15px;
