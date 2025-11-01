@@ -1267,18 +1267,78 @@
                 options: {
                     innovativedesign_competitivedialogue_noncse: {
                         text: "Include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility",
-                        next: "result_underconstruction"
+                        next: "prefer_competitivedialogue_noncse"
                     },
                     priornegotiation_competitivedialogue_noncse: {
                         text: "Has a contract that requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
-                        next: "result_underconstruction"
+                        next: "prefer_competitivedialogue_noncse"
                     },
                     undefinedtechspecs_competitivedialogue_noncse: {
                         text: "Has Technical Specifications that cannot be sufficiently established or precisely defined by the PE",
-                        next: "result_underconstruction"
+                        next: "prefer_competitivedialogue_noncse"
                     },
                     othergoods_competitivedialogue_noncse: {
                         text: "❓ Not among the stated options",
+                        next: "researchuse_noncse"
+                    }
+                }
+            },
+            prefer_competitivedialogue_noncse: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_competitivedialogue_noncse: {
+                        text: "🤝 Employ a 2-stage bidding process where the PE invites suppliers etc., to propose solutions to address its needs and requirements",
+                        next: "result_agencytoagency"
+                    },
+                    different_prefer_competitivedialogue_noncse: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "researchuse_noncse"
+                    }
+                }
+            },
+            researchuse_noncse: {
+                question: "Is the Good to be used actually, exclusively, and directly in the conduct of research and development projects or activities?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "typeofgood_sti_noncse"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            typeofgood_sti_noncse: {
+                question: "Is the Good:",
+                options: {
+                    actualscience: {
+                        text: "Supplies, materials, equipment and related services to be used actually, exclusively, and directly in the conduct of research and development projects or activities",
+                        next: "prefer_directsti_noncse"
+                    },
+                    priornegotiation_competitivedialogue_noncse: {
+                        text: "Goods which include products of a commissioned task by a PE which where processed, developed, and manufactured in satisfaction of its needs and requirements, which include: (i) pre-commercial goods and services that involve early market engagement to stimulate the development of new goods and services that meet specific government needs; and (ii) goods to be manufactured by qualified start up businesses alongside the thrust to develop and support new businesses",
+                        next: "prefer_directsti_noncse"
+                    },
+                    sti_analogous: {
+                        text: "Other analogous goods",
+                        next: "prefer_directsti_noncse"
+                    },
+                    othergoods_sti_noncse: {
+                        text: "❓ Not among the stated options",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            prefer_directsti_noncse: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_directsti_noncse: {
+                        text: "🤝 Adopting Direct Procurement",
+                        next: "result_underconstruction"
+                    },
+                    different_prefer_directsti_noncse: {
+                        text: "🔄 Adopt different procurement mode",
                         next: "result_underconstruction"
                     }
                 }
