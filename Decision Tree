@@ -1176,7 +1176,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_underconstruction"
+                        next: "agencymandate_realpropertyvenue"
                     },
                     no: {
                         text: "❌ No",
@@ -1189,11 +1189,37 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
+                        next: "prefer_realpropertyvenue_noncse"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "smallvalueprocurement_abc"
+                    }
+                }
+            },
+            prefer_realpropertyvenue_noncse: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_realpropertyvenue: {
+                        text: "🤝 Adopting Negotiated Procurement",
+                        next: "result_leaseofrealproperty"
+                    },
+                    different_prefer_realpropertyvenue: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "smallvalueprocurement_abc"
+                    }
+                }
+            },
+            agencymandate_realpropertyvenue: {
+                question: "Is the government agency mandated to undertake the project?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
                         next: "result_underconstruction"
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_underconstruction"
+                        next: "efficientandeconomical_venue"
                     }
                 }
             }
