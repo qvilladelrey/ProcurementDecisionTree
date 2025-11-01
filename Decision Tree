@@ -866,11 +866,11 @@
                     },
                     agriculturalproduct: {
                         text: "🌾🐟 Agricultural or fishery product",
-                        next: "result_underconstruction"
+                        next: "sagipsaka_accreditedffce"
                     },
                     majordefenseequipment: {
                         text: "🚁 Major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense",
-                        next: "result_underconstruction"
+                        next: "afpmodernizationprogram_noncse"
                     },
                     scientifcscholarlyetc: {
                         text: "🔬🎨💻🎥📚 Scientific, scholarly or artistic work, exclusive technology and/or media services",
@@ -1043,14 +1043,53 @@
                 }
             },
             prefer_directretail_onlinesubscription: {
-                question: "Do you prefer/have the capacity to undertake the public bidding process?",
+                question: "Do you prefer to:",
                 options: {
-                    yes_prefer_directacquisition_noncse: {
-                        text: "🤝 Adopting Direct Acquisition",
+                    yes_prefer_directretail_onlinesubscription: {
+                        text: "🤝 Adopting Direct Retail",
                         next: "result_directacquisition"
                     },
-                    different_prefer_directacquisition_noncse: {
+                    different_prefer_directretail_onlinesubscription: {
                         text: "🔄 Adopt different procurement mode",
+                        next: "prefer_publicbidding_onlinesubscription"
+                    }
+                }
+            },
+            sagipsaka_accreditedffce: {
+                question: "Is the supplier an accredited FFCE?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_underconstruction"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            afpmodernizationprogram_noncse: {
+                question: "Is the Good included in the AFP Modernization Program previously approved by the President of the Philippines?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "afpmodernizationprogram_directnegotiation"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            afpmodernizationprogram_directnegotiation: {
+                question: "Will direct negotiation address compatibility, interoperability, and sustainability?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_underconstruction"
+                    },
+                    no: {
+                        text: "❌ No",
                         next: "result_underconstruction"
                     }
                 }
