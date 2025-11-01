@@ -2353,7 +2353,37 @@
                     currentNode === 'directacquisition_abc_noncse' ||
                     currentNode === 'directacquisition_invoicecompliant_noncse' ||
                     currentNode === 'smallvalueprocurement_abc' ||
-                    currentNode === 'prefer_competitivebidding_noncse') {
+                    currentNode === 'prefer_competitivebidding_noncse' ||
+                    currentNode === 'onlinesubscription_availablepsdbm' ||
+                    currentNode === 'onlinesubscription_localprovider' ||
+                    currentNode === 'onlinesubscription_abc' ||
+                    currentNode === 'onlinesubscription_abc_hopeapproval' ||
+                    currentNode === 'prefer_publicbidding_onlinesubscription' ||
+                    currentNode === 'sagipsaka_accreditedffce' ||
+                    currentNode === 'afpmodernizationprogram_noncse' || 
+                    currentNode === 'afpmodernizationprogram_directnegotiation_noncse' ||
+                    currentNode === 'afpmodernizationprogram_previouscontract_noncse' ||
+                    currentNode === 'afpmodernizationprogram_performancesecurity_noncse' ||
+                    currentNode === 'publicownedvenue' ||
+                    currentNode === 'efficientandeconomical_venue' ||
+                    currentNode === 'agencymandate_realpropertyvenue' ||
+                    currentNode === 'newconcepttechnology_noncse' ||
+                    currentNode === 'unsolicitedoffer_noncse' ||
+                    currentNode === 'researchuse_noncse' ||
+                    currentNode === 'approvedlist_limitedsourcebidding_noncse' ||
+                    currentNode === 'ngo_appropriationlaw_noncse' ||
+                    currentNode === 'necessarytools_agencytoagency_noncse' ||
+                    currentNode === 'directacquisition_abc_noncse' ||
+                    currentNode === 'directacquisition_invoicecompliant_noncse' ||
+                    currentNode === 'availablepsdbm_cse' ||
+                    currentNode === 'previouslyprocured_cse' ||
+                    currentNode === 'previouscontract_takeovercontract_cse' ||
+                    currentNode === 'repeatorder_previousprocurement_competitive_cse' ||
+                    currentNode === 'repeatorder_lowerunitprice_cse' ||
+                    currentNode === 'repeatorder_previousprocurement_sixmonths_cse' ||
+                    currentNode === 'repeatorder_quantifiablegood_cse' ||
+                    currentNode === 'directacquisition_abc_cse' ||
+                    currentNode === 'compliantinvoice_directacquisition_cse') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
