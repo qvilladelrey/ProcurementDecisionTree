@@ -1928,42 +1928,42 @@
         const results = {
             result_competitivebidding: {
                 title: "Competitive Bidding",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                description: "Competitive Bidding is a mode of procurement which is open to participation by any eligible bidder.",
                 path: []
             },
             result_limitedsourcebidding: {
                 title: "Limited Source Bidding",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                description: "Limited Source Bidding is a mode of procurement that involves direct  invitation to bid by the Procuring Entity to a set of pre-selected suppliers, contractors, or consultants with known experience and proven capability relative to the requirements of a particular contract.",
                 path: []
             },
             result_competitivedialogue: {
                 title: "Competitive Dialogue",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                description: "Competitive Dialogue is a mode of procurement that employs a two-stage  bidding process where the Procuring Entity invites suppliers, manufacturers, distributors, contractors, consultants, and service providers to a dialogue to propose solutions to address its needs and requirements.",
                 path: []
             },
             result_unsolicitedofferwithbidmatching: {
                 title: "Unsolicited Offer with Bid Matching",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                description: "Unsolicited Offer with Bid Matching is a mode of procurement wherein the Procuring Entity may consider unsolicited offers from the original offeror on a negotiated basis for Goods and Consulting Services.",
                 path: []
             },
             result_directcontracting: {
                 title: "Direct Contracting",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                description: "Direct Contracting is a mode of procurement of Goods that does not require elaborate Bidding Documents, and the supplier is only required to submit a price quotation or a pro-forma invoice together with the conditions of sale, which may be accepted immediately or after some negotiations. ",
                 path: []
             },
             result_directacquisition: {
                 title: "Direct Acquisition",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                description: "Direct Acquisition is a mode of procurement of CSE not available in the PS-DBM, Non-CSE, and services with ABC not exceeding Two Hundred Thousand Pesos (₱200,000.00), where the Procuring Entity, without need to conduct a canvass or request for quotations, may procure directly from any known and reputable sources. Goods covered under this mode may be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores. Services may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services. ",
                 path: []
             },
             result_repeatorder: {
                 title: "Repeat Order",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                description: "Repeat Order is a mode of procurement wherein the Procuring Entity may procure goods from the previous winning bidder whenever there arises a need to replenish the goods procured under a contract previously awarded through bidding, particularly Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching.",
                 path: []
             },
             result_smallvalueprocurement: {
                 title: "Small Value Procurement",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                description: "Small Value Procurement (SVP) is a mode of procurement whereby the Procuring Entity requests for the submission of at least three (3) price quotations for Goods not available in the PS-DBM, Infrastructure Projects, and Consulting Services. The receipt of one (1) quotation is sufficient to proceed with the evaluation of bidders: Provided, That, the amount involved does not exceed Two Million Pesos (₱2,000,000.00), subject to the periodic review of the threshold amount and adjustments as may be deemed appropriate by the GPPB.",
                 path: []
             },
             result_twofailedbiddings: {
