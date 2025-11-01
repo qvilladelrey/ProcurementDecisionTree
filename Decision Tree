@@ -882,7 +882,7 @@
                     },
                     othergoods_noncse: {
                         text: "❓ Not among the stated options",
-                        next: "result_underconstruction"
+                        next: "newconcepttechnology_noncse"
                     }
                 }
             },
@@ -895,7 +895,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_underconstruction"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -1064,7 +1064,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_underconstruction"
+                        next: "newconcepttechnology_noncse"
                     }
                 }
             },
@@ -1090,7 +1090,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_underconstruction"
+                        next: "newconcepttechnology_noncse"
                     }
                 }
             },
@@ -1103,7 +1103,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_underconstruction"
+                        next: "newconcepttechnology_noncse"
                     }
                 }
             },
@@ -1116,7 +1116,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_underconstruction"
+                        next: "newconcepttechnology_noncse"
                     }
                 }
             },
@@ -1129,7 +1129,7 @@
                     },
                     different_prefer_defensecooperation_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "result_underconstruction"
+                        next: "newconcepttechnology_noncse"
                     }
                 }
             },
@@ -1154,7 +1154,7 @@
                     },
                     othergoods_scientificscholarlyetc_noncse: {
                         text: "❓ Not among the stated options",
-                        next: "result_underconstruction"
+                        next: "newconcepttechnology_noncse"
                     }
                 }
             },
@@ -1167,7 +1167,7 @@
                     },
                     different_prefer_scientificscholarly_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "result_underconstruction"
+                        next: "newconcepttechnology_noncse"
                     }
                 }
             },
@@ -1215,11 +1215,71 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
+                        next: "prefer_agencytoagency_realpropertyvenue"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "smallvalueprocurement_abc"
+                    }
+                }
+            },
+            prefer_agencytoagency_realpropertyvenue: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_agencytoagency_realpropertyvenue: {
+                        text: "🤝 Enter into Contract with Agency",
+                        next: "result_agencytoagency"
+                    },
+                    different_prefer_agencytoagecny_realpropertyvenue: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "smallvalueprocurement_abc"
+                    }
+                }
+            },
+            newconcepttechnology_noncse: {
+                question: "Is the Good a new concept or technology?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "unsolicitedoffer_noncse"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
+            unsolicitedoffer_noncse: {
+                question: "Was an unsolicited offer initially submitted by an entity that was determined by the PE as necessary?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
                         next: "result_underconstruction"
                     },
                     no: {
                         text: "❌ No",
-                        next: "efficientandeconomical_venue"
+                        next: "typeofgood_competitivedialogue_noncse"
+                    }
+                }
+            },
+            typeofgood_competitivedialogue_noncse: {
+                question: "Does the Good:",
+                options: {
+                    innovativedesign_competitivedialogue_noncse: {
+                        text: "Include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility",
+                        next: "result_underconstruction"
+                    },
+                    priornegotiation_competitivedialogue_noncse: {
+                        text: "Has a contract that requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
+                        next: "result_underconstruction"
+                    },
+                    undefinedtechspecs_competitivedialogue_noncse: {
+                        text: "Has Technical Specifications that cannot be sufficiently established or precisely defined by the PE",
+                        next: "result_underconstruction"
+                    },
+                    othergoods_competitivedialogue_noncse: {
+                        text: "❓ Not among the stated options",
+                        next: "result_underconstruction"
                     }
                 }
             }
