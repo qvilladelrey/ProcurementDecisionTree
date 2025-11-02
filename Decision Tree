@@ -671,7 +671,7 @@
                     yes: {
                         text: "✅ Yes",
                         next: "prefer_takeover_noncse",
-                        triggers: ["Negotiated Procurement: Take-Over of Contracts"]
+                        triggers: ["Negotiated Procurement: Take-Over of Contracts", "Competitive Bidding", "Competitive Dialogue", "Limited Source Bidding", "Small Value Procurement"]
                     },
                     no: {
                         text: "❌ No",
@@ -750,7 +750,7 @@
                     yes: {
                         text: "✅ Yes",
                         next: "prefer_directsales",
-                        triggers: ["Direct Sales"]
+                        triggers: ["Direct Sales", "Small Value Procurement", "Competitive Bidding"]
                     },
                     no: {
                         text: "❌ No",
@@ -829,7 +829,7 @@
                     yes: {
                         text: "✅ Yes",
                         next: "prefer_repeatorder_noncse",
-                        triggers: ["Repeat Order"]
+                        triggers: ["Repeat Order", "Small Value Procurement", "Competitive Bidding"]
                     },
                     no: {
                         text: "❌ No",
