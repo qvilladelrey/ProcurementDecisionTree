@@ -1012,12 +1012,12 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "onlinesubscription_abc_hopeapproval",
-                        triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
+                        next: "onlinesubscription_abc_hopeapproval"
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_competitivebidding"
+                        next: "prefer_publicbidding_onlinesubscription", 
+                        triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions", "]
                     }
                 }
             },
@@ -1026,8 +1026,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_publicbidding_onlinesubscription",
-                        triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
+                        next: "prefer_publicbidding_onlinesubscription"
                     },
                     no: {
                         text: "❌ No",
