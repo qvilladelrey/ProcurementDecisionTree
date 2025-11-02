@@ -1398,7 +1398,7 @@
                         triggers: ["Limited Source Bidding"]
                     },
                     highlyspecialized_noncse: {
-                        text: "Goods which include products of a commissioned task by a PE which where processed, developed, and manufactured in satisfaction of its needs and requirements, which include: (i) pre-commercial goods and services that involve early market engagement to stimulate the development of new goods and services that meet specific government needs; and (ii) goods to be manufactured by qualified start up businesses alongside the thrust to develop and support new businesses",
+                        text: "Highly specialized or complex, which is known to be obtainable only from a limited number of sources",
                         next: "prefer_limitedsourcebidding_noncse",
                         triggers: ["Limited Source Bidding"]
                     },
