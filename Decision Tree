@@ -2333,7 +2333,7 @@
                 // Use image options for yes/no questions
                 if (currentNode === 'cse_goods' || 
                     currentNode === 'previouslyprocured_noncse' || 
-                    currentNode === 'contractrescinded_noncse' ||
+                    currentNode === 'previouscontract_takeovercontract_noncse' ||
                     currentNode === 'directsales_previousprocurement_competitive' ||
                     currentNode === 'directsales_certificateofsatisfactoryperformance' ||
                     currentNode === 'directsales_previousprocurement_sixmonths' ||
