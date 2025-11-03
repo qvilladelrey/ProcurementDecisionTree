@@ -1154,7 +1154,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_defensecooperation_noncse: {
-                        text: "🤝 Adopting Direct Retail",
+                        text: "🤝 Adopt Negotiated Procurement",
                         next: "result_defensecooperationagreement"
                     },
                     different_prefer_defensecooperation_noncse: {
@@ -1281,7 +1281,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_underconstruction"
+                        next: "researchuse_noncse"
                     }
                 }
             },
