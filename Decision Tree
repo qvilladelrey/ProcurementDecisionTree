@@ -635,7 +635,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -661,7 +661,7 @@
                     },
                     othergoods_noncse: {
                         text: "❓ Not among the stated options",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -675,7 +675,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -689,7 +689,7 @@
                     },
                     different_prefer_takeover_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -702,7 +702,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -715,7 +715,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -728,7 +728,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -741,7 +741,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -755,7 +755,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -768,7 +768,7 @@
                     },
                     different_prefer_directsales: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -782,7 +782,7 @@
                     },
                     different_prefer_twofailedbidding_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -795,7 +795,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -808,7 +808,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -821,7 +821,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -835,7 +835,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_noncse_b"
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -848,6 +848,84 @@
                         triggers: ["Competitive Bidding", "Limited Source Bidding", "Competitive Dialogue", "Unsolicited Offer with Bid Matching"]
                     },
                     different_prefer_repeatorder_noncse: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "directacquisition_abc_noncse"
+                    }
+                }
+            },
+            directacquisition_abc_noncse: {
+                question: "Is the ABC less than Php 200,000.00?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "typeofgood_directacquisition_noncse"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "typeofgood_noncse_b"
+                    }
+                }
+            },
+            typeofgood_directacquisition_noncse: {
+                question: "Is the Good:",
+                options: {
+                    services_directacquisition_noncse: {
+                        text: "🛠️ Services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
+                        next: "availability_directacquisition_noncse"
+                    },
+                    stores_directacquisition_noncse: {
+                        text: "🛒 May be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores",
+                        next: "availability_directacquisition_noncse"
+                    },
+                    othergoods_directacquisition_noncse: {
+                        text: "❓ Not among the stated options",
+                        next: "typeofgood_noncse_b"
+                    }
+                }
+            },
+            availability_directacquisition_noncse: {
+                question: "Is the Good:",
+                options: {
+                    philgepsregistered_directacquisition_noncse: {
+                        text: "💻 Supplied by a supplier registered with the PhilGEPS as verified from the PhilGEPS website",
+                        next: "directacquisition_invoicecompliant_noncse"
+                    },
+                    ecommerce_directacquisition_noncse: {
+                        text: "📦 Available in electronic commerce platforms for delivery or pick up at such date and time identified by the PE",
+                        next: "directacquisition_invoicecompliant_noncse"
+                    },
+                    immediatedelivery_directacquisition_noncse: {
+                        text: "🚚 Readily available off-the-shelf and can be picked up or delivered immediately",
+                        next: "directacquisition_invoicecompliant_noncse"
+                    },
+                    otheravailability_directacquisition_noncse: {
+                        text: "❓ Not among the stated options",
+                        next: "typeofgood_noncse_b"
+                    }
+                }
+            },
+            directacquisition_invoicecompliant_noncse: {
+                question: "Does the supplier issue invoices compliant with the Bureau of Internal Revenue (BIR) and Commission on Audit (COA)?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_directacquisition_noncse",
+                        triggers: ["Direct Acquisition"]
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "typeofgood_directacquisition_noncse"
+                    }
+                }
+            },
+            prefer_directacquisition_noncse: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_directacquisition_noncse: {
+                        text: "🤝 Adopt Direct Acquisition",
+                        next: "result_communityparticipation"
+                    },
+                    different_prefer_directacquisition_noncse: {
                         text: "🔄 Adopt different procurement mode",
                         next: "typeofgood_noncse_b"
                     }
@@ -1542,7 +1620,7 @@
                     },
                     othersupplier_noncse: {
                         text: "❓ Not among the stated options",
-                        next: "typeofgood_directacquisition_noncse"
+                        next: "smallvalueprocurement_abc"
                     }
                 }
             },
@@ -1571,7 +1649,7 @@
                     },
                     othergoods_unagency_noncse: {
                         text: "❓ Not among the stated options",
-                        next: "typeofgood_directacquisition_noncse"
+                        next: "smallvalueprocurement_abc"
                     }
                 }
             },
@@ -1584,7 +1662,7 @@
                     },
                     different_prefer_unagency_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_directacquisition_noncse"
+                        next: "smallvalueprocurement_abc"
                     }
                 }
             },
@@ -1598,7 +1676,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_directacquisition_noncse"
+                        next: "smallvalueprocurement_abc"
                     }
                 }
             },
@@ -1611,7 +1689,7 @@
                     },
                     different_prefer_ngoparticipation_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_directacquisition_noncse"
+                        next: "smallvalueprocurement_abc"
                     }
                 }
             },
@@ -1625,7 +1703,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_directacquisition_noncse"
+                        next: "smallvalueprocurement_abc"
                     }
                 }
             },
@@ -1638,7 +1716,7 @@
                     },
                     different_prefer_agencytoagency_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "typeofgood_directacquisition_noncse"
+                        next: "smallvalueprocurement_abc"
                     }
                 }
             },
@@ -1650,84 +1728,6 @@
                         next: "result_communityparticipation"
                     },
                     different_prefer_localcommunity_noncse: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "smallvalueprocurement_abc"
-                    }
-                }
-            },
-            directacquisition_abc_noncse: {
-                question: "Is the ABC less than Php 200,000.00?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "smallvalueprocurement_abc"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "typeofgood_directacquisition_noncse"
-                    }
-                }
-            },
-            typeofgood_directacquisition_noncse: {
-                question: "Is the Good:",
-                options: {
-                    services_directacquisition_noncse: {
-                        text: "🛠️ Services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
-                        next: "availability_directacquisition_noncse"
-                    },
-                    stores_directacquisition_noncse: {
-                        text: "🛒 May be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores",
-                        next: "availability_directacquisition_noncse"
-                    },
-                    othergoods_directacquisition_noncse: {
-                        text: "❓ Not among the stated options",
-                        next: "smallvalueprocurement_abc"
-                    }
-                }
-            },
-            availability_directacquisition_noncse: {
-                question: "Is the Good:",
-                options: {
-                    philgepsregistered_directacquisition_noncse: {
-                        text: "💻 Supplied by a supplier registered with the PhilGEPS as verified from the PhilGEPS website",
-                        next: "directacquisition_invoicecompliant_noncse"
-                    },
-                    ecommerce_directacquisition_noncse: {
-                        text: "📦 Available in electronic commerce platforms for delivery or pick up at such date and time identified by the PE",
-                        next: "directacquisition_invoicecompliant_noncse"
-                    },
-                    immediatedelivery_directacquisition_noncse: {
-                        text: "🚚 Readily available off-the-shelf and can be picked up or delivered immediately",
-                        next: "directacquisition_invoicecompliant_noncse"
-                    },
-                    otheravailability_directacquisition_noncse: {
-                        text: "❓ Not among the stated options",
-                        next: "smallvalueprocurement_abc"
-                    }
-                }
-            },
-            directacquisition_invoicecompliant_noncse: {
-                question: "Does the supplier issue invoices compliant with the Bureau of Internal Revenue (BIR) and Commission on Audit (COA)?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "prefer_directacquisition_noncse",
-                        triggers: ["Direct Acquisition"]
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "typeofgood_directacquisition_noncse"
-                    }
-                }
-            },
-            prefer_directacquisition_noncse: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_directacquisition_noncse: {
-                        text: "🤝 Adopting Direct Acquisition",
-                        next: "result_communityparticipation"
-                    },
-                    different_prefer_directacquisition_noncse: {
                         text: "🔄 Adopt different procurement mode",
                         next: "smallvalueprocurement_abc"
                     }
@@ -1939,7 +1939,7 @@
                 }
             },
             directacquisition_invoicecompliant_cse: {
-                question: "Is the ABC less than Php 200,000.00?",
+                question: "Does the supplier issue invoices compliant with the Bureau of Internal Revenue (BIR) and Commission on Audit (COA)?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1948,7 +1948,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_directacquisition_cse"
+                        next: "smallvalueprocurement_abc"
                     }
                 }
             },
@@ -1957,11 +1957,11 @@
                 options: {
                     yes_prefer_directacquisition_cse: {
                         text: "🤝 Adopting Direct Acquisition",
-                        next: "result_communityparticipation"
+                        next: "result_directacquisition"
                     },
                     different_prefer_directacquisition_cse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "result_directacquisition"
+                        next: "smallvalueprocurement_abc"
                     }
                 }
             }
