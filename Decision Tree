@@ -2072,12 +2072,12 @@
             },
             result_directprocurementforsti: {
                 title: "Direct Procurement for Science, Technology, and Innovation",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                description: "Direct Procurement for Science, Technology, and Innovation is a mode of procurement in which the Procuring Entity may directly acquire goods and services from a manufacturer or supplier that is legally, technically, and financially capable of providing the required items or services.",
                 path: []
             },
             result_underconstruction: {
                 title: "🚧 Under Construction",
-                description: "Direct Procurement for Science, Technology, and Innovation is a mode of procurement in which the Procuring Entity may directly acquire goods and services from a manufacturer or supplier that is legally, technically, and financially capable of providing the required items or services.",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
                 path: []
             }
         };
