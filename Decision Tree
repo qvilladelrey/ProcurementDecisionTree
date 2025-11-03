@@ -2497,7 +2497,7 @@
                 <div class="recommendation-description">
                     <strong>${result.title}</strong><br><br>
                     ${result.description}
-                    ${result.link ? `<br><br><a href="${result.link}" target="_blank" class="learn-more-btn">🔗 Learn more about this mode</a>` : ''}
+                    <br><br><a href="${result.link || '#'}" target="_blank" class="learn-more-btn">🔗 Learn more about this mode</a>
                 </div>
             `;
             recommendationContainer.appendChild(primaryRecommendation);
