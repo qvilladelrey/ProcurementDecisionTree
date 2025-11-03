@@ -1360,7 +1360,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_limitedsourcebidding_noncse"
+                        next: "totalsuppliers_noncse"
                     }
                 }
             },
