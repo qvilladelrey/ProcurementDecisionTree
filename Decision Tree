@@ -1221,7 +1221,8 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "agencymandate_realpropertyvenue"
+                        next: "agencymandate_realpropertyvenue",
+                        triggers: ["Negotiated Procurement: Lease of Real Property and Venue"]
                     },
                     no: {
                         text: "❌ No",
@@ -1275,9 +1276,13 @@
                 options: {
                     yes_prefer_agencytoagency_realpropertyvenue: {
                         text: "🤝 Enter into Contract with Agency",
+                        next: "result_leaseofrealproperty"
+                    },
+                    different_prefer_realpropertyvenue_realpropertyvenue: {
+                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with Agency",
                         next: "result_agencytoagency"
                     },
-                    different_prefer_agencytoagecny_realpropertyvenue: {
+                    different_prefer_agencytoagency_realpropertyvenue: {
                         text: "🔄 Adopt different procurement mode",
                         next: "smallvalueprocurement_abc"
                     }
