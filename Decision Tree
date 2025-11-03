@@ -1971,6 +1971,7 @@
             result_competitivebidding: {
                 title: "Competitive Bidding",
                 description: "Competitive Bidding is a mode of procurement which is open to participation by any eligible bidder.",
+                link: "Competitive Bidding.pdf",
                 path: []
             },
             result_limitedsourcebidding: {
@@ -2120,7 +2121,7 @@
 
         // Emoji mapping for procurement modes
         const procurementModeLinks = {
-            "Competitive Bidding": "🏆",            
+            "Competitive Bidding": "Competitive Bidding.pdf",            
             "Limited Source Bidding": "🎯",
             "Competitive Dialogue": "🤝",
             "Unsolicited Offer with Bid Matching": "⭐",
