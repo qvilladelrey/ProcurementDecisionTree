@@ -258,21 +258,24 @@
         }
 
         .primary-recommendation {
-            background: linear-gradient(135deg, #1e3888, #3a6ea5);
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            text-align: left;
+          background: linear-gradient(135deg, #1e3888, #3a6ea5);
+          color: white;
+          padding: 25px;
+          border-radius: 15px;
+          margin-bottom: 15px;
+          box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+          text-align: justify;
+          position: relative;
         }
 
         .recommendation-title {
-            font-weight: 700;
-            font-size: 1.3em;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
+          font-weight: 700;
+          font-size: 1.3em;
+          margin-bottom: 15px;
+          display: flex;
+          justify-content: center; 
+          align-items: center;
+          text-align: center;
         }
 
         .recommendation-title .icon {
@@ -281,8 +284,15 @@
         }
 
         .recommendation-description {
-            font-size: 1em;
-            line-height: 1.5;
+          font-size: 1em;
+          line-height: 1.5;
+          text-align: justify; 
+        }
+
+        .recommendation-description strong {
+          display: block;
+          text-align: center; /* centers the mode title */
+          margin-bottom: 10px;
         }
 
         .alternative-recommendations {
@@ -372,15 +382,16 @@
         }
 
         .learn-more-btn {
-            display: inline-block;
-            margin-top: 12px;
-            background: #1e3888;
-            color: white;
-            padding: 10px 16px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background 0.3s ease;
+          display: block;
+          margin: 20px auto 0 auto; /* centers the button horizontally */
+          background: #1e3888;
+          color: white;
+          padding: 10px 16px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: 500;
+          transition: background 0.3s ease;
+          width: fit-content;
         }
         .learn-more-btn:hover {
             background: #3a6ea5;
@@ -2490,15 +2501,12 @@
             const primaryRecommendation = document.createElement('div');
             primaryRecommendation.className = 'primary-recommendation';
             primaryRecommendation.innerHTML = `
-                <div class="recommendation-title">
-                    <span class="icon">🏆</span>
-                    <span>Primary Recommendation</span>
-                </div>
-                <div class="recommendation-description">
-                    <strong>${result.title}</strong><br><br>
-                    ${result.description}
-                    <br><br><a href="${result.link || '#'}" target="_blank" class="learn-more-btn">🔗 Learn more about this mode</a>
-                </div>
+              <div class="recommendation-title">🏆 Primary Recommendation</div>
+              <strong>${result.title}</strong>
+              <div class="recommendation-description">
+                ${result.description}
+              </div>
+              <a href="${result.link || '#'}" target="_blank" class="learn-more-btn">🔗 Learn more about this mode</a>
             `;
             recommendationContainer.appendChild(primaryRecommendation);
             
