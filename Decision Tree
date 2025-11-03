@@ -1017,22 +1017,22 @@
                 options: {
                     lessonemillion_onlinesubscription: {
                         text: "Less than one (1) million",
-                        next: "prefer_publicbidding_onlinesubscription",
+                        next: "prefer_directretail_smallvalueprocurement_onlinesubscription",
                         triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
                     },
                     moreonemillionlesstwomillion_onlinesubscription: {
                         text: "More than one (1) million but less than two (2) million ",
-                        next: "prefer_publicbidding_onlinesubscription",
+                        next: "prefer_directretail_smallvalueprocurement_onlinesubscription",
                         triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
                     },
                     moretwomillionlessfivemillion_onlinesubscription: {
                         text: "More than two (2) million but less than five (5) million, with HoPE approval",
-                        next: "prefer_publicbidding_onlinesubscription",
+                        next: "prefer_directretail_competitivebidding_onlinesubscription",
                         triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
                     },
                     morefivemillion_onlinesubscription: {
                         text: "More than five (5) million",
-                        next: "result_competitivebidding"
+                        next: "prefer_directretail_competitivebiddingothers_onlinesubscription"
                     }
                 }
             },
