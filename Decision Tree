@@ -1318,17 +1318,17 @@
                 question: "Does the Good:",
                 options: {
                     innovativedesign_competitivedialogue_noncse: {
-                        text: "Include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility",
+                        text: "🤖 Include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility",
                         next: "prefer_competitivedialogue_noncse",
                         triggers: ["Competitive Dialogue"]
                     },
                     priornegotiation_competitivedialogue_noncse: {
-                        text: "Has a contract that requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
+                        text: "⚙️ Has a contract that requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
                         next: "prefer_competitivedialogue_noncse",
                         triggers: ["Competitive Dialogue"]
                     },
                     undefinedtechspecs_competitivedialogue_noncse: {
-                        text: "Has Technical Specifications that cannot be sufficiently established or precisely defined by the PE",
+                        text: "💡 Has Technical Specifications that cannot be sufficiently established or precisely defined by the PE",
                         next: "prefer_competitivedialogue_noncse",
                         triggers: ["Competitive Dialogue"]
                     },
@@ -1368,17 +1368,17 @@
                 question: "Is the Good:",
                 options: {
                     actualscience: {
-                        text: "Supplies, materials, equipment and related services to be used actually, exclusively, and directly in the conduct of research and development projects or activities",
+                        text: "🔬 Supplies, materials, equipment and related services to be used actually, exclusively, and directly in the conduct of research and development projects or activities",
                         next: "prefer_directsti_noncse",
                         triggers: ["Direct Procurement for Science, Technology, and Innovation"]
                     },
                     priornegotiation_competitivedialogue_noncse: {
-                        text: "Goods which include products of a commissioned task by a PE which where processed, developed, and manufactured in satisfaction of its needs and requirements, which include: (i) pre-commercial goods and services that involve early market engagement to stimulate the development of new goods and services that meet specific government needs; and (ii) goods to be manufactured by qualified start up businesses alongside the thrust to develop and support new businesses",
+                        text: "💡 Goods which include products of a commissioned task by a PE which where processed, developed, and manufactured in satisfaction of its needs and requirements, which include: (i) pre-commercial goods and services that involve early market engagement to stimulate the development of new goods and services that meet specific government needs; and (ii) goods to be manufactured by qualified start up businesses alongside the thrust to develop and support new businesses",
                         next: "prefer_directsti_noncse",
                         triggers: ["Direct Procurement for Science, Technology, and Innovation"]
                     },
                     sti_analogous: {
-                        text: "Other analogous goods",
+                        text: "🧪 Other analogous goods",
                         next: "prefer_directsti_noncse",
                         triggers: ["Direct Procurement for Science, Technology, and Innovation"]
                     },
@@ -1431,12 +1431,12 @@
                 question: "Is the Good:",
                 options: {
                     majorplantcomponent: {
-                        text: "A major plant component where it is deemed advantageous to limit the bidding to known eligible bidders in order to maintain an optimum and uniform level of quality and performance of the plant as a whole",
+                        text: "🏭 A major plant component where it is deemed advantageous to limit the bidding to known eligible bidders in order to maintain an optimum and uniform level of quality and performance of the plant as a whole",
                         next: "prefer_limitedsourcebidding_noncse",
                         triggers: ["Limited Source Bidding"]
                     },
                     highlyspecialized_noncse: {
-                        text: "Highly specialized or complex, which is known to be obtainable only from a limited number of sources",
+                        text: "⚙️ Highly specialized or complex, which is known to be obtainable only from a limited number of sources",
                         next: "prefer_limitedsourcebidding_noncse",
                         triggers: ["Limited Source Bidding"]
                     },
@@ -1463,17 +1463,17 @@
                 question: "Is the Good:",
                 options: {
                     exclusivedealer_noncse: {
-                        text: "Sold by an exclusive dealer or manufacturer which does not have sub-dealers selling at lower prices and for which no suitable substitute can be obtained at more advantageous terms to the government",
+                        text: "🏷️ Sold by an exclusive dealer or manufacturer which does not have sub-dealers selling at lower prices and for which no suitable substitute can be obtained at more advantageous terms to the government",
                         next: "prefer_directcontracting_noncse",
                         triggers: ["Direct Contracting"]
                     },
                     criticalcomponent_noncse: {
-                        text: "A critical component from a specific manufacturer, supplier, or distributor is a condition precedent to hold a service provider to guarantee its project performance, in accordance with the provisions of the contract, as determined by the EU/IU",
+                        text: "🏭 A critical component from a specific manufacturer, supplier, or distributor is a condition precedent to hold a service provider to guarantee its project performance, in accordance with the provisions of the contract, as determined by the EU/IU",
                         next: "prefer_directcontracting_noncse",
                         triggers: ["Direct Contracting"]
                     },
                     proprietarygood_noncse: {
-                        text: "Proprietary in nature, which can only be obtained from the proprietary source; or when patents, trade secrets, and copyrights prohibit others from manufacturing the same item, as supported by relevant documentary evidence issued by competent authority",
+                        text: "🔒 Proprietary in nature, which can only be obtained from the proprietary source; or when patents, trade secrets, and copyrights prohibit others from manufacturing the same item, as supported by relevant documentary evidence issued by competent authority",
                         next: "prefer_directcontracting_noncse",
                         triggers: ["Direct Contracting"]
                     },
@@ -1500,19 +1500,19 @@
                 question: "Does the Good:",
                 options: {
                     significantbenefits_noncse: {
-                        text: "Provide significant benefits to the procuring entity in terms of efficiency, cost, or outcome",
+                        text: "⚡ Provide significant benefits to the procuring entity in terms of efficiency, cost, or outcome",
                         next: "result_unsolicitedofferwithbidmatching"
                     },
                     substantialimprovement_noncse: {
-                        text: "Offer a substantial improvement over existing solutions, demonstrated through verifiable data, proof of concept, or technical studies",
+                        text: "📈 Offer a substantial improvement over existing solutions, demonstrated through verifiable data, proof of concept, or technical studies",
                         next: "result_unsolicitedofferwithbidmatching"
                     },
                     emergingtechnology_noncse: {
-                        text: "Incorporate features promoting emerging technology and sustainable solutions",
+                        text: "💡 Incorporate features promoting emerging technology and sustainable solutions",
                         next: "result_unsolicitedofferwithbidmatching"
                     },
                     stateoftheart_noncse: {
-                        text: "Involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
+                        text: "🛰️ Involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
                         next: "result_unsolicitedofferwithbidmatching"
                     },
                     othergoods_unsolicitedofferwithbidmatching_noncse: {
@@ -1525,19 +1525,19 @@
                 question: "Is the supplier:",
                 options: {
                     unagency_noncse: {
-                        text: "United Nations (UN) Agencies, International Organizations  or International Financing Institutions",
+                        text: "🌐 United Nations (UN) Agencies, International Organizations  or International Financing Institutions",
                         next: "typeofgood_unagency_noncse"
                     },
                     ngo_noncse: {
-                        text: "SEC registered non-stock, non-profit domestic corporation OR CDA-registered cooperative",
+                        text: "🏢 SEC registered non-stock, non-profit domestic corporation OR CDA-registered cooperative",
                         next: "ngo_appropriationlaw_noncse"
                     },
                     governmentagency_noncse: {
-                        text: "Another agency that has the mandate and absorptive capacity to undertake the project, as validated by the PE",
+                        text: "🏛️ Another agency that has the mandate and absorptive capacity to undertake the project, as validated by the PE",
                         next: "necessarytools_agencytoagency_noncse"
                     },
                     community_noncse: {
-                        text: "Part of a local community or social groups  (CSG)",
+                        text: "🏘️ Part of a local community or social groups (CSG)",
                         next: "prefer_localcommunity_noncse"
                     },
                     othersupplier_noncse: {
@@ -1550,22 +1550,22 @@
                 question: "Is the Good:",
                 options: {
                     advancedtechnology_unagency_noncse: {
-                        text: "Goods involving advanced technologies, techniques, and innovations not locally available as certified by the DTI, when it is most advantageous to the PE",
+                        text: "🛰️ Goods involving advanced technologies, techniques, and innovations not locally available as certified by the DTI, when it is most advantageous to the PE",
                         next: "prefer_unagency_noncse",
                         triggers: ["Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations"]
                     },
                     specializedproduct_unagency_noncse: {
-                        text: "Specialized products where the number of suppliers is limited, such as vaccines",
+                        text: "💉 Specialized products where the number of suppliers is limited, such as vaccines",
                         next: "prefer_unagency_noncse",
                         triggers: ["Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations"]
                     },
                     educationandhealth_unagency_noncse: {
-                        text: "Small quantities of off-the-shelf goods exclusively used in education and health",
+                        text: "🏥 Small quantities of off-the-shelf goods exclusively used in education and health",
                         next: "prefer_unagency_noncse",
                         triggers: ["Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations"]
                     },
                     criticalpublichealth_unagency_noncse: {
-                        text: "Goods for critical public health priorities as determined and certified by the DOH",
+                        text: "🩺 Goods for critical public health priorities as determined and certified by the DOH",
                         next: "prefer_unagency_noncse",
                         triggers: ["Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations"]
                     },
@@ -1646,7 +1646,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_localcommunity_noncse: {
-                        text: "🤝 Adpopting Negotiated Procurement",
+                        text: "🤝 Adopting Negotiated Procurement",
                         next: "result_communityparticipation"
                     },
                     different_prefer_localcommunity_noncse: {
@@ -1672,11 +1672,11 @@
                 question: "Is the Good:",
                 options: {
                     services_directacquisition_noncse: {
-                        text: "Services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
+                        text: "🛠️ Services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
                         next: "availability_directacquisition_noncse"
                     },
                     stores_directacquisition_noncse: {
-                        text: "May be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores",
+                        text: "🛒 May be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores",
                         next: "availability_directacquisition_noncse"
                     },
                     othergoods_directacquisition_noncse: {
@@ -1689,15 +1689,15 @@
                 question: "Is the Good:",
                 options: {
                     philgepsregistered_directacquisition_noncse: {
-                        text: "Supplied by a supplier registered with the PhilGEPS as verified from the PhilGEPS website",
+                        text: "💻 Supplied by a supplier registered with the PhilGEPS as verified from the PhilGEPS website",
                         next: "directacquisition_invoicecompliant_noncse"
                     },
                     ecommerce_directacquisition_noncse: {
-                        text: "Available in electronic commerce platforms for delivery or pick up at such date and time identified by the PE",
+                        text: "📦 Available in electronic commerce platforms for delivery or pick up at such date and time identified by the PE",
                         next: "directacquisition_invoicecompliant_noncse"
                     },
                     immediatedelivery_directacquisition_noncse: {
-                        text: "Readily available off-the-shelf and can be picked up or delivered immediately",
+                        text: "🚚 Readily available off-the-shelf and can be picked up or delivered immediately",
                         next: "directacquisition_invoicecompliant_noncse"
                     },
                     otheravailability_directacquisition_noncse: {
@@ -1904,11 +1904,11 @@
                 question: "Is the Good:",
                 options: {
                     services_directacquisition_cse: {
-                        text: "Services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
+                        text: "🛠️ Services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
                         next: "availability_directacquisition_cse"
                     },
                     stores_directacquisition_cse: {
-                        text: "May be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores",
+                        text: "🛒 May be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores",
                         next: "availability_directacquisition_cse"
                     },
                     othergoods_directacquisition_cse: {
@@ -1921,15 +1921,15 @@
                 question: "Is the Good:",
                 options: {
                     philgepsregistered_directacquisition_cse: {
-                        text: "Supplied by a supplier registered with the PhilGEPS as verified from the PhilGEPS website",
+                        text: "💻 Supplied by a supplier registered with the PhilGEPS as verified from the PhilGEPS website",
                         next: "directacquisition_invoicecompliant_cse"
                     },
                     ecommerce_directacquisition_cse: {
-                        text: "Available in electronic commerce platforms for delivery or pick up at such date and time identified by the PE",
+                        text: "📦 Available in electronic commerce platforms for delivery or pick up at such date and time identified by the PE",
                         next: "directacquisition_invoicecompliant_cse"
                     },
                     immediatedelivery_directacquisition_cse: {
-                        text: "Readily available off-the-shelf and can be picked up or delivered immediately",
+                        text: "🚚 Readily available off-the-shelf and can be picked up or delivered immediately",
                         next: "directacquisition_invoicecompliant_cse"
                     },
                     otheravailability_directacquisition_cse: {
