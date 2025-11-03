@@ -1153,7 +1153,7 @@
                     yes: {
                         text: "✅ Yes",
                         next: "prefer_defensecooperation_noncse",
-                        triggers: ["Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items", "Small Value Procurement", "Competitive Bidding"]
+                        triggers: ["Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items"]
                     },
                     no: {
                         text: "❌ No",
