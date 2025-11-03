@@ -1036,42 +1036,50 @@
                     }
                 }
             },
-            prefer_competitivebidding_onlinesubscription: {
-                question: "Do you prefer/have the capacity to undertake the public bidding process?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "result_competitivebidding"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "result_smallvalueprocurement"
-                    }
-                }
-            },
-            prefer_smallvalueprocurement_onlinesubscription: {
-                question: "Do you prefer/have the capacity to undertake the public bidding process?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "result_competitivebidding"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "result_smallvalueprocurement"
-                    }
-                }
-            },
-            prefer_directretail_onlinesubscription: {
+            prefer_directretail_smallvalueprocurement_onlinesubscription: {
                 question: "Do you prefer to:",
                 options: {
-                    yes_prefer_directretail_onlinesubscription: {
+                    yes_prefer_directretailsmallvalueprocurement_onlinesubscription: {
                         text: "🤝 Adopting Direct Retail",
                         next: "result_directacquisition"
                     },
-                    different_prefer_directretail_onlinesubscription: {
+                    different_prefer_smallvalueprocurement_onlinesubscription: {
+                        text: "🤝 Adopt Small Value Procurement",
+                        next: "result_smallvalueprocurement"
+                    },
+                    different_prefer_smallvalueprocurementothers_onlinesubscription: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "prefer_publicbidding_onlinesubscription"
+                        next: "newconcepttechnology_noncse"
+                    }
+                }
+            },
+            prefer_directretail_competitivebidding_onlinesubscription: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_directretailcompetitivebidding_onlinesubscription: {
+                        text: "🤝 Adopting Direct Retail",
+                        next: "result_directacquisition"
+                    },
+                    different_prefer_competitivebidding_onlinesubscription: {
+                        text: "🤝 Adopt Competitive Bidding",
+                        next: "result_competitivebidding"
+                    },
+                    different_prefer_competitivebiddingothers_onlinesubscription: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "newconcepttechnology_noncse"
+                    }
+                }
+            },
+            prefer_directretail_competitivebiddingothers_onlinesubscription: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_competitivebiddingothers_onlinesubscription: {
+                        text: "🤝 Adopt Competitive Bidding",
+                        next: "result_competitivebidding"
+                    },
+                    different_prefer_otherscompetitivebiddingothers_onlinesubscription: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "newconcepttechnology_noncse"
                     }
                 }
             },
