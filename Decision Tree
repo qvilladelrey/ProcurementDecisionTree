@@ -953,7 +953,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "directacquisition_abc_pol"
+                        next: "result_underconstruction"
                     }
                 }
             },
