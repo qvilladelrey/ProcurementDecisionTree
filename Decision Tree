@@ -1036,7 +1036,20 @@
                     }
                 }
             },
-            prefer_publicbidding_onlinesubscription: {
+            prefer_competitivebidding_onlinesubscription: {
+                question: "Do you prefer/have the capacity to undertake the public bidding process?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "result_smallvalueprocurement"
+                    }
+                }
+            },
+            prefer_smallvalueprocurement_onlinesubscription: {
                 question: "Do you prefer/have the capacity to undertake the public bidding process?",
                 options: {
                     yes: {
@@ -2352,7 +2365,6 @@
                     currentNode === 'prefer_competitivebidding_noncse' ||
                     currentNode === 'onlinesubscription_availablepsdbm' ||
                     currentNode === 'onlinesubscription_localprovider' ||
-                    currentNode === 'prefer_publicbidding_onlinesubscription' ||
                     currentNode === 'sagipsaka_accreditedffce' ||
                     currentNode === 'afpmodernizationprogram_noncse' || 
                     currentNode === 'afpmodernizationprogram_directnegotiation_noncse' ||
