@@ -845,7 +845,7 @@
                     yes_prefer_repeatorder_noncse: {
                         text: "📋 To Prepare Purchase Request and adopt Repeat Order",
                         next: "result_repeatorder",
-                        triggers: ["Small Value Procurement", "Competitive Bidding"]
+                        triggers: ["Competitive Bidding", "Limited Source Bidding", "Competitive Dialogue", "Unsolicited Offer with Bid Matching"]
                     },
                     different_prefer_repeatorder_noncse: {
                         text: "🔄 Adopt different procurement mode",
