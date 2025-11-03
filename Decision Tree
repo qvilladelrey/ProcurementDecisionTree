@@ -1343,7 +1343,7 @@
                 options: {
                     yes_prefer_competitivedialogue_noncse: {
                         text: "🤝 Employ a 2-stage bidding process where the PE invites suppliers etc., to propose solutions to address its needs and requirements",
-                        next: "result_agencytoagency"
+                        next: "result_competitivedialogue"
                     },
                     different_prefer_competitivedialogue_noncse: {
                         text: "🔄 Adopt different procurement mode",
