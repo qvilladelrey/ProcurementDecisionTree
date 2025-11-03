@@ -1016,17 +1016,17 @@
                         triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
                     },
                     moreonemillionlesstwomillion_onlinesubscription: {
-                        text: "📚 Scientific, technical, economic, business, trade or legal journal, magazine, paper, subscription, or other exclusive statistical publications and references",
+                        text: "More than one (1) million but less than two (2) million ",
                         next: "prefer_publicbidding_onlinesubscription",
                         triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
                     },
                     moretwomillionlessfivemillion_onlinesubscription: {
-                        text: "🔬 Highly specialized life-saving medical and biotech equipment and devices, medicine, supplies, materials, tools and consumables, as certified by the Department of Health",
+                        text: "More than two (2) million but less than five (5) million, with HoPE approval",
                         next: "prefer_publicbidding_onlinesubscription",
                         triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
                     },
                     morefivemillion_onlinesubscription: {
-                        text: "🎥 Media documentation, advertisement, or announcement through television, radio, newspaper, internet, and other communication media",
+                        text: "More than five (5) million",
                         next: "result_competitivebidding"
                     }
                 }
