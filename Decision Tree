@@ -605,8 +605,7 @@
                 options: {
                     yes_prefer_emergencycases_goods: {
                         text: "📋 Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
-                        next: "result_emergencycases",
-                        triggers: ["Small Value Procurement", "Competitive Bidding"]
+                        next: "result_emergencycases"
                     },
                     different_prefer_emergencycases_goods: {
                         text: "🔄 Adopt different procurement mode",
@@ -765,8 +764,7 @@
                 options: {
                     yes_prefer_directsales: {
                         text: "🤝 Coordinate with the government agency that originally procured the non-CSE",
-                        next: "result_directsales",
-                        triggers: ["Small Value Procurement", "Competitive Bidding"]
+                        next: "result_directsales"
                     },
                     different_prefer_directsales: {
                         text: "🔄 Adopt different procurement mode",
