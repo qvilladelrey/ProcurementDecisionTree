@@ -1052,7 +1052,7 @@
                 options: {
                     yes_prefer_directretailsmallvalueprocurement_onlinesubscription: {
                         text: "🤝 Adopt Direct Retail",
-                        next: "result_directacquisition"
+                        next: "result_directretailofpol"
                     },
                     different_prefer_smallvalueprocurement_onlinesubscription: {
                         text: "🤝 Adopt Small Value Procurement",
@@ -1069,7 +1069,7 @@
                 options: {
                     yes_prefer_directretailcompetitivebidding_onlinesubscription: {
                         text: "🤝 Adopting Direct Retail",
-                        next: "result_directacquisition"
+                        next: "result_directretailofpol"
                     },
                     different_prefer_competitivebidding_onlinesubscription: {
                         text: "🤝 Adopt Competitive Bidding",
