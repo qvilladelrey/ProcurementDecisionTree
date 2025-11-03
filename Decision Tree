@@ -908,7 +908,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_directacquisition_pol",
+                        next: "prefer_directretail_pol",
                         triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
                     },
                     no: {
