@@ -1051,7 +1051,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directretailsmallvalueprocurement_onlinesubscription: {
-                        text: "🤝 Adopting Direct Retail",
+                        text: "🤝 Adopt Direct Retail",
                         next: "result_directacquisition"
                     },
                     different_prefer_smallvalueprocurement_onlinesubscription: {
