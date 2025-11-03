@@ -1451,7 +1451,7 @@
                 options: {
                     yes_prefer_limitedsourcebidding_noncse: {
                         text: "🤝 Direct invitation to bid by the PE to a set of pre-selected suppliers",
-                        next: ""
+                        next: "result_limitedsourcebidding"
                     },
                     different_prefer_limitedsourcebidding_noncse: {
                         text: "🔄 Adopt different procurement mode",
