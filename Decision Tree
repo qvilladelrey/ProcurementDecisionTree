@@ -1384,7 +1384,7 @@
                     },
                     othergoods_sti_noncse: {
                         text: "❓ Not among the stated options",
-                        next: "typeofgood_limitedsourcebidding_noncse"
+                        next: "totalsuppliers_noncse"
                     }
                 }
             },
