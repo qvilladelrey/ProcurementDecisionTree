@@ -899,7 +899,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "directacquisition_abc_noncse"
+                        next: "directacquisition_abc_pol"
                     }
                 }
             },
@@ -908,12 +908,25 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "directacquisition_abc_pol",
+                        next: "prefer_directacquisition_pol",
                         triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_underconstruction"
+                        next: "directacquisition_abc_pol"
+                    }
+                }
+            },
+            prefer_directretail_pol: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_directretail_pol: {
+                        text: "🤝 Adopt Direct Retail",
+                        next: "result_directretailofpol"
+                    },
+                    different_prefer_directretail_pol: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "directacquisition_abc_pol"
                     }
                 }
             },
@@ -948,7 +961,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directacquisition_pol: {
-                        text: "🤝 Adopting Direct Acquisition",
+                        text: "🤝 Adopt Direct Acquisition",
                         next: "result_directacquisition"
                     },
                     different_prefer_directacquisition_pol: {
