@@ -778,7 +778,7 @@
                     yes_prefer_twofailedbidding_noncse: {
                         text: "📋 To Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
                         next: "result_twofailedbiddings",
-                        triggers: ["Competitive Bidding"]
+                        triggers: ["Competitive Bidding", "Limited Source Bidding", "Competitive Dialogue"]
                     },
                     different_prefer_twofailedbidding_noncse: {
                         text: "🔄 Adopt different procurement mode",
