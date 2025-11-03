@@ -577,22 +577,22 @@
                     imminentdanger_goods: {
                         text: "🌪️ Address imminent danger to life or property during a state of calamity",
                         next: "prefer_emergencycases_goods",
-                        triggers: ["Negotiated Procurement: Emergency Cases", "Small Value Procurement", "Competitive Bidding"]
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     timeessence_goods: {
                         text: "🔥 Implement prompt measures since time is of the essence in situations arising from natural or man-made calamities",
                         next: "prefer_emergencycases_goods",
-                        triggers: ["Negotiated Procurement: Emergency Cases", "Small Value Procurement", "Competitive Bidding"]
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     immediateaction_goods: {
                         text: "🚨 A need to undertake immediate action to prevent damage to or loss of life or property or to restore vital public  services, infrastructure facilities,  and other public utilities",
                         next: "prefer_emergencycases_goods",
-                        triggers: ["Negotiated Procurement: Emergency Cases", "Small Value Procurement", "Competitive Bidding"]
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     otherinstancesemergency_goods: {
                         text: "⚠️ Respond to other instances aside from the mentioned situations where the provision of life, injury, disease, and other negative effects on human, physical, mental and social well-being, together with damage to property, destruction of assets, loss of services, social and economic disruption and environmental degradation",
                         next: "prefer_emergencycases_goods",
-                        triggers: ["Negotiated Procurement: Emergency Cases", "Small Value Procurement", "Competitive Bidding"]
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     othersemergency_goods: {
                         text: "❓ Not among the stated options",
@@ -605,7 +605,8 @@
                 options: {
                     yes_prefer_emergencycases_goods: {
                         text: "📋 Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
-                        next: "result_emergencycases"
+                        next: "result_emergencycases",
+                        triggers: ["Small Value Procurement", "Competitive Bidding"]
                     },
                     different_prefer_emergencycases_goods: {
                         text: "🔄 Adopt different procurement mode",
@@ -671,7 +672,7 @@
                     yes: {
                         text: "✅ Yes",
                         next: "prefer_takeover_noncse",
-                        triggers: ["Negotiated Procurement: Take-Over of Contracts", "Competitive Bidding", "Competitive Dialogue", "Limited Source Bidding", "Small Value Procurement"]
+                        triggers: ["Negotiated Procurement: Take-Over of Contracts"]
                     },
                     no: {
                         text: "❌ No",
@@ -684,7 +685,8 @@
                 options: {
                     yes_prefer_takeover_noncse: {
                         text: "📋 Post-Qualify and negotiate with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
-                        next: "result_takeoverofcontracts"
+                        next: "result_takeoverofcontracts",
+                        triggers: ["Competitive Bidding", "Competitive Dialogue", "Limited Source Bidding", "Small Value Procurement"]
                     },
                     different_prefer_takeover_noncse: {
                         text: "🔄 Adopt different procurement mode",
@@ -750,7 +752,7 @@
                     yes: {
                         text: "✅ Yes",
                         next: "prefer_directsales",
-                        triggers: ["Direct Sales", "Small Value Procurement", "Competitive Bidding"]
+                        triggers: ["Direct Sales"]
                     },
                     no: {
                         text: "❌ No",
@@ -763,7 +765,8 @@
                 options: {
                     yes_prefer_directsales: {
                         text: "🤝 Coordinate with the government agency that originally procured the non-CSE",
-                        next: "result_directsales"
+                        next: "result_directsales",
+                        triggers: ["Direct Sales"]
                     },
                     different_prefer_directsales: {
                         text: "🔄 Adopt different procurement mode",
@@ -776,7 +779,8 @@
                 options: {
                     yes_prefer_twofailedbidding_noncse: {
                         text: "📋 To Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
-                        next: "result_twofailedbiddings"
+                        next: "result_twofailedbiddings",
+                        triggers: ["Competitive Bidding"]
                     },
                     different_prefer_twofailedbidding_noncse: {
                         text: "🔄 Adopt different procurement mode",
@@ -829,7 +833,7 @@
                     yes: {
                         text: "✅ Yes",
                         next: "prefer_repeatorder_noncse",
-                        triggers: ["Repeat Order", "Small Value Procurement", "Competitive Bidding"]
+                        triggers: ["Repeat Order"]
                     },
                     no: {
                         text: "❌ No",
@@ -842,7 +846,8 @@
                 options: {
                     yes_prefer_repeatorder_noncse: {
                         text: "📋 To Prepare Purchase Request and adopt Repeat Order",
-                        next: "result_repeatorder"
+                        next: "result_repeatorder",
+                        triggers: ["Small Value Procurement", "Competitive Bidding"]
                     },
                     different_prefer_repeatorder_noncse: {
                         text: "🔄 Adopt different procurement mode",
