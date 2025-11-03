@@ -1504,7 +1504,7 @@
                         next: "result_unsolicitedofferwithbidmatching"
                     },
                     substantialimprovement_noncse: {
-                        text: "Offer a substantial improvement over existing solutions, demonstrated through verifiable data, proof of concept, or technical studies,
+                        text: "Offer a substantial improvement over existing solutions, demonstrated through verifiable data, proof of concept, or technical studies",
                         next: "result_unsolicitedofferwithbidmatching"
                     },
                     emergingtechnology_noncse: {
