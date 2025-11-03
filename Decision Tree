@@ -1423,7 +1423,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_underconstruction"
+                        next: "typeofsupplier_noncse"
                     }
                 }
             },
@@ -1442,7 +1442,7 @@
                     },
                     othergoods_limitedsourcebidding_noncse: {
                         text: "❓ Not among the stated options",
-                        next: "result_underconstruction"
+                        next: "typeofsupplier_noncse"
                     }
                 }
             },
@@ -1455,7 +1455,7 @@
                     },
                     different_prefer_limitedsourcebidding_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "result_underconstruction"
+                        next: "typeofsupplier_noncse"
                     }
                 }
             },
