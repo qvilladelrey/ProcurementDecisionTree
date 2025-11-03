@@ -1499,19 +1499,23 @@
             typeofgood_unsolicitedofferwithbidmatching_noncse: {
                 question: "Does the Good:",
                 options: {
-                    exclusivedealer_noncse: {
-                        text: "Sold by an exclusive dealer or manufacturer which does not have sub-dealers selling at lower prices and for which no suitable substitute can be obtained at more advantageous terms to the government",
+                    significantbenefits_noncse: {
+                        text: "Provide significant benefits to the procuring entity in terms of efficiency, cost, or outcome",
                         next: "result_limitedsourcebidding"
                     },
-                    criticalcomponent_noncse: {
-                        text: "A critical component from a specific manufacturer, supplier, or distributor is a condition precedent to hold a service provider to guarantee its project performance, in accordance with the provisions of the contract, as determined by the EU/IU",
+                    substantialimprovement_noncse: {
+                        text: "Offer a substantial improvement over existing solutions, demonstrated through verifiable data, proof of concept, or technical studies,
                         next: "result_limitedsourcebidding"
                     },
-                    proprietarygood_noncse: {
-                        text: "Proprietary in nature, which can only be obtained from the proprietary source; or when patents, trade secrets, and copyrights prohibit others from manufacturing the same item, as supported by relevant documentary evidence issued by competent authority",
+                    emergingtechnology_noncse: {
+                        text: "Incorporate features promoting emerging technology and sustainable solutions",
                         next: "result_limitedsourcebidding"
                     },
-                    othergoods_directcontracting_noncse: {
+                    stateoftheart_noncse: {
+                        text: "Involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
+                        next: "result_limitedsourcebidding"
+                    },
+                    othergoods_unsolicitedofferwithbidmatching_noncse: {
                         text: "❓ Not among the stated options",
                         next: "typeofsupplier_noncse"
                     }
