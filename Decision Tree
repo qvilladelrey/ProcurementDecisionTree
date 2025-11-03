@@ -1112,12 +1112,12 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "afpmodernizationprogram_directnegotiation_noncse",
+                        next: "prefer_defensecooperation_noncse",
                         triggers: ["Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items"]
                     },
                     no: {
                         text: "❌ No",
-                        next: "prefer_defensecooperation_noncse"
+                        next: "afpmodernizationprogram_directnegotiation_noncse"
                     }
                 }
             },
