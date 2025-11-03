@@ -2378,8 +2378,8 @@
                     currentNode === 'repeatorder_quantifiablegood_noncse' ||
                     currentNode === 'retailpumpprice' ||
                     currentNode === 'immediateconsumption' ||
-                    currentNode === 'directacquisition_abc_noncse' ||
-                    currentNode === 'directacquisition_invoicecompliant_noncse' ||
+                    currentNode === 'directacquisition_abc_pol' ||
+                    currentNode === 'directacquisition_invoicecompliant_pol' ||
                     currentNode === 'smallvalueprocurement_abc' ||
                     currentNode === 'prefer_competitivebidding_noncse' ||
                     currentNode === 'onlinesubscription_availablepsdbm' ||
