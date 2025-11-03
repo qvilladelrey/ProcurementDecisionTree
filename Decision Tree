@@ -271,7 +271,7 @@
         .recommendation-title {
           font-weight: 700;
           font-size: 1.3em;
-          margin-bottom: 20px;
+          margin-bottom: 15px;
           display: flex;
           justify-content: center; 
           align-items: center;
@@ -280,6 +280,7 @@
 
         .recommendation-title .icon {
             margin-right: 10px;
+            margin-bottom: 10px;
             font-size: 1.5em;
         }
 
