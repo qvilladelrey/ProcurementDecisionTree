@@ -1017,7 +1017,7 @@
                     no: {
                         text: "❌ No",
                         next: "prefer_publicbidding_onlinesubscription", 
-                        triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions", "]
+                        triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions", "Small Value Procurement"]
                     }
                 }
             },
