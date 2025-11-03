@@ -2501,15 +2501,12 @@
             const primaryRecommendation = document.createElement('div');
             primaryRecommendation.className = 'primary-recommendation';
             primaryRecommendation.innerHTML = `
-              <div class="recommendation-title">
-                <span class="icon">🏆</span>
-                <span>Primary Recommendation</span>
-              </div>
+              <div class="recommendation-title">🏆 Primary Recommendation</div>
+              <strong>${result.title}</strong>
               <div class="recommendation-description">
-                <strong>${result.title}</strong><br><br>
                 ${result.description}
-                <br><br><a href="${result.link || '#'}" target="_blank" class="learn-more-btn">🔗 Learn more about this mode</a>
               </div>
+              <a href="${result.link || '#'}" target="_blank" class="learn-more-btn">🔗 Learn more about this mode</a>
             `;
             recommendationContainer.appendChild(primaryRecommendation);
             
