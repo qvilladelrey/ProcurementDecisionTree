@@ -1008,28 +1008,25 @@
                 }
             },
             onlinesubscription_abc: {
-                question: "Is the ABC more than Php 1 million?",
+                question: "Is the ABC:",
                 options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "onlinesubscription_abc_hopeapproval"
+                    lessonemillion_onlinesubscription: {
+                        text: "Less than one (1) million",
+                        next: "prefer_publicbidding_onlinesubscription",
+                        triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
                     },
-                    no: {
-                        text: "❌ No",
-                        next: "prefer_publicbidding_onlinesubscription", 
-                        triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions", "Small Value Procurement"]
-                    }
-                }
-            },
-            onlinesubscription_abc_hopeapproval: {
-                question: "Is the ABC below 5 million (with HoPE approval)?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "prefer_publicbidding_onlinesubscription"
+                    moreonemillionlesstwomillion_onlinesubscription: {
+                        text: "📚 Scientific, technical, economic, business, trade or legal journal, magazine, paper, subscription, or other exclusive statistical publications and references",
+                        next: "prefer_publicbidding_onlinesubscription",
+                        triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
                     },
-                    no: {
-                        text: "❌ No",
+                    moretwomillionlessfivemillion_onlinesubscription: {
+                        text: "🔬 Highly specialized life-saving medical and biotech equipment and devices, medicine, supplies, materials, tools and consumables, as certified by the Department of Health",
+                        next: "prefer_publicbidding_onlinesubscription",
+                        triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
+                    },
+                    morefivemillion_onlinesubscription: {
+                        text: "🎥 Media documentation, advertisement, or announcement through television, radio, newspaper, internet, and other communication media",
                         next: "result_competitivebidding"
                     }
                 }
@@ -2350,8 +2347,6 @@
                     currentNode === 'prefer_competitivebidding_noncse' ||
                     currentNode === 'onlinesubscription_availablepsdbm' ||
                     currentNode === 'onlinesubscription_localprovider' ||
-                    currentNode === 'onlinesubscription_abc' ||
-                    currentNode === 'onlinesubscription_abc_hopeapproval' ||
                     currentNode === 'prefer_publicbidding_onlinesubscription' ||
                     currentNode === 'sagipsaka_accreditedffce' ||
                     currentNode === 'afpmodernizationprogram_noncse' || 
