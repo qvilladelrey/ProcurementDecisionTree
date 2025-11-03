@@ -766,7 +766,7 @@
                     yes_prefer_directsales: {
                         text: "🤝 Coordinate with the government agency that originally procured the non-CSE",
                         next: "result_directsales",
-                        triggers: ["Direct Sales"]
+                        triggers: ["Small Value Procurement", "Competitive Bidding"]
                     },
                     different_prefer_directsales: {
                         text: "🔄 Adopt different procurement mode",
