@@ -702,7 +702,8 @@
                     },
                     different_prefer_takeover_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "directacquisition_abc_noncse"
+                        next: "directacquisition_abc_noncse",
+                        triggers: ["Competitive Bidding", "Competitive Dialogue", "Limited Source Bidding", "Small Value Procurement"]
                     }
                 }
             },
