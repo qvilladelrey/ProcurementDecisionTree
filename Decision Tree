@@ -656,7 +656,7 @@
                 question: "Is there a need to:",
                 options: {
                     directpurchase_noncse: {
-                        text: "🔄 Directly purchase from supplier that has delivered non-CSE to other government agency",
+                        text: "📦 Directly purchase from supplier that has delivered non-CSE to other government agency",
                         next: "directsales_previousprocurement_competitive"
                     },
                     takeovercontract_noncse: {
@@ -776,7 +776,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directsales: {
-                        text: "🤝 Coordinate with the government agency that originally procured the non-CSE",
+                        text: "📦 Coordinate with the government agency that originally procured the non-CSE",
                         next: "result_directsales"
                     },
                     different_prefer_directsales: {
@@ -1012,7 +1012,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directretail_pol: {
-                        text: "🤝 Adopt Direct Retail",
+                        text: "⛽ Adopt Direct Retail",
                         next: "result_directretailofpol"
                     },
                     different_prefer_directretail_pol: {
@@ -1102,11 +1102,11 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directretailsmallvalueprocurement_onlinesubscription: {
-                        text: "🤝 Adopt Direct Retail",
+                        text: "⛽ Adopt Direct Retail",
                         next: "result_directretailofpol"
                     },
                     different_prefer_smallvalueprocurement_onlinesubscription: {
-                        text: "🤝 Adopt Small Value Procurement",
+                        text: "🛍️ Adopt Small Value Procurement",
                         next: "result_smallvalueprocurement"
                     },
                     different_prefer_smallvalueprocurementothers_onlinesubscription: {
@@ -1123,7 +1123,7 @@
                         next: "result_directretailofpol"
                     },
                     different_prefer_competitivebidding_onlinesubscription: {
-                        text: "🤝 Adopt Competitive Bidding",
+                        text: "🏆 Adopt Competitive Bidding",
                         next: "result_competitivebidding"
                     },
                     different_prefer_competitivebiddingothers_onlinesubscription: {
