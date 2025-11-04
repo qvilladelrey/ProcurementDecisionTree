@@ -2093,7 +2093,7 @@
             },
             result_sagipsaka: {
                 title: "Adopt Sagip Saka Act",
-                description: "Sample.",
+                description: "Based on your selections, your procurement should follow the provisions of Republic Act No. 11321 (Sagip Saka Act) and its Implementing Rules and Regulations (IRR). This ensures that agricultural and fishery products are procured from accredited farmers’ and fisherfolk cooperatives and enterprises, promoting local production, fair trade, and sustainable sourcing.",
                 path: []
             }'
             result_underconstruction: {
