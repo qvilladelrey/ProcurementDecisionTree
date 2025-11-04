@@ -1768,7 +1768,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "result_underconstruction"
+                        next: "directacquisition_abc_cse"
                     }
                 }
             },
