@@ -2122,7 +2122,7 @@
             result_procurepsdbm: {
                 title: "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)",
                 description: "Procuring Entities can purchase common-use supplies and equipment directly from the Procurement Service–Department of Budget and Management (PS-DBM). This ensures cost efficiency, standardization, and timely availability of pre-procured items, while reducing duplication of bidding and promoting the efficient use of government resources.",
-                link: "Direct Procurement for STI.pdf",
+                link: "PS-DBM.pdf",
                 path: []
             },
             result_underconstruction: {
@@ -2155,7 +2155,8 @@
             "Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations": "🤝",
             "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions": "🤝",
             "Direct Sales": "🔄",
-            "Direct Procurement for Science, Technology, and Innovation": "🔬"
+            "Direct Procurement for Science, Technology, and Innovation": "🔬",
+            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "🤝"
         };
 
         const procurementModeLinks = {
@@ -2181,7 +2182,8 @@
             "Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations": "UN Organizations.pdf",
             "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions": "Direct Retail of POL.pdf",
             "Direct Sales": "Direct Sales.pdf",
-            "Direct Procurement for Science, Technology, and Innovation": "Direct Procurement for STI.pdf"
+            "Direct Procurement for Science, Technology, and Innovation": "Direct Procurement for STI.pdf",
+            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "PS-DBM.pdf"
         };
 
         let currentNode = 'start';
