@@ -457,6 +457,35 @@
           box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
         }
 
+        .manual-buttons-container {
+          position: fixed;
+          bottom: 110px; /* places it above the User Guide button */
+          right: 25px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          z-index: 9999;
+        }
+        
+        .manual-btn {
+          background: #1e3888;
+          color: white;
+          border: none;
+          padding: 12px 18px;
+          border-radius: 10px;
+          font-size: 0.95em;
+          cursor: pointer;
+          font-weight: 500;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .manual-btn:hover {
+          background: #1e3888;
+          transform: translateY(-3px);
+          box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+        }
+
         @media (max-width: 768px) {
             .decision-container {
                 padding: 25px;
@@ -557,6 +586,13 @@
             💬 Give Feedback
             </button>
             </div>
+        </div>
+
+        <!-- 📚 Manual Download Buttons -->
+        <div class="manual-buttons-container">
+          <button class="manual-btn" onclick="downloadManual('Decision Tree (Goods).pdf')">📦 Manual Version for Goods</button>
+          <button class="manual-btn" onclick="downloadManual('Decision Tree (Infra).pdf')">🏗️ Manual Version for Infrastructure</button>
+          <button class="manual-btn" onclick="downloadManual('Decision Tree (Consulting).pdf')">🤝 Manual Version for Consulting</button>
         </div>
 
         <div class="user-guide-container" onclick="openUserGuide()">
@@ -2550,6 +2586,13 @@
 
         function openUserGuide() {
           window.open('User_Guide.pdf', '_blank'); 
+        }
+
+        function downloadManual(filename) {
+          const link = document.createElement('a');
+          link.href = filename;
+          link.download = filename;
+          link.click();
         }
 
 </script>
