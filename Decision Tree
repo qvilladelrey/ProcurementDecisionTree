@@ -936,7 +936,7 @@
                 options: {
                     yes_prefer_directacquisition_noncse: {
                         text: "🤝 Adopt Direct Acquisition",
-                        next: "result_communityparticipation"
+                        next: "result_directacquisition"
                     },
                     different_prefer_directacquisition_noncse: {
                         text: "🔄 Adopt different procurement mode",
