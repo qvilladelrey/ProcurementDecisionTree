@@ -257,15 +257,10 @@
             margin-bottom: 20px;
         }
 
-        .primary-recommendation {
-          background: linear-gradient(135deg, #1e3888, #3a6ea5);
-          color: white;
-          padding: 25px;
-          border-radius: 15px;
-          margin-bottom: 15px;
-          box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-          text-align: justify;
-          position: relative;
+        .primary-recommendation strong {
+          display: block;
+          text-align: center;
+          margin-bottom: 20px;
         }
 
         .recommendation-title {
@@ -285,9 +280,7 @@
         }
 
         .recommendation-description {
-          font-size: 0.9em;
-          line-height: 1.4;
-          text-align: justify; 
+          margin-top: 10px;
         }
 
         .recommendation-description strong {
