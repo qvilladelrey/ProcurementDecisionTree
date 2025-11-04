@@ -2095,6 +2095,11 @@
                 title: "Adopt Sagip Saka Act",
                 description: "Sample.",
                 path: []
+            }'
+            result_underconstruction: {
+                title: "🚧 Under Construction",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                path: []
             }
         };
 
