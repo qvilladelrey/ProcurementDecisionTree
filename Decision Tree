@@ -697,13 +697,11 @@
                 options: {
                     yes_prefer_takeover_noncse: {
                         text: "📋 Post-Qualify and negotiate with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
-                        next: "result_takeoverofcontracts",
-                        triggers: ["Competitive Bidding", "Competitive Dialogue", "Limited Source Bidding", "Small Value Procurement"]
+                        next: "result_takeoverofcontracts"
                     },
                     different_prefer_takeover_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "directacquisition_abc_noncse",
-                        triggers: ["Competitive Bidding", "Competitive Dialogue", "Limited Source Bidding", "Small Value Procurement"]
+                        next: "directacquisition_abc_noncse"
                     }
                 }
             },
@@ -791,8 +789,7 @@
                 options: {
                     yes_prefer_twofailedbidding_noncse: {
                         text: "📋 To Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
-                        next: "result_twofailedbiddings",
-                        triggers: ["Competitive Bidding", "Limited Source Bidding", "Competitive Dialogue"]
+                        next: "result_twofailedbiddings"
                     },
                     different_prefer_twofailedbidding_noncse: {
                         text: "🔄 Adopt different procurement mode",
@@ -858,8 +855,7 @@
                 options: {
                     yes_prefer_repeatorder_noncse: {
                         text: "📋 To Prepare Purchase Request and adopt Repeat Order",
-                        next: "result_repeatorder",
-                        triggers: ["Competitive Bidding", "Limited Source Bidding", "Competitive Dialogue", "Unsolicited Offer with Bid Matching"]
+                        next: "result_repeatorder"
                     },
                     different_prefer_repeatorder_noncse: {
                         text: "🔄 Adopt different procurement mode",
