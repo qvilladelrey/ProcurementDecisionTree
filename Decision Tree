@@ -1119,7 +1119,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directretailcompetitivebidding_onlinesubscription: {
-                        text: "🤝 Adopting Direct Retail",
+                        text: "🌐 Adopting Direct Retail",
                         next: "result_directretailofpol"
                     },
                     different_prefer_competitivebidding_onlinesubscription: {
@@ -1136,7 +1136,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_competitivebiddingothers_onlinesubscription: {
-                        text: "🤝 Adopt Competitive Bidding",
+                        text: "🏆 Adopt Competitive Bidding",
                         next: "result_competitivebidding"
                     },
                     different_prefer_otherscompetitivebiddingothers_onlinesubscription: {
@@ -1216,7 +1216,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_defensecooperation_noncse: {
-                        text: "🤝 Adopt Negotiated Procurement",
+                        text: "🚁 Adopt Negotiated Procurement",
                         next: "result_defensecooperationagreement"
                     },
                     different_prefer_defensecooperation_noncse: {
@@ -1258,7 +1258,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_scientificscholarly_noncse: {
-                        text: "🤝 Adopting Negotiated Procurement",
+                        text: "🎓 Adopting Negotiated Procurement",
                         next: "result_scientificscholarlyetc"
                     },
                     different_prefer_scientificscholarly_noncse: {
@@ -1299,7 +1299,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_realpropertyvenue: {
-                        text: "🤝 Adopting Negotiated Procurement",
+                        text: "🏢 Adopting Negotiated Procurement",
                         next: "result_leaseofrealproperty"
                     },
                     different_prefer_realpropertyvenue: {
@@ -1326,11 +1326,11 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_agencytoagency_realpropertyvenue: {
-                        text: "🤝 Enter into Contract with Agency",
+                        text: "🏢 Enter into Contract with Agency",
                         next: "result_leaseofrealproperty"
                     },
                     different_prefer_realpropertyvenue_realpropertyvenue: {
-                        text: "🤝 Enter into a Memorandum of Agreement (MOA) with Agency",
+                        text: "📝 Enter into a Memorandum of Agreement (MOA) with Agency",
                         next: "result_agencytoagency"
                     },
                     different_prefer_agencytoagency_realpropertyvenue: {
@@ -1443,7 +1443,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directsti_noncse: {
-                        text: "🤝 Adopting Direct Procurement",
+                        text: "🔬 Adopting Direct Procurement",
                         next: "result_directprocurementforsti"
                     },
                     different_prefer_directsti_noncse: {
@@ -1501,7 +1501,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_limitedsourcebidding_noncse: {
-                        text: "🤝 Direct invitation to bid by the PE to a set of pre-selected suppliers",
+                        text: "🏭 Direct invitation to bid by the PE to a set of pre-selected suppliers",
                         next: "result_limitedsourcebidding"
                     },
                     different_prefer_limitedsourcebidding_noncse: {
@@ -1538,7 +1538,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directcontracting_noncse: {
-                        text: "🤝 Adopt Direct Contracting and prepare Price Quotation or Pro Forma Invoice w/ Conditions of Sale",
+                        text: "📝 Adopt Direct Contracting and prepare Price Quotation or Pro Forma Invoice w/ Conditions of Sale",
                         next: "result_directcontracting"
                     },
                     different_prefer_directcontracting_noncse: {
@@ -1630,7 +1630,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_unagency_noncse: {
-                        text: "🤝 Enter into a Memorandum of Agreement with the identified agency",
+                        text: "🌐 Enter into a Memorandum of Agreement with the identified agency",
                         next: "result_unagencies"
                     },
                     different_prefer_unagency_noncse: {
@@ -1657,7 +1657,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_ngoparticipation_noncse: {
-                        text: "🤝 Enter into a Memorandum of Agreement with the identified NGO",
+                        text: "🏢 Enter into a Memorandum of Agreement with the identified NGO",
                         next: "result_ngoparticipation"
                     },
                     different_prefer_ngoparticipation_noncse: {
@@ -1684,7 +1684,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_agencytoagency_noncse: {
-                        text: "🤝 Enter into a Memorandum of Agreement with the identified agency",
+                        text: "🏢 Enter into a Memorandum of Agreement with the identified agency",
                         next: "result_ngoparticipation"
                     },
                     different_prefer_agencytoagency_noncse: {
@@ -1697,7 +1697,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_localcommunity_noncse: {
-                        text: "🤝 Adopting Negotiated Procurement",
+                        text: "🏘️ Adopting Negotiated Procurement",
                         next: "result_communityparticipation"
                     },
                     different_prefer_localcommunity_noncse: {
@@ -1929,7 +1929,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directacquisition_cse: {
-                        text: "🤝 Adopting Direct Acquisition",
+                        text: "🛒 Adopting Direct Acquisition",
                         next: "result_directacquisition"
                     },
                     different_prefer_directacquisition_cse: {
