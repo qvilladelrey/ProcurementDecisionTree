@@ -2126,11 +2126,13 @@
             result_sagipsaka: {
                 title: "Adopt Sagip Saka Act",
                 description: "Based on your selections, your procurement should follow the provisions of Republic Act No. 11321 (Sagip Saka Act) and its Implementing Rules and Regulations (IRR). This ensures that agricultural and fishery products are procured from accredited farmers’ and fisherfolk cooperatives and enterprises, promoting local production, fair trade, and sustainable sourcing.",
+                link: "Sagip Saka Guidelines.pdf",
                 path: []
             },
             result_underconstruction: {
                 title: "🚧 Under Construction",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type.",
+                link: "Under Construction.pdf",
                 path: []
             }
         };
@@ -2159,7 +2161,8 @@
             "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions": "⛽",
             "Direct Sales": "📦",
             "Direct Procurement for Science, Technology, and Innovation": "🔬",
-            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "📋"
+            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "📋",
+            "Under Construction": "🚧"
         };
 
         const procurementModeLinks = {
@@ -2186,7 +2189,8 @@
             "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions": "Direct Retail of POL.pdf",
             "Direct Sales": "Direct Sales.pdf",
             "Direct Procurement for Science, Technology, and Innovation": "Direct Procurement for STI.pdf",
-            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "PS-DBM.pdf"
+            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "PS-DBM.pdf",
+            "Under Construction": "Under Construction.pdf"
         };
 
         let currentNode = 'start';
