@@ -585,7 +585,7 @@
                 }
             },
             isthereemergency_goods: {
-                question: "Is there:",
+                question: "Is there a need to:",
                 options: {
                     imminentdanger_goods: {
                         text: "🌪️ Address imminent danger to life or property during a state of calamity",
@@ -598,7 +598,7 @@
                         triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     immediateaction_goods: {
-                        text: "🚨 A need to undertake immediate action to prevent damage to or loss of life or property or to restore vital public  services, infrastructure facilities,  and other public utilities",
+                        text: "🚨 Undertake immediate action to prevent damage to or loss of life or property or to restore vital public  services, infrastructure facilities,  and other public utilities",
                         next: "prefer_emergencycases_goods",
                         triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
