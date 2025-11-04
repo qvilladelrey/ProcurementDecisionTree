@@ -292,7 +292,7 @@
 
         .recommendation-description strong {
           display: block;
-          text-align: center; /* centers the mode title */
+          text-align: center; 
           margin-bottom: 15px;
         }
 
