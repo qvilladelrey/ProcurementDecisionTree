@@ -2189,37 +2189,29 @@
             itemsToShow = breadcrumbPath.map((text, i) => ({ text, index: i }));
           }
         
-          // Render breadcrumbs
-          itemsToShow.forEach((item, idx) => {
-            // Separator
-            const separator = document.createElement('span');
-            separator.textContent = ' / ';
-            separator.style.color = '#999';
-            breadcrumbTrail.appendChild(separator);
+        // Render breadcrumbs
+        itemsToShow.forEach((item, idx) => {
+          // Separator
+          const separator = document.createElement('span');
+          separator.textContent = ' / ';
+          separator.style.color = '#999';
+          breadcrumbTrail.appendChild(separator);
         
-            if (item.isEllipsis) {
-              // Ellipsis, not clickable
-              const ellipsis = document.createElement('span');
-              ellipsis.className = 'breadcrumb-current';
-              ellipsis.textContent = '...';
-              breadcrumbTrail.appendChild(ellipsis);
-            } else if (item.index < breadcrumbPath.length - 1) {
-              // Clickable breadcrumb
-              const breadcrumbBtn = document.createElement('button');
-              breadcrumbBtn.className = 'breadcrumb-btn';
-              breadcrumbBtn.textContent = truncate(item.text);
-              breadcrumbBtn.title = item.text; // Show full text on hover
-              breadcrumbBtn.onclick = () => navigateToStep(item.index);
-              breadcrumbTrail.appendChild(breadcrumbBtn);
-            } else {
-              // Current breadcrumb (not clickable)
-              const breadcrumbItem = document.createElement('span');
-              breadcrumbItem.className = 'breadcrumb-current';
-              breadcrumbItem.textContent = truncate(item.text);
-              breadcrumbItem.title = item.text;
-              breadcrumbTrail.appendChild(breadcrumbItem);
-            }
-          });
+          if (item.isEllipsis) {
+            // Ellipsis, not clickable
+            const ellipsis = document.createElement('span');
+            ellipsis.className = 'breadcrumb-current';
+            ellipsis.textContent = '...';
+            breadcrumbTrail.appendChild(ellipsis);
+          } else {
+            // All breadcrumbs are now non-clickable
+            const breadcrumbItem = document.createElement('span');
+            breadcrumbItem.className = 'breadcrumb-current';
+            breadcrumbItem.textContent = truncate(item.text);
+            breadcrumbItem.title = item.text;
+            breadcrumbTrail.appendChild(breadcrumbItem);
+          }
+        });
         
           // Show/hide container
           if (breadcrumbPath.length > 0) {
