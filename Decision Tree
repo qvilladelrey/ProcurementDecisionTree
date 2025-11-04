@@ -590,9 +590,9 @@
 
         <!-- 📚 Manual Download Buttons -->
         <div class="manual-buttons-container">
-          <button class="manual-btn" onclick="downloadManual('[For Comments] Decision Tree (Goods).pdf')">📦 Download Manual Version for Goods</button>
-          <button class="manual-btn" onclick="downloadManual('[For Comments] Decision Tree (Infra).pdf')">🏗️ Download Manual Version for Infrastructure</button>
-          <button class="manual-btn" onclick="downloadManual('[For Comments] Decision Tree (Consulting).pdf')">🤝 Download Manual Version for Consulting</button>
+          <button class="manual-btn" onclick="downloadManual('Decision Tree (Goods).pdf')">📦 Download Manual Version for Goods</button>
+          <button class="manual-btn" onclick="downloadManual('Decision Tree (Infra).pdf')">🏗️ Download Manual Version for Infrastructure</button>
+          <button class="manual-btn" onclick="downloadManual('Decision Tree (Consulting).pdf')">🤝 Download Manual Version for Consulting</button>
         </div>
 
         <div class="user-guide-container" onclick="openUserGuide()">
