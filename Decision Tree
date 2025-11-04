@@ -2134,29 +2134,29 @@
 
         const procurementModeEmojis = {
             "Competitive Bidding": "🏆",            
-            "Limited Source Bidding": "🎯",
+            "Limited Source Bidding": "🏭",
             "Competitive Dialogue": "🤝",
             "Unsolicited Offer with Bid Matching": "⭐",
-            "Direct Contracting": "🤝",
-            "Direct Acquisition": "🤝",
+            "Direct Contracting": "📝",
+            "Direct Acquisition": "🛒",
             "Repeat Order": "📋",
-            "Small Value Procurement": "💰",
+            "Small Value Procurement": "🛍️",
             "Negotiated Procurement: Two-Failed Biddings": "🔄",
             "Negotiated Procurement: Emergency Cases": "🚨",
             "Negotiated Procurement: Take-Over of Contracts": "📋",
-            "Negotiated Procurement: Adjacent or Contiguous": "📋",
-            "Negotiated Procurement: Agency-to-Agency": "🤝",
+            "Negotiated Procurement: Adjacent or Contiguous": "⚙️",
+            "Negotiated Procurement: Agency-to-Agency": "🏛️",
             "Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services": "🎓",
             "Negotiated Procurement: Highly Technical Consultants": "🌟",
             "Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items": "🚁",
-            "Negotiated Procurement: Lease of Real Property and Venue": "🤝",
-            "Negotiated Procurement: Non-Government Organization (NGO) Participation": "🤝",
-            "Negotiated Procurement: Community Participation": "🤝",
-            "Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations": "🤝",
-            "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions": "🤝",
-            "Direct Sales": "🔄",
+            "Negotiated Procurement: Lease of Real Property and Venue": "🏢",
+            "Negotiated Procurement: Non-Government Organization (NGO) Participation": "🏢",
+            "Negotiated Procurement: Community Participation": "🏘️",
+            "Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations": "🌐",
+            "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions": "⛽",
+            "Direct Sales": "📦",
             "Direct Procurement for Science, Technology, and Innovation": "🔬",
-            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "🤝"
+            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "📋"
         };
 
         const procurementModeLinks = {
