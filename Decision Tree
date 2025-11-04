@@ -1866,11 +1866,11 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "smallvalueprocurement_abc"
+                        next: "typeofgood_directacquisition_cse"
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_directacquisition_cse"
+                        next: "smallvalueprocurement_abc"
                     }
                 }
             },
