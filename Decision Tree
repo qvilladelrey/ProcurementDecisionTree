@@ -1569,7 +1569,7 @@
                     },
                     othergoods_unsolicitedofferwithbidmatching_noncse: {
                         text: "❓ Not among the stated options",
-                        next: "result_underconstruction"
+                        next: "result_reviewtechspecs"
                     }
                 }
             },
@@ -2084,6 +2084,11 @@
                 title: "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)",
                 description: "Procuring Entities can purchase common-use supplies and equipment directly from the Procurement Service–Department of Budget and Management (PS-DBM). This ensures cost efficiency, standardization, and timely availability of pre-procured items, while reducing duplication of bidding and promoting the efficient use of government resources.",
                 link: "PS-DBM.pdf",
+                path: []
+            },
+            result_reviewtechspecs: {
+                title: "Review Procurement Documents",
+                description: "Based on your selections, it is recommended that you review your technical specifications, the results of your market scoping, and other relevant documents. This review will help ensure that your requirements are accurate and complete, that the budget aligns with the scope of procurement, and that potential suppliers and pricing have been properly assessed.",
                 path: []
             },
             result_underconstruction: {
