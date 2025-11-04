@@ -1017,46 +1017,6 @@
                     },
                     different_prefer_directretail_pol: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "directacquisition_abc_pol"
-                    }
-                }
-            },
-            directacquisition_abc_pol: {
-                question: "Is the ABC less than Php 200,000.00?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "directacquisition_invoicecompliant_pol"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "smallvalueprocurement_abc"
-                    }
-                }
-            },
-            directacquisition_invoicecompliant_pol: {
-                question: "Does the supplier issue invoices compliant with the Bureau of Internal Revenue (BIR) and Commission on Audit (COA)?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "prefer_directacquisition_pol",
-                        triggers: ["Direct Acquisition"]
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "result_underconstruction"
-                    }
-                }
-            },
-            prefer_directacquisition_pol: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_directacquisition_pol: {
-                        text: "🤝 Adopt Direct Acquisition",
-                        next: "result_directacquisition"
-                    },
-                    different_prefer_directacquisition_pol: {
-                        text: "🔄 Adopt different procurement mode",
                         next: "smallvalueprocurement_abc"
                     }
                 }
@@ -2428,8 +2388,6 @@
                     currentNode === 'repeatorder_quantifiablegood_noncse' ||
                     currentNode === 'retailpumpprice' ||
                     currentNode === 'immediateconsumption' ||
-                    currentNode === 'directacquisition_abc_pol' ||
-                    currentNode === 'directacquisition_invoicecompliant_pol' ||
                     currentNode === 'smallvalueprocurement_abc' ||
                     currentNode === 'prefer_competitivebidding_noncse' ||
                     currentNode === 'onlinesubscription_availablepsdbm' ||
