@@ -1151,7 +1151,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_underconstruction"
+                        next: "result_sagipsaka"
                     },
                     no: {
                         text: "❌ No",
@@ -2091,9 +2091,9 @@
                 description: "Based on your selections, it is recommended that you review your technical specifications, the results of your market scoping, and other relevant documents. This review will help ensure that your requirements are accurate and complete, that the budget aligns with the scope of procurement, and that potential suppliers and pricing have been properly assessed.",
                 path: []
             },
-            result_underconstruction: {
-                title: "🚧 Under Construction",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+            result_sagipsaka: {
+                title: "Adopt Sagip Saka Act",
+                description: "Sample.",
                 path: []
             }
         };
