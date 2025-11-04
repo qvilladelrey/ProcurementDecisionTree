@@ -169,7 +169,7 @@
         }
 
         .definition-tooltip {
-            position: absolute; /* or fixed if you prefer */
+            position: absolute; 
             bottom: 100%;
             left: 50%;
             transform: translateX(-50%);
@@ -385,7 +385,7 @@
 
         .learn-more-btn {
           display: block;
-          margin: 20px auto 0 auto; /* centers the button horizontally */
+          margin: 20px auto 0 auto; 
           background: #1e3888;
           color: white;
           padding: 10px 16px;
@@ -1093,7 +1093,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_underconstruction"
+                        next: "result_procurepsdbm"
                     },
                     no: {
                         text: "❌ No",
@@ -1751,7 +1751,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_underconstruction"
+                        next: "result_procurepsdbm"
                     },
                     no: {
                         text: "❌ No",
@@ -2116,6 +2116,12 @@
             result_directprocurementforsti: {
                 title: "Direct Procurement for Science, Technology, and Innovation",
                 description: "Direct Procurement for Science, Technology, and Innovation is a mode of procurement in which the Procuring Entity may directly acquire goods and services from a manufacturer or supplier that is legally, technically, and financially capable of providing the required items or services.",
+                link: "Direct Procurement for STI.pdf",
+                path: []
+            },
+            result_procurepsdbm: {
+                title: "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)",
+                description: "Procuring Entities can purchase common-use supplies and equipment directly from the Procurement Service–Department of Budget and Management (PS-DBM). This ensures cost efficiency, standardization, and timely availability of pre-procured items, while reducing duplication of bidding and promoting the efficient use of government resources.",
                 link: "Direct Procurement for STI.pdf",
                 path: []
             },
