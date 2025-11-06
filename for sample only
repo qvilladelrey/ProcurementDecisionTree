@@ -457,33 +457,60 @@
           box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
         }
 
-        .manual-buttons-container {
+        /* Ellipsis Download Button */
+        .ellipsis-download-container {
           position: fixed;
-          bottom: 110px; /* places it above the User Guide button */
+          bottom: 110px; /* adjust to match your layout */
           right: 25px;
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
           z-index: 9999;
         }
         
-        .manual-btn {
-          background: #3a6ea5;
+        .ellipsis-btn {
+          background: #1e3888;
           color: white;
           border: none;
           padding: 12px 18px;
-          border-radius: 10px;
-          font-size: 0.95em;
+          border-radius: 50%;
+          font-size: 1.5em;
           cursor: pointer;
-          font-weight: 500;
+          font-weight: bold;
           box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
           transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         
-        .manual-btn:hover {
-          background: #1e3888;
+        .ellipsis-btn:hover {
           transform: translateY(-3px);
           box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Dropdown Menu */
+        .manual-dropdown {
+          display: none;
+          position: absolute;
+          bottom: 60px;
+          right: 0;
+          background: white;
+          border-radius: 10px;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+          overflow: hidden;
+          flex-direction: column;
+          min-width: 240px;
+        }
+        
+        .manual-dropdown button {
+          background: none;
+          border: none;
+          color: #1e3888;
+          text-align: left;
+          padding: 12px 16px;
+          font-size: 0.95em;
+          cursor: pointer;
+          width: 100%;
+          transition: background 0.2s ease;
+        }
+        
+        .manual-dropdown button:hover {
+          background: #e8f0ff;
         }
 
         @media (max-width: 768px) {
@@ -588,15 +615,14 @@
             </div>
         </div>
 
-        <!-- 📚 Manual Download Buttons -->
-        <div class="manual-buttons-container">
-          <button class="manual-btn" onclick="downloadManual('Decision Tree (Goods).pdf')">📦 Download Manual Version for Goods</button>
-          <button class="manual-btn" onclick="downloadManual('Decision Tree (Infra).pdf')">🏗️ Download Manual Version for Infrastructure</button>
-          <button class="manual-btn" onclick="downloadManual('Decision Tree (Consulting).pdf')">🤝 Download Manual Version for Consulting</button>
-        </div>
-
-        <div class="user-guide-container" onclick="openUserGuide()">
-          📘 User Guide
+        <!-- Ellipsis Download Button -->
+        <div class="ellipsis-download-container">
+          <button class="ellipsis-btn" onclick="toggleManualDropdown()">⋯</button>
+          <div id="manualDropdown" class="manual-dropdown">
+            <button onclick="downloadManual('Decision Tree (Goods).pdf')">📦 Goods Manual</button>
+            <button onclick="downloadManual('Decision Tree (Infra).pdf')">🏗️ Infrastructure Manual</button>
+            <button onclick="downloadManual('Decision Tree (Consulting).pdf')">🤝 Consulting Manual</button>
+          </div>
         </div>
 
     </div>
@@ -2126,11 +2152,13 @@
             result_sagipsaka: {
                 title: "Adopt Sagip Saka Act",
                 description: "Based on your selections, your procurement should follow the provisions of Republic Act No. 11321 (Sagip Saka Act) and its Implementing Rules and Regulations (IRR). This ensures that agricultural and fishery products are procured from accredited farmers’ and fisherfolk cooperatives and enterprises, promoting local production, fair trade, and sustainable sourcing.",
+                link: "Sagip Saka Guidelines.pdf",
                 path: []
             },
             result_underconstruction: {
                 title: "🚧 Under Construction",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type, or contact your procurement office for immediate assistance with your specific requirements.",
+                description: "This section is currently under development. Please check back later for guidance on this procurement type.",
+                link: "Under Construction.pdf",
                 path: []
             }
         };
@@ -2159,7 +2187,8 @@
             "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions": "⛽",
             "Direct Sales": "📦",
             "Direct Procurement for Science, Technology, and Innovation": "🔬",
-            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "📋"
+            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "📋",
+            "Under Construction": "🚧"
         };
 
         const procurementModeLinks = {
@@ -2186,7 +2215,8 @@
             "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions": "Direct Retail of POL.pdf",
             "Direct Sales": "Direct Sales.pdf",
             "Direct Procurement for Science, Technology, and Innovation": "Direct Procurement for STI.pdf",
-            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "PS-DBM.pdf"
+            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "PS-DBM.pdf",
+            "Under Construction": "Under Construction.pdf"
         };
 
         let currentNode = 'start';
@@ -2587,6 +2617,20 @@
         function openUserGuide() {
           window.open('User_Guide.pdf', '_blank'); 
         }
+
+        function toggleManualDropdown() {
+          const dropdown = document.getElementById('manualDropdown');
+          dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+        }
+        
+        // Optional: Close dropdown when clicking outside
+        window.addEventListener('click', function (e) {
+          const dropdown = document.getElementById('manualDropdown');
+          const button = document.querySelector('.ellipsis-btn');
+          if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+            dropdown.style.display = 'none';
+          }
+        });
 
         function downloadManual(filename) {
           const link = document.createElement('a');
