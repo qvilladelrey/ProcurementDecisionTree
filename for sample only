@@ -436,35 +436,24 @@
           transform: translateY(-1px);
         }
 
-        .user-guide-container {
+        /* Floating Buttons Wrapper */
+        .floating-buttons {
           position: fixed;
           bottom: 25px;
           right: 25px;
-          background: #1e3888;
-          color: white;
-          padding: 14px 20px;
-          border-radius: 12px;
-          font-size: 1em;
-          font-weight: 500;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-          cursor: pointer;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 15px; /* space between buttons */
           z-index: 9999;
         }
         
-        .user-guide-container:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
-        }
-
-        /* Ellipsis Download Button */
+        /* Download (ellipsis) button container */
         .ellipsis-download-container {
-          position: fixed;
-          bottom: 110px; /* adjust to match your layout */
-          right: 25px;
-          z-index: 9999;
+          position: relative;
         }
         
+        /* Ellipsis Button */
         .ellipsis-btn {
           background: #1e3888;
           color: white;
@@ -482,8 +471,8 @@
           transform: translateY(-3px);
           box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
         }
-        
-        /* Dropdown Menu */
+
+        /* Dropdown Menu for Manuals */
         .manual-dropdown {
           display: none;
           position: absolute;
@@ -511,6 +500,40 @@
         
         .manual-dropdown button:hover {
           background: #e8f0ff;
+        }
+        
+        /* User Guide Button */
+        .user-guide-container {
+          background: #1e3888;
+          color: white;
+          padding: 14px 20px;
+          border-radius: 12px;
+          font-size: 1em;
+          font-weight: 500;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+          cursor: pointer;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .user-guide-container {
+          position: fixed;
+          bottom: 25px;
+          right: 25px;
+          background: #1e3888;
+          color: white;
+          padding: 14px 20px;
+          border-radius: 12px;
+          font-size: 1em;
+          font-weight: 500;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+          cursor: pointer;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          z-index: 9999;
+        }
+        
+        .user-guide-container:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
         }
 
         @media (max-width: 768px) {
