@@ -625,6 +625,10 @@
           </div>
         </div>
 
+        <div class="user-guide-container" onclick="openUserGuide()">
+          📘 User Guide
+        </div>
+
     </div>
 
     <script>
