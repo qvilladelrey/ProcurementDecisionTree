@@ -615,14 +615,14 @@
             </div>
         </div>
 
-        <!-- Ellipsis Download Button -->
-        <div class="ellipsis-download-container">
-          <button class="ellipsis-btn" onclick="toggleManualDropdown()">⋯</button>
-          <div id="manualDropdown" class="manual-dropdown">
-            <button onclick="downloadManual('Decision Tree (Goods).pdf')">📦 Goods Manual</button>
-            <button onclick="downloadManual('Decision Tree (Infra).pdf')">🏗️ Infrastructure Manual</button>
-            <button onclick="downloadManual('Decision Tree (Consulting).pdf')">🤝 Consulting Manual</button>
-          </div>
+        <!-- 📚 Collapsible Manual Download Button -->
+        <div class="manual-buttons-container">
+            <button class="manual-btn" onclick="toggleManualOptions()">⬇️ Download</button>
+            <div id="manualOptions" style="display: none; flex-direction: column; gap: 10px; margin-top: 10px;">
+                <button class="manual-btn" onclick="downloadManual('Decision Tree (Goods).pdf')">📦 Goods Manual</button>
+                <button class="manual-btn" onclick="downloadManual('Decision Tree (Infra).pdf')">🏗️ Infrastructure Manual</button>
+                <button class="manual-btn" onclick="downloadManual('Decision Tree (Consulting).pdf')">🤝 Consulting Manual</button>
+            </div>
         </div>
 
         <div class="user-guide-container" onclick="openUserGuide()">
@@ -2622,9 +2622,9 @@
           window.open('User_Guide.pdf', '_blank'); 
         }
 
-        function toggleManualDropdown() {
-          const dropdown = document.getElementById('manualDropdown');
-          dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+        function toggleManualOptions() {
+            const manualOptions = document.getElementById('manualOptions');
+            manualOptions.style.display = manualOptions.style.display === 'none' ? 'flex' : 'none';
         }
         
         // Optional: Close dropdown when clicking outside
