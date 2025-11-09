@@ -685,7 +685,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_emergencycases_goods: {
-                        text: "Adopt Negotiated Procurement: Emergency Cases",
+                        text: "🚨 Adopt Negotiated Procurement: Emergency Cases",
                         next: "result_emergencycases"
                     },
                     different_prefer_emergencycases_goods: {
@@ -764,7 +764,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_takeover_noncse: {
-                        text: "Adopt Negotiated Procurement",
+                        text: "📋 Adopt Negotiated Procurement",
                         next: "result_takeoverofcontracts"
                     },
                     different_prefer_takeover_noncse: {
@@ -843,7 +843,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directsales: {
-                        text: "📦 Coordinate with the government agency that originally procured the non-CSE",
+                        text: "📦 Adopt Direct Sales",
                         next: "result_directsales"
                     },
                     different_prefer_directsales: {
@@ -856,7 +856,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_twofailedbidding_noncse: {
-                        text: "📋 To Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
+                        text: "🔄 Adopt Negotiated Procurement: Two Failed Biddings",
                         next: "result_twofailedbiddings"
                     },
                     different_prefer_twofailedbidding_noncse: {
@@ -922,7 +922,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_repeatorder_noncse: {
-                        text: "📋 To Prepare Purchase Request and adopt Repeat Order",
+                        text: "📋 Adopt Repeat Order",
                         next: "result_repeatorder"
                     },
                     different_prefer_repeatorder_noncse: {
@@ -1000,7 +1000,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directacquisition_noncse: {
-                        text: "🤝 Adopt Direct Acquisition",
+                        text: "🛒 Adopt Direct Acquisition",
                         next: "result_directacquisition"
                     },
                     different_prefer_directacquisition_noncse: {
@@ -1077,7 +1077,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directretail_pol: {
-                        text: "⛽ Adopt Direct Retail",
+                        text: "⛽ Adopt Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions",
                         next: "result_directretailofpol"
                     },
                     different_prefer_directretail_pol: {
@@ -1167,7 +1167,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directretailsmallvalueprocurement_onlinesubscription: {
-                        text: "⛽ Adopt Direct Retail",
+                        text: "⛽ Adopt Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions",
                         next: "result_directretailofpol"
                     },
                     different_prefer_smallvalueprocurement_onlinesubscription: {
@@ -1184,7 +1184,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directretailcompetitivebidding_onlinesubscription: {
-                        text: "🌐 Adopting Direct Retail",
+                        text: "🌐 Adopt Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions",
                         next: "result_directretailofpol"
                     },
                     different_prefer_competitivebidding_onlinesubscription: {
@@ -1281,7 +1281,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_defensecooperation_noncse: {
-                        text: "🚁 Adopt Negotiated Procurement",
+                        text: "🚁 Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items",
                         next: "result_defensecooperationagreement"
                     },
                     different_prefer_defensecooperation_noncse: {
@@ -1323,7 +1323,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_scientificscholarly_noncse: {
-                        text: "🎓 Adopting Negotiated Procurement",
+                        text: "🎓 Adopt Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services",
                         next: "result_scientificscholarlyetc"
                     },
                     different_prefer_scientificscholarly_noncse: {
@@ -1364,7 +1364,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_realpropertyvenue: {
-                        text: "🏢 Adopting Negotiated Procurement",
+                        text: "🏢 Adopt Negotiated Procurement: Lease of Real Property and Venue",
                         next: "result_leaseofrealproperty"
                     },
                     different_prefer_realpropertyvenue: {
@@ -1391,11 +1391,11 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_agencytoagency_realpropertyvenue: {
-                        text: "🏢 Enter into Contract with Agency",
+                        text: "🏢 Adopt Negotiated Procurement: Lease of Real Property and Venue",
                         next: "result_leaseofrealproperty"
                     },
                     different_prefer_realpropertyvenue_realpropertyvenue: {
-                        text: "📝 Enter into a Memorandum of Agreement (MOA) with Agency",
+                        text: "🏛️ Adopt Negotiated Procurement: Agency-to-Agency",
                         next: "result_agencytoagency"
                     },
                     different_prefer_agencytoagency_realpropertyvenue: {
@@ -1458,7 +1458,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_competitivedialogue_noncse: {
-                        text: "🤝 Employ a 2-stage bidding process where the PE invites suppliers etc., to propose solutions to address its needs and requirements",
+                        text: "🤝 Adopt Competitive Dialogue",
                         next: "result_competitivedialogue"
                     },
                     different_prefer_competitivedialogue_noncse: {
@@ -1508,7 +1508,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directsti_noncse: {
-                        text: "🔬 Adopting Direct Procurement",
+                        text: "🔬 Adopt Direct Procurement for Science, Technology, and Innovation",
                         next: "result_directprocurementforsti"
                     },
                     different_prefer_directsti_noncse: {
@@ -1566,7 +1566,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_limitedsourcebidding_noncse: {
-                        text: "🏭 Direct invitation to bid by the PE to a set of pre-selected suppliers",
+                        text: "🏭 Adopt Limited Source Bidding",
                         next: "result_limitedsourcebidding"
                     },
                     different_prefer_limitedsourcebidding_noncse: {
@@ -1603,7 +1603,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directcontracting_noncse: {
-                        text: "📝 Adopt Direct Contracting and prepare Price Quotation or Pro Forma Invoice w/ Conditions of Sale",
+                        text: "📝 Adopt Direct Contracting",
                         next: "result_directcontracting"
                     },
                     different_prefer_directcontracting_noncse: {
@@ -1695,7 +1695,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_unagency_noncse: {
-                        text: "🌐 Enter into a Memorandum of Agreement with the identified agency",
+                        text: "🌐 Adopt Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations",
                         next: "result_unagencies"
                     },
                     different_prefer_unagency_noncse: {
@@ -1722,7 +1722,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_ngoparticipation_noncse: {
-                        text: "🏢 Enter into a Memorandum of Agreement with the identified NGO",
+                        text: "🏢 Adopt Negotiated Procurement: Non-Government Organization (NGO) Participation",
                         next: "result_ngoparticipation"
                     },
                     different_prefer_ngoparticipation_noncse: {
@@ -1749,8 +1749,8 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_agencytoagency_noncse: {
-                        text: "🏢 Enter into a Memorandum of Agreement with the identified agency",
-                        next: "result_ngoparticipation"
+                        text: "🏛️ Adopt Negotiated Procurement: Agency-to-Agency",
+                        next: "result_agencytoagency"
                     },
                     different_prefer_agencytoagency_noncse: {
                         text: "🔄 Adopt different procurement mode",
@@ -1762,7 +1762,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_localcommunity_noncse: {
-                        text: "🏘️ Adopting Negotiated Procurement",
+                        text: "🏘️ Adopt Negotiated Procurement: Community Participation",
                         next: "result_communityparticipation"
                     },
                     different_prefer_localcommunity_noncse: {
@@ -1837,7 +1837,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_takeover_cse: {
-                        text: "📋 Post-Qualify and negotiate with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
+                        text: "📋 Adopt Negotiated Procurement: Take-Over of Contracts",
                         next: "result_takeoverofcontracts"
                     },
                     different_prefer_takeover_cse: {
@@ -1903,7 +1903,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_repeatorder_cse: {
-                        text: "📋 To Prepare Purchase Request and adopt Repeat Order",
+                        text: "📋 Adopt Repeat Order",
                         next: "result_repeatorder"
                     },
                     different_prefer_repeatorder_cse: {
@@ -1994,7 +1994,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_directacquisition_cse: {
-                        text: "🛒 Adopting Direct Acquisition",
+                        text: "🛒 Adopt Direct Acquisition",
                         next: "result_directacquisition"
                     },
                     different_prefer_directacquisition_cse: {
