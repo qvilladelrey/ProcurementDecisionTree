@@ -2621,7 +2621,7 @@
         }
 
         function openUserGuide() {
-          window.open('https://www.canva.com/design/DAG35SkETZs/9okYvhOZTNWTG0lfQGY8ug/view?utm_content=DAG35SkETZs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6f88135de8', '_blank'); 
+          window.open('https://drive.google.com/file/d/1rn8o9af06ipG1kIPzTACDZJC__bH26OY/view?usp=sharing', '_blank'); 
         }
 
         function downloadManual(filename) {
