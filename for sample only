@@ -436,85 +436,6 @@
           transform: translateY(-1px);
         }
 
-        /* Floating Buttons Wrapper */
-        .floating-buttons {
-          position: fixed;
-          bottom: 25px;
-          right: 25px;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-          gap: 15px; /* space between buttons */
-          z-index: 9999;
-        }
-        
-        /* Download (ellipsis) button container */
-        .ellipsis-download-container {
-          position: relative;
-        }
-        
-        /* Ellipsis Button */
-        .ellipsis-btn {
-          background: #1e3888;
-          color: white;
-          border: none;
-          padding: 12px 18px;
-          border-radius: 50%;
-          font-size: 1.5em;
-          cursor: pointer;
-          font-weight: bold;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .ellipsis-btn:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
-        }
-
-        /* Dropdown Menu for Manuals */
-        .manual-dropdown {
-          display: none;
-          position: absolute;
-          bottom: 60px;
-          right: 0;
-          background: white;
-          border-radius: 10px;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-          overflow: hidden;
-          flex-direction: column;
-          min-width: 240px;
-        }
-        
-        .manual-dropdown button {
-          background: none;
-          border: none;
-          color: #1e3888;
-          text-align: left;
-          padding: 12px 16px;
-          font-size: 0.95em;
-          cursor: pointer;
-          width: 100%;
-          transition: background 0.2s ease;
-        }
-        
-        .manual-dropdown button:hover {
-          background: #e8f0ff;
-        }
-        
-        /* User Guide Button */
-        .user-guide-container {
-          background: #1e3888;
-          color: white;
-          padding: 14px 20px;
-          border-radius: 12px;
-          font-size: 1em;
-          font-weight: 500;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-          cursor: pointer;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
         .user-guide-container {
           position: fixed;
           bottom: 25px;
@@ -534,6 +455,60 @@
         .user-guide-container:hover {
           transform: translateY(-4px);
           box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+        }
+
+        /* 📂 Floating Download Button */
+        .download-container {
+          position: fixed;
+          bottom: 90px; /* just above the User Guide button */
+          right: 25px;
+          background: #1e3888;
+          color: white;
+          padding: 14px 20px;
+          border-radius: 12px;
+          font-size: 1em;
+          font-weight: 500;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+          cursor: pointer;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          z-index: 9999;
+        }
+        
+        .download-container:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* 📂 Hidden Download Menu */
+        .download-menu {
+          position: fixed;
+          bottom: 160px; /* appears above the Download button */
+          right: 25px;
+          background: white;
+          border-radius: 12px;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+          display: none;
+          flex-direction: column;
+          gap: 8px;
+          padding: 10px;
+          z-index: 9999;
+        }
+        
+        .download-option {
+          background: #1e3888;
+          color: white;
+          border: none;
+          padding: 10px 16px;
+          border-radius: 8px;
+          font-size: 0.95em;
+          cursor: pointer;
+          font-weight: 500;
+          transition: background 0.3s ease, transform 0.2s ease;
+        }
+        
+        .download-option:hover {
+          background: #3a6ea5;
+          transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
@@ -638,14 +613,16 @@
             </div>
         </div>
 
-        <!-- 📚 Collapsible Manual Download Button -->
-        <div class="manual-buttons-container">
-            <button class="manual-btn" onclick="toggleManualOptions()">⬇️ Download</button>
-            <div id="manualOptions" style="display: none; flex-direction: column; gap: 10px; margin-top: 10px;">
-                <button class="manual-btn" onclick="downloadManual('Decision Tree (Goods).pdf')">📦 Goods Manual</button>
-                <button class="manual-btn" onclick="downloadManual('Decision Tree (Infra).pdf')">🏗️ Infrastructure Manual</button>
-                <button class="manual-btn" onclick="downloadManual('Decision Tree (Consulting).pdf')">🤝 Consulting Manual</button>
-            </div>
+        <!-- 📂 Floating Download Button -->
+        <div class="download-container" onclick="toggleDownloadMenu()">
+        📂 Download
+        </div>
+        
+        <!-- 📂 Hidden Download Menu -->
+        <div id="downloadMenu" class="download-menu">
+          <button class="download-option" onclick="downloadManual('Digital Tree (Goods).pdf')">📦 Digital Tree for Goods</button>
+          <button class="download-option" onclick="downloadManual('Digital Tree (Infrastructure).pdf')">🏗️ Digital Tree for Infrastructure Projects</button>
+          <button class="download-option" onclick="downloadManual('Digital Tree (Consulting).pdf')">🤝 Digital Tree for Consulting Services</button>
         </div>
 
         <div class="user-guide-container" onclick="openUserGuide()">
@@ -2645,25 +2622,9 @@
           window.open('User_Guide.pdf', '_blank'); 
         }
 
-        function toggleManualOptions() {
-            const manualOptions = document.getElementById('manualOptions');
-            manualOptions.style.display = manualOptions.style.display === 'none' ? 'flex' : 'none';
-        }
-        
-        // Optional: Close dropdown when clicking outside
-        window.addEventListener('click', function (e) {
-          const dropdown = document.getElementById('manualDropdown');
-          const button = document.querySelector('.ellipsis-btn');
-          if (!button.contains(e.target) && !dropdown.contains(e.target)) {
-            dropdown.style.display = 'none';
-          }
-        });
-
-        function downloadManual(filename) {
-          const link = document.createElement('a');
-          link.href = filename;
-          link.download = filename;
-          link.click();
+        function toggleDownloadMenu() {
+          const menu = document.getElementById('downloadMenu');
+          menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
         }
 
 </script>
