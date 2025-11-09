@@ -104,6 +104,9 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             flex: 1;
             min-width: 140px;
+            position: relative; /* ensure tooltip positions correctly */
+            overflow: visible !important; /* allow tooltip to show outside */
+            z-index: 1; /* ensure it’s above other elements */
         }
 
         .image-option:hover {
