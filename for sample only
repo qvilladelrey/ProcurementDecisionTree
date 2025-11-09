@@ -2009,19 +2009,19 @@
             result_competitivebidding: {
                 title: "Competitive Bidding",
                 description: "Competitive Bidding is a mode of procurement which is open to participation by any eligible bidder.",
-                link: "Competitive Bidding.pdf",
+                link: "https://drive.google.com/file/d/1DCbKi0KoccDPRrr-tkCrQp0oa96gyjP6/view?usp=sharing",
                 path: []
             },
             result_limitedsourcebidding: {
                 title: "Limited Source Bidding",
                 description: "Limited Source Bidding is a mode of procurement that involves direct  invitation to bid by the Procuring Entity to a set of pre-selected suppliers, contractors, or consultants with known experience and proven capability relative to the requirements of a particular contract.",
-                link: "Limited Source Bidding.pdf",
+                link: "https://drive.google.com/file/d/1MvOSACQkQEb7hB1twaLvtQ8hw1LvZ9lD/view?usp=sharing",
                 path: []
             },
             result_competitivedialogue: {
                 title: "Competitive Dialogue",
                 description: "Competitive Dialogue is a mode of procurement that employs a two-stage  bidding process where the Procuring Entity invites suppliers, manufacturers, distributors, contractors, consultants, and service providers to a dialogue to propose solutions to address its needs and requirements.",
-                link: "Competitive Dialogue.pdf",
+                link: "https://drive.google.com/file/d/1EZbTokpACQOQcZjUac8Yq9TDPdJuZ4Vp/view?usp=sharing",
                 path: []
             },
             result_unsolicitedofferwithbidmatching: {
@@ -2198,9 +2198,9 @@
         };
 
         const procurementModeLinks = {
-            "Competitive Bidding": "Competitive Bidding.pdf",            
-            "Limited Source Bidding": "Limited Source Bidding.pdf",
-            "Competitive Dialogue": "Competitive Dialogue.pdf",
+            "Competitive Bidding": "https://drive.google.com/file/d/1DCbKi0KoccDPRrr-tkCrQp0oa96gyjP6/view?usp=sharing",            
+            "Limited Source Bidding": "https://drive.google.com/file/d/1MvOSACQkQEb7hB1twaLvtQ8hw1LvZ9lD/view?usp=sharing",
+            "Competitive Dialogue": "https://drive.google.com/file/d/1EZbTokpACQOQcZjUac8Yq9TDPdJuZ4Vp/view?usp=sharing",
             "Unsolicited Offer with Bid Matching": "Unsolicited Offer with Bid Matching.pdf",
             "Direct Contracting": "Direct Contracting.pdf",
             "Direct Acquisition": "Direct Acquisition.pdf",
