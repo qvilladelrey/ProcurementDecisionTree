@@ -457,33 +457,60 @@
           box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
         }
 
-        .manual-buttons-container {
+        /* 📂 Floating Download Button */
+        .download-container {
           position: fixed;
-          bottom: 110px; /* places it above the User Guide button */
+          bottom: 90px; /* just above the User Guide button */
           right: 25px;
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
+          background: #1e3888;
+          color: white;
+          padding: 14px 20px;
+          border-radius: 12px;
+          font-size: 1em;
+          font-weight: 500;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+          cursor: pointer;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
           z-index: 9999;
         }
         
-        .manual-btn {
+        .download-container:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* 📂 Hidden Download Menu */
+        .download-menu {
+          position: fixed;
+          bottom: 160px; /* appears above the Download button */
+          right: 25px;
+          background: white;
+          border-radius: 12px;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+          display: none;
+          flex-direction: column;
+          gap: 8px;
+          padding: 10px;
+          z-index: 9999;
+        }
+        
+        .download-option {
           background: #1e3888;
           color: white;
           border: none;
-          padding: 12px 18px;
-          border-radius: 10px;
+          padding: 10px 16px;
+          border-radius: 8px;
           font-size: 0.95em;
           cursor: pointer;
           font-weight: 500;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          transition: background 0.3s ease, transform 0.2s ease;
+          text-decoration: none; /* removes underline */
+          display: block; /* ensures full clickable area */
         }
         
-        .manual-btn:hover {
-          background: #1e3888;
-          transform: translateY(-3px);
-          box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+        .download-option:hover {
+          background: #3a6ea5;
+          transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
@@ -588,11 +615,16 @@
             </div>
         </div>
 
-        <!-- 📚 Manual Download Buttons -->
-        <div class="manual-buttons-container">
-          <button class="manual-btn" onclick="downloadManual('Decision Tree (Goods).pdf')">📦 Manual Version for Goods</button>
-          <button class="manual-btn" onclick="downloadManual('Decision Tree (Infra).pdf')">🏗️ Manual Version for Infrastructure</button>
-          <button class="manual-btn" onclick="downloadManual('Decision Tree (Consulting).pdf')">🤝 Manual Version for Consulting</button>
+        <!-- 📂 Floating Download Button -->
+        <div class="download-container" onclick="toggleDownloadMenu()">
+        📂 Download
+        </div>
+        
+        <!-- 📂 Hidden Download Menu -->
+        <div id="downloadMenu" class="download-menu">
+          <a href="https://drive.google.com/file/d/1050YqU5wg4LPJe13zoDj2FxT-Z6Hd6Gi/view?usp=sharing" target="_blank" class="download-option">📦 Decision Tree for Goods</a>
+          <a href="https://drive.google.com/file/d/1VE3sbfO-jxDQrbafVDBx5aidSzc0fqaT/view?usp=sharing" target="_blank" class="download-option">🏗️ Decision Tree for Infrastructure Projects</a>
+          <a href="https://drive.google.com/file/d/1IeSMvVJPAbkGLcTAZbRTWhZfSzJoQDI2/view?usp=sharing" target="_blank" class="download-option">🤝 Decision Tree for Consulting Services</a>
         </div>
 
         <div class="user-guide-container" onclick="openUserGuide()">
@@ -1977,145 +2009,145 @@
             result_competitivebidding: {
                 title: "Competitive Bidding",
                 description: "Competitive Bidding is a mode of procurement which is open to participation by any eligible bidder.",
-                link: "Competitive Bidding.pdf",
+                link: "https://drive.google.com/file/d/1DCbKi0KoccDPRrr-tkCrQp0oa96gyjP6/view?usp=sharing",
                 path: []
             },
             result_limitedsourcebidding: {
                 title: "Limited Source Bidding",
                 description: "Limited Source Bidding is a mode of procurement that involves direct  invitation to bid by the Procuring Entity to a set of pre-selected suppliers, contractors, or consultants with known experience and proven capability relative to the requirements of a particular contract.",
-                link: "Limited Source Bidding.pdf",
+                link: "https://drive.google.com/file/d/1MvOSACQkQEb7hB1twaLvtQ8hw1LvZ9lD/view?usp=sharing",
                 path: []
             },
             result_competitivedialogue: {
                 title: "Competitive Dialogue",
                 description: "Competitive Dialogue is a mode of procurement that employs a two-stage  bidding process where the Procuring Entity invites suppliers, manufacturers, distributors, contractors, consultants, and service providers to a dialogue to propose solutions to address its needs and requirements.",
-                link: "Competitive Dialogue.pdf",
+                link: "https://drive.google.com/file/d/1EZbTokpACQOQcZjUac8Yq9TDPdJuZ4Vp/view?usp=sharing",
                 path: []
             },
             result_unsolicitedofferwithbidmatching: {
                 title: "Unsolicited Offer with Bid Matching",
                 description: "Unsolicited Offer with Bid Matching is a mode of procurement wherein the Procuring Entity may consider unsolicited offers from the original offeror on a negotiated basis for Goods and Consulting Services.",
-                link: "Unsolicited Offer with Bid Matching.pdf",
+                link: "https://drive.google.com/file/d/1HJWAr_5ZAanEnaHJGXc_-kg18N8gZRGA/view?usp=sharing",
                 path: []
             },
             result_directcontracting: {
                 title: "Direct Contracting",
                 description: "Direct Contracting is a mode of procurement of Goods that does not require elaborate Bidding Documents, and the supplier is only required to submit a price quotation or a pro-forma invoice together with the conditions of sale, which may be accepted immediately or after some negotiations. ",
-                link: "Direct Contracting.pdf",
+                link: "https://drive.google.com/file/d/1ItVcEuwADfAhO-yLuRt0Q4qXUX_6t-q9/view?usp=sharing",
                 path: []
             },
             result_directacquisition: {
                 title: "Direct Acquisition",
                 description: "Direct Acquisition is a mode of procurement of CSE not available in the PS-DBM, Non-CSE, and services with ABC not exceeding Two Hundred Thousand Pesos (₱200,000.00), where the Procuring Entity, without need to conduct a canvass or request for quotations, may procure directly from any known and reputable sources. Goods covered under this mode may be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores. Services may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services. ",
-                link: "Direct Acquisition.pdf",
+                link: "https://drive.google.com/file/d/1y-gk2LPUm8xnh8nTmj5x-m2nDppbM3_c/view?usp=sharing",
                 path: []
             },
             result_repeatorder: {
                 title: "Repeat Order",
                 description: "Repeat Order is a mode of procurement wherein the Procuring Entity may procure goods from the previous winning bidder whenever there arises a need to replenish the goods procured under a contract previously awarded through bidding, particularly Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching.",
-                link: "Repeat Order.pdf",
+                link: "https://drive.google.com/file/d/1LQfKrWgD3heA3NKmVPGw9qhHLL_nBdXS/view?usp=drive_link",
                 path: []
             },
             result_smallvalueprocurement: {
                 title: "Small Value Procurement",
                 description: "Small Value Procurement (SVP) is a mode of procurement whereby the Procuring Entity requests for the submission of at least three (3) price quotations for Goods not available in the PS-DBM, Infrastructure Projects, and Consulting Services. The receipt of one (1) quotation is sufficient to proceed with the evaluation of bidders: Provided, That, the amount involved does not exceed Two Million Pesos (₱2,000,000.00), subject to the periodic review of the threshold amount and adjustments as may be deemed appropriate by the GPPB.",
-                link: "Small Value Procurement.pdf",
+                link: "https://drive.google.com/file/d/1oNyw-dTJZ9PispD2pP2vU_2vNy6m9JE9/view?usp=drive_link",
                 path: []
             },
             result_twofailedbiddings: {
                 title: "Negotiated Procurement: Two-Failed Biddings",
                 description: "This mode of procurement may be adopted in cases of Two Failed Biddings, where there have been two (2) failures of bidding under Competitive Bidding, Limited Source Bidding, or Competitive Dialogue, as provided in Section 64 of the Implementing Rules and Regulations (IRR) of RA 12009.",
-                link: "Two Failed Biddings.pdf",
+                link: "https://drive.google.com/file/d/1MFjBqz5pmdwBa_04upqqQdMSiXkrveCP/view?usp=drive_link",
                 path: []
             },
             result_emergencycases: {
                 title: "Negotiated Procurement: Emergency Cases",
                 description: "This mode of procurement may be adopted in Emergency Cases, where immediate action is required under any of the following circumstances: (a) there is an imminent danger to life or property during a state of calamity; (b) time is of the essence due to natural or man-made calamities; or (c) other causes necessitate urgent action to (i) prevent damage to or loss of life or property, or (ii) restore vital public services, infrastructure facilities, and other public utilities. Such situations include the provision of immediate response and initial recovery measures to prevent loss of life, injury, disease, and other adverse effects on human, physical, mental, and social well-being, as well as to mitigate damage to property, destruction of assets, loss of services, social and economic disruption, and environmental degradation.",
-                link: "Emergency Cases.pdf",
+                link: "https://drive.google.com/file/d/1Yid1cDwIdJ2NwqgO-9zNfLZjc2S3aptR/view?usp=drive_link",
                 path: []
             },
             result_takeoverofcontracts: {
                 title: "Negotiated Procurement: Take-Over of Contracts",
                 description: "This mode of procurement may be adopted in cases of Take-Over of Contracts, where a contract previously awarded through Competitive Bidding, Competitive Dialogue, Limited Source Bidding, or Small Value Procurement has been rescinded or terminated for causes provided in the contract and existing laws, and immediate action is necessary to (a) prevent damage to or loss of life or property, or (b) restore vital public services, infrastructure facilities, and other public utilities.",
-                link: "Take-Over of Contracts.pdf",
+                link: "https://drive.google.com/file/d/1TAGfReZQ_WWBn3mnWhkG4PpvgWBygw9d/view?usp=drive_link",
                 path: []
             },
             result_adjacentorcontiguous: {
                 title: "Negotiated Procurement: Adjacent or Contiguous",
                 description: "This mode of procurement may be adopted in cases of Adjacent or Contiguous Projects, where the subject contract is adjacent or contiguous to an ongoing Infrastructure Project, or involves Consulting Services in which the consultants possess unique experience and expertise necessary to deliver the required services.",
-                link: "Adjacent or Contiguous.pdf",
+                link: "https://drive.google.com/file/d/1mU8dpTOmKtX3OnrwSVojSN6wfFrampq-/view?usp=drive_link",
                 path: []
             },
             result_agencytoagency: {
                 title: "Negotiated Procurement: Agency-to-Agency",
                 description: "This mode of procurement may be adopted through Agency-to-Agency arrangements, involving the procurement of Goods, Infrastructure Projects, or Consulting Services from another government agency that has the mandate and absorptive capacity to effectively undertake the project.",
-                link: "Agency-to-Agency.pdf",
+                link: "https://drive.google.com/file/d/1j1CEgofqUWfn6xzHOmXSgqYBifoC_y7w/view?usp=drive_link",
                 path: []
             },
             result_scientificscholarlyetc: {
                 title: "Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services",
                 description: "This mode of procurement may be adopted for Scientific, Scholarly or Artistic Work, Exclusive Technology, and Media Services, where the Goods, Infrastructure Projects, or Consulting Services may be contracted to a particular supplier, contractor, or consultant, as determined by the Head of the Procuring Entity (HoPE). In view of the nature of the information to be disseminated and in adherence to the principles of transparency, efficiency, and economy, the Procuring Entity may award the contract to more than one (1) supplier.",
-                link: "Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services.pdf",
+                link: "https://drive.google.com/file/d/1MFdKzgDZ8g9_lh8endS31etlXzPr4-UB/view?usp=drive_link",
                 path: []
             },
             result_highlytechnicalconsultants: {
                 title: "Negotiated Procurement: Highly Technical Consultants",
                 description: "This mode of procurement may be adopted for the engagement of Highly Technical Consultants, in cases where individual consultants are hired to perform work that is (i) highly technical or proprietary, or (ii) primarily confidential or policy-determining, provided that trust and confidence are the primary considerations in their engagement. The term of the individual consultant shall be on a yearly basis, renewable at the option of the Head of the Procuring Entity (HoPE), but shall in no case exceed the term of the HoPE.",
-                link: "Highly Technical Consultants.pdf",
+                link: "https://drive.google.com/file/d/13nvX2OIdrDFEF0yDku-GsEyzM11yy4hO/view?usp=drive_link",
                 path: []
             },
             result_defensecooperationagreement: {
                 title: "Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items",
                 description: "This mode of procurement may be adopted in the interest of national security, wherein the Secretary of the Department of National Defense (DND), or any of his authorized representatives, may directly negotiate with a supplier or manufacturer for the procurement of inventory-based items pertaining to major defense equipment or materiel, which are not necessarily limited to those covered under the AFP Modernization Program.",
-                link: "Defense Cooperation Agreements and Inventory-Based Items.pdf",
+                link: "https://drive.google.com/file/d/1366yhcR0mQGuX3_2p1xvGWncgnBprN1S/view?usp=drive_link",
                 path: []
             },
             result_leaseofrealproperty: {
                 title: "Negotiated Procurement: Lease of Real Property and Venue",
                 description: "This mode of procurement may be adopted for the Lease of Real Property and Venue intended for official use, with preference given to publicly owned properties or venues leased from other government agencies. If a publicly owned property or venue that meets the requirements of the Procuring Entity is available, the Procuring Entity may enter into a lease agreement with the concerned government agency. However, if the Procuring Entity opts to lease privately owned real property or venue, the End-User or Implementing Unit must justify that such arrangement is more efficient and economical for the government.",
-                link: "Lease of Real Property and Venue.pdf",
+                link: "https://drive.google.com/file/d/1A9tvj11ljkzoI_EEiL9Tp2fxiugSMVR7/view?usp=drive_link",
                 path: []
             },
             result_ngoparticipation: {
                 title: "Negotiated Procurement: Non-Government Organization (NGO) Participation",
                 description: "This mode of procurement may be adopted through Non-Government Organization (NGO) Participation, wherein the Procuring Entity may enter into a Memorandum of Agreement (MOA) with an NGO when an appropriation law or ordinance earmarks funds specifically for contracting out projects to such organizations.",
-                link: "NGO Participation.pdf",
+                link: "https://drive.google.com/file/d/1tzdwYBeoY2LxJd2XgVGGy3iN3lfSlndV/view?usp=drive_link",
                 path: []
             },
             result_communityparticipation: {
                 title: "Negotiated Procurement: Community Participation",
                 description: "This mode of procurement may be adopted through Community Participation, wherein the Procuring Entity may directly purchase Goods, including agricultural and fishery products, from local farmers and fisherfolk, or directly negotiate simple Infrastructure Projects with local communities or community and social groups (CSGs) or their members. For this purpose, CSGs may be classified as either organized or unorganized.",
-                link: "Community Participation.pdf",
+                link: "https://drive.google.com/file/d/15B53YfcwUP1vUaqohmsMfhmhVrefo_xi/view?usp=drive_link",
                 path: []
             },
             result_unagencies: {
                 title: "Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations",
                 description: "This mode of procurement may be adopted for engagements with United Nations (UN) Agencies, International Organizations, or International Financing Institutions, wherein the Procuring Entity may directly procure from specialized agencies of the UN, as well as from international organizations or international financing institutions, in accordance with applicable laws, rules, and international commitments.",
-                link: "UN Organizations.pdf",
+                link: "https://drive.google.com/file/d/1FmoayUUtDk6nnR5bRLBNBmgB0WA0d-ZP/view?usp=drive_link",
                 path: []
             },
             result_directretailofpol: {
                 title: "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions",
                 description: "This mode of procurement may be adopted for the Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant (POL) Products, Electronic Charging Devices, and Online Subscriptions, when such items are not available from the Procurement Service–Department of Budget and Management (PS-DBM). In such cases, the End-User or Implementing Units authorized to procure may directly purchase from identified suppliers or service providers, provided that the goods and services are necessary for the efficient discharge of the Procuring Entity’s principal functions or day-to-day operations.",
-                link: "Direct Retail of POL.pdf",
+                link: "https://drive.google.com/file/d/1U_-b-cp0Rz3HhTvtywQbOIxnDFPlK7fs/view?usp=drive_link",
                 path: []
             },
             result_directsales: {
                 title: "Direct Sales",
                 description: "Direct Sales is a mode of procurement of Non-CSE where a Procuring Entity directly purchases from a supplier that has satisfactorily delivered Non-CSE to another government agency under a completed contract.",
-                link: "Direct Sales.pdf",
+                link: "https://drive.google.com/file/d/16j-amAVba17TTmPQ8ssxrjpPbaQ2gg_5/view?usp=drive_link",
                 path: []
             },
             result_directprocurementforsti: {
                 title: "Direct Procurement for Science, Technology, and Innovation",
                 description: "Direct Procurement for Science, Technology, and Innovation is a mode of procurement in which the Procuring Entity may directly acquire goods and services from a manufacturer or supplier that is legally, technically, and financially capable of providing the required items or services.",
-                link: "Direct Procurement for STI.pdf",
+                link: "https://drive.google.com/file/d/1yG9BPyW-25-hK0eTdBBMR8u1T0orjrV_/view?usp=drive_link",
                 path: []
             },
             result_procurepsdbm: {
                 title: "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)",
                 description: "Procuring Entities can purchase common-use supplies and equipment directly from the Procurement Service–Department of Budget and Management (PS-DBM). This ensures cost efficiency, standardization, and timely availability of pre-procured items, while reducing duplication of bidding and promoting the efficient use of government resources.",
-                link: "PS-DBM.pdf",
+                link: "https://drive.google.com/file/d/1MA0eYD00ej9gzPEk1BhTw9kuchZjk1RL/view?usp=drive_link",
                 path: []
             },
             result_reviewtechspecs: {
@@ -2124,9 +2156,9 @@
                 path: []
             },
             result_sagipsaka: {
-                title: "Adopt Sagip Saka Act",
+                title: "Negotiated Procurement: Sagip Saka Act",
                 description: "Based on your selections, your procurement should follow the provisions of Republic Act No. 11321 (Sagip Saka Act) and its Implementing Rules and Regulations (IRR). This ensures that agricultural and fishery products are procured from accredited farmers’ and fisherfolk cooperatives and enterprises, promoting local production, fair trade, and sustainable sourcing.",
-                link: "Sagip Saka Guidelines.pdf",
+                link: "https://drive.google.com/file/d/1T_gXviGPaHXy7NgnkWyJ8CXLY4U5apGH/view?usp=drive_link",
                 path: []
             },
             result_underconstruction: {
@@ -2166,30 +2198,31 @@
         };
 
         const procurementModeLinks = {
-            "Competitive Bidding": "Competitive Bidding.pdf",            
-            "Limited Source Bidding": "Limited Source Bidding.pdf",
-            "Competitive Dialogue": "Competitive Dialogue.pdf",
-            "Unsolicited Offer with Bid Matching": "Unsolicited Offer with Bid Matching.pdf",
-            "Direct Contracting": "Direct Contracting.pdf",
-            "Direct Acquisition": "Direct Acquisition.pdf",
-            "Repeat Order": "Repeat Order.pdf",
-            "Small Value Procurement": "Small Value Procurement.pdf",
-            "Negotiated Procurement: Two-Failed Biddings": "Two Failed Biddings.pdf",
-            "Negotiated Procurement: Emergency Cases": "Emergency Cases.pdf",
-            "Negotiated Procurement: Take-Over of Contracts": "Take-Over of Contracts.pdf",
-            "Negotiated Procurement: Adjacent or Contiguous": "Adjacent or Contiguous.pdf",
-            "Negotiated Procurement: Agency-to-Agency": "Agency-to-Agency.pdf",
-            "Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services": "Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services.pdf",
-            "Negotiated Procurement: Highly Technical Consultants": "Highly Technical Consultants.pdf",
-            "Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items": "Defense Cooperation Agreements and Inventory-Based Items.pdf",
-            "Negotiated Procurement: Lease of Real Property and Venue": "Lease of Real Property and Venue.pdf",
-            "Negotiated Procurement: Non-Government Organization (NGO) Participation": "NGO Participation.pdf",
-            "Negotiated Procurement: Community Participation": "Community Participation.pdf",
-            "Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations": "UN Organizations.pdf",
-            "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions": "Direct Retail of POL.pdf",
-            "Direct Sales": "Direct Sales.pdf",
-            "Direct Procurement for Science, Technology, and Innovation": "Direct Procurement for STI.pdf",
-            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "PS-DBM.pdf",
+            "Competitive Bidding": "https://drive.google.com/file/d/1DCbKi0KoccDPRrr-tkCrQp0oa96gyjP6/view?usp=sharing",            
+            "Limited Source Bidding": "https://drive.google.com/file/d/1MvOSACQkQEb7hB1twaLvtQ8hw1LvZ9lD/view?usp=sharing",
+            "Competitive Dialogue": "https://drive.google.com/file/d/1EZbTokpACQOQcZjUac8Yq9TDPdJuZ4Vp/view?usp=sharing",
+            "Unsolicited Offer with Bid Matching": "https://drive.google.com/file/d/1HJWAr_5ZAanEnaHJGXc_-kg18N8gZRGA/view?usp=sharing",
+            "Direct Contracting": "https://drive.google.com/file/d/1ItVcEuwADfAhO-yLuRt0Q4qXUX_6t-q9/view?usp=sharing",
+            "Direct Acquisition": "https://drive.google.com/file/d/1y-gk2LPUm8xnh8nTmj5x-m2nDppbM3_c/view?usp=sharing",
+            "Repeat Order": "https://drive.google.com/file/d/1LQfKrWgD3heA3NKmVPGw9qhHLL_nBdXS/view?usp=drive_link",
+            "Small Value Procurement": "https://drive.google.com/file/d/1oNyw-dTJZ9PispD2pP2vU_2vNy6m9JE9/view?usp=drive_link",
+            "Negotiated Procurement: Two-Failed Biddings": "https://drive.google.com/file/d/1MFjBqz5pmdwBa_04upqqQdMSiXkrveCP/view?usp=drive_link",
+            "Negotiated Procurement: Emergency Cases": "https://drive.google.com/file/d/1Yid1cDwIdJ2NwqgO-9zNfLZjc2S3aptR/view?usp=drive_link",
+            "Negotiated Procurement: Take-Over of Contracts": "https://drive.google.com/file/d/1TAGfReZQ_WWBn3mnWhkG4PpvgWBygw9d/view?usp=drive_link",
+            "Negotiated Procurement: Adjacent or Contiguous": "https://drive.google.com/file/d/1mU8dpTOmKtX3OnrwSVojSN6wfFrampq-/view?usp=drive_link",
+            "Negotiated Procurement: Agency-to-Agency": "https://drive.google.com/file/d/1j1CEgofqUWfn6xzHOmXSgqYBifoC_y7w/view?usp=drive_link",
+            "Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services": "https://drive.google.com/file/d/1MFdKzgDZ8g9_lh8endS31etlXzPr4-UB/view?usp=drive_link",
+            "Negotiated Procurement: Highly Technical Consultants": "https://drive.google.com/file/d/13nvX2OIdrDFEF0yDku-GsEyzM11yy4hO/view?usp=drive_link",
+            "Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items": "https://drive.google.com/file/d/1366yhcR0mQGuX3_2p1xvGWncgnBprN1S/view?usp=drive_link",
+            "Negotiated Procurement: Lease of Real Property and Venue": "https://drive.google.com/file/d/1A9tvj11ljkzoI_EEiL9Tp2fxiugSMVR7/view?usp=drive_link",
+            "Negotiated Procurement: Non-Government Organization (NGO) Participation": "https://drive.google.com/file/d/1tzdwYBeoY2LxJd2XgVGGy3iN3lfSlndV/view?usp=drive_link",
+            "Negotiated Procurement: Community Participation": "https://drive.google.com/file/d/15B53YfcwUP1vUaqohmsMfhmhVrefo_xi/view?usp=drive_link",
+            "Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations": "https://drive.google.com/file/d/1FmoayUUtDk6nnR5bRLBNBmgB0WA0d-ZP/view?usp=drive_link",
+            "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions": "https://drive.google.com/file/d/1U_-b-cp0Rz3HhTvtywQbOIxnDFPlK7fs/view?usp=drive_link",
+            "Direct Sales": "https://drive.google.com/file/d/16j-amAVba17TTmPQ8ssxrjpPbaQ2gg_5/view?usp=drive_link",
+            "Direct Procurement for Science, Technology, and Innovation": "https://drive.google.com/file/d/1yG9BPyW-25-hK0eTdBBMR8u1T0orjrV_/view?usp=drive_link",
+            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "https://drive.google.com/file/d/1MA0eYD00ej9gzPEk1BhTw9kuchZjk1RL/view?usp=drive_link",
+            "Negotiated Procurement: Sagip Saka Act": "https://drive.google.com/file/d/1T_gXviGPaHXy7NgnkWyJ8CXLY4U5apGH/view?usp=drive_link",
             "Under Construction": "Under Construction.pdf"
         };
 
@@ -2589,14 +2622,37 @@
         }
 
         function openUserGuide() {
-          window.open('User_Guide.pdf', '_blank'); 
+          window.open('https://drive.google.com/file/d/1rn8o9af06ipG1kIPzTACDZJC__bH26OY/view?usp=sharing', '_blank'); 
         }
 
         function downloadManual(filename) {
           const link = document.createElement('a');
-          link.href = filename;
+          link.href = encodeURI(filename);
           link.download = filename;
+          document.body.appendChild(link);
           link.click();
+          document.body.removeChild(link);
         }
+
+        function toggleDownloadMenu() {
+          const menu = document.getElementById('downloadMenu');
+          menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+        }
+        
+        // Close the menu when clicking outside or on a link
+        window.addEventListener('click', function (event) {
+          const menu = document.getElementById('downloadMenu');
+          const button = document.querySelector('.download-container');
+        
+          // If the click is outside both the button and the menu, close it
+          if (!menu.contains(event.target) && !button.contains(event.target)) {
+            menu.style.display = 'none';
+          }
+        
+          // If a link inside the menu is clicked, close it too
+          if (event.target.classList.contains('download-option')) {
+            menu.style.display = 'none';
+          }
+        });
 
 </script>
