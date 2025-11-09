@@ -613,6 +613,15 @@
             💬 Give Feedback
             </button>
             </div>
+
+        <div class="button-container">
+          <button class="back-btn" onclick="goBack()" id="backButtonResult">
+            ← Go Back
+          </button>
+          <button class="restart-btn" onclick="restart()">🔄 Start Over</button>
+          <button class="feedback-btn" onclick="openFeedbackForm()">💬 Give Feedback</button>
+        </div>
+
         </div>
 
         <!-- 📂 Floating Download Button -->
@@ -2521,6 +2530,14 @@
             document.getElementById('homeContainer').style.display = 'none';
             document.getElementById('questionContainer').style.display = 'none';
             document.getElementById('resultContainer').style.display = 'block';
+
+            // Show the Back button on the result page if there’s history
+            const backButtonResult = document.getElementById('backButtonResult');
+            if (history.length > 0) {
+              backButtonResult.style.display = 'block';
+            } else {
+              backButtonResult.style.display = 'none';
+            }
             
             const recommendationContainer = document.getElementById('recommendationContainer');
             recommendationContainer.innerHTML = '';
