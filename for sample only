@@ -2619,7 +2619,7 @@
         }
 
         function openUserGuide() {
-          window.open('User_Guide.pdf', '_blank'); 
+          window.open('https://www.canva.com/design/DAG35SkETZs/9okYvhOZTNWTG0lfQGY8ug/view?utm_content=DAG35SkETZs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6f88135de8', '_blank'); 
         }
 
         function downloadManual(filename) {
