@@ -2622,6 +2622,13 @@
           window.open('User_Guide.pdf', '_blank'); 
         }
 
+        function downloadManual(filename) {
+          const link = document.createElement('a');
+          link.href = filename;
+          link.download = filename;
+          link.click();
+        }
+
         function toggleDownloadMenu() {
           const menu = document.getElementById('downloadMenu');
           menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
