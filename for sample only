@@ -622,9 +622,9 @@
         
         <!-- 📂 Hidden Download Menu -->
         <div id="downloadMenu" class="download-menu">
-          <a href="Digital Tree (Goods).pdf" target="_blank" class="download-option">📦 Digital Tree for Goods</a>
-          <a href="Digital Tree (Infrastructure).pdf" target="_blank" class="download-option">🏗️ Digital Tree for Infrastructure Projects</a>
-          <a href="Digital Tree (Consulting).pdf" target="_blank" class="download-option">🤝 Digital Tree for Consulting Services</a>
+          <a href="https://drive.google.com/file/d/1050YqU5wg4LPJe13zoDj2FxT-Z6Hd6Gi/view?usp=sharing" target="_blank" class="download-option">📦 Decision Tree for Goods</a>
+          <a href="Digital Tree (Infrastructure).pdf" target="_blank" class="download-option">🏗️ Decision Tree for Infrastructure Projects</a>
+          <a href="Digital Tree (Consulting).pdf" target="_blank" class="download-option">🤝 Decision Tree for Consulting Services</a>
         </div>
 
         <div class="user-guide-container" onclick="openUserGuide()">
