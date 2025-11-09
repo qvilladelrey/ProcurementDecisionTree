@@ -685,7 +685,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_emergencycases_goods: {
-                        text: "📋 Revise Annual Procurement Plan (APP) as necessary and adopt Negotiated Procurement",
+                        text: "Adopt Negotiated Procurement: Emergency Cases",
                         next: "result_emergencycases"
                     },
                     different_prefer_emergencycases_goods: {
@@ -764,7 +764,7 @@
                 question: "Do you prefer to:",
                 options: {
                     yes_prefer_takeover_noncse: {
-                        text: "📋 Post-Qualify and negotiate with the second (2nd) lowest Lowest Calculated (LC) or Most Advantageous (MA) bidder and adopt Negotiated Procurement",
+                        text: "Adopt Negotiated Procurement",
                         next: "result_takeoverofcontracts"
                     },
                     different_prefer_takeover_noncse: {
@@ -2145,7 +2145,7 @@
                 path: []
             },
             result_procurepsdbm: {
-                title: "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)",
+                title: "Adopt Negotiated Procurement: Agency-to-Agency and Procure from the Procurement Service-Department of Budget and Management (PS-DBM)",
                 description: "Procuring Entities can purchase common-use supplies and equipment directly from the Procurement Service–Department of Budget and Management (PS-DBM). This ensures cost efficiency, standardization, and timely availability of pre-procured items, while reducing duplication of bidding and promoting the efficient use of government resources.",
                 link: "https://drive.google.com/file/d/1MA0eYD00ej9gzPEk1BhTw9kuchZjk1RL/view?usp=drive_link",
                 path: []
@@ -2157,7 +2157,7 @@
             },
             result_sagipsaka: {
                 title: "Negotiated Procurement: Sagip Saka Act",
-                description: "Based on your selections, your procurement should follow the provisions of Republic Act No. 11321 (Sagip Saka Act) and its Implementing Rules and Regulations (IRR). This ensures that agricultural and fishery products are procured from accredited farmers’ and fisherfolk cooperatives and enterprises, promoting local production, fair trade, and sustainable sourcing.",
+                description: "Based on your selections, you may adopt Negotiated Procurement-Sagip Saka Act, in accordance with the provisions of Republic Act No. 11321 (Sagip Saka Act) and its Implementing Rules and Regulations (IRR). This ensures that agricultural and fishery products are procured from accredited farmers’ and fisherfolk cooperatives and enterprises, promoting local production, fair trade, and sustainable sourcing.",
                 link: "https://drive.google.com/file/d/1T_gXviGPaHXy7NgnkWyJ8CXLY4U5apGH/view?usp=drive_link",
                 path: []
             },
