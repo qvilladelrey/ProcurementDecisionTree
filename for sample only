@@ -2624,9 +2624,11 @@
 
         function downloadManual(filename) {
           const link = document.createElement('a');
-          link.href = filename;
+          link.href = encodeURI(filename);
           link.download = filename;
+          document.body.appendChild(link);
           link.click();
+          document.body.removeChild(link);
         }
 
         function toggleDownloadMenu() {
