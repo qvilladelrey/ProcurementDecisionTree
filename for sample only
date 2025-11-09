@@ -620,9 +620,9 @@
         
         <!-- 📂 Hidden Download Menu -->
         <div id="downloadMenu" class="download-menu">
-          <button class="download-option" onclick="downloadManual('Digital Tree (Goods).pdf')">📦 Decision Tree for Goods</button>
-          <button class="download-option" onclick="downloadManual('Digital Tree (Infrastructure).pdf')">🏗️ Decision Tree for Infrastructure Projects</button>
-          <button class="download-option" onclick="downloadManual('Digital Tree (Consulting).pdf')">🤝 Decision Tree for Consulting Services</button>
+          <a href="Digital Tree (Goods).pdf" target="_blank" class="download-option">📦 Digital Tree for Goods</a>
+          <a href="Digital Tree (Infrastructure).pdf" target="_blank" class="download-option">🏗️ Digital Tree for Infrastructure Projects</a>
+          <a href="Digital Tree (Consulting).pdf" target="_blank" class="download-option">🤝 Digital Tree for Consulting Services</a>
         </div>
 
         <div class="user-guide-container" onclick="openUserGuide()">
@@ -2635,5 +2635,21 @@
           const menu = document.getElementById('downloadMenu');
           menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
         }
+        
+        // Close the menu when clicking outside or on a link
+        window.addEventListener('click', function (event) {
+          const menu = document.getElementById('downloadMenu');
+          const button = document.querySelector('.download-container');
+        
+          // If the click is outside both the button and the menu, close it
+          if (!menu.contains(event.target) && !button.contains(event.target)) {
+            menu.style.display = 'none';
+          }
+        
+          // If a link inside the menu is clicked, close it too
+          if (event.target.classList.contains('download-option')) {
+            menu.style.display = 'none';
+          }
+        });
 
 </script>
