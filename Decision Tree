@@ -1060,7 +1060,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "directacquisition_abc_pol"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1386,7 +1386,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     },
                     no: {
                         text: "❌ No",
@@ -1426,8 +1426,8 @@
                         next: "result_directretailofpol"
                     },
                     different_prefer_smallvalueprocurement_onlinesubscription: {
-                        text: "🛍️ Adopt Small Value Procurement",
-                        next: "result_smallvalueprocurement"
+                        text: "🛍️ Adopt Small Value Procurement or 🏆 Competitive Bidding",
+                        next: "lgu_goods"
                     },
                     different_prefer_smallvalueprocurementothers_onlinesubscription: {
                         text: "🔄 Adopt different procurement mode",
@@ -1611,7 +1611,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1638,7 +1638,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1655,7 +1655,7 @@
                     },
                     different_prefer_agencytoagency_realpropertyvenue: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1913,7 +1913,7 @@
                     },
                     othersupplier_noncse: {
                         text: "❓ Not among the stated options",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1942,7 +1942,7 @@
                     },
                     othergoods_unagency_noncse: {
                         text: "❓ Not among the stated options",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1955,7 +1955,7 @@
                     },
                     different_prefer_unagency_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1969,7 +1969,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1982,7 +1982,7 @@
                     },
                     different_prefer_ngoparticipation_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1996,7 +1996,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -2009,7 +2009,7 @@
                     },
                     different_prefer_agencytoagency_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -2022,7 +2022,7 @@
                     },
                     different_prefer_localcommunity_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -2189,7 +2189,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -2206,7 +2206,7 @@
                     },
                     othergoods_directacquisition_cse: {
                         text: "❓ Not among the stated options",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -2227,7 +2227,7 @@
                     },
                     otheravailability_directacquisition_cse: {
                         text: "❓ Not among the stated options",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -2241,7 +2241,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -2254,7 +2254,7 @@
                     },
                     different_prefer_directacquisition_cse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             }
