@@ -677,7 +677,8 @@
                     },
                     takeovercontract_noncse: {
                         text: "🚨Take-over previously awarded contract that was rescinded or terminated for causes provided for in the contract and existing laws, in order to prevent damage to or loss of life or property or restore vital public services, etc.",
-                        next: "previouscontract_takeovercontract_noncse"
+                        next: "previouscontract_takeovercontract_noncse",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     othersemergency_goods: {
                         text: "❓ Not among the stated options",
