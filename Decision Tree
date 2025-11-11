@@ -675,6 +675,10 @@
                         next: "prefer_emergencycases_goods",
                         triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
+                    takeovercontract_noncse: {
+                        text: "🚨Take-over previously awarded contract that was rescinded or terminated for causes provided for in the contract and existing laws, in order to prevent damage to or loss of life or property or restore vital public services, etc.",
+                        next: "previouscontract_takeovercontract_noncse"
+                    },
                     othersemergency_goods: {
                         text: "❓ Not among the stated options",
                         next: "cse_goods"
@@ -691,6 +695,37 @@
                     different_prefer_emergencycases_goods: {
                         text: "🔄 Adopt different procurement mode",
                         next: "cse_goods"
+                    }
+                }
+            },
+            previouscontract_takeovercontract_noncse: {
+                question: "Was the previous contract awarded through Competitive Bidding, Competitive Dialogue, Limited Source Bidding, or Small Value Procurement?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_takeover_noncse",
+                        triggers: ["Negotiated Procurement: Take-Over of Contracts"]
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_emergencycases_goods"
+                    }
+                }
+            },
+            prefer_takeover_noncse: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_takeover_noncse: {
+                        text: "📋 Adopt Negotiated Procurement: Take-Over of Contracts",
+                        next: "result_takeoverofcontracts"
+                    },
+                    different_prefer_takeover_emergencycases_noncse: {
+                        text: "🚨 Adopt Negotiated Procurement: Emergency Cases",
+                        next: "result_emergencycases"
+                    },
+                    different_prefer_takeover_noncse: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "directacquisition_abc_noncse"
                        }
                     }
                 },
@@ -727,10 +762,6 @@
                         text: "📦 Directly purchase from supplier that has delivered non-CSE to other government agency",
                         next: "directsales_previousprocurement_competitive"
                     },
-                    takeovercontract_noncse: {
-                        text: "🚨Take-over previously awarded contract that was rescinded or terminated for causes provided for in the contract and existing laws, in order to prevent damage to or loss of life or property or restore vital public services, etc.",
-                        next: "previouscontract_takeovercontract_noncse"
-                    },
                     twofailedbidding_noncse: {
                         text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
                         next: "prefer_twofailedbidding_noncse",
@@ -742,33 +773,6 @@
                     },
                     othergoods_noncse: {
                         text: "❓ Not among the stated options",
-                        next: "directacquisition_abc_noncse"
-                    }
-                }
-            },
-            previouscontract_takeovercontract_noncse: {
-                question: "Was the previous contract awarded through Competitive Bidding, Competitive Dialogue, Limited Source Bidding, or Small Value Procurement?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "prefer_takeover_noncse",
-                        triggers: ["Negotiated Procurement: Take-Over of Contracts"]
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "directacquisition_abc_noncse"
-                    }
-                }
-            },
-            prefer_takeover_noncse: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_takeover_noncse: {
-                        text: "📋 Adopt Negotiated Procurement",
-                        next: "result_takeoverofcontracts"
-                    },
-                    different_prefer_takeover_noncse: {
-                        text: "🔄 Adopt different procurement mode",
                         next: "directacquisition_abc_noncse"
                     }
                 }
