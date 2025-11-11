@@ -2060,10 +2060,6 @@
             need_csegoods: {
                 question: "Is there a need to:",
                 options: {
-                    takeovercontract_cse: {
-                        text: "🚨 Take-over previously awarded contract that was rescinded or terminated for causes provided for in the contract and existing laws, in order to prevent damage to or loss of life or property or restore vital public services, etc.",
-                        next: "previouscontract_takeovercontract_cse"
-                    },
                     twofailedbidding_cse: {
                         text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
                         next: "prefer_twofailedbidding_cse",
@@ -2075,33 +2071,6 @@
                     },
                     othergoods_cse: {
                         text: "❓ Not among the stated options",
-                        next: "directacquisition_abc_cse"
-                    }
-                }
-            },
-            previouscontract_takeovercontract_cse: {
-                question: "Was the previous contract awarded through Competitive Bidding, Competitive Dialogue, Limited Source Bidding, or Small Value Procurement?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "prefer_takeover_cse",
-                        triggers: ["Negotiated Procurement: Take-Over of Contracts"]
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "directacquisition_abc_cse"
-                    }
-                }
-            },
-            prefer_takeover_cse: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_takeover_cse: {
-                        text: "📋 Adopt Negotiated Procurement: Take-Over of Contracts",
-                        next: "result_takeoverofcontracts"
-                    },
-                    different_prefer_takeover_cse: {
-                        text: "🔄 Adopt different procurement mode",
                         next: "directacquisition_abc_cse"
                     }
                 }
