@@ -1114,15 +1114,15 @@
                     },
                     province_typeoflgu_goods: {
                         text: "Province",
-                        next: "result_underconstruction"
+                        next: "abc_province_goods"
                     },
                     city_typeoflgu_goods: {
                         text: "City",
-                        next: "result_underconstruction"
+                        next: "abc_city_goods"
                     },
                     municipality_typeoflgu_goods: {
                         text: "Municipality",
-                        next: "result_underconstruction"
+                        next: "abc_municipality_goods"
                     }
                 }
             },
