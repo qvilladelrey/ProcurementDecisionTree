@@ -2663,7 +2663,7 @@
         }
 
         function openUserGuide() {
-          window.open('https://drive.google.com/file/d/1rn8o9af06ipG1kIPzTACDZJC__bH26OY/view?usp=sharing', '_blank'); 
+          window.open('https://drive.google.com/file/d/1SK2LCkgt4-nuzIc13SjPQdW2H_IbpGpj/view?usp=drive_link', '_blank'); 
         }
 
         function downloadManual(filename) {
