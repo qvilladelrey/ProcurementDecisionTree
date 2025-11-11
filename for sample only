@@ -1105,8 +1105,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "prefer_competitivebidding_noncse",
-                        triggers: ["Small Value Procurement"]
+                        next: "smallvalueprocurement_abc"
                     }
                 }
             },
