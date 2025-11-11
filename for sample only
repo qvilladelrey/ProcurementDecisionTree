@@ -579,7 +579,7 @@
             <div class="options" id="optionsContainer">
                 <div class="image-option" onclick="makeChoice('goods')">
                     <img src="Billy Goods.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Goods icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
-                    <h3><span class="definition-word">Goods<span class="definition-tooltip">Goods refer to (i) all items, supplies, and  materials, whether in the nature of equipment, furniture, stationery, materials for construction, or personal property of any kind, needed in the transaction of public businesses or in the pursuit of any government undertaking, project or activity; or (ii) general support services which pertain to all types of services except Consulting Services and Infrastructure Projects, such as the repair and maintenance of equipment and furniture, as well as trucking, hauling, janitorial, security, and related or analogous services. Personnel Services or individual COS or JO engagements do not fall under this definition.</span></span></h3>
+                    <h3>Goods</h3>
                 </div>
                 <div class="image-option" onclick="makeChoice('infrastructure')">
                     <img src="Billy Infra.png" style="width: 290px; height: 260px; object-fit: cover; border-radius: 8px;" alt="Infrastructure icon" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
@@ -604,6 +604,11 @@
                 <!-- Primary and alternative recommendations will be inserted here -->
             </div>
             <div class="button-container">
+
+                <button class="back-btn" onclick="goBackFromResult()">
+                ← Go Back
+                </button>
+
                 <button class="restart-btn" onclick="restart()">
                     🔄 Start Over
                 </button>
@@ -675,6 +680,11 @@
                         next: "prefer_emergencycases_goods",
                         triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
+                    takeovercontract_noncse: {
+                        text: "🚨Take-over previously awarded contract that was rescinded or terminated for causes provided for in the contract and existing laws, in order to prevent damage to or loss of life or property or restore vital public services, etc.",
+                        next: "previouscontract_takeovercontract_noncse",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
+                    },
                     othersemergency_goods: {
                         text: "❓ Not among the stated options",
                         next: "cse_goods"
@@ -691,6 +701,37 @@
                     different_prefer_emergencycases_goods: {
                         text: "🔄 Adopt different procurement mode",
                         next: "cse_goods"
+                    }
+                }
+            },
+            previouscontract_takeovercontract_noncse: {
+                question: "Was the previous contract awarded through Competitive Bidding, Competitive Dialogue, Limited Source Bidding, or Small Value Procurement?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_takeoverofcontracts",
+                        triggers: ["Negotiated Procurement: Take-Over of Contracts"]
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_emergencycases_goods"
+                    }
+                }
+            },
+            prefer_takeover_noncse: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_takeover_noncse: {
+                        text: "📋 Adopt Negotiated Procurement: Take-Over of Contracts",
+                        next: "result_takeoverofcontracts"
+                    },
+                    different_prefer_takeover_emergencycases_noncse: {
+                        text: "🚨 Adopt Negotiated Procurement: Emergency Cases",
+                        next: "result_emergencycases"
+                    },
+                    different_prefer_takeover_noncse: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "directacquisition_abc_noncse"
                        }
                     }
                 },
@@ -727,10 +768,6 @@
                         text: "📦 Directly purchase from supplier that has delivered non-CSE to other government agency",
                         next: "directsales_previousprocurement_competitive"
                     },
-                    takeovercontract_noncse: {
-                        text: "🚨Take-over previously awarded contract that was rescinded or terminated for causes provided for in the contract and existing laws, in order to prevent damage to or loss of life or property or restore vital public services, etc.",
-                        next: "previouscontract_takeovercontract_noncse"
-                    },
                     twofailedbidding_noncse: {
                         text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
                         next: "prefer_twofailedbidding_noncse",
@@ -742,33 +779,6 @@
                     },
                     othergoods_noncse: {
                         text: "❓ Not among the stated options",
-                        next: "directacquisition_abc_noncse"
-                    }
-                }
-            },
-            previouscontract_takeovercontract_noncse: {
-                question: "Was the previous contract awarded through Competitive Bidding, Competitive Dialogue, Limited Source Bidding, or Small Value Procurement?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "prefer_takeover_noncse",
-                        triggers: ["Negotiated Procurement: Take-Over of Contracts"]
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "directacquisition_abc_noncse"
-                    }
-                }
-            },
-            prefer_takeover_noncse: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_takeover_noncse: {
-                        text: "📋 Adopt Negotiated Procurement",
-                        next: "result_takeoverofcontracts"
-                    },
-                    different_prefer_takeover_noncse: {
-                        text: "🔄 Adopt different procurement mode",
                         next: "directacquisition_abc_noncse"
                     }
                 }
@@ -1055,7 +1065,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "directacquisition_abc_pol"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1069,7 +1079,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "directacquisition_abc_pol"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1082,12 +1092,262 @@
                     },
                     different_prefer_directretail_pol: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
+                    }
+                }
+            },
+            lgu_goods: {
+                question: "Is the Procuring Entity (PE) a Local Government Unit (LGU)?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "typeoflgu_goods"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse",
+                        triggers: ["Small Value Procurement"]
+                    }
+                }
+            },
+            typeoflgu_goods: {
+                question: "Is the LGU?",
+                options: {
+                    barangay_typeoflgu_goods: {
+                        text: "Barangay",
+                        next: "abc_barangay_goods"
+                    },
+                    province_typeoflgu_goods: {
+                        text: "Province",
+                        next: "abc_province_goods"
+                    },
+                    city_typeoflgu_goods: {
+                        text: "City",
+                        next: "abc_city_goods"
+                    },
+                    municipality_typeoflgu_goods: {
+                        text: "Municipality",
+                        next: "abc_municipality_goods"
+                    }
+                }
+            },
+            abc_barangay_goods: {
+                question: "Is the ABC more than P100,000?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse",
+                        triggers: ["Small Value Procurement"]
+                    }
+                }
+            },
+            abc_province_goods: {
+                question: "Is the PE?",
+                options: {
+                    firstclass_province_goods: {
+                        text: "1st Class Province",
+                        next: "abc_province_twomillion_goods"
+                    },
+                    secondclass_province_goods: {
+                        text: "2nd Class Province",
+                        next: "abc_province_twomillion_goods"
+                    },
+                    thirdclass_province_goods: {
+                        text: "3rd Class Province",
+                        next: "abc_province_twomillion_goods"
+                    },
+                    fourthclass_province_goods: {
+                        text: "4th Class Province",
+                        next: "abc_province_onemillionsixhundred_goods"
+                    },
+                    fifthclass_province_goods: {
+                        text: "5th Class Province",
+                        next: "abc_province_onemilliontwohundred_goods"
+                    }
+                }
+            },
+            abc_province_twomillion_goods: {
+                question: "Is the ABC more than P2,000,000.00?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse",
+                        triggers: ["Small Value Procurement"]
+                    }
+                }
+            },
+            abc_province_onemillionsixhundred_goods: {
+                question: "Is the ABC more than P1,600,000.00?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse",
+                        triggers: ["Small Value Procurement"]
+                    }
+                }
+            },
+            abc_province_onemilliontwohundred_goods: {
+                question: "Is the ABC more than P1,200,000.00?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse",
+                        triggers: ["Small Value Procurement"]
+                    }
+                }
+            },
+            abc_city_goods: {
+                question: "Is the PE?",
+                options: {
+                    firstclass_city_goods: {
+                        text: "1st Class City",
+                        next: "abc_city_twomillion_goods"
+                    },
+                    secondclass_city_goods: {
+                        text: "2nd Class City",
+                        next: "abc_city_twomillion_goods"
+                    },
+                    thirdclass_city_goods: {
+                        text: "3rd Class City",
+                        next: "abc_city_onemillionsixhundred_goods"
+                    },
+                    fourthclass_city_goods: {
+                        text: "4th Class City",
+                        next: "abc_city_onemilliontwohundred_goods"
+                    },
+                    fifthclass_city_goods: {
+                        text: "5th Class City",
+                        next: "abc_city_eighthundred_goods"
+                    }
+                }
+            },
+            abc_city_twomillion_goods: {
+                question: "Is the ABC more than P2,000,000.00?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse",
+                        triggers: ["Small Value Procurement"]
+                    }
+                }
+            },
+            abc_city_onemillionsixhundred_goods: {
+                question: "Is the ABC more than P1,600,000.00?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse",
+                        triggers: ["Small Value Procurement"]
+                    }
+                }
+            },
+            abc_city_onemilliontwohundred_goods: {
+                question: "Is the ABC more than P1,200,000.00?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse",
+                        triggers: ["Small Value Procurement"]
+                    }
+                }
+            },
+            abc_city_eighthundred_goods: {
+                question: "Is the ABC more than P800,000.00?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse",
+                        triggers: ["Small Value Procurement"]
+                    }
+                }
+            },
+            abc_municipality_goods: {
+                question: "Is the PE?",
+                options: {
+                    firstclass_municipality_goods: {
+                        text: "1st Class",
+                        next: "abc_municipality_fourhundred_goods"
+                    },
+                    secondclass_municipality_goods: {
+                        text: "2nd Class",
+                        next: "abc_municipality_fourhundred_goods"
+                    },
+                    thirdclass_municipality_goods: {
+                        text: "3rd Class",
+                        next: "abc_municipality_fourhundred_goods"
+                    },
+                    fourthclass_municipality_goods: {
+                        text: "4th Class",
+                        next: "abc_municipality_twohundred_goods"
+                    },
+                    fifthclass_municipality_goods: {
+                        text: "5th Class",
+                        next: "abc_municipality_twohundred_goods"
+                    }
+                }
+            },
+            abc_city_fourhundred_goods: {
+                question: "Is the ABC more than P400,000.00?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse",
+                        triggers: ["Small Value Procurement"]
+                    }
+                }
+            },
+            abc_city_twohundred_goods: {
+                question: "Is the ABC more than P200,000.00?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse",
+                        triggers: ["Small Value Procurement"]
                     }
                 }
             },
             smallvalueprocurement_abc: {
-                question: "Is the ABC more than P2 million?",
+                question: "Is the ABC more than P2,000,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1131,7 +1391,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     },
                     no: {
                         text: "❌ No",
@@ -1171,8 +1431,8 @@
                         next: "result_directretailofpol"
                     },
                     different_prefer_smallvalueprocurement_onlinesubscription: {
-                        text: "🛍️ Adopt Small Value Procurement",
-                        next: "result_smallvalueprocurement"
+                        text: "🛍️ Adopt Small Value Procurement or 🏆 Competitive Bidding",
+                        next: "lgu_goods"
                     },
                     different_prefer_smallvalueprocurementothers_onlinesubscription: {
                         text: "🔄 Adopt different procurement mode",
@@ -1356,7 +1616,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1383,7 +1643,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1400,7 +1660,7 @@
                     },
                     different_prefer_agencytoagency_realpropertyvenue: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1658,7 +1918,7 @@
                     },
                     othersupplier_noncse: {
                         text: "❓ Not among the stated options",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1687,7 +1947,7 @@
                     },
                     othergoods_unagency_noncse: {
                         text: "❓ Not among the stated options",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1700,7 +1960,7 @@
                     },
                     different_prefer_unagency_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1714,7 +1974,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1727,7 +1987,7 @@
                     },
                     different_prefer_ngoparticipation_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1741,7 +2001,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1754,7 +2014,7 @@
                     },
                     different_prefer_agencytoagency_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1767,7 +2027,7 @@
                     },
                     different_prefer_localcommunity_noncse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1934,7 +2194,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1951,7 +2211,7 @@
                     },
                     othergoods_directacquisition_cse: {
                         text: "❓ Not among the stated options",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1972,7 +2232,7 @@
                     },
                     otheravailability_directacquisition_cse: {
                         text: "❓ Not among the stated options",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1986,7 +2246,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             },
@@ -1999,7 +2259,7 @@
                     },
                     different_prefer_directacquisition_cse: {
                         text: "🔄 Adopt different procurement mode",
-                        next: "smallvalueprocurement_abc"
+                        next: "lgu_goods"
                     }
                 }
             }
@@ -2460,6 +2720,17 @@
                     currentNode === 'repeatorder_quantifiablegood_noncse' ||
                     currentNode === 'retailpumpprice' ||
                     currentNode === 'immediateconsumption' ||
+                    currentNode === 'lgu_goods' ||
+                    currentNode === 'abc_barangay_goods' ||
+                    currentNode === 'abc_province_twomillion_goods' ||
+                    currentNode === 'abc_province_onemillionsixhundred_goods' ||
+                    currentNode === 'abc_province_onemilliontwohundred_goods' ||
+                    currentNode === 'abc_city_twomillion_goods' ||
+                    currentNode === 'abc_city_onemillionsixhundred_goods' ||
+                    currentNode === 'abc_city_onemilliontwohundred_goods' ||
+                    currentNode === 'abc_city_eighthundred_goods' ||
+                    currentNode === 'abc_municipality_fourhundred_goods' ||
+                    currentNode === 'abc_municipality_twohundred_goods' ||
                     currentNode === 'smallvalueprocurement_abc' ||
                     currentNode === 'prefer_competitivebidding_noncse' ||
                     currentNode === 'onlinesubscription_availablepsdbm' ||
@@ -2622,7 +2893,7 @@
         }
 
         function openUserGuide() {
-          window.open('https://drive.google.com/file/d/1rn8o9af06ipG1kIPzTACDZJC__bH26OY/view?usp=sharing', '_blank'); 
+          window.open('https://drive.google.com/file/d/1SK2LCkgt4-nuzIc13SjPQdW2H_IbpGpj/view?usp=drive_link', '_blank'); 
         }
 
         function downloadManual(filename) {
@@ -2654,5 +2925,28 @@
             menu.style.display = 'none';
           }
         });
+
+        function goBackFromResult() {
+          if (history.length === 0) {
+            restart();
+            return;
+          }
+        
+          // Restore the last question state
+          const previousState = history.pop();
+          currentNode = previousState.node;
+          breadcrumbPath = previousState.path;
+          availableModes = previousState.modes;
+        
+          // Show the question screen again
+          document.getElementById('resultContainer').style.display = 'none';
+          document.getElementById('questionContainer').style.display = 'block';
+          document.getElementById('dynamicRecommendations').style.display = 'block';
+        
+          updateBreadcrumb();
+          updateDynamicRecommendations();
+          updateBackButton();
+          showQuestion();
+        }
 
 </script>
