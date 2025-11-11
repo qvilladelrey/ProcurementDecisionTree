@@ -1091,6 +1091,41 @@
                     }
                 }
             },
+            lgu_goods: {
+                question: "Is the Procuring Entity (PE) a Local Government Unit (LGU)?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "typeoflgu_goods"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse",
+                        triggers: ["Small Value Procurement"]
+                    }
+                }
+            },
+            typeoflgu_goods: {
+                question: "Is the LGU?",
+                options: {
+                    barangay_typeoflgu_goods: {
+                        text: "Barangay",
+                        next: "result_underconstruction"
+                    },
+                    province_typeoflgu_goods: {
+                        text: "Province",
+                        next: "result_underconstruction"
+                    },
+                    city_typeoflgu_goods: {
+                        text: "City",
+                        next: "result_underconstruction"
+                    },
+                    municipality_typeoflgu_goods: {
+                        text: "Municipality",
+                        next: "result_underconstruction"
+                    }
+                }
+            },
             smallvalueprocurement_abc: {
                 question: "Is the ABC more than P2 million?",
                 options: {
@@ -2465,6 +2500,7 @@
                     currentNode === 'repeatorder_quantifiablegood_noncse' ||
                     currentNode === 'retailpumpprice' ||
                     currentNode === 'immediateconsumption' ||
+                    currentNode === 'lgu_goods' ||
                     currentNode === 'smallvalueprocurement_abc' ||
                     currentNode === 'prefer_competitivebidding_noncse' ||
                     currentNode === 'onlinesubscription_availablepsdbm' ||
