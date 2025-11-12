@@ -749,7 +749,7 @@
                 }
             },
             takeovercontract_cse_noncse: {
-                question: "Is it <a href="https://sys.ps-philgeps.gov.ph/catalogue/cse-list/" target="_blank">CSE</a>?",
+                question: "Is it <a href='https://sys.ps-philgeps.gov.ph/catalogue/cse-list/' target='_blank'>CSE</a>?",
                     options: {
                     yes: {
                         text: "✅ Yes",
@@ -762,7 +762,7 @@
                     }
                 },
                 cse_goods: {
-                    question: "Is it <a href="https://sys.ps-philgeps.gov.ph/catalogue/cse-list/" target="_blank">CSE</a>?",
+                    question: "Is it <a href='https://sys.ps-philgeps.gov.ph/catalogue/cse-list/' target='_blank'>CSE</a>?",
                     options: {
                     yes: {
                         text: "✅ Yes",
