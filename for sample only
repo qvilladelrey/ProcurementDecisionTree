@@ -627,9 +627,9 @@
         
         <!-- 📂 Hidden Download Menu -->
         <div id="downloadMenu" class="download-menu">
-          <a href="https://drive.google.com/file/d/1050YqU5wg4LPJe13zoDj2FxT-Z6Hd6Gi/view?usp=sharing" target="_blank" class="download-option">📦 Decision Tree for Goods</a>
-          <a href="https://drive.google.com/file/d/1VE3sbfO-jxDQrbafVDBx5aidSzc0fqaT/view?usp=sharing" target="_blank" class="download-option">🏗️ Decision Tree for Infrastructure Projects</a>
-          <a href="https://drive.google.com/file/d/1IeSMvVJPAbkGLcTAZbRTWhZfSzJoQDI2/view?usp=sharing" target="_blank" class="download-option">🤝 Decision Tree for Consulting Services</a>
+          <a href="https://drive.google.com/file/d/1Ww6SVXN3debivn0ZjQEqhe-w76o5bHo3/view?usp=sharing" target="_blank" class="download-option">📦 Decision Tree for Goods</a>
+          <a href="https://drive.google.com/file/d/1f_gzcrVDez2lunPNhUQWP8r0iFKJBHAB/view?usp=sharing" target="_blank" class="download-option">🏗️ Decision Tree for Infrastructure Projects</a>
+          <a href="https://drive.google.com/file/d/1Q4XA5F8iNGLh1Vcxru6XecylHedgzImH/view?usp=sharing" target="_blank" class="download-option">🤝 Decision Tree for Consulting Services</a>
         </div>
 
         <div class="user-guide-container" onclick="openUserGuide()">
@@ -709,12 +709,25 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_takeoverofcontracts",
+                        next: "prefer_takeover_noncse",
                         triggers: ["Negotiated Procurement: Take-Over of Contracts"]
                     },
                     no: {
                         text: "❌ No",
-                        next: "prefer_emergencycases_goods"
+                        next: "prefer_emergencycases_takeovercontract_goods"
+                    }
+                }
+            },
+            prefer_emergencycases_takeovercontract_goods: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_emergencycases_takeovercontract_goods: {
+                        text: "🚨 Adopt Negotiated Procurement: Emergency Cases",
+                        next: "result_emergencycases"
+                    },
+                    different_prefer_emergencycases_takeovercontract_goods: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "takeovercontract_cse_noncse"
                     }
                 }
             },
@@ -731,12 +744,25 @@
                     },
                     different_prefer_takeover_noncse: {
                         text: "🔄 Adopt different procurement mode",
+                        next: "takeovercontract_cse_noncse"
+                    }
+                }
+            },
+            takeovercontract_cse_noncse: {
+                question: "Is it <a href='https://sys.ps-philgeps.gov.ph/catalogue/cse-list/' target='_blank'>CSE</a>?",
+                    options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "directacquisition_abc_cse"
+                    },
+                    no: {
+                        text: "❌ No",
                         next: "directacquisition_abc_noncse"
                        }
                     }
                 },
                 cse_goods: {
-                    question: "Is it CSE?",
+                    question: "Is it <a href='https://sys.ps-philgeps.gov.ph/catalogue/cse-list/' target='_blank'>CSE</a>?",
                     options: {
                     yes: {
                         text: "✅ Yes",
@@ -2676,6 +2702,7 @@
                 // Use image options for yes/no questions
                 if (currentNode === 'cse_goods' || 
                     currentNode === 'previouslyprocured_noncse' || 
+                    currentNode === 'takeovercontract_cse_noncse' ||
                     currentNode === 'previouscontract_takeovercontract_noncse' ||
                     currentNode === 'directsales_previousprocurement_competitive' ||
                     currentNode === 'directsales_certificateofsatisfactoryperformance' ||
