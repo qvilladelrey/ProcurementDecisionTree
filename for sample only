@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Decision Tree for Modes of Procurement</title>
+    <title>Decision Tree for Modes of Procurement Digital Interactive Version</title>
     <style>
         body {
             box-sizing: border-box;
@@ -259,16 +259,16 @@
 
         .alternative-title {
             font-weight: 600;
-            color: #333;
+            color: #fbf6ed;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
-            font-size: 1.1em;
+            font-size: 1.3em;
         }
 
         .alternative-title .icon {
             margin-right: 8px;
-            font-size: 1.2em;
+            font-size: 1.3em;
         }
 
         .alternative-badges {
