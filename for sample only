@@ -393,81 +393,6 @@
           transform: translateY(-1px);
         }
 
-        .user-guide-container {
-          position: fixed;
-          bottom: 25px;
-          right: 25px;
-          background: #1e3888;
-          color: white;
-          padding: 14px 20px;
-          border-radius: 12px;
-          font-size: 1em;
-          font-weight: 500;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-          cursor: pointer;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-          z-index: 9999;
-        }
-        
-        .user-guide-container:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
-        }
-
-        .download-container {
-          position: fixed;
-          bottom: 90px; 
-          right: 25px;
-          background: #1e3888;
-          color: white;
-          padding: 14px 20px;
-          border-radius: 12px;
-          font-size: 1em;
-          font-weight: 500;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-          cursor: pointer;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-          z-index: 9999;
-        }
-        
-        .download-container:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
-        }
-        
-        .download-menu {
-          position: fixed;
-          bottom: 160px; /* appears above the Download button */
-          right: 25px;
-          background: white;
-          border-radius: 12px;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-          display: none;
-          flex-direction: column;
-          gap: 8px;
-          padding: 10px;
-          z-index: 9999;
-        }
-        
-        .download-option {
-          background: #1e3888;
-          color: white;
-          border: none;
-          padding: 10px 16px;
-          border-radius: 8px;
-          font-size: 0.95em;
-          cursor: pointer;
-          font-weight: 500;
-          transition: background 0.3s ease, transform 0.2s ease;
-          text-decoration: none; /* removes underline */
-          display: block; /* ensures full clickable area */
-        }
-        
-        .download-option:hover {
-          background: #3a6ea5;
-          transform: translateY(-2px);
-        }
-
         @media (max-width: 768px) {
             .decision-container {
                 padding: 25px;
@@ -501,23 +426,27 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          gap: 15px;
-          flex-wrap: wrap;
+          flex-wrap: wrap; /* allows wrapping when space is limited */
+          gap: 20px; /* equal spacing between buttons */
+          width: 90%; /* responsive width */
+          max-width: 1000px; /* prevents stretching too wide */
           z-index: 9998;
         }
         
+        /* Individual Buttons */
         .footer-btn {
+          flex: 1 1 200px; /* flexible width: grows and shrinks as needed */
           background: linear-gradient(135deg, #1e3888, #3a6ea5);
           color: white;
           text-decoration: none;
-          padding: 14px 22px;
+          padding: 14px 20px;
           border-radius: 10px;
           font-size: 1em;
           font-weight: 500;
+          text-align: center;
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
           transition: all 0.3s ease;
-          text-align: center;
-          min-width: 180px;
+          min-width: 180px; /* ensures readability */
         }
         
         .footer-btn:hover {
@@ -526,21 +455,16 @@
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
         
-        .footer-btn:focus {
-          outline: 3px solid #ffcc00;
-          outline-offset: 3px;
-        }
-        
         /* Responsive layout for smaller screens */
         @media (max-width: 768px) {
           .footer-buttons {
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             bottom: 15px;
           }
         
           .footer-btn {
-            width: 90%;
+            width: 100%;
             min-width: unset;
           }
         }
@@ -645,22 +569,6 @@
             💬 Give Feedback
             </button>
             </div>
-        </div>
-
-        <!-- 📂 Floating Download Button -->
-        <div class="download-container" onclick="toggleDownloadMenu()">
-        📂 Manual Decision Tree
-        </div>
-        
-        <!-- 📂 Hidden Download Menu -->
-        <div id="downloadMenu" class="download-menu">
-          <a href="https://drive.google.com/file/d/1Ww6SVXN3debivn0ZjQEqhe-w76o5bHo3/view?usp=sharing" target="_blank" class="download-option">📦 Decision Tree for Goods</a>
-          <a href="https://drive.google.com/file/d/1f_gzcrVDez2lunPNhUQWP8r0iFKJBHAB/view?usp=sharing" target="_blank" class="download-option">🏗️ Decision Tree for Infrastructure Projects</a>
-          <a href="https://drive.google.com/file/d/1Q4XA5F8iNGLh1Vcxru6XecylHedgzImH/view?usp=sharing" target="_blank" class="download-option">🤝 Decision Tree for Consulting Services</a>
-        </div>
-
-        <div class="user-guide-container" onclick="openUserGuide()">
-          📘 User Guide
         </div>
 
     </div>
