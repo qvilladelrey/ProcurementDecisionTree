@@ -2227,19 +2227,19 @@
             },
             result_limitedsourcebidding: {
                 title: "Limited Source Bidding",
-                description: "Limited Source Bidding is a mode of procurement that involves direct  invitation to bid by the Procuring Entity to a set of pre-selected suppliers, contractors, or consultants with known experience and proven capability relative to the requirements of a particular contract.",
+                description: "Limited Source Bidding is a mode of procurement that involves direct  invitation to bid by the Procuring Entity to a set of pre-selected suppliers, contractors, or consultants with known experience and proven capability relative to the requirements of a particular contract. (See Section 28, IRR of RA No. 12009)",
                 link: "https://drive.google.com/file/d/1MvOSACQkQEb7hB1twaLvtQ8hw1LvZ9lD/view?usp=sharing",
                 path: []
             },
             result_competitivedialogue: {
                 title: "Competitive Dialogue",
-                description: "Competitive Dialogue is a mode of procurement that employs a two-stage  bidding process where the Procuring Entity invites suppliers, manufacturers, distributors, contractors, consultants, and service providers to a dialogue to propose solutions to address its needs and requirements.",
+                description: "Competitive Dialogue is a mode of procurement that employs a two-stage  bidding process where the Procuring Entity invites suppliers, manufacturers, distributors, contractors, consultants, and service providers to a dialogue to propose solutions to address its needs and requirements. (See Section 29, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1EZbTokpACQOQcZjUac8Yq9TDPdJuZ4Vp/view?usp=sharing",
                 path: []
             },
             result_unsolicitedofferwithbidmatching: {
                 title: "Unsolicited Offer with Bid Matching",
-                description: "Unsolicited Offer with Bid Matching is a mode of procurement wherein the Procuring Entity may consider unsolicited offers from the original offeror on a negotiated basis for Goods and Consulting Services.",
+                description: "Unsolicited Offer with Bid Matching is a mode of procurement wherein the Procuring Entity may consider unsolicited offers from the original offeror on a negotiated basis for Goods and Consulting Services. (See Section 30, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1HJWAr_5ZAanEnaHJGXc_-kg18N8gZRGA/view?usp=sharing",
                 path: []
             },
