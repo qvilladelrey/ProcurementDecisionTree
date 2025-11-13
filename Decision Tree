@@ -416,7 +416,7 @@
 
         .download-container {
           position: fixed;
-          bottom: 90px; /* just above the User Guide button */
+          bottom: 90px; 
           right: 25px;
           background: #1e3888;
           color: white;
@@ -581,7 +581,7 @@
 
         <!-- 📂 Floating Download Button -->
         <div class="download-container" onclick="toggleDownloadMenu()">
-        📂 Download
+        📂 Manual Decision Tree
         </div>
         
         <!-- 📂 Hidden Download Menu -->
