@@ -2809,7 +2809,7 @@
             const primaryRecommendation = document.createElement('div');
             primaryRecommendation.className = 'primary-recommendation';
             primaryRecommendation.innerHTML = `
-              <div class="recommendation-title">🏆 Primary Recommendation</div>
+              <div class="recommendation-title">Procurement Mode</div>
               <strong>${result.title}</strong>
               <div class="recommendation-description">
                 ${result.description}
