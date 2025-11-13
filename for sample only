@@ -314,8 +314,8 @@
         }
 
         .alternative-title .icon {
-            margin-right: 8px;
-            font-size: 1.2em;
+            margin-right: 10px;
+            font-size: 1.5em;
         }
 
         .alternative-badges {
@@ -400,11 +400,11 @@
         }
         
         .alternative-badge {
-            background: #f8f9fa;
-            color: #333;
+            background: #1e3888;
+            color: white;
             padding: 10px 15px;
             border-radius: 8px;
-            font-size: 0.9em;
+            font-size: 1em;
             font-weight: 500;
             display: flex;
             align-items: center;
@@ -413,6 +413,7 @@
             text-decoration: none;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
         .alternative-badge:hover {
             background: #e8f0ff;
             transform: translateY(-2px);
