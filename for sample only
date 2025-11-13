@@ -563,11 +563,11 @@
         
         <div id="homeContainer">
             <div class="question" style="font-size: 1.2em; text-align: justify; margin-bottom: 20px;">
-                This decision tree for modes of procurement is a tool that assists Procuring Entities in determining the mode of procurement most fit for their desired purpose based on the complexity of the procurement project, their Approved Budget for the Contract, results of market scoping, and other key considerations. 
+                This decision tree for modes of procurement is a tool that assists Procuring Entities (PEs) in determining the mode of procurement most fit for their desired purpose based on the complexity of the procurement project, their Approved Budget for the Contract, results of market scoping, and other key considerations. 
              </div>
 
             <div class="question" style="font-size: 0.9em; text-align: justify; margin-bottom: 30px; font-style: italic">
-                Disclaimer: The Decision Tree serves as a guide for Procuring Entities (PEs) in determining possible modes of procurement. Its results are not conclusive, as outcomes depend on the conditions set by the PEs, which may vary and affect the applicable modes. Users remain accountable for their actions and are encouraged to use the tool alongside other means to validate the identified conditions and recommended modes.
+                Disclaimer: The Decision Tree serves as a guide for PEs in determining possible modes of procurement. Its results are not conclusive, as outcomes depend on the conditions set by the PEs, which may vary and affect the applicable modes. Users remain accountable for their actions and are encouraged to use the tool alongside other means to validate the identified conditions and recommended modes.
              </div>
             
             <div class="options">
