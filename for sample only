@@ -2401,7 +2401,7 @@
                 path: []
             },
             result_procurepsdbm: {
-                title: "Adopt Negotiated Procurement: Agency-to-Agency and Procure from the Procurement Service-Department of Budget and Management (PS-DBM)",
+                title: "Negotiated Procurement: Agency-to-Agency and Procure from the Procurement Service-Department of Budget and Management (PS-DBM)",
                 description: "Procuring Entities can purchase common-use supplies and equipment directly from the Procurement Service–Department of Budget and Management (PS-DBM). This ensures cost efficiency, standardization, and timely availability of pre-procured items, while reducing duplication of bidding and promoting the efficient use of government resources.",
                 link: "https://drive.google.com/file/d/1MA0eYD00ej9gzPEk1BhTw9kuchZjk1RL/view?usp=drive_link",
                 path: []
@@ -2809,7 +2809,7 @@
             const primaryRecommendation = document.createElement('div');
             primaryRecommendation.className = 'primary-recommendation';
             primaryRecommendation.innerHTML = `
-              <div class="recommendation-title">Procurement Mode</div>
+              <div class="recommendation-title">💡 Procurement Mode</div>
               <strong>${result.title}</strong>
               <div class="recommendation-description">
                 ${result.description}
@@ -2825,7 +2825,7 @@
                 
                 const alternativeTitle = document.createElement('div');
                 alternativeTitle.className = 'alternative-title';
-                alternativeTitle.innerHTML = '<span class="icon">💡</span> Other Recommended Procurement Modes:';
+                alternativeTitle.innerHTML = '<span class="icon">💡</span> Other Procurement Modes:';
                 alternativeContainer.appendChild(alternativeTitle);
                 
                 const alternativeBadges = document.createElement('div');
