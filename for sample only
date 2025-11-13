@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decision Tree for Modes of Procurement Digital Interactive Version</title>
+    <title>Digital Decision Tree for Modes of Procurement</title>
     <style>
         body {
             box-sizing: border-box;
@@ -160,6 +160,53 @@
             transform: translateY(-1px);
         }
 
+        .definition-word {
+            position: relative;
+            cursor: help;
+            color: #667eea;
+            font-weight: 500;
+            border-bottom: 1px dotted #667eea;
+        }
+
+        .definition-tooltip {
+            position: absolute; 
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            white-space: normal;
+            z-index: 9999; /* ensure it's on top */
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: 5px;
+            width: 300px;
+            text-align: center;
+            line-height: 1.2;
+            max-height: 80px;
+            overflow-y: auto;
+        }
+
+        .definition-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #333;
+        }
+
+        .definition-word:hover .definition-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
         .breadcrumb-container {
             background: #f0f4fa;
             border-radius: 8px;
@@ -259,16 +306,16 @@
 
         .alternative-title {
             font-weight: 600;
-            color: #fbf6ed;
+            color: #333;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
-            font-size: 1.3em;
+            font-size: 1.1em;
         }
 
         .alternative-title .icon {
             margin-right: 8px;
-            font-size: 1.3em;
+            font-size: 1.2em;
         }
 
         .alternative-badges {
