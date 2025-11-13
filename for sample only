@@ -491,8 +491,76 @@
                 margin: 5px 0;
             }
         }
+
+        /* Footer Button Section */
+        .footer-buttons {
+          position: fixed;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 15px;
+          flex-wrap: wrap;
+          z-index: 9998;
+        }
+        
+        .footer-btn {
+          background: linear-gradient(135deg, #1e3888, #3a6ea5);
+          color: white;
+          text-decoration: none;
+          padding: 14px 22px;
+          border-radius: 10px;
+          font-size: 1em;
+          font-weight: 500;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+          transition: all 0.3s ease;
+          text-align: center;
+          min-width: 180px;
+        }
+        
+        .footer-btn:hover {
+          background: #3a6ea5;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+        
+        .footer-btn:focus {
+          outline: 3px solid #ffcc00;
+          outline-offset: 3px;
+        }
+        
+        /* Responsive layout for smaller screens */
+        @media (max-width: 768px) {
+          .footer-buttons {
+            flex-direction: column;
+            gap: 10px;
+            bottom: 15px;
+          }
+        
+          .footer-btn {
+            width: 90%;
+            min-width: unset;
+          }
+        }
+
     </style>
 </head>
+
+        <div class="footer-buttons">
+          <a href="https://drive.google.com/file/d/1DCbKi0KoccDPRrr-tkCrQp0oa96gyjP6/view?usp=sharing" 
+             target="_blank" class="footer-btn">📜 RA No. 12009 & IRR</a>
+        
+          <a href="https://drive.google.com/file/d/1Ww6SVXN3debivn0ZjQEqhe-w76o5bHo3/view?usp=sharing" 
+             target="_blank" class="footer-btn">🌳 Manual Decision Tree</a>
+        
+          <a href="https://drive.google.com/file/d/1SK2LCkgt4-nuzIc13SjPQdW2H_IbpGpj/view?usp=drive_link" 
+             target="_blank" class="footer-btn">📘 User Guide</a>
+        
+          <a href="mailto:procurement.support@example.com" class="footer-btn">✉️ Contact Us</a>
+        </div>
+
 <body>
     <div class="decision-container">
         <h1>Decision Tree for Modes of Procurement <br/> Digital Interactive Version (DIVe)</h1>
