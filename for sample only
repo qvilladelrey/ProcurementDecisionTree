@@ -549,6 +549,13 @@
                     <h3>Consulting Services</h3>
                 </div>
             </div>
+
+        <div id="resultContainer" style="display: none;">
+            <div class="recommendation-container" id="recommendationContainer">
+                <!-- Primary and alternative recommendations will be inserted here -->
+            </div>
+
+            <div class="button-container">
             
             <!-- Back Button -->
             <div class="button-container">
@@ -557,13 +564,6 @@
                 </button>
             </div>
         </div>
-        
-        <div id="resultContainer" style="display: none;">
-            <div class="recommendation-container" id="recommendationContainer">
-                <!-- Primary and alternative recommendations will be inserted here -->
-            </div>
-            <div class="button-container">
-
                 <button class="back-btn" onclick="goBackFromResult()">
                 ← Go Back
                 </button>
