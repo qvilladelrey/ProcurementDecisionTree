@@ -82,6 +82,7 @@
             text-align: center;
             line-height: 1.3;
         }
+
         .option-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
@@ -130,20 +131,19 @@
             background: #28a745;
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 8px 16px;
             border-radius: 10px;
             font-size: 1em;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 500;
-            margin-right: 10px;
         }
 
         .back-btn {
             background: #6c757d;
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 8px 16px;
             border-radius: 10px;
             font-size: 1em;
             cursor: pointer;
@@ -158,53 +158,6 @@
         .restart-btn:hover {
             background: #218838;
             transform: translateY(-1px);
-        }
-
-        .definition-word {
-            position: relative;
-            cursor: help;
-            color: #667eea;
-            font-weight: 500;
-            border-bottom: 1px dotted #667eea;
-        }
-
-        .definition-tooltip {
-            position: absolute; 
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #333;
-            color: white;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-size: 0.85em;
-            white-space: normal;
-            z-index: 9999; /* ensure it's on top */
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            margin-bottom: 5px;
-            width: 300px;
-            text-align: center;
-            line-height: 1.2;
-            max-height: 80px;
-            overflow-y: auto;
-        }
-
-        .definition-tooltip::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 5px solid transparent;
-            border-top-color: #333;
-        }
-
-        .definition-word:hover .definition-tooltip {
-            opacity: 1;
-            visibility: visible;
         }
 
         .breadcrumb-container {
@@ -314,8 +267,8 @@
         }
 
         .alternative-title .icon {
-            margin-right: 8px;
-            font-size: 1.2em;
+            margin-right: 10px;
+            font-size: 1.5em;
         }
 
         .alternative-badges {
@@ -377,10 +330,12 @@
         }
 
         .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
+          display: flex;
+          justify-content: center; 
+          align-items: center;
+          gap: 20px; 
+          margin-top: 30px;
+          flex-wrap: wrap;
         }
 
         .learn-more-btn {
@@ -395,6 +350,7 @@
           transition: background 0.3s ease;
           width: fit-content;
         }
+
         .learn-more-btn:hover {
             background: #3a6ea5;
         }
@@ -424,7 +380,7 @@
           background: #007bff;
           color: white;
           border: none;
-          padding: 15px 30px;
+          padding: 8px 16px;
           border-radius: 10px;
           font-size: 1em;
           cursor: pointer;
@@ -2402,7 +2358,7 @@
                 path: []
             },
             result_procurepsdbm: {
-                title: "Adopt Negotiated Procurement: Agency-to-Agency and Procure from the Procurement Service-Department of Budget and Management (PS-DBM)",
+                title: "Negotiated Procurement: Agency-to-Agency and Procure from the Procurement Service-Department of Budget and Management (PS-DBM)",
                 description: "Procuring Entities can purchase common-use supplies and equipment directly from the Procurement Service–Department of Budget and Management (PS-DBM). This ensures cost efficiency, standardization, and timely availability of pre-procured items, while reducing duplication of bidding and promoting the efficient use of government resources.",
                 link: "https://drive.google.com/file/d/1MA0eYD00ej9gzPEk1BhTw9kuchZjk1RL/view?usp=drive_link",
                 path: []
@@ -2810,7 +2766,7 @@
             const primaryRecommendation = document.createElement('div');
             primaryRecommendation.className = 'primary-recommendation';
             primaryRecommendation.innerHTML = `
-              <div class="recommendation-title">Procurement Mode</div>
+              <div class="recommendation-title">💡 Procurement Mode</div>
               <strong>${result.title}</strong>
               <div class="recommendation-description">
                 ${result.description}
@@ -2826,7 +2782,7 @@
                 
                 const alternativeTitle = document.createElement('div');
                 alternativeTitle.className = 'alternative-title';
-                alternativeTitle.innerHTML = '<span class="icon">💡</span> Other Recommended Procurement Modes:';
+                alternativeTitle.innerHTML = '<span class="icon">💡</span> Other Procurement Modes:';
                 alternativeContainer.appendChild(alternativeTitle);
                 
                 const alternativeBadges = document.createElement('div');
