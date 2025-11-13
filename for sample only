@@ -37,7 +37,7 @@
             font-family: 'Bricolage Grotesque', 'Arial', sans-serif;
             color: #333;
             margin-bottom: 30px;
-            font-size: 2.3em;
+            font-size: 2.1em;
             font-weight: 600;
         }
 
