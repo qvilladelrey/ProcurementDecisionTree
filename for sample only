@@ -330,12 +330,12 @@
         }
 
         .button-container {
-        display: flex;
-        justify-content: center; /* centers the group horizontally */
-        align-items: center;
-        gap: 20px; /* equal spacing between buttons */
-        margin-top: 30px;
-        flex-wrap: wrap;
+          display: flex;
+          justify-content: center; 
+          align-items: center;
+          gap: 20px; 
+          margin-top: 30px;
+          flex-wrap: wrap;
         }
 
         .learn-more-btn {
