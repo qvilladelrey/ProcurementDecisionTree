@@ -37,7 +37,7 @@
             font-family: 'Bricolage Grotesque', 'Arial', sans-serif;
             color: #333;
             margin-bottom: 30px;
-            font-size: 2.5em;
+            font-size: 2.1em;
             font-weight: 600;
         }
 
@@ -457,7 +457,6 @@
           box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
         }
 
-        /* 📂 Floating Download Button */
         .download-container {
           position: fixed;
           bottom: 90px; /* just above the User Guide button */
@@ -479,7 +478,6 @@
           box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
         }
         
-        /* 📂 Hidden Download Menu */
         .download-menu {
           position: fixed;
           bottom: 160px; /* appears above the Download button */
@@ -540,7 +538,7 @@
 </head>
 <body>
     <div class="decision-container">
-        <h1>Decision Tree for Modes of Procurement</h1>
+        <h1>Decision Tree for Modes of Procurement <br/> Digital Interactive Version (DIVe)</h1>
         
         <!-- Breadcrumb Trail -->
         <div id="breadcrumbContainer" class="breadcrumb-container" style="display: none;">
