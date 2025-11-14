@@ -2560,8 +2560,8 @@
                 // Use image options for yes/no questions
                 if (currentNode === 'cse_goods' || 
                     currentNode === 'previouslyprocured_noncse' || 
-                    currentNode === 'takeovercontract_cse_noncse' ||
                     currentNode === 'previouscontract_takeovercontract_goods' ||
+                    currentNode === 'takeovercontract_cse_noncse' ||
                     currentNode === 'directsales_previousprocurement_competitive' ||
                     currentNode === 'directsales_certificateofsatisfactoryperformance' ||
                     currentNode === 'directsales_previousprocurement_sixmonths' ||
@@ -2571,6 +2571,7 @@
                     currentNode === 'repeatorder_lowerunitprice_noncse' ||
                     currentNode === 'repeatorder_previousprocurement_sixmonths_noncse' ||
                     currentNode === 'repeatorder_quantifiablegood_noncse' ||
+                    currentNode === 'directacquisition_abc_noncse' ||
                     currentNode === 'retailpumpprice' ||
                     currentNode === 'immediateconsumption' ||
                     currentNode === 'lgu_goods' ||
@@ -2602,10 +2603,8 @@
                     currentNode === 'approvedlist_limitedsourcebidding_noncse' ||
                     currentNode === 'ngo_appropriationlaw_noncse' ||
                     currentNode === 'necessarytools_agencytoagency_noncse' ||
-                    currentNode === 'directacquisition_abc_noncse' ||
                     currentNode === 'availablepsdbm_cse' ||
                     currentNode === 'previouslyprocured_cse' ||
-                    currentNode === 'previouscontract_takeovercontract_cse' ||
                     currentNode === 'repeatorder_previousprocurement_competitive_cse' ||
                     currentNode === 'repeatorder_lowerunitprice_cse' ||
                     currentNode === 'repeatorder_previousprocurement_sixmonths_cse' ||
