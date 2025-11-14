@@ -2026,7 +2026,7 @@
                 }
             },
             repeatorder_previousprocurement_sixmonths_cse: {
-                question: "Is the procurement within six (6) months from the date of the NTP arising from the original contract?",
+                question: "Is the procurement within six (6) months from the date of the original contract's Notice to Proceed (NTP)?",
                 options: {
                     yes: {
                         text: "✅ Yes",
