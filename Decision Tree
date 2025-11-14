@@ -2603,7 +2603,6 @@
                     currentNode === 'ngo_appropriationlaw_noncse' ||
                     currentNode === 'necessarytools_agencytoagency_noncse' ||
                     currentNode === 'directacquisition_abc_noncse' ||
-                    currentNode === 'directacquisition_invoicecompliant_noncse' ||
                     currentNode === 'availablepsdbm_cse' ||
                     currentNode === 'previouslyprocured_cse' ||
                     currentNode === 'previouscontract_takeovercontract_cse' ||
