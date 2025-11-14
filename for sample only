@@ -1956,7 +1956,7 @@
                 }
             },
             availablepsdbm_cse: {
-                question: "Is it available at PS-DBM?",
+                question: "Is it available from the Procurement Service-Department of Budget and Management (PS-DBM)?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1978,7 +1978,6 @@
                     no: {
                         text: "❌ No",
                         next: "directacquisition_abc_cse"
-                    }
                 }
             },
             need_csegoods: {
