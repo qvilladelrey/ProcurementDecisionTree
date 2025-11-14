@@ -459,8 +459,8 @@
           cursor: pointer;
           font-weight: 500;
           transition: background 0.3s ease, transform 0.2s ease;
-          text-decoration: none; /* removes underline */
-          display: block; /* ensures full clickable area */
+          text-decoration: none;
+          display: block; 
         }
         
         .download-option:hover {
@@ -2245,121 +2245,121 @@
             },
             result_directcontracting: {
                 title: "Direct Contracting",
-                description: "Direct Contracting is a mode of procurement of Goods that does not require elaborate Bidding Documents, and the supplier is only required to submit a price quotation or a pro-forma invoice together with the conditions of sale, which may be accepted immediately or after some negotiations. ",
+                description: "Direct Contracting is a mode of procurement of Goods that does not require elaborate Bidding Documents, and the supplier is only required to submit a price quotation or a pro-forma invoice together with the conditions of sale, which may be accepted immediately or after some negotiations. (See Section 31, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1ItVcEuwADfAhO-yLuRt0Q4qXUX_6t-q9/view?usp=sharing",
                 path: []
             },
             result_directacquisition: {
                 title: "Direct Acquisition",
-                description: "Direct Acquisition is a mode of procurement of CSE not available in the PS-DBM, Non-CSE, and services with ABC not exceeding Two Hundred Thousand Pesos (₱200,000.00), where the Procuring Entity, without need to conduct a canvass or request for quotations, may procure directly from any known and reputable sources. Goods covered under this mode may be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores. Services may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services. ",
+                description: "Direct Acquisition is a mode of procurement of CSE not available in the PS-DBM, Non-CSE, and services with ABC not exceeding Two Hundred Thousand Pesos (₱200,000.00), where the Procuring Entity, without need to conduct a canvass or request for quotations, may procure directly from any known and reputable sources. Goods covered under this mode may be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores. Services may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services. (See Section 32, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1y-gk2LPUm8xnh8nTmj5x-m2nDppbM3_c/view?usp=sharing",
                 path: []
             },
             result_repeatorder: {
                 title: "Repeat Order",
-                description: "Repeat Order is a mode of procurement wherein the Procuring Entity may procure goods from the previous winning bidder whenever there arises a need to replenish the goods procured under a contract previously awarded through bidding, particularly Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching.",
+                description: "Repeat Order is a mode of procurement wherein the Procuring Entity may procure goods from the previous winning bidder whenever there arises a need to replenish the goods procured under a contract previously awarded through bidding, particularly Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching. (See Section 33, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1LQfKrWgD3heA3NKmVPGw9qhHLL_nBdXS/view?usp=drive_link",
                 path: []
             },
             result_smallvalueprocurement: {
                 title: "Small Value Procurement",
-                description: "Small Value Procurement (SVP) is a mode of procurement whereby the Procuring Entity requests for the submission of at least three (3) price quotations for Goods not available in the PS-DBM, Infrastructure Projects, and Consulting Services. The receipt of one (1) quotation is sufficient to proceed with the evaluation of bidders: Provided, That, the amount involved does not exceed Two Million Pesos (₱2,000,000.00), subject to the periodic review of the threshold amount and adjustments as may be deemed appropriate by the GPPB.",
+                description: "Small Value Procurement (SVP) is a mode of procurement whereby the Procuring Entity requests for the submission of at least three (3) price quotations for Goods not available in the PS-DBM, Infrastructure Projects, and Consulting Services. The receipt of one (1) quotation is sufficient to proceed with the evaluation of bidders: Provided, That, the amount involved does not exceed Two Million Pesos (₱2,000,000.00), subject to the periodic review of the threshold amount and adjustments as may be deemed appropriate by the GPPB. (See Section 34, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1oNyw-dTJZ9PispD2pP2vU_2vNy6m9JE9/view?usp=drive_link",
                 path: []
             },
             result_twofailedbiddings: {
                 title: "Negotiated Procurement: Two-Failed Biddings",
-                description: "This mode of procurement may be adopted in cases of Two Failed Biddings, where there have been two (2) failures of bidding under Competitive Bidding, Limited Source Bidding, or Competitive Dialogue, as provided in Section 64 of the Implementing Rules and Regulations (IRR) of RA 12009.",
+                description: "This mode of procurement may be adopted in cases of Two Failed Biddings, where there have been two (2) failures of bidding under Competitive Bidding, Limited Source Bidding, or Competitive Dialogue, as provided in Section 64 of the Implementing Rules and Regulations (IRR) of RA 12009. (See Section 35.1, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1MFjBqz5pmdwBa_04upqqQdMSiXkrveCP/view?usp=drive_link",
                 path: []
             },
             result_emergencycases: {
                 title: "Negotiated Procurement: Emergency Cases",
-                description: "This mode of procurement may be adopted in Emergency Cases, where immediate action is required under any of the following circumstances: (a) there is an imminent danger to life or property during a state of calamity; (b) time is of the essence due to natural or man-made calamities; or (c) other causes necessitate urgent action to (i) prevent damage to or loss of life or property, or (ii) restore vital public services, infrastructure facilities, and other public utilities. Such situations include the provision of immediate response and initial recovery measures to prevent loss of life, injury, disease, and other adverse effects on human, physical, mental, and social well-being, as well as to mitigate damage to property, destruction of assets, loss of services, social and economic disruption, and environmental degradation.",
+                description: "This mode of procurement may be adopted in Emergency Cases, where immediate action is required under any of the following circumstances: (a) there is an imminent danger to life or property during a state of calamity; (b) time is of the essence due to natural or man-made calamities; or (c) other causes necessitate urgent action to (i) prevent damage to or loss of life or property, or (ii) restore vital public services, infrastructure facilities, and other public utilities. Such situations include the provision of immediate response and initial recovery measures to prevent loss of life, injury, disease, and other adverse effects on human, physical, mental, and social well-being, as well as to mitigate damage to property, destruction of assets, loss of services, social and economic disruption, and environmental degradation. (See Section 35.2, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1Yid1cDwIdJ2NwqgO-9zNfLZjc2S3aptR/view?usp=drive_link",
                 path: []
             },
             result_takeoverofcontracts: {
                 title: "Negotiated Procurement: Take-Over of Contracts",
-                description: "This mode of procurement may be adopted in cases of Take-Over of Contracts, where a contract previously awarded through Competitive Bidding, Competitive Dialogue, Limited Source Bidding, or Small Value Procurement has been rescinded or terminated for causes provided in the contract and existing laws, and immediate action is necessary to (a) prevent damage to or loss of life or property, or (b) restore vital public services, infrastructure facilities, and other public utilities.",
+                description: "This mode of procurement may be adopted in cases of Take-Over of Contracts, where a contract previously awarded through Competitive Bidding, Competitive Dialogue, Limited Source Bidding, or Small Value Procurement has been rescinded or terminated for causes provided in the contract and existing laws, and immediate action is necessary to (a) prevent damage to or loss of life or property, or (b) restore vital public services, infrastructure facilities, and other public utilities. (See Section 35.3, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1TAGfReZQ_WWBn3mnWhkG4PpvgWBygw9d/view?usp=drive_link",
                 path: []
             },
             result_adjacentorcontiguous: {
                 title: "Negotiated Procurement: Adjacent or Contiguous",
-                description: "This mode of procurement may be adopted in cases of Adjacent or Contiguous Projects, where the subject contract is adjacent or contiguous to an ongoing Infrastructure Project, or involves Consulting Services in which the consultants possess unique experience and expertise necessary to deliver the required services.",
+                description: "This mode of procurement may be adopted in cases of Adjacent or Contiguous Projects, where the subject contract is adjacent or contiguous to an ongoing Infrastructure Project, or involves Consulting Services in which the consultants possess unique experience and expertise necessary to deliver the required services. (See Section 35.4, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1mU8dpTOmKtX3OnrwSVojSN6wfFrampq-/view?usp=drive_link",
                 path: []
             },
             result_agencytoagency: {
                 title: "Negotiated Procurement: Agency-to-Agency",
-                description: "This mode of procurement may be adopted through Agency-to-Agency arrangements, involving the procurement of Goods, Infrastructure Projects, or Consulting Services from another government agency that has the mandate and absorptive capacity to effectively undertake the project.",
+                description: "This mode of procurement may be adopted through Agency-to-Agency arrangements, involving the procurement of Goods, Infrastructure Projects, or Consulting Services from another government agency that has the mandate and absorptive capacity to effectively undertake the project. (See Section 35.5, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1j1CEgofqUWfn6xzHOmXSgqYBifoC_y7w/view?usp=drive_link",
                 path: []
             },
             result_scientificscholarlyetc: {
                 title: "Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services",
-                description: "This mode of procurement may be adopted for Scientific, Scholarly or Artistic Work, Exclusive Technology, and Media Services, where the Goods, Infrastructure Projects, or Consulting Services may be contracted to a particular supplier, contractor, or consultant, as determined by the Head of the Procuring Entity (HoPE). In view of the nature of the information to be disseminated and in adherence to the principles of transparency, efficiency, and economy, the Procuring Entity may award the contract to more than one (1) supplier.",
+                description: "This mode of procurement may be adopted for Scientific, Scholarly or Artistic Work, Exclusive Technology, and Media Services, where the Goods, Infrastructure Projects, or Consulting Services may be contracted to a particular supplier, contractor, or consultant, as determined by the Head of the Procuring Entity (HoPE). In view of the nature of the information to be disseminated and in adherence to the principles of transparency, efficiency, and economy, the Procuring Entity may award the contract to more than one (1) supplier. (See Section 35.6, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1MFdKzgDZ8g9_lh8endS31etlXzPr4-UB/view?usp=drive_link",
                 path: []
             },
             result_highlytechnicalconsultants: {
                 title: "Negotiated Procurement: Highly Technical Consultants",
-                description: "This mode of procurement may be adopted for the engagement of Highly Technical Consultants, in cases where individual consultants are hired to perform work that is (i) highly technical or proprietary, or (ii) primarily confidential or policy-determining, provided that trust and confidence are the primary considerations in their engagement. The term of the individual consultant shall be on a yearly basis, renewable at the option of the Head of the Procuring Entity (HoPE), but shall in no case exceed the term of the HoPE.",
+                description: "This mode of procurement may be adopted for the engagement of Highly Technical Consultants, in cases where individual consultants are hired to perform work that is (i) highly technical or proprietary, or (ii) primarily confidential or policy-determining, provided that trust and confidence are the primary considerations in their engagement. The term of the individual consultant shall be on a yearly basis, renewable at the option of the Head of the Procuring Entity (HoPE), but shall in no case exceed the term of the HoPE. (See Section 35.7, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/13nvX2OIdrDFEF0yDku-GsEyzM11yy4hO/view?usp=drive_link",
                 path: []
             },
             result_defensecooperationagreement: {
                 title: "Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items",
-                description: "This mode of procurement may be adopted in the interest of national security, wherein the Secretary of the Department of National Defense (DND), or any of his authorized representatives, may directly negotiate with a supplier or manufacturer for the procurement of inventory-based items pertaining to major defense equipment or materiel, which are not necessarily limited to those covered under the AFP Modernization Program.",
+                description: "This mode of procurement may be adopted in the interest of national security, wherein the Secretary of the Department of National Defense (DND), or any of his authorized representatives, may directly negotiate with a supplier or manufacturer for the procurement of inventory-based items pertaining to major defense equipment or materiel, which are not necessarily limited to those covered under the AFP Modernization Program. (See Section 35.8, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1366yhcR0mQGuX3_2p1xvGWncgnBprN1S/view?usp=drive_link",
                 path: []
             },
             result_leaseofrealproperty: {
                 title: "Negotiated Procurement: Lease of Real Property and Venue",
-                description: "This mode of procurement may be adopted for the Lease of Real Property and Venue intended for official use, with preference given to publicly owned properties or venues leased from other government agencies. If a publicly owned property or venue that meets the requirements of the Procuring Entity is available, the Procuring Entity may enter into a lease agreement with the concerned government agency. However, if the Procuring Entity opts to lease privately owned real property or venue, the End-User or Implementing Unit must justify that such arrangement is more efficient and economical for the government.",
+                description: "This mode of procurement may be adopted for the Lease of Real Property and Venue intended for official use, with preference given to publicly owned properties or venues leased from other government agencies. If a publicly owned property or venue that meets the requirements of the Procuring Entity is available, the Procuring Entity may enter into a lease agreement with the concerned government agency. However, if the Procuring Entity opts to lease privately owned real property or venue, the End-User or Implementing Unit must justify that such arrangement is more efficient and economical for the government. (See Section 35.9, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1A9tvj11ljkzoI_EEiL9Tp2fxiugSMVR7/view?usp=drive_link",
                 path: []
             },
             result_ngoparticipation: {
                 title: "Negotiated Procurement: Non-Government Organization (NGO) Participation",
-                description: "This mode of procurement may be adopted through Non-Government Organization (NGO) Participation, wherein the Procuring Entity may enter into a Memorandum of Agreement (MOA) with an NGO when an appropriation law or ordinance earmarks funds specifically for contracting out projects to such organizations.",
+                description: "This mode of procurement may be adopted through Non-Government Organization (NGO) Participation, wherein the Procuring Entity may enter into a Memorandum of Agreement (MOA) with an NGO when an appropriation law or ordinance earmarks funds specifically for contracting out projects to such organizations.(See Section 35.10, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1tzdwYBeoY2LxJd2XgVGGy3iN3lfSlndV/view?usp=drive_link",
                 path: []
             },
             result_communityparticipation: {
                 title: "Negotiated Procurement: Community Participation",
-                description: "This mode of procurement may be adopted through Community Participation, wherein the Procuring Entity may directly purchase Goods, including agricultural and fishery products, from local farmers and fisherfolk, or directly negotiate simple Infrastructure Projects with local communities or community and social groups (CSGs) or their members. For this purpose, CSGs may be classified as either organized or unorganized.",
+                description: "This mode of procurement may be adopted through Community Participation, wherein the Procuring Entity may directly purchase Goods, including agricultural and fishery products, from local farmers and fisherfolk, or directly negotiate simple Infrastructure Projects with local communities or community and social groups (CSGs) or their members. For this purpose, CSGs may be classified as either organized or unorganized. (See Section 35.11, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/15B53YfcwUP1vUaqohmsMfhmhVrefo_xi/view?usp=drive_link",
                 path: []
             },
             result_unagencies: {
                 title: "Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations",
-                description: "This mode of procurement may be adopted for engagements with United Nations (UN) Agencies, International Organizations, or International Financing Institutions, wherein the Procuring Entity may directly procure from specialized agencies of the UN, as well as from international organizations or international financing institutions, in accordance with applicable laws, rules, and international commitments.",
+                description: "This mode of procurement may be adopted for engagements with United Nations (UN) Agencies, International Organizations, or International Financing Institutions, wherein the Procuring Entity may directly procure from specialized agencies of the UN, as well as from international organizations or international financing institutions, in accordance with applicable laws, rules, and international commitments. (See Section 35.12, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1FmoayUUtDk6nnR5bRLBNBmgB0WA0d-ZP/view?usp=drive_link",
                 path: []
             },
             result_directretailofpol: {
                 title: "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions",
-                description: "This mode of procurement may be adopted for the Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant (POL) Products, Electronic Charging Devices, and Online Subscriptions, when such items are not available from the Procurement Service–Department of Budget and Management (PS-DBM). In such cases, the End-User or Implementing Units authorized to procure may directly purchase from identified suppliers or service providers, provided that the goods and services are necessary for the efficient discharge of the Procuring Entity’s principal functions or day-to-day operations.",
+                description: "This mode of procurement may be adopted for the Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant (POL) Products, Electronic Charging Devices, and Online Subscriptions, when such items are not available from the Procurement Service–Department of Budget and Management (PS-DBM). In such cases, the End-User or Implementing Units authorized to procure may directly purchase from identified suppliers or service providers, provided that the goods and services are necessary for the efficient discharge of the Procuring Entity’s principal functions or day-to-day operations. (See Section 35.13, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1U_-b-cp0Rz3HhTvtywQbOIxnDFPlK7fs/view?usp=drive_link",
                 path: []
             },
             result_directsales: {
                 title: "Direct Sales",
-                description: "Direct Sales is a mode of procurement of Non-CSE where a Procuring Entity directly purchases from a supplier that has satisfactorily delivered Non-CSE to another government agency under a completed contract.",
+                description: "Direct Sales is a mode of procurement of Non-CSE where a Procuring Entity directly purchases from a supplier that has satisfactorily delivered Non-CSE to another government agency under a completed contract. (See Section 36, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/16j-amAVba17TTmPQ8ssxrjpPbaQ2gg_5/view?usp=drive_link",
                 path: []
             },
             result_directprocurementforsti: {
                 title: "Direct Procurement for Science, Technology, and Innovation",
-                description: "Direct Procurement for Science, Technology, and Innovation is a mode of procurement in which the Procuring Entity may directly acquire goods and services from a manufacturer or supplier that is legally, technically, and financially capable of providing the required items or services.",
+                description: "Direct Procurement for Science, Technology, and Innovation is a mode of procurement in which the Procuring Entity may directly acquire goods and services from a manufacturer or supplier that is legally, technically, and financially capable of providing the required items or services. (See Section 37, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1yG9BPyW-25-hK0eTdBBMR8u1T0orjrV_/view?usp=drive_link",
                 path: []
             },
             result_procurepsdbm: {
                 title: "Negotiated Procurement: Agency-to-Agency and Procure from the Procurement Service-Department of Budget and Management (PS-DBM)",
-                description: "Procuring Entities can purchase common-use supplies and equipment directly from the Procurement Service–Department of Budget and Management (PS-DBM). This ensures cost efficiency, standardization, and timely availability of pre-procured items, while reducing duplication of bidding and promoting the efficient use of government resources.",
+                description: "Procuring Entities can purchase common-use supplies and equipment directly from the Procurement Service–Department of Budget and Management (PS-DBM). This ensures cost efficiency, standardization, and timely availability of pre-procured items, while reducing duplication of bidding and promoting the efficient use of government resources. (See Section 40, IRR of RA No. 12009.)",
                 link: "https://drive.google.com/file/d/1MA0eYD00ej9gzPEk1BhTw9kuchZjk1RL/view?usp=drive_link",
                 path: []
             },
