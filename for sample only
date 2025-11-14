@@ -2716,40 +2716,6 @@
         window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=t4cJLfDqkEG0q9B_9ONFBILVbW3cIK9Grl4vnQmaLbpUNFZaSkMwOUUyR0MyQ0pRMUVUSFVNN080UCQlQCN0PWcu', '_blank');
         }
 
-        function openUserGuide() {
-          window.open('https://drive.google.com/file/d/1SK2LCkgt4-nuzIc13SjPQdW2H_IbpGpj/view?usp=drive_link', '_blank'); 
-        }
-
-        function downloadManual(filename) {
-          const link = document.createElement('a');
-          link.href = encodeURI(filename);
-          link.download = filename;
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        }
-
-        function toggleDownloadMenu() {
-          const menu = document.getElementById('downloadMenu');
-          menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-        }
-        
-        // Close the menu when clicking outside or on a link
-        window.addEventListener('click', function (event) {
-          const menu = document.getElementById('downloadMenu');
-          const button = document.querySelector('.download-container');
-        
-          // If the click is outside both the button and the menu, close it
-          if (!menu.contains(event.target) && !button.contains(event.target)) {
-            menu.style.display = 'none';
-          }
-        
-          // If a link inside the menu is clicked, close it too
-          if (event.target.classList.contains('download-option')) {
-            menu.style.display = 'none';
-          }
-        });
-
         function goBackFromResult() {
           if (history.length === 0) {
             restart();
