@@ -801,8 +801,21 @@
                     }
                 }
             },
+            directsales_previousprocurement_firsttime: {
+                question: "Is this the first time the PE initiated procurement for the non-CSE Good since acceptance by the Original agency of the earlier delivery of the non-CSE Good?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "directsales_previousprocurement_sixmonths"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "directacquisition_abc_noncse"
+                    }
+                }
+            },
             directsales_previousprocurement_sixmonths: {
-                question: "Was procurement initiated only once within six (6) months from acceptance of the Non-CSE by the original government agency?",
+                question: "Is it still within six (6) months from acceptance of the Non-CSE Good by the original government agency?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2572,6 +2585,7 @@
                     currentNode === 'takeovercontract_cse_noncse' ||
                     currentNode === 'directsales_previousprocurement_competitive' ||
                     currentNode === 'directsales_certificateofsatisfactoryperformance' ||
+                    currentNode === 'directsales_previousprocurement_firsttime' ||
                     currentNode === 'directsales_previousprocurement_sixmonths' ||
                     currentNode === 'directsales_lowerunitprice' ||
                     currentNode === 'directsales_suppliercapability' ||
