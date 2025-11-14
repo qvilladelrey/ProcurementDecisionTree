@@ -165,6 +165,46 @@
           transform: translateY(-2px);
         }
 
+        /* Dropdown Menu Styles */
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .dropbtn {
+          cursor: pointer;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: white;
+          min-width: 220px;
+          box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+          border-radius: 8px;
+          z-index: 10001;
+          top: 40px;
+          left: 0;
+        }
+        
+        .dropdown-content a {
+          color: #1e3888;
+          padding: 10px 16px;
+          text-decoration: none;
+          display: block;
+          font-weight: 500;
+          transition: background 0.3s ease;
+        }
+        
+        .dropdown-content a:hover {
+          background-color: #f0f4fa;
+        }
+        
+        /* Show dropdown when active */
+        .dropdown.show .dropdown-content {
+          display: block;
+        }
+
         .restart-btn {
             background: #28a745;
             color: white;
@@ -462,7 +502,17 @@
         <nav class="top-nav">
           <ul>
             <li><a href="https://www.gppb.gov.ph/new-government-procurement-act-republic-act-no-12009/" target="_blank">RA No. 12009 & IRR</a></li>
-            <li><a href="#" onclick="toggleDownloadMenu()">Manual Decision Tree</a></li>
+        
+            <!-- Dropdown Menu -->
+            <li class="dropdown">
+              <a href="#" class="dropbtn" onclick="toggleDropdown(event)">Manual Decision Tree ▾</a>
+              <div class="dropdown-content" id="manualDropdown">
+                <a href="Manual_Goods.pdf" target="_blank">Goods</a>
+                <a href="Manual_Infrastructure.pdf" target="_blank">Infrastructure Services</a>
+                <a href="Manual_Consulting.pdf" target="_blank">Consulting Services</a>
+              </div>
+            </li>
+        
             <li><a href="https://drive.google.com/file/d/1SK2LCkgt4-nuzIc13SjPQdW2H_IbpGpj/view?usp=drive_link" target="_blank">User Guide</a></li>
             <li><a href="https://www.gppb.gov.ph/" target="_blank">Contact Us</a></li>
           </ul>
@@ -2721,6 +2771,20 @@
           updateDynamicRecommendations();
           updateBackButton();
           showQuestion();
+        }
+
+        function toggleDropdown(event) {
+          event.preventDefault();
+          const dropdown = event.target.closest('.dropdown');
+          dropdown.classList.toggle('show');
+        
+          // Close dropdown if clicked outside
+          window.addEventListener('click', function closeDropdown(e) {
+            if (!dropdown.contains(e.target)) {
+              dropdown.classList.remove('show');
+              window.removeEventListener('click', closeDropdown);
+            }
+          });
         }
 
 </script>
