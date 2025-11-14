@@ -2141,7 +2141,7 @@
         const results = {
             result_competitivebidding: {
                 title: "Competitive Bidding",
-                description: "Competitive Bidding is a mode of procurement which is open to participation by any eligible bidder.",
+                description: "Competitive Bidding is a mode of procurement which is open to participation by any eligible bidder. <em>(Section 27, Rules VI to XI, IRR of RA No. 12009)</em>",
                 link: "https://drive.google.com/file/d/1UgHf6lyl0nLtOeewCQhgWrljdmawQK6G/view?usp=sharing",
                 path: []
             },
