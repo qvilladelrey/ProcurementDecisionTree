@@ -2561,7 +2561,7 @@
                 if (currentNode === 'cse_goods' || 
                     currentNode === 'previouslyprocured_noncse' || 
                     currentNode === 'takeovercontract_cse_noncse' ||
-                    currentNode === 'previouscontract_takeovercontract_noncse' ||
+                    currentNode === 'previouscontract_takeovercontract_goods' ||
                     currentNode === 'directsales_previousprocurement_competitive' ||
                     currentNode === 'directsales_certificateofsatisfactoryperformance' ||
                     currentNode === 'directsales_previousprocurement_sixmonths' ||
