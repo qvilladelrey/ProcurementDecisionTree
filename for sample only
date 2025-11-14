@@ -1956,7 +1956,7 @@
                 }
             },
             availablepsdbm_cse: {
-                question: "Is it available at PS-DBM?",
+                question: "Is it available from the Procurement Service-Department of Budget and Management (PS-DBM)?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1982,25 +1982,24 @@
                 }
             },
             need_csegoods: {
-                question: "Is there a need to:",
+                question: "Would you prefer to:",
                 options: {
                     twofailedbidding_cse: {
-                        text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
-                        next: "prefer_twofailedbidding_cse",
-                        triggers: ["Negotiated Procurement: Two-Failed Biddings"]
+                        text: "🔄 procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
+                        next: "result_twofailedbiddings"
                     },
                     replenishgoods_cse: {
-                        text: "📋 Replenish Goods procured under a previously awarded contract",
+                        text: "📋 replenish Goods procured under a previously awarded contract (the "original contract")",
                         next: "repeatorder_previousprocurement_competitive_cse"
                     },
                     othergoods_cse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ choose another option not listed",
                         next: "directacquisition_abc_cse"
                     }
                 }
             },
             repeatorder_previousprocurement_competitive_cse: {
-                question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
+                question: "Was the original contract awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2026,7 +2025,7 @@
                 }
             },
             repeatorder_previousprocurement_sixmonths_cse: {
-                question: "Is the procurement within six (6) months from the date of the NTP arising from the original contract?",
+                question: "Is the procurement within six (6) months from the date of the original contract's Notice to Proceed (NTP)?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2043,8 +2042,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_repeatorder_cse",
-                        triggers: ["Repeat Order"]
+                        next: "result_repeatorder"
                     },
                     no: {
                         text: "❌ No",
@@ -2052,34 +2050,8 @@
                     }
                 }
             },
-            prefer_repeatorder_cse: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_repeatorder_cse: {
-                        text: "📋 Adopt Repeat Order",
-                        next: "result_repeatorder"
-                    },
-                    different_prefer_repeatorder_cse: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "directacquisition_abc_cse"
-                    }
-                }
-            },
-            prefer_twofailedbidding_cse: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_twofailedbidding_cse: {
-                        text: "📋 To Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
-                        next: "result_directsales"
-                    },
-                    different_prefer_twofailedbidding_cse: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "directacquisition_abc_cse"
-                    }
-                }
-            },
             directacquisition_abc_cse: {
-                question: "Is the ABC less than Php 200,000.00?",
+                question: "Is the Approved Budget for the Contract (ABC) less than Php 200,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2095,15 +2067,15 @@
                 question: "Is the Good:",
                 options: {
                     services_directacquisition_cse: {
-                        text: "🛠️ Services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
+                        text: "🛠️ services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
                         next: "availability_directacquisition_cse"
                     },
                     stores_directacquisition_cse: {
-                        text: "🛒 May be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores",
+                        text: "🛒 those that may be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores",
                         next: "availability_directacquisition_cse"
                     },
                     othergoods_directacquisition_cse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ not among the stated options",
                         next: "lgu_goods"
                     }
                 }
@@ -2112,51 +2084,38 @@
                 question: "Is the Good:",
                 options: {
                     philgepsregistered_directacquisition_cse: {
-                        text: "💻 Supplied by a supplier registered with the PhilGEPS as verified from the PhilGEPS website",
-                        next: "directacquisition_invoicecompliant_cse"
+                        text: "💻 supplied by a supplier registered with the Philippine Government Electronic Procurement System (PhilGEPS) as verified from the PhilGEPS website",
+                        next: "prefer_directacquisition_cse"
                     },
                     ecommerce_directacquisition_cse: {
-                        text: "📦 Available in electronic commerce platforms for delivery or pick up at such date and time identified by the PE",
-                        next: "directacquisition_invoicecompliant_cse"
+                        text: "📦 available in electronic commerce platforms for delivery or pick up at such date and time identified by the Procuring Entity",
+                        next: "prefer_directacquisition_cse"
                     },
                     immediatedelivery_directacquisition_cse: {
-                        text: "🚚 Readily available off-the-shelf and can be picked up or delivered immediately",
-                        next: "directacquisition_invoicecompliant_cse"
+                        text: "🚚 readily available off-the-shelf and can be picked up or delivered immediately",
+                        next: "prefer_directacquisition_cse"
                     },
                     otheravailability_directacquisition_cse: {
-                        text: "❓ Not among the stated options",
-                        next: "lgu_goods"
-                    }
-                }
-            },
-            directacquisition_invoicecompliant_cse: {
-                question: "Does the supplier issue invoices compliant with the Bureau of Internal Revenue (BIR) and Commission on Audit (COA)?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "prefer_directacquisition_cse",
-                        triggers: ["Direct Acquisition"]
-                    },
-                    no: {
-                        text: "❌ No",
+                        text: "❌ not among the stated options",
                         next: "lgu_goods"
                     }
                 }
             },
             prefer_directacquisition_cse: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_directacquisition_cse: {
                         text: "🛒 Adopt Direct Acquisition",
                         next: "result_directacquisition"
                     },
                     different_prefer_directacquisition_cse: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "lgu_goods"
                     }
                 }
             }
         };
+
 
         const results = {
             result_competitivebidding: {
