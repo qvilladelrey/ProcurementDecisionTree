@@ -600,7 +600,7 @@
     <script>
         const decisionTree = {
             start: {
-                question: "What are you procuring?",
+                question: "What is the nature of your procurement project?",
                 options: {
                     goods: {
                         text: "📦 Goods",
@@ -620,50 +620,50 @@
                 question: "Is there a need to:",
                 options: {
                     imminentdanger_goods: {
-                        text: "🌪️ Address imminent danger to life or property during a state of calamity",
+                        text: "🌪️ address imminent danger to life or property during a state of calamity",
                         next: "prefer_emergencycases_goods",
                         triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     timeessence_goods: {
-                        text: "🔥 Implement prompt measures since time is of the essence in situations arising from natural or man-made calamities",
+                        text: "🔥 implement prompt measures since time is of the essence in situations arising from natural or man-made calamities",
                         next: "prefer_emergencycases_goods",
                         triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     immediateaction_goods: {
-                        text: "🚨 Undertake immediate action to prevent damage to or loss of life or property or to restore vital public  services, infrastructure facilities,  and other public utilities",
+                        text: "🚨 undertake immediate action to prevent damage to or loss of life or property or to restore vital public  services, infrastructure facilities,  and other public utilities",
                         next: "prefer_emergencycases_goods",
                         triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     otherinstancesemergency_goods: {
-                        text: "⚠️ Respond to other instances aside from the mentioned situations where the provision of life, injury, disease, and other negative effects on human, physical, mental and social well-being, together with damage to property, destruction of assets, loss of services, social and economic disruption and environmental degradation",
+                        text: "⚠️ respond to other instances aside from the mentioned situations where the provision of life, injury, disease, and other negative effects on human, physical, mental and social well-being, together with damage to property, destruction of assets, loss of services, social and economic disruption and environmental degradation",
                         next: "prefer_emergencycases_goods",
                         triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
-                    takeovercontract_noncse: {
-                        text: "🚨Take-over previously awarded contract that was rescinded or terminated for causes provided for in the contract and existing laws, in order to prevent damage to or loss of life or property or restore vital public services, etc.",
-                        next: "previouscontract_takeovercontract_noncse",
+                    takeovercontract_goods: {
+                        text: "🚨take-over a previously awarded contract that was rescinded or terminated for causes provided for in the contract and existing laws, in order to prevent damage to or loss of life or property or restore vital public services, etc.",
+                        next: "previouscontract_takeovercontract_goods",
                         triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
                     othersemergency_goods: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ take action outside the stated options",
                         next: "cse_goods"
                     }
                 }
             },
             prefer_emergencycases_goods: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_emergencycases_goods: {
                         text: "🚨 Adopt Negotiated Procurement: Emergency Cases",
                         next: "result_emergencycases"
                     },
                     different_prefer_emergencycases_goods: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "cse_goods"
                     }
                 }
             },
-            previouscontract_takeovercontract_noncse: {
+            previouscontract_takeovercontract_goods: {
                 question: "Was the previous contract awarded through Competitive Bidding, Competitive Dialogue, Limited Source Bidding, or Small Value Procurement?",
                 options: {
                     yes: {
@@ -678,20 +678,20 @@
                 }
             },
             prefer_emergencycases_takeovercontract_goods: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_emergencycases_takeovercontract_goods: {
                         text: "🚨 Adopt Negotiated Procurement: Emergency Cases",
                         next: "result_emergencycases"
                     },
                     different_prefer_emergencycases_takeovercontract_goods: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "takeovercontract_cse_noncse"
                     }
                 }
             },
             prefer_takeover_noncse: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_takeover_noncse: {
                         text: "📋 Adopt Negotiated Procurement: Take-Over of Contracts",
@@ -702,13 +702,13 @@
                         next: "result_emergencycases"
                     },
                     different_prefer_takeover_noncse: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "takeovercontract_cse_noncse"
                     }
                 }
             },
             takeovercontract_cse_noncse: {
-                question: "Is it CSE?",
+                question: "Is the Good included in the List of Common-Use Supplies and Equipment (CSE)?",
                     options: {
                     yes: {
                         text: "✅ Yes",
@@ -721,7 +721,7 @@
                     }
                 },
                 cse_goods: {
-                    question: "Is it CSE?",
+                    question: "Is the Good included in the List of Common-Use Supplies and Equipment (CSE)?",
                     options: {
                     yes: {
                         text: "✅ Yes",
@@ -747,23 +747,22 @@
                 }
             },
             need_noncsegoods: {
-                question: "Is there a need to:",
+                question: "Would you prefer to:",
                 options: {
                     directpurchase_noncse: {
-                        text: "📦 Directly purchase from supplier that has delivered non-CSE to other government agency",
+                        text: "📦 directly purchase from supplier that has delivered non-CSE to other government agency",
                         next: "directsales_previousprocurement_competitive"
                     },
                     twofailedbidding_noncse: {
-                        text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
-                        next: "prefer_twofailedbidding_noncse",
-                        triggers: ["Negotiated Procurement: Two-Failed Biddings"]
+                        text: "🔄 procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
+                        next: "result_twofailedbiddings"
                     },
                     replenishgoods_noncse: {
-                        text: "📋 Replenish Goods procured under a previously awarded contract",
+                        text: "📋 replenish Goods procured under a previously awarded contract",
                         next: "repeatorder_previousprocurement_competitive_noncse"
                     },
                     othergoods_noncse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ choose an option not among those listed",
                         next: "directacquisition_abc_noncse"
                     }
                 }
@@ -795,7 +794,7 @@
                 }
             },
             directsales_previousprocurement_sixmonths: {
-                question: "Is the procurement  only initiated once within six (6) months from the acceptance of the Non-CSE by the original government agency?",
+                question: "Was procurement initiated only once within six (6) months from acceptance of the Non-CSE by the original government agency?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -808,7 +807,7 @@
                 }
             },
             directsales_lowerunitprice: {
-                question: "Is the  contract to be executed between the PE & the supplier within the amount of the contract executed with the original government agency, and offered to the PE at the same or lower unit price offered to the original govt agency?",
+                question: "Is the contract to be executed between the Procuring Entity (PE) and the supplier within the amount of the contract executed with the original govt agency, and offered to the PE at the same or lower unit price offered to the original government agency?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -825,37 +824,10 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_directsales",
-                        triggers: ["Direct Sales"]
+                        next: "result_directsales"
                     },
                     no: {
                         text: "❌ No",
-                        next: "directacquisition_abc_noncse"
-                    }
-                }
-            },
-            prefer_directsales: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_directsales: {
-                        text: "📦 Adopt Direct Sales",
-                        next: "result_directsales"
-                    },
-                    different_prefer_directsales: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "directacquisition_abc_noncse"
-                    }
-                }
-            },
-            prefer_twofailedbidding_noncse: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_twofailedbidding_noncse: {
-                        text: "🔄 Adopt Negotiated Procurement: Two Failed Biddings",
-                        next: "result_twofailedbiddings"
-                    },
-                    different_prefer_twofailedbidding_noncse: {
-                        text: "🔄 Adopt different procurement mode",
                         next: "directacquisition_abc_noncse"
                     }
                 }
@@ -887,7 +859,7 @@
                 }
             },
             repeatorder_previousprocurement_sixmonths_noncse: {
-                question: "Is the procurement within six (6) months from the date of the NTP arising from the original contract?",
+                question: "Is the procurement within six (6) months from the date of the Notice to Proceed (NTP) arising from the original contract?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -900,12 +872,11 @@
                 }
             },
             repeatorder_quantifiablegood_noncse: {
-                question: "Is the Good quantifiable, divisible, and consisting of at least four (4) units per item, and does not exceed 25% of the quantity of each item in the original contract?",
+                question: "Is the Good quantifiable, divisible, and consisting of at least four (4) units per item, and does not exceed 25% of the quantity of each item in the original contract??",
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_repeatorder_noncse",
-                        triggers: ["Repeat Order"]
+                        next: "result_repeatorder"
                     },
                     no: {
                         text: "❌ No",
@@ -913,21 +884,8 @@
                     }
                 }
             },
-            prefer_repeatorder_noncse: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_repeatorder_noncse: {
-                        text: "📋 Adopt Repeat Order",
-                        next: "result_repeatorder"
-                    },
-                    different_prefer_repeatorder_noncse: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "directacquisition_abc_noncse"
-                    }
-                }
-            },
             directacquisition_abc_noncse: {
-                question: "Is the ABC less than Php 200,000.00?",
+                question: "Is the Approved Budget for the Contract (ABC) less than Php 200,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -940,18 +898,18 @@
                 }
             },
             typeofgood_directacquisition_noncse: {
-                question: "Is the Good:",
+                question: "Does the Good pertain to those:",
                 options: {
                     services_directacquisition_noncse: {
                         text: "🛠️ Services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
                         next: "availability_directacquisition_noncse"
                     },
                     stores_directacquisition_noncse: {
-                        text: "🛒 May be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores",
+                        text: "🛒 those that may be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores",
                         next: "availability_directacquisition_noncse"
                     },
                     othergoods_directacquisition_noncse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ not among the stated options",
                         next: "typeofgood_noncse_b"
                     }
                 }
@@ -960,89 +918,75 @@
                 question: "Is the Good:",
                 options: {
                     philgepsregistered_directacquisition_noncse: {
-                        text: "💻 Supplied by a supplier registered with the PhilGEPS as verified from the PhilGEPS website",
-                        next: "directacquisition_invoicecompliant_noncse"
+                        text: "💻 supplied by a supplier registered with the Philippine Government Electronic Procurement System (PhilGEPS) as verified from the PhilGEPS website",
+                        next: "prefer_directacquisition_noncse"
                     },
                     ecommerce_directacquisition_noncse: {
-                        text: "📦 Available in electronic commerce platforms for delivery or pick up at such date and time identified by the PE",
-                        next: "directacquisition_invoicecompliant_noncse"
+                        text: "📦 available in electronic commerce platforms for delivery or pick up at such date and time identified by the PE",
+                        next: "prefer_directacquisition_noncse"
                     },
                     immediatedelivery_directacquisition_noncse: {
-                        text: "🚚 Readily available off-the-shelf and can be picked up or delivered immediately",
-                        next: "directacquisition_invoicecompliant_noncse"
+                        text: "🚚 readily available off-the-shelf and can be picked up or delivered immediately",
+                        next: "prefer_directacquisition_noncse"
                     },
                     otheravailability_directacquisition_noncse: {
-                        text: "❓ Not among the stated options",
-                        next: "typeofgood_noncse_b"
-                    }
-                }
-            },
-            directacquisition_invoicecompliant_noncse: {
-                question: "Does the supplier issue invoices compliant with the Bureau of Internal Revenue (BIR) and Commission on Audit (COA)?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "prefer_directacquisition_noncse",
-                        triggers: ["Direct Acquisition"]
-                    },
-                    no: {
-                        text: "❌ No",
+                        text: "❌ not among the stated options",
                         next: "typeofgood_noncse_b"
                     }
                 }
             },
             prefer_directacquisition_noncse: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_directacquisition_noncse: {
                         text: "🛒 Adopt Direct Acquisition",
                         next: "result_directacquisition"
                     },
                     different_prefer_directacquisition_noncse: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "typeofgood_noncse_b"
                     }
                 }
             },
             typeofgood_noncse_b: {
-                question: "Is the Good:",
+                question: "Does the Good pertain to:",
                 options: {
                     petroleumproducts: {
-                        text: "⛽ Petroleum Fuel, Oil and Lubricant Products",
+                        text: "⛽ Petroleum Fuel, Oil and Lubricant (POL) Products",
                         next: "retailpumpprice"
                     },
                     electronicchargingdevice: {
-                        text: "🚗 Electronic charging device intended for electric vehicles",
+                        text: "🚗 an electronic charging device intended for electric vehicles",
                         next: "retailpumpprice"
                     },
                     onlinesubscription: {
-                        text: "💻 Online subscription",
+                        text: "💻 an online subscription",
                         next: "onlinesubscription_availablepsdbm"
                     },
                     agriculturalproduct: {
-                        text: "🌾🐟 Agricultural or fishery product",
+                        text: "🌾🐟 an agricultural or fishery product",
                         next: "sagipsaka_accreditedffce"
                     },
                     majordefenseequipment: {
-                        text: "🚁 Major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense",
+                        text: "🚁 a major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense",
                         next: "afpmodernizationprogram_noncse"
                     },
                     scientifcscholarlyetc: {
-                        text: "🔬🎨💻🎥📚 Scientific, scholarly or artistic work, exclusive technology and/or media services",
+                        text: "🔬🎨💻🎥📚 scientific, scholarly or artistic work, exclusive technology and/or media services",
                         next: "typeofgood_scientificscholarly_noncse"
                     },
                     realpropertyorvenue: {
-                        text: "🏢 Lease of Real Property or Venue",
+                        text: "🏢 lease of Real Property or Venue",
                         next: "publicownedvenue"
                     },
                     othergoods_noncse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ those not among the stated options",
                         next: "newconcepttechnology_noncse"
                     }
                 }
             },
             retailpumpprice: {
-                question: "Is it available from retailers, dealers, or gas stations at retail pump price?",
+                question: "Is it available from retailers, dealers, or gas stations at retail pump/charging price?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1069,14 +1013,14 @@
                 }
             },
             prefer_directretail_pol: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_directretail_pol: {
                         text: "⛽ Adopt Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions",
                         next: "result_directretailofpol"
                     },
                     different_prefer_directretail_pol: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "lgu_goods"
                     }
                 }
@@ -1095,7 +1039,7 @@
                 }
             },
             typeoflgu_goods: {
-                question: "Is the LGU?",
+                question: "Is the Procuring Entity (PE) a:",
                 options: {
                     barangay_typeoflgu_goods: {
                         text: "Barangay",
@@ -1116,7 +1060,7 @@
                 }
             },
             abc_barangay_goods: {
-                question: "Is the ABC more than P100,000?",
+                question: "Is the Approved Budget for the Contract (ABC) more than P100,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1130,7 +1074,7 @@
                 }
             },
             abc_province_goods: {
-                question: "Is the PE?",
+                question: "What is its classification?",
                 options: {
                     firstclass_province_goods: {
                         text: "1st Class Province",
@@ -1155,7 +1099,7 @@
                 }
             },
             abc_province_twomillion_goods: {
-                question: "Is the ABC more than P2,000,000.00?",
+                question: "Is the Approved Budget for the Contract (ABC) more than P2,000,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1169,7 +1113,7 @@
                 }
             },
             abc_province_onemillionsixhundred_goods: {
-                question: "Is the ABC more than P1,600,000.00?",
+                question: "Is the Approved Budget for the Contract (ABC) more than P1,600,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1183,7 +1127,7 @@
                 }
             },
             abc_province_onemilliontwohundred_goods: {
-                question: "Is the ABC more than P1,200,000.00?",
+                question: "Is the Approved Budget for the Contract (ABC) more than P1,200,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1197,7 +1141,7 @@
                 }
             },
             abc_city_goods: {
-                question: "Is the PE?",
+                question: "What is its classification?",
                 options: {
                     firstclass_city_goods: {
                         text: "1st Class City",
@@ -1222,7 +1166,7 @@
                 }
             },
             abc_city_twomillion_goods: {
-                question: "Is the ABC more than P2,000,000.00?",
+                question: "Is the Approved Budget for the Contract (ABC) more than P2,000,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1236,7 +1180,7 @@
                 }
             },
             abc_city_onemillionsixhundred_goods: {
-                question: "Is the ABC more than P1,600,000.00?",
+                question: "Is the Approved Budget for the Contract (ABC) more than P1,600,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1250,7 +1194,7 @@
                 }
             },
             abc_city_onemilliontwohundred_goods: {
-                question: "Is the ABC more than P1,200,000.00?",
+                question: "Is the Approved Budget for the Contract (ABC) more than P1,200,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1264,7 +1208,7 @@
                 }
             },
             abc_city_eighthundred_goods: {
-                question: "Is the ABC more than P800,000.00?",
+                question: "Is the Approved Budget for the Contract (ABC) more than 800,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1278,7 +1222,7 @@
                 }
             },
             abc_municipality_goods: {
-                question: "Is the PE?",
+                question: "What is its classification?",
                 options: {
                     firstclass_municipality_goods: {
                         text: "1st Class",
@@ -1303,7 +1247,7 @@
                 }
             },
             abc_city_fourhundred_goods: {
-                question: "Is the ABC more than P400,000.00?",
+                question: "Is the Approved Budget for the Contract (ABC) more than P400,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1317,7 +1261,7 @@
                 }
             },
             abc_city_twohundred_goods: {
-                question: "Is the ABC more than P200,000.00?",
+                question: "Is the Approved Budget for the Contract (ABC) more than P200,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1331,7 +1275,7 @@
                 }
             },
             smallvalueprocurement_abc: {
-                question: "Is the ABC more than P2,000,000.00?",
+                question: "Is the Approved Budget for the Contract (ABC) more than P2,000,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1345,7 +1289,7 @@
                 }
             },
             prefer_competitivebidding_noncse: {
-                question: "Do you prefer/have the capacity to undertake the public bidding process?",
+                question: "Would you prefer to conduct a public bidding process?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1358,7 +1302,7 @@
                 }
             },
             onlinesubscription_availablepsdbm: {
-                question: "Is it available at PS-DBM?",
+                question: "Is it available from the Procurement Service-Department of Budget and Management (PS-DBM)?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1384,31 +1328,31 @@
                 }
             },
             onlinesubscription_abc: {
-                question: "Is the ABC:",
+                question: "Is the Approved Budget for the Contract (ABC):",
                 options: {
                     lessonemillion_onlinesubscription: {
-                        text: "Less than one (1) million",
+                        text: "less than one (1) million (P1,000,000.00)",
                         next: "prefer_directretail_smallvalueprocurement_onlinesubscription",
                         triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
                     },
                     moreonemillionlesstwomillion_onlinesubscription: {
-                        text: "More than one (1) million but less than two (2) million ",
+                        text: "more than one (1) million (P1,000,000.00) but less than two (2) million (P2,000,000.00)",
                         next: "prefer_directretail_smallvalueprocurement_onlinesubscription",
                         triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
                     },
                     moretwomillionlessfivemillion_onlinesubscription: {
-                        text: "More than two (2) million but less than five (5) million, with HoPE approval",
+                        text: "more than two (2) million (P2,000,000.00) but less than five (5) million (P5,000,000.00), with approval from the Head of the Procuring Entity",
                         next: "prefer_directretail_competitivebidding_onlinesubscription",
                         triggers: ["Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions"]
                     },
                     morefivemillion_onlinesubscription: {
-                        text: "More than five (5) million",
+                        text: "more than five (5) million (P5,000,000.00)",
                         next: "prefer_directretail_competitivebiddingothers_onlinesubscription"
                     }
                 }
             },
             prefer_directretail_smallvalueprocurement_onlinesubscription: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_directretailsmallvalueprocurement_onlinesubscription: {
                         text: "⛽ Adopt Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions",
@@ -1419,13 +1363,13 @@
                         next: "lgu_goods"
                     },
                     different_prefer_smallvalueprocurementothers_onlinesubscription: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "newconcepttechnology_noncse"
                     }
                 }
             },
             prefer_directretail_competitivebidding_onlinesubscription: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_directretailcompetitivebidding_onlinesubscription: {
                         text: "🌐 Adopt Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions",
@@ -1436,26 +1380,26 @@
                         next: "result_competitivebidding"
                     },
                     different_prefer_competitivebiddingothers_onlinesubscription: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "newconcepttechnology_noncse"
                     }
                 }
             },
             prefer_directretail_competitivebiddingothers_onlinesubscription: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_competitivebiddingothers_onlinesubscription: {
                         text: "🏆 Adopt Competitive Bidding",
                         next: "result_competitivebidding"
                     },
                     different_prefer_otherscompetitivebiddingothers_onlinesubscription: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Modee",
                         next: "newconcepttechnology_noncse"
                     }
                 }
             },
             sagipsaka_accreditedffce: {
-                question: "Is the supplier an accredited FFCE?",
+                question: "Is the supplier an Accredited Farmers and Fisherfolk Cooperatives and Enterprises (FFCE)?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1463,12 +1407,25 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "newconcepttechnology_noncse"
+                        next: "prefer_localcommunity_noncse"
+                    }
+                }
+            },
+            prefer_localcommunity_noncse: {
+                question: "Would you prefer to:",
+                options: {
+                    yes_prefer_localcommunity_noncse: {
+                        text: "🏘️ Adopt Negotiated Procurement: Community Participation",
+                        next: "result_communityparticipation"
+                    },
+                    different_prefer_localcommunity_noncse: {
+                        text: "🔄 Adopt a Different Procurement Mode",
+                        next: "lgu_goods"
                     }
                 }
             },
             afpmodernizationprogram_noncse: {
-                question: "Is the Good included in the AFP Modernization Program previously approved by the President of the Philippines?",
+                question: "Is it included in the Armed Forces of the Philippines (AFP) Modernization Program previously approved by the President of the Philippines?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1495,7 +1452,7 @@
                 }
             },
             afpmodernizationprogram_previouscontract_noncse: {
-                question: "Has the supplier/manufacturer fully & satisfactorily implemented a contract of the same item with the DND, any of its bureaus or attached agencies, or law enforcement agencies?",
+                question: "Has the supplier or manufacturer fully & satisfactorily implemented a contract of the same item with the Department of the National Defense, any of its bureaus or attached agencies, or law enforcement agencies?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1508,7 +1465,7 @@
                 }
             },
             afpmodernizationprogram_performancesecurity_noncse: {
-                question: "Will the supplier or manufacturer provide performance security in accordance with RA 12009?",
+                question: "Will the supplier or manufacturer provide performance security in accordance with RA No. 12009?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1522,14 +1479,14 @@
                 }
             },
             prefer_defensecooperation_noncse: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_defensecooperation_noncse: {
-                        text: "🚁 Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items",
+                        text: "🚁 Adopt Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items",
                         next: "result_defensecooperationagreement"
                     },
                     different_prefer_defensecooperation_noncse: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "newconcepttechnology_noncse"
                     }
                 }
@@ -1538,33 +1495,33 @@
                 question: "Is the Good:",
                 options: {
                     workofart: {
-                        text: "🎨 Work of art; commissioned work or services for creative design or a specific artist skill (e.g., singer, performer, poet, writer, painter, sculptor, etc.)",
+                        text: "🎨 a work of art, or a commissioned work or services for creative design or a specific artist skill (e.g., singer, performer, poet, writer, painter, sculptor, etc.)",
                         next: "prefer_scientificscholarly_noncse",
                         triggers: ["Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services"]
                     },
                     scientificpublication: {
-                        text: "📚 Scientific, technical, economic, business, trade or legal journal, magazine, paper, subscription, or other exclusive statistical publications and references",
+                        text: "📚 a scientific, technical, economic, business, trade or legal journal, magazine, paper, subscription, or other exclusive statistical publications and references",
                         next: "prefer_scientificscholarly_noncse",
                         triggers: ["Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services"]
                     },
                     medicalbiotech: {
-                        text: "🔬 Highly specialized life-saving medical and biotech equipment and devices, medicine, supplies, materials, tools and consumables, as certified by the Department of Health",
+                        text: "🔬 classified as highly specialized life-saving medical and biotech equipment and devices, medicine, supplies, materials, tools and consumables, as certified by the Department of Health (DOH)",
                         next: "prefer_scientificscholarly_noncse",
                         triggers: ["Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services"]
                     },
                     mediadocumentation: {
-                        text: "🎥 Media documentation, advertisement, or announcement through television, radio, newspaper, internet, and other communication media",
+                        text: "🎥 classified as media documentation, advertisement, or announcement through television, radio, newspaper, internet, and other communication media",
                         next: "prefer_scientificscholarly_noncse",
                         triggers: ["Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services"]
                     },
                     othergoods_scientificscholarlyetc_noncse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ not among the stated options",
                         next: "newconcepttechnology_noncse"
                     }
                 }
             },
             prefer_scientificscholarly_noncse: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_scientificscholarly_noncse: {
                         text: "🎓 Adopt Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services",
@@ -1577,7 +1534,7 @@
                 }
             },
             publicownedvenue: {
-                question: "Is the real property or venue publicly-owned/ from other government agency?",
+                question: "Is the real property or venue publicly-owned?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1605,20 +1562,20 @@
                 }
             },
             prefer_realpropertyvenue_noncse: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_realpropertyvenue: {
                         text: "🏢 Adopt Negotiated Procurement: Lease of Real Property and Venue",
                         next: "result_leaseofrealproperty"
                     },
                     different_prefer_realpropertyvenue: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "smallvalueprocurement_abc"
                     }
                 }
             },
             agencymandate_realpropertyvenue: {
-                question: "Is the government agency mandated to undertake the project?",
+                question: "Is the government agency owner mandated to undertake the project (e.g., PICC)?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1632,18 +1589,18 @@
                 }
             },
             prefer_agencytoagency_realpropertyvenue: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
-                    yes_prefer_agencytoagency_realpropertyvenue: {
+                    different_prefer_realpropertyvenue_realpropertyvenue: {
                         text: "🏢 Adopt Negotiated Procurement: Lease of Real Property and Venue",
                         next: "result_leaseofrealproperty"
                     },
-                    different_prefer_realpropertyvenue_realpropertyvenue: {
+                    different_prefer_agencytoagency_realpropertyvenue: {
                         text: "🏛️ Adopt Negotiated Procurement: Agency-to-Agency",
                         next: "result_agencytoagency"
                     },
-                    different_prefer_agencytoagency_realpropertyvenue: {
-                        text: "🔄 Adopt different procurement mode",
+                    different_prefer_agencytoagencyrealpropertyvenue: {
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "lgu_goods"
                     }
                 }
@@ -1662,7 +1619,7 @@
                 }
             },
             unsolicitedoffer_noncse: {
-                question: "Was an unsolicited offer initially submitted by an entity that was determined by the PE as necessary?",
+                question: "Did an entity submit an unsolicited offer which the Procuring Entity determine as necessary?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1678,28 +1635,28 @@
                 question: "Does the Good:",
                 options: {
                     innovativedesign_competitivedialogue_noncse: {
-                        text: "🤖 Include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility",
+                        text: "🤖 include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility",
                         next: "prefer_competitivedialogue_noncse",
                         triggers: ["Competitive Dialogue"]
                     },
                     priornegotiation_competitivedialogue_noncse: {
-                        text: "⚙️ Has a contract that requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
+                        text: "⚙️ has a contract that requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
                         next: "prefer_competitivedialogue_noncse",
                         triggers: ["Competitive Dialogue"]
                     },
                     undefinedtechspecs_competitivedialogue_noncse: {
-                        text: "💡 Has Technical Specifications that cannot be sufficiently established or precisely defined by the PE",
+                        text: "💡 has Technical Specifications that cannot be sufficiently established or precisely defined by the PE",
                         next: "prefer_competitivedialogue_noncse",
                         triggers: ["Competitive Dialogue"]
                     },
                     othergoods_competitivedialogue_noncse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ pertain to those not among the stated options",
                         next: "researchuse_noncse"
                     }
                 }
             },
             prefer_competitivedialogue_noncse: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_competitivedialogue_noncse: {
                         text: "🤝 Adopt Competitive Dialogue",
@@ -1725,44 +1682,44 @@
                 }
             },
             typeofgood_sti_noncse: {
-                question: "Is the Good:",
+                question: "Does the Good pertain to:",
                 options: {
                     actualscience: {
-                        text: "🔬 Supplies, materials, equipment and related services to be used actually, exclusively, and directly in the conduct of research and development projects or activities",
+                        text: "🔬 those classified as supplies, materials, equipment and related services to be used actually, exclusively, and directly in the conduct of research and development projects or activities",
                         next: "prefer_directsti_noncse",
                         triggers: ["Direct Procurement for Science, Technology, and Innovation"]
                     },
                     priornegotiation_competitivedialogue_noncse: {
-                        text: "💡 Goods which include products of a commissioned task by a PE which where processed, developed, and manufactured in satisfaction of its needs and requirements, which include: (i) pre-commercial goods and services that involve early market engagement to stimulate the development of new goods and services that meet specific government needs; and (ii) goods to be manufactured by qualified start up businesses alongside the thrust to develop and support new businesses",
+                        text: "💡 those  which include products of a commissioned task by a PE which where processed, developed, and manufactured in satisfaction of its needs and requirements, which include: (i) pre-commercial goods and services that involve early market engagement to stimulate the development of new goods and services that meet specific government needs; and (ii) goods to be manufactured by qualified start up businesses alongside the thrust to develop and support new businesses",
                         next: "prefer_directsti_noncse",
                         triggers: ["Direct Procurement for Science, Technology, and Innovation"]
                     },
                     sti_analogous: {
-                        text: "🧪 Other analogous goods",
+                        text: "🧪 other analogous goods",
                         next: "prefer_directsti_noncse",
                         triggers: ["Direct Procurement for Science, Technology, and Innovation"]
                     },
                     othergoods_sti_noncse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ those not among the stated options",
                         next: "totalsuppliers_noncse"
                     }
                 }
             },
             prefer_directsti_noncse: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_directsti_noncse: {
                         text: "🔬 Adopt Direct Procurement for Science, Technology, and Innovation",
                         next: "result_directprocurementforsti"
                     },
                     different_prefer_directsti_noncse: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "totalsuppliers_noncse"
                     }
                 }
             },
             totalsuppliers_noncse: {
-                question: "Based on your market scoping, how many capable suppliers are available?",
+                question: "How many capable suppliers are available?",
                 options: {
                     one_directcontracting_noncse: {
                         text: "One (1)",
@@ -1775,7 +1732,7 @@
                 }
             },
             approvedlist_limitedsourcebidding_noncse: {
-                question: "Are the set of pre-selected suppliers included in the govt approved or self-generated supplier list?",
+                question: "Are the set of pre-selected suppliers included in a government-approved or self-generated supplier list?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1791,30 +1748,30 @@
                 question: "Is the Good:",
                 options: {
                     majorplantcomponent: {
-                        text: "🏭 A major plant component where it is deemed advantageous to limit the bidding to known eligible bidders in order to maintain an optimum and uniform level of quality and performance of the plant as a whole",
+                        text: "🏭 a major plant component where it is deemed advantageous to limit the bidding to known eligible bidders in order to maintain an optimum and uniform level of quality and performance of the plant as a whole",
                         next: "prefer_limitedsourcebidding_noncse",
                         triggers: ["Limited Source Bidding"]
                     },
                     highlyspecialized_noncse: {
-                        text: "⚙️ Highly specialized or complex, which is known to be obtainable only from a limited number of sources",
+                        text: "⚙️ classified as highly specialized or complex, which is known to be obtainable only from a limited number of sources",
                         next: "prefer_limitedsourcebidding_noncse",
                         triggers: ["Limited Source Bidding"]
                     },
                     othergoods_limitedsourcebidding_noncse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ not among the stated options",
                         next: "typeofsupplier_noncse"
                     }
                 }
             },
             prefer_limitedsourcebidding_noncse: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_limitedsourcebidding_noncse: {
                         text: "🏭 Adopt Limited Source Bidding",
                         next: "result_limitedsourcebidding"
                     },
                     different_prefer_limitedsourcebidding_noncse: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "typeofsupplier_noncse"
                     }
                 }
@@ -1823,35 +1780,35 @@
                 question: "Is the Good:",
                 options: {
                     exclusivedealer_noncse: {
-                        text: "🏷️ Sold by an exclusive dealer or manufacturer which does not have sub-dealers selling at lower prices and for which no suitable substitute can be obtained at more advantageous terms to the government",
+                        text: "🏷️ sold by an exclusive dealer or manufacturer which does not have sub-dealers selling at lower prices and for which no suitable substitute can be obtained at more advantageous terms to the government",
                         next: "prefer_directcontracting_noncse",
                         triggers: ["Direct Contracting"]
                     },
                     criticalcomponent_noncse: {
-                        text: "🏭 A critical component from a specific manufacturer, supplier, or distributor is a condition precedent to hold a service provider to guarantee its project performance, in accordance with the provisions of the contract, as determined by the EU/IU",
+                        text: "🏭 a critical component from a specific manufacturer, supplier, or distributor is a condition precedent to hold a service provider to guarantee its project performance, in accordance with the provisions of the contract, as determined by the EU/IU",
                         next: "prefer_directcontracting_noncse",
                         triggers: ["Direct Contracting"]
                     },
                     proprietarygood_noncse: {
-                        text: "🔒 Proprietary in nature, which can only be obtained from the proprietary source; or when patents, trade secrets, and copyrights prohibit others from manufacturing the same item, as supported by relevant documentary evidence issued by competent authority",
+                        text: "🔒 proprietary in nature, which can only be obtained from the proprietary source; or when patents, trade secrets, and copyrights prohibit others from manufacturing the same item, as supported by relevant documentary evidence issued by competent authority",
                         next: "prefer_directcontracting_noncse",
                         triggers: ["Direct Contracting"]
                     },
                     othergoods_directcontracting_noncse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ not among the stated options",
                         next: "typeofsupplier_noncse"
                     }
                 }
             },
             prefer_directcontracting_noncse: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_directcontracting_noncse: {
                         text: "📝 Adopt Direct Contracting",
                         next: "result_directcontracting"
                     },
                     different_prefer_directcontracting_noncse: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "typeofsupplier_noncse"
                     }
                 }
@@ -1860,23 +1817,23 @@
                 question: "Does the Good:",
                 options: {
                     significantbenefits_noncse: {
-                        text: "⚡ Provide significant benefits to the procuring entity in terms of efficiency, cost, or outcome",
+                        text: "⚡ provide significant benefits to the Procuring Entity in terms of efficiency, cost, or outcome",
                         next: "result_unsolicitedofferwithbidmatching"
                     },
                     substantialimprovement_noncse: {
-                        text: "📈 Offer a substantial improvement over existing solutions, demonstrated through verifiable data, proof of concept, or technical studies",
+                        text: "📈 offer a substantial improvement over existing solutions, demonstrated through verifiable data, proof of concept, or technical studies",
                         next: "result_unsolicitedofferwithbidmatching"
                     },
                     emergingtechnology_noncse: {
-                        text: "💡 Incorporate features promoting emerging technology and sustainable solutions",
+                        text: "💡 incorporate features promoting emerging technology and sustainable solutions",
                         next: "result_unsolicitedofferwithbidmatching"
                     },
                     stateoftheart_noncse: {
-                        text: "🛰️ Involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
+                        text: "🛰️ involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
                         next: "result_unsolicitedofferwithbidmatching"
                     },
                     othergoods_unsolicitedofferwithbidmatching_noncse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ not among the stated options",
                         next: "result_reviewtechspecs"
                     }
                 }
@@ -1885,71 +1842,67 @@
                 question: "Is the supplier:",
                 options: {
                     unagency_noncse: {
-                        text: "🌐 United Nations (UN) Agencies, International Organizations  or International Financing Institutions",
+                        text: "🌐 classified as a United Nations (UN) Agency, International Organization  or International Financing Institution",
                         next: "typeofgood_unagency_noncse"
                     },
                     ngo_noncse: {
-                        text: "🏢 SEC registered non-stock, non-profit domestic corporation OR CDA-registered cooperative",
+                        text: "🏢 a non-stock, non-profit domestic corporation with the Securities and Exchange Commission (SEC) or a cooperative registered with the Cooperative Development Authority (CDA)",
                         next: "ngo_appropriationlaw_noncse"
                     },
                     governmentagency_noncse: {
-                        text: "🏛️ Another agency that has the mandate and absorptive capacity to undertake the project, as validated by the PE",
+                        text: "🏛️ another agency that has the mandate and absorptive capacity to undertake the project, as validated by the Procuring Entity",
                         next: "necessarytools_agencytoagency_noncse"
                     },
-                    community_noncse: {
-                        text: "🏘️ Part of a local community or social groups (CSG)",
-                        next: "prefer_localcommunity_noncse"
-                    },
                     othersupplier_noncse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ not among the stated options",
                         next: "lgu_goods"
                     }
                 }
             },
             typeofgood_unagency_noncse: {
-                question: "Is the Good:",
+                question: "Does the Good pertain to:",
                 options: {
                     advancedtechnology_unagency_noncse: {
-                        text: "🛰️ Goods involving advanced technologies, techniques, and innovations not locally available as certified by the DTI, when it is most advantageous to the PE",
+                        text: "🛰️ those that involve advanced technologies, techniques, and innovations not locally available as certified by the Department of Trade and Industry (DTI), when it is most advantageous to the Procuring Entity",
                         next: "prefer_unagency_noncse",
                         triggers: ["Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations"]
                     },
                     specializedproduct_unagency_noncse: {
-                        text: "💉 Specialized products where the number of suppliers is limited, such as vaccines",
+                        text: "💉 specialized products where the number of suppliers is limited, such as vaccines",
                         next: "prefer_unagency_noncse",
                         triggers: ["Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations"]
                     },
                     educationandhealth_unagency_noncse: {
-                        text: "🏥 Small quantities of off-the-shelf goods exclusively used in education and health",
+                        text: "🏥 small quantities of off-the-shelf goods exclusively used in education and health",
                         next: "prefer_unagency_noncse",
                         triggers: ["Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations"]
                     },
                     criticalpublichealth_unagency_noncse: {
-                        text: "🩺 Goods for critical public health priorities as determined and certified by the DOH",
+                        text: "🩺 those for critical public health priorities as determined and certified by the DOH",
                         next: "prefer_unagency_noncse",
                         triggers: ["Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations"]
                     },
                     othergoods_unagency_noncse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ not among the stated options",
                         next: "lgu_goods"
                     }
                 }
             },
             prefer_unagency_noncse: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_unagency_noncse: {
                         text: "🌐 Adopt Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations",
                         next: "result_unagencies"
                     },
                     different_prefer_unagency_noncse: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "lgu_goods"
                     }
                 }
             },
             ngo_appropriationlaw_noncse: {
-                question: "Is there an appropriation law or ordinance earmarking an amount to be specifically contacted out to NGOs?",
+                question: "Is there an appropriation law or ordinance earmarking an amount to be specifically contacted out to non-government organizations (NGOs)?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -1970,7 +1923,7 @@
                         next: "result_ngoparticipation"
                     },
                     different_prefer_ngoparticipation_noncse: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "lgu_goods"
                     }
                 }
@@ -1990,33 +1943,20 @@
                 }
             },
             prefer_agencytoagency_noncse: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_agencytoagency_noncse: {
                         text: "🏛️ Adopt Negotiated Procurement: Agency-to-Agency",
                         next: "result_agencytoagency"
                     },
                     different_prefer_agencytoagency_noncse: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "lgu_goods"
-                    }
-                }
-            },
-            prefer_localcommunity_noncse: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_localcommunity_noncse: {
-                        text: "🏘️ Adopt Negotiated Procurement: Community Participation",
-                        next: "result_communityparticipation"
-                    },
-                    different_prefer_localcommunity_noncse: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "lgu_goods"
                     }
                 }
             },
             availablepsdbm_cse: {
-                question: "Is it available at PS-DBM?",
+                question: "Is it available from the Procurement Service-Department of Budget and Management (PS-DBM)?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2042,25 +1982,24 @@
                 }
             },
             need_csegoods: {
-                question: "Is there a need to:",
+                question: "Would you prefer to:",
                 options: {
                     twofailedbidding_cse: {
-                        text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
-                        next: "prefer_twofailedbidding_cse",
-                        triggers: ["Negotiated Procurement: Two-Failed Biddings"]
+                        text: "🔄 procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
+                        next: "result_twofailedbiddings"
                     },
                     replenishgoods_cse: {
-                        text: "📋 Replenish Goods procured under a previously awarded contract",
+                        text: "📋 replenish Goods procured under a previously awarded contract (the "original contract")",
                         next: "repeatorder_previousprocurement_competitive_cse"
                     },
                     othergoods_cse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ choose another option not listed",
                         next: "directacquisition_abc_cse"
                     }
                 }
             },
             repeatorder_previousprocurement_competitive_cse: {
-                question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
+                question: "Was the original contract awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2086,7 +2025,7 @@
                 }
             },
             repeatorder_previousprocurement_sixmonths_cse: {
-                question: "Is the procurement within six (6) months from the date of the NTP arising from the original contract?",
+                question: "Is the procurement within six (6) months from the date of the original contract's Notice to Proceed (NTP)?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2103,8 +2042,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_repeatorder_cse",
-                        triggers: ["Repeat Order"]
+                        next: "result_repeatorder"
                     },
                     no: {
                         text: "❌ No",
@@ -2112,34 +2050,8 @@
                     }
                 }
             },
-            prefer_repeatorder_cse: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_repeatorder_cse: {
-                        text: "📋 Adopt Repeat Order",
-                        next: "result_repeatorder"
-                    },
-                    different_prefer_repeatorder_cse: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "directacquisition_abc_cse"
-                    }
-                }
-            },
-            prefer_twofailedbidding_cse: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_twofailedbidding_cse: {
-                        text: "📋 To Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
-                        next: "result_directsales"
-                    },
-                    different_prefer_twofailedbidding_cse: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "directacquisition_abc_cse"
-                    }
-                }
-            },
             directacquisition_abc_cse: {
-                question: "Is the ABC less than Php 200,000.00?",
+                question: "Is the Approved Budget for the Contract (ABC) less than Php 200,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2155,15 +2067,15 @@
                 question: "Is the Good:",
                 options: {
                     services_directacquisition_cse: {
-                        text: "🛠️ Services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
+                        text: "🛠️ services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
                         next: "availability_directacquisition_cse"
                     },
                     stores_directacquisition_cse: {
-                        text: "🛒 May be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores",
+                        text: "🛒 those that may be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores",
                         next: "availability_directacquisition_cse"
                     },
                     othergoods_directacquisition_cse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ not among the stated options",
                         next: "lgu_goods"
                     }
                 }
@@ -2172,46 +2084,32 @@
                 question: "Is the Good:",
                 options: {
                     philgepsregistered_directacquisition_cse: {
-                        text: "💻 Supplied by a supplier registered with the PhilGEPS as verified from the PhilGEPS website",
-                        next: "directacquisition_invoicecompliant_cse"
+                        text: "💻 supplied by a supplier registered with the Philippine Government Electronic Procurement System (PhilGEPS) as verified from the PhilGEPS website",
+                        next: "prefer_directacquisition_cse"
                     },
                     ecommerce_directacquisition_cse: {
-                        text: "📦 Available in electronic commerce platforms for delivery or pick up at such date and time identified by the PE",
-                        next: "directacquisition_invoicecompliant_cse"
+                        text: "📦 available in electronic commerce platforms for delivery or pick up at such date and time identified by the Procuring Entity",
+                        next: "prefer_directacquisition_cse"
                     },
                     immediatedelivery_directacquisition_cse: {
-                        text: "🚚 Readily available off-the-shelf and can be picked up or delivered immediately",
-                        next: "directacquisition_invoicecompliant_cse"
+                        text: "🚚 readily available off-the-shelf and can be picked up or delivered immediately",
+                        next: "prefer_directacquisition_cse"
                     },
                     otheravailability_directacquisition_cse: {
-                        text: "❓ Not among the stated options",
-                        next: "lgu_goods"
-                    }
-                }
-            },
-            directacquisition_invoicecompliant_cse: {
-                question: "Does the supplier issue invoices compliant with the Bureau of Internal Revenue (BIR) and Commission on Audit (COA)?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "prefer_directacquisition_cse",
-                        triggers: ["Direct Acquisition"]
-                    },
-                    no: {
-                        text: "❌ No",
+                        text: "❌ not among the stated options",
                         next: "lgu_goods"
                     }
                 }
             },
             prefer_directacquisition_cse: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_directacquisition_cse: {
                         text: "🛒 Adopt Direct Acquisition",
                         next: "result_directacquisition"
                     },
                     different_prefer_directacquisition_cse: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "lgu_goods"
                     }
                 }
@@ -2661,8 +2559,8 @@
                 // Use image options for yes/no questions
                 if (currentNode === 'cse_goods' || 
                     currentNode === 'previouslyprocured_noncse' || 
+                    currentNode === 'previouscontract_takeovercontract_goods' ||
                     currentNode === 'takeovercontract_cse_noncse' ||
-                    currentNode === 'previouscontract_takeovercontract_noncse' ||
                     currentNode === 'directsales_previousprocurement_competitive' ||
                     currentNode === 'directsales_certificateofsatisfactoryperformance' ||
                     currentNode === 'directsales_previousprocurement_sixmonths' ||
@@ -2672,6 +2570,7 @@
                     currentNode === 'repeatorder_lowerunitprice_noncse' ||
                     currentNode === 'repeatorder_previousprocurement_sixmonths_noncse' ||
                     currentNode === 'repeatorder_quantifiablegood_noncse' ||
+                    currentNode === 'directacquisition_abc_noncse' ||
                     currentNode === 'retailpumpprice' ||
                     currentNode === 'immediateconsumption' ||
                     currentNode === 'lgu_goods' ||
@@ -2703,17 +2602,13 @@
                     currentNode === 'approvedlist_limitedsourcebidding_noncse' ||
                     currentNode === 'ngo_appropriationlaw_noncse' ||
                     currentNode === 'necessarytools_agencytoagency_noncse' ||
-                    currentNode === 'directacquisition_abc_noncse' ||
-                    currentNode === 'directacquisition_invoicecompliant_noncse' ||
                     currentNode === 'availablepsdbm_cse' ||
                     currentNode === 'previouslyprocured_cse' ||
-                    currentNode === 'previouscontract_takeovercontract_cse' ||
                     currentNode === 'repeatorder_previousprocurement_competitive_cse' ||
                     currentNode === 'repeatorder_lowerunitprice_cse' ||
                     currentNode === 'repeatorder_previousprocurement_sixmonths_cse' ||
                     currentNode === 'repeatorder_quantifiablegood_cse' ||
-                    currentNode === 'directacquisition_abc_cse' ||
-                    currentNode === 'compliantinvoice_directacquisition_cse') {
+                    currentNode === 'directacquisition_abc_cse') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
