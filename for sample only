@@ -2094,15 +2094,15 @@
                 question: "Is the Good:",
                 options: {
                     services_directacquisition_cse: {
-                        text: "🛠️ Services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
+                        text: "🛠️ services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
                         next: "availability_directacquisition_cse"
                     },
                     stores_directacquisition_cse: {
-                        text: "🛒 May be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores",
+                        text: "🛒 those that may be procured from stores, such as but not limited to, department store, depot, fast food chain, grocery and supermarket, wholesale and retail store, convenience store, clothing and apparel store, bookstore, drugstore and pharmacy, automotive parts and accessories store, construction and hardware store, and online stores",
                         next: "availability_directacquisition_cse"
                     },
                     othergoods_directacquisition_cse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ not among the stated options",
                         next: "lgu_goods"
                     }
                 }
@@ -2111,19 +2111,19 @@
                 question: "Is the Good:",
                 options: {
                     philgepsregistered_directacquisition_cse: {
-                        text: "💻 Supplied by a supplier registered with the PhilGEPS as verified from the PhilGEPS website",
+                        text: "💻 supplied by a supplier registered with the Philippine Government Electronic Procurement System (PhilGEPS) as verified from the PhilGEPS website",
                         next: "prefer_directacquisition_cse"
                     },
                     ecommerce_directacquisition_cse: {
-                        text: "📦 Available in electronic commerce platforms for delivery or pick up at such date and time identified by the PE",
+                        text: "📦 available in electronic commerce platforms for delivery or pick up at such date and time identified by the Procuring Entity",
                         next: "prefer_directacquisition_cse"
                     },
                     immediatedelivery_directacquisition_cse: {
-                        text: "🚚 Readily available off-the-shelf and can be picked up or delivered immediately",
+                        text: "🚚 readily available off-the-shelf and can be picked up or delivered immediately",
                         next: "prefer_directacquisition_cse"
                     },
                     otheravailability_directacquisition_cse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ not among the stated options",
                         next: "lgu_goods"
                     }
                 }
