@@ -1993,13 +1993,13 @@
                         next: "repeatorder_previousprocurement_competitive_cse"
                     },
                     othergoods_cse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ choose another option not listed",
                         next: "directacquisition_abc_cse"
                     }
                 }
             },
             repeatorder_previousprocurement_competitive_cse: {
-                question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
+                question: "Was the original contract awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
                 options: {
                     yes: {
                         text: "✅ Yes",
