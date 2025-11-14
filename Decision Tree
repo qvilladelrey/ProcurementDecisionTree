@@ -507,8 +507,8 @@
             <li class="dropdown">
               <a href="#" class="dropbtn" onclick="toggleDropdown(event)">Manual Decision Tree ▾</a>
               <div class="dropdown-content" id="manualDropdown">
-                <a href="Manual_Goods.pdf" target="_blank">Goods</a>
-                <a href="Manual_Infrastructure.pdf" target="_blank">Infrastructure Services</a>
+                <a href="https://drive.google.com/file/d/1a4TtNh5w5WVLe_apbswX9uTAWq49NnRO/view?usp=sharing" target="_blank">Goods</a>
+                <a href="Manual_Infrastructure.pdf" target="_blank">Infrastructure Project</a>
                 <a href="Manual_Consulting.pdf" target="_blank">Consulting Services</a>
               </div>
             </li>
