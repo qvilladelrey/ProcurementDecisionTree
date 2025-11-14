@@ -9,7 +9,7 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 80px 20px 20px 20px;
             background-image: url('Decision Tree Background.png');
             background-size: cover;
             background-position: center;
@@ -125,6 +125,84 @@
             color: #666;
             font-size: 0.85em;
             line-height: 1.3;
+        }
+
+        /* 🌐 Top Navigation Bar */
+        .top-nav {
+          background: #1e3888;
+          padding: 12px 0;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 10000;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .top-nav ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+        }
+        
+        .top-nav li {
+          display: inline;
+        }
+        
+        .top-nav a {
+          color: white;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 1em;
+          transition: color 0.3s ease, transform 0.2s ease;
+        }
+        
+        .top-nav a:hover {
+          color: #ffd700;
+          transform: translateY(-2px);
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .dropbtn {
+          cursor: pointer;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: white;
+          min-width: 220px;
+          box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+          border-radius: 8px;
+          z-index: 10001;
+          top: 40px;
+          left: 0;
+        }
+        
+        .dropdown-content a {
+          color: #1e3888;
+          padding: 10px 16px;
+          text-decoration: none;
+          display: block;
+          font-weight: 500;
+          transition: background 0.3s ease;
+        }
+        
+        .dropdown-content a:hover {
+          background-color: #f0f4fa;
+        }
+        
+        /* Show dropdown when active */
+        .dropdown.show .dropdown-content {
+          display: block;
         }
 
         .restart-btn {
@@ -393,81 +471,6 @@
           transform: translateY(-1px);
         }
 
-        .user-guide-container {
-          position: fixed;
-          bottom: 25px;
-          right: 25px;
-          background: #1e3888;
-          color: white;
-          padding: 14px 20px;
-          border-radius: 12px;
-          font-size: 1em;
-          font-weight: 500;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-          cursor: pointer;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-          z-index: 9999;
-        }
-        
-        .user-guide-container:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
-        }
-
-        .download-container {
-          position: fixed;
-          bottom: 90px; 
-          right: 25px;
-          background: #1e3888;
-          color: white;
-          padding: 14px 20px;
-          border-radius: 12px;
-          font-size: 1em;
-          font-weight: 500;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-          cursor: pointer;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-          z-index: 9999;
-        }
-        
-        .download-container:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
-        }
-        
-        .download-menu {
-          position: fixed;
-          bottom: 160px; /* appears above the Download button */
-          right: 25px;
-          background: white;
-          border-radius: 12px;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-          display: none;
-          flex-direction: column;
-          gap: 8px;
-          padding: 10px;
-          z-index: 9999;
-        }
-        
-        .download-option {
-          background: #1e3888;
-          color: white;
-          border: none;
-          padding: 10px 16px;
-          border-radius: 8px;
-          font-size: 0.95em;
-          cursor: pointer;
-          font-weight: 500;
-          transition: background 0.3s ease, transform 0.2s ease;
-          text-decoration: none;
-          display: block; 
-        }
-        
-        .download-option:hover {
-          background: #3a6ea5;
-          transform: translateY(-2px);
-        }
-
         @media (max-width: 768px) {
             .decision-container {
                 padding: 25px;
@@ -494,6 +497,27 @@
     </style>
 </head>
 <body>
+
+        <!-- 🌐 Top Navigation Bar -->
+        <nav class="top-nav">
+          <ul>
+            <li><a href="https://www.gppb.gov.ph/new-government-procurement-act-republic-act-no-12009/" target="_blank">RA No. 12009 & IRR</a></li>
+        
+            <!-- Dropdown Menu -->
+            <li class="dropdown">
+              <a href="#" class="dropbtn" onclick="toggleDropdown(event)">Manual Decision Tree ▾</a>
+              <div class="dropdown-content" id="manualDropdown">
+                <a href="Manual_Goods.pdf" target="_blank">Goods</a>
+                <a href="Manual_Infrastructure.pdf" target="_blank">Infrastructure Services</a>
+                <a href="Manual_Consulting.pdf" target="_blank">Consulting Services</a>
+              </div>
+            </li>
+        
+            <li><a href="https://drive.google.com/file/d/1SK2LCkgt4-nuzIc13SjPQdW2H_IbpGpj/view?usp=drive_link" target="_blank">User Guide</a></li>
+            <li><a href="https://www.gppb.gov.ph/" target="_blank">Contact Us</a></li>
+          </ul>
+        </nav>
+
     <div class="decision-container">
         <h1>Decision Tree for Modes of Procurement <br/> Digital Interactive Version (DIVe)</h1>
         
@@ -577,22 +601,6 @@
             💬 Give Feedback
             </button>
             </div>
-        </div>
-
-        <!-- 📂 Floating Download Button -->
-        <div class="download-container" onclick="toggleDownloadMenu()">
-        📂 Manual Decision Tree
-        </div>
-        
-        <!-- 📂 Hidden Download Menu -->
-        <div id="downloadMenu" class="download-menu">
-          <a href="https://drive.google.com/file/d/1Ww6SVXN3debivn0ZjQEqhe-w76o5bHo3/view?usp=sharing" target="_blank" class="download-option">📦 Decision Tree for Goods</a>
-          <a href="https://drive.google.com/file/d/1f_gzcrVDez2lunPNhUQWP8r0iFKJBHAB/view?usp=sharing" target="_blank" class="download-option">🏗️ Decision Tree for Infrastructure Projects</a>
-          <a href="https://drive.google.com/file/d/1Q4XA5F8iNGLh1Vcxru6XecylHedgzImH/view?usp=sharing" target="_blank" class="download-option">🤝 Decision Tree for Consulting Services</a>
-        </div>
-
-        <div class="user-guide-container" onclick="openUserGuide()">
-          📘 User Guide
         </div>
 
     </div>
@@ -793,8 +801,21 @@
                     }
                 }
             },
+            directsales_previousprocurement_firsttime: {
+                question: "Is this the first time the PE initiated procurement for the non-CSE Good since acceptance by the Original agency of the earlier delivery of the non-CSE Good?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "directsales_previousprocurement_sixmonths"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "directacquisition_abc_noncse"
+                    }
+                }
+            },
             directsales_previousprocurement_sixmonths: {
-                question: "Was procurement initiated only once within six (6) months from acceptance of the Non-CSE by the original government agency?",
+                question: "Is it still within six (6) months from acceptance of the Non-CSE Good by the original government agency?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2564,6 +2585,7 @@
                     currentNode === 'takeovercontract_cse_noncse' ||
                     currentNode === 'directsales_previousprocurement_competitive' ||
                     currentNode === 'directsales_certificateofsatisfactoryperformance' ||
+                    currentNode === 'directsales_previousprocurement_firsttime' ||
                     currentNode === 'directsales_previousprocurement_sixmonths' ||
                     currentNode === 'directsales_lowerunitprice' ||
                     currentNode === 'directsales_suppliercapability' ||
@@ -2742,40 +2764,6 @@
         window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=t4cJLfDqkEG0q9B_9ONFBILVbW3cIK9Grl4vnQmaLbpUNFZaSkMwOUUyR0MyQ0pRMUVUSFVNN080UCQlQCN0PWcu', '_blank');
         }
 
-        function openUserGuide() {
-          window.open('https://drive.google.com/file/d/1SK2LCkgt4-nuzIc13SjPQdW2H_IbpGpj/view?usp=drive_link', '_blank'); 
-        }
-
-        function downloadManual(filename) {
-          const link = document.createElement('a');
-          link.href = encodeURI(filename);
-          link.download = filename;
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        }
-
-        function toggleDownloadMenu() {
-          const menu = document.getElementById('downloadMenu');
-          menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-        }
-        
-        // Close the menu when clicking outside or on a link
-        window.addEventListener('click', function (event) {
-          const menu = document.getElementById('downloadMenu');
-          const button = document.querySelector('.download-container');
-        
-          // If the click is outside both the button and the menu, close it
-          if (!menu.contains(event.target) && !button.contains(event.target)) {
-            menu.style.display = 'none';
-          }
-        
-          // If a link inside the menu is clicked, close it too
-          if (event.target.classList.contains('download-option')) {
-            menu.style.display = 'none';
-          }
-        });
-
         function goBackFromResult() {
           if (history.length === 0) {
             restart();
@@ -2797,6 +2785,20 @@
           updateDynamicRecommendations();
           updateBackButton();
           showQuestion();
+        }
+
+        function toggleDropdown(event) {
+          event.preventDefault();
+          const dropdown = event.target.closest('.dropdown');
+          dropdown.classList.toggle('show');
+        
+          // Close dropdown if clicked outside
+          window.addEventListener('click', function closeDropdown(e) {
+            if (!dropdown.contains(e.target)) {
+              dropdown.classList.remove('show');
+              window.removeEventListener('click', closeDropdown);
+            }
+          });
         }
 
 </script>
