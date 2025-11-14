@@ -2143,14 +2143,14 @@
                 }
             },
             prefer_directacquisition_cse: {
-                question: "Do you prefer to:",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_directacquisition_cse: {
                         text: "🛒 Adopt Direct Acquisition",
                         next: "result_directacquisition"
                     },
                     different_prefer_directacquisition_cse: {
-                        text: "🔄 Adopt different procurement mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "lgu_goods"
                     }
                 }
