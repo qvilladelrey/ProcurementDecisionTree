@@ -2043,24 +2043,10 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_repeatorder_cse",
-                        triggers: ["Repeat Order"]
+                        next: "result_repeatorder"
                     },
                     no: {
                         text: "❌ No",
-                        next: "directacquisition_abc_cse"
-                    }
-                }
-            },
-            prefer_repeatorder_cse: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_repeatorder_cse: {
-                        text: "📋 Adopt Repeat Order",
-                        next: "result_repeatorder"
-                    },
-                    different_prefer_repeatorder_cse: {
-                        text: "🔄 Adopt different procurement mode",
                         next: "directacquisition_abc_cse"
                     }
                 }
