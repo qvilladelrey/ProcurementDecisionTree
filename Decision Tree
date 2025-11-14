@@ -2141,7 +2141,7 @@
         const results = {
             result_competitivebidding: {
                 title: "Competitive Bidding",
-                description: "Competitive Bidding is a mode of procurement which is open to participation by any eligible bidder. <em>(Section 27, Rules VI to XI, IRR of RA No. 12009)</em>",
+                description: "Competitive Bidding is a mode of procurement which is open to participation by any eligible bidder.",
                 link: "https://drive.google.com/file/d/1UgHf6lyl0nLtOeewCQhgWrljdmawQK6G/view?usp=sharing",
                 path: []
             },
@@ -2195,7 +2195,7 @@
             },
             result_emergencycases: {
                 title: "Negotiated Procurement: Emergency Cases",
-                description: "This mode of procurement may be adopted in Emergency Cases, where immediate action is required under any of the following circumstances: (a) there is an imminent danger to life or property during a state of calamity; (b) time is of the essence due to natural or man-made calamities; or (c) other causes necessitate urgent action to (i) prevent damage to or loss of life or property, or (ii) restore vital public services, infrastructure facilities, and other public utilities. Such situations include the provision of immediate response and initial recovery measures to prevent loss of life, injury, disease, and other adverse effects on human, physical, mental, and social well-being, as well as to mitigate damage to property, destruction of assets, loss of services, social and economic disruption, and environmental degradation.",
+                description: "This mode of procurement may be adopted in Emergency Cases, where immediate action is required under any of the following circumstances: (a) there is an imminent danger to life or property during a state of calamity; (b) time is of the essence due to natural or man-made calamities; or (c) other causes necessitate urgent action to (i) prevent damage to or loss of life or property, or (ii) restore vital public services, infrastructure facilities, and other public utilities. Such situations include the provision of immediate response and initial recovery measures to prevent loss of life, injury, disease, and other adverse effects on human, physical, mental, and social well-being, as well as to mitigate damage to property, destruction of assets, loss of services, social and economic disruption, and environmental degradation.<em>(See Section 27, Rules VI to XI, IRR of RA No. 12009.)</em>",
                 link: "https://drive.google.com/file/d/1U1wHJQYJNx9Ml5RI7yp-XDoGvzNnr0RG/view?usp=sharing",
                 path: []
             },
