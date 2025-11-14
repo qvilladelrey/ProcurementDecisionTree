@@ -9,7 +9,7 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 80px 20px 20px 20px;
             background-image: url('Decision Tree Background.png');
             background-size: cover;
             background-position: center;
@@ -125,6 +125,44 @@
             color: #666;
             font-size: 0.85em;
             line-height: 1.3;
+        }
+
+        /* 🌐 Top Navigation Bar */
+        .top-nav {
+          background: #1e3888;
+          padding: 12px 0;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 10000;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .top-nav ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+        }
+        
+        .top-nav li {
+          display: inline;
+        }
+        
+        .top-nav a {
+          color: white;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 1em;
+          transition: color 0.3s ease, transform 0.2s ease;
+        }
+        
+        .top-nav a:hover {
+          color: #ffd700;
+          transform: translateY(-2px);
         }
 
         .restart-btn {
@@ -494,6 +532,17 @@
     </style>
 </head>
 <body>
+
+        <!-- 🌐 Top Navigation Bar -->
+        <nav class="top-nav">
+          <ul>
+            <li><a href="https://drive.google.com/file/d/1DCbKi0KoccDPRrr-tkCrQp0oa96gyjP6/view?usp=sharing" target="_blank">RA No. 12009 & IRR</a></li>
+            <li><a href="#" onclick="toggleDownloadMenu()">Manual Decision Tree</a></li>
+            <li><a href="https://drive.google.com/file/d/1SK2LCkgt4-nuzIc13SjPQdW2H_IbpGpj/view?usp=drive_link" target="_blank">User Guide</a></li>
+            <li><a href="mailto:contact@gppb.gov.ph">Contact Us</a></li>
+          </ul>
+        </nav>
+
     <div class="decision-container">
         <h1>Decision Tree for Modes of Procurement <br/> Digital Interactive Version (DIVe)</h1>
         
@@ -2560,8 +2609,8 @@
                 // Use image options for yes/no questions
                 if (currentNode === 'cse_goods' || 
                     currentNode === 'previouslyprocured_noncse' || 
-                    currentNode === 'takeovercontract_cse_noncse' ||
                     currentNode === 'previouscontract_takeovercontract_goods' ||
+                    currentNode === 'takeovercontract_cse_noncse' ||
                     currentNode === 'directsales_previousprocurement_competitive' ||
                     currentNode === 'directsales_certificateofsatisfactoryperformance' ||
                     currentNode === 'directsales_previousprocurement_sixmonths' ||
@@ -2571,6 +2620,7 @@
                     currentNode === 'repeatorder_lowerunitprice_noncse' ||
                     currentNode === 'repeatorder_previousprocurement_sixmonths_noncse' ||
                     currentNode === 'repeatorder_quantifiablegood_noncse' ||
+                    currentNode === 'directacquisition_abc_noncse' ||
                     currentNode === 'retailpumpprice' ||
                     currentNode === 'immediateconsumption' ||
                     currentNode === 'lgu_goods' ||
@@ -2602,10 +2652,8 @@
                     currentNode === 'approvedlist_limitedsourcebidding_noncse' ||
                     currentNode === 'ngo_appropriationlaw_noncse' ||
                     currentNode === 'necessarytools_agencytoagency_noncse' ||
-                    currentNode === 'directacquisition_abc_noncse' ||
                     currentNode === 'availablepsdbm_cse' ||
                     currentNode === 'previouslyprocured_cse' ||
-                    currentNode === 'previouscontract_takeovercontract_cse' ||
                     currentNode === 'repeatorder_previousprocurement_competitive_cse' ||
                     currentNode === 'repeatorder_lowerunitprice_cse' ||
                     currentNode === 'repeatorder_previousprocurement_sixmonths_cse' ||
