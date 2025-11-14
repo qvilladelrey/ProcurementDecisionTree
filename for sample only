@@ -2079,7 +2079,7 @@
                 }
             },
             directacquisition_abc_cse: {
-                question: "Is the ABC less than Php 200,000.00?",
+                question: "Is the Approved Budget for the Contract (ABC) less than Php 200,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
