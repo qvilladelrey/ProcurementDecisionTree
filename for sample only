@@ -203,6 +203,11 @@
           color: #3a6ea5;
         }
 
+        /* Show dropdown when active */
+        .dropdown-menu.show {
+          display: block;
+        }
+
         .restart-btn {
             background: #28a745;
             color: white;
@@ -501,14 +506,14 @@
             <li><a href="https://drive.google.com/file/d/1DCbKi0KoccDPRrr-tkCrQp0oa96gyjP6/view?usp=sharing" target="_blank">RA No. 12009 & IRR</a></li>
         
             <!-- Manual Decision Tree Dropdown -->
-            <li class="dropdown">
-              <a href="#" onclick="toggleDownloadMenu(event)">Manual Decision Tree ▾</a>
-              <ul id="downloadMenu" class="dropdown-menu">
-                <li><a href="https://drive.google.com/file/d/GOODS_LINK/view?usp=sharing" target="_blank">Goods</a></li>
-                <li><a href="https://drive.google.com/file/d/INFRA_LINK/view?usp=sharing" target="_blank">Infrastructure Project</a></li>
-                <li><a href="https://drive.google.com/file/d/CONSULT_LINK/view?usp=sharing" target="_blank">Consulting Services</a></li>
-              </ul>
-            </li>
+        <li class="dropdown">
+          <a href="#" onclick="toggleDownloadMenu(event)">Manual Decision Tree ▼</a>
+          <ul id="downloadMenu" class="dropdown-menu">
+            <li><a href="Manual_Goods.pdf" target="_blank">Goods</a></li>
+            <li><a href="Manual_Infrastructure.pdf" target="_blank">Infrastructure Projects</a></li>
+            <li><a href="Manual_Consulting.pdf" target="_blank">Consulting Services</a></li>
+          </ul>
+        </li>
         
             <li><a href="https://drive.google.com/file/d/1SK2LCkgt4-nuzIc13SjPQdW2H_IbpGpj/view?usp=drive_link" target="_blank">User Guide</a></li>
             <li><a href="mailto:contact@gppb.gov.ph">Contact Us</a></li>
@@ -2772,15 +2777,16 @@
 
         function toggleDownloadMenu(event) {
           event.preventDefault();
-          const menu = document.getElementById("downloadMenu");
-          menu.style.display = (menu.style.display === "block") ? "none" : "block";
+          const menu = document.getElementById('downloadMenu');
+          menu.classList.toggle('show');
         }
         
         // Close dropdown when clicking outside
-        window.addEventListener("click", function(e) {
-          const menu = document.getElementById("downloadMenu");
-          if (!e.target.closest(".dropdown")) {
-            menu.style.display = "none";
+        document.addEventListener('click', function(e) {
+          const menu = document.getElementById('downloadMenu');
+          const dropdown = document.querySelector('.dropdown');
+          if (menu && !dropdown.contains(e.target)) {
+            menu.classList.remove('show');
           }
         });
 
