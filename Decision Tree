@@ -2611,8 +2611,7 @@
                     currentNode === 'repeatorder_lowerunitprice_cse' ||
                     currentNode === 'repeatorder_previousprocurement_sixmonths_cse' ||
                     currentNode === 'repeatorder_quantifiablegood_cse' ||
-                    currentNode === 'directacquisition_abc_cse' ||
-                    currentNode === 'compliantinvoice_directacquisition_cse') {
+                    currentNode === 'directacquisition_abc_cse') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
