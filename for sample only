@@ -1982,18 +1982,19 @@
                 }
             },
             need_csegoods: {
-                question: "Would you prefer to:",
+                question: "Is there a need to:",
                 options: {
                     twofailedbidding_cse: {
-                        text: "🔄 procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
-                        next: "result_twofailedbiddings"
+                        text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
+                        next: "prefer_twofailedbidding_cse",
+                        triggers: ["Negotiated Procurement: Two-Failed Biddings"]
                     },
                     replenishgoods_cse: {
-                        text: "📋 replenish Goods procured under a previously awarded contract (the "original contract")",
+                        text: "📋 Replenish Goods procured under a previously awarded contract",
                         next: "repeatorder_previousprocurement_competitive_cse"
                     },
                     othergoods_cse: {
-                        text: "❌ choose another option not listed",
+                        text: "❓ Not among the stated options",
                         next: "directacquisition_abc_cse"
                     }
                 }
