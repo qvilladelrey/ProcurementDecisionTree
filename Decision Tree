@@ -2325,8 +2325,7 @@
             "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions": "⛽",
             "Direct Sales": "📦",
             "Direct Procurement for Science, Technology, and Innovation": "🔬",
-            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "📋",
-            "Under Construction": "🚧"
+            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "📋"
         };
 
         const procurementModeLinks = {
@@ -2354,8 +2353,7 @@
             "Direct Sales": "https://drive.google.com/file/d/16j-amAVba17TTmPQ8ssxrjpPbaQ2gg_5/view?usp=drive_link",
             "Direct Procurement for Science, Technology, and Innovation": "https://drive.google.com/file/d/1yG9BPyW-25-hK0eTdBBMR8u1T0orjrV_/view?usp=drive_link",
             "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "https://drive.google.com/file/d/1MA0eYD00ej9gzPEk1BhTw9kuchZjk1RL/view?usp=drive_link",
-            "Negotiated Procurement: Sagip Saka Act": "https://drive.google.com/file/d/1T_gXviGPaHXy7NgnkWyJ8CXLY4U5apGH/view?usp=drive_link",
-            "Under Construction": "Under Construction.pdf"
+            "Negotiated Procurement: Sagip Saka Act": "https://drive.google.com/file/d/1T_gXviGPaHXy7NgnkWyJ8CXLY4U5apGH/view?usp=drive_link"
         };
 
         let currentNode = 'start';
