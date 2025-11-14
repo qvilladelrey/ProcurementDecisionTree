@@ -872,7 +872,7 @@
                 }
             },
             repeatorder_quantifiablegood_noncse: {
-                question: "Is the Good quantifiable, divisible, and consisting of at least four (4) units per item, and does not exceed 25% of the quantity of each item in the original contract??",
+                question: "Is the Good quantifiable, divisible, and consisting of at least four (4) units per item, and does not exceed 25% of the quantity of each item in the original contract?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -901,7 +901,7 @@
                 question: "Does the Good pertain to those:",
                 options: {
                     services_directacquisition_noncse: {
-                        text: "🛠️ Services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
+                        text: "🛠️ services that may be procured from service providers, such as but not limited to, furniture repair, automotive service, restoration service, machine and fabrication, and other related services",
                         next: "availability_directacquisition_noncse"
                     },
                     stores_directacquisition_noncse: {
@@ -1393,7 +1393,7 @@
                         next: "result_competitivebidding"
                     },
                     different_prefer_otherscompetitivebiddingothers_onlinesubscription: {
-                        text: "🔄 Adopt a Different Procurement Modee",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "newconcepttechnology_noncse"
                     }
                 }
