@@ -1982,24 +1982,25 @@
                 }
             },
             need_csegoods: {
-                question: "Would you prefer to:",
+                question: "Is there a need to:",
                 options: {
                     twofailedbidding_cse: {
-                        text: "🔄 procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
-                        next: "result_twofailedbiddings"
+                        text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
+                        next: "prefer_twofailedbidding_cse",
+                        triggers: ["Negotiated Procurement: Two-Failed Biddings"]
                     },
                     replenishgoods_cse: {
-                        text: "📋 replenish Goods procured under a previously awarded contract (the "original contract")",
+                        text: "📋 Replenish Goods procured under a previously awarded contract",
                         next: "repeatorder_previousprocurement_competitive_cse"
                     },
                     othergoods_cse: {
-                        text: "❌ choose another option not listed",
+                        text: "❓ Not among the stated options",
                         next: "directacquisition_abc_cse"
                     }
                 }
             },
             repeatorder_previousprocurement_competitive_cse: {
-                question: "Was the original contract awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
+                question: "Was the good procured under a contract previously awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2025,7 +2026,7 @@
                 }
             },
             repeatorder_previousprocurement_sixmonths_cse: {
-                question: "Is the procurement within six (6) months from the date of the original contract's Notice to Proceed (NTP)?",
+                question: "Is the procurement within six (6) months from the date of the NTP arising from the original contract?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2042,7 +2043,8 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_repeatorder"
+                        next: "prefer_repeatorder_cse",
+                        triggers: ["Repeat Order"]
                     },
                     no: {
                         text: "❌ No",
@@ -2050,8 +2052,34 @@
                     }
                 }
             },
+            prefer_repeatorder_cse: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_repeatorder_cse: {
+                        text: "📋 Adopt Repeat Order",
+                        next: "result_repeatorder"
+                    },
+                    different_prefer_repeatorder_cse: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "directacquisition_abc_cse"
+                    }
+                }
+            },
+            prefer_twofailedbidding_cse: {
+                question: "Do you prefer to:",
+                options: {
+                    yes_prefer_twofailedbidding_cse: {
+                        text: "📋 To Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
+                        next: "result_directsales"
+                    },
+                    different_prefer_twofailedbidding_cse: {
+                        text: "🔄 Adopt different procurement mode",
+                        next: "directacquisition_abc_cse"
+                    }
+                }
+            },
             directacquisition_abc_cse: {
-                question: "Is the Approved Budget for the Contract (ABC) less than Php 200,000.00?",
+                question: "Is the ABC less than Php 200,000.00?",
                 options: {
                     yes: {
                         text: "✅ Yes",
