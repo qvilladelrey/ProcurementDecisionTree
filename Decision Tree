@@ -2296,7 +2296,7 @@
             },
             result_underconstruction: {
                 title: "🚧 Under Construction",
-                description: "This section is currently under development. Please check back later for guidance on this procurement type."
+                description: "This section is currently under development. Please check back later for guidance on this procurement type.",
                 path: []
             }
         };
