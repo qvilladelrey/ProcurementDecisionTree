@@ -459,8 +459,8 @@
           cursor: pointer;
           font-weight: 500;
           transition: background 0.3s ease, transform 0.2s ease;
-          text-decoration: none; /* removes underline */
-          display: block; /* ensures full clickable area */
+          text-decoration: none;
+          display: block; 
         }
         
         .download-option:hover {
@@ -522,7 +522,7 @@
              </div>
 
             <div class="question" style="font-size: 0.9em; text-align: justify; margin-bottom: 30px; font-style: italic">
-                Disclaimer: The Decision Tree serves as a guide for PEs in determining possible modes of procurement. Its results are not conclusive, as outcomes depend on the conditions set by the PEs, which may vary and affect the applicable modes. Users remain accountable for their actions and are encouraged to use the tool alongside other means to validate the identified conditions and recommended modes.
+                Disclaimer: PEs are reminded that the Decision Tree serves only as a guide in identifying possible modes of procurement, and that results are not conclusive as outcomes depend on the conditions provided by its users. PEs remain accountable for their decisions and are encouraged to use the tool together with other appropriate methods to validate the identified conditions and recommended modes.
              </div>
             
             <div class="options">
@@ -549,13 +549,6 @@
                     <h3>Consulting Services</h3>
                 </div>
             </div>
-
-        <div id="resultContainer" style="display: none;">
-            <div class="recommendation-container" id="recommendationContainer">
-                <!-- Primary and alternative recommendations will be inserted here -->
-            </div>
-
-            <div class="button-container">
             
             <!-- Back Button -->
             <div class="button-container">
@@ -564,6 +557,13 @@
                 </button>
             </div>
         </div>
+        
+        <div id="resultContainer" style="display: none;">
+            <div class="recommendation-container" id="recommendationContainer">
+                <!-- Primary and alternative recommendations will be inserted here -->
+            </div>
+            <div class="button-container">
+
                 <button class="back-btn" onclick="goBackFromResult()">
                 ← Go Back
                 </button>
