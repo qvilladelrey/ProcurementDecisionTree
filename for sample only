@@ -2051,19 +2051,6 @@
                     }
                 }
             },
-            prefer_twofailedbidding_cse: {
-                question: "Do you prefer to:",
-                options: {
-                    yes_prefer_twofailedbidding_cse: {
-                        text: "📋 To Review terms, conditions, specifications, and cost estimates, and adjust ABC, if necessary and approved",
-                        next: "result_directsales"
-                    },
-                    different_prefer_twofailedbidding_cse: {
-                        text: "🔄 Adopt different procurement mode",
-                        next: "directacquisition_abc_cse"
-                    }
-                }
-            },
             directacquisition_abc_cse: {
                 question: "Is the Approved Budget for the Contract (ABC) less than Php 200,000.00?",
                 options: {
