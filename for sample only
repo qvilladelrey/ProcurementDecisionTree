@@ -2112,32 +2112,18 @@
                 options: {
                     philgepsregistered_directacquisition_cse: {
                         text: "💻 Supplied by a supplier registered with the PhilGEPS as verified from the PhilGEPS website",
-                        next: "directacquisition_invoicecompliant_cse"
+                        next: "prefer_directacquisition_cse"
                     },
                     ecommerce_directacquisition_cse: {
                         text: "📦 Available in electronic commerce platforms for delivery or pick up at such date and time identified by the PE",
-                        next: "directacquisition_invoicecompliant_cse"
+                        next: "prefer_directacquisition_cse"
                     },
                     immediatedelivery_directacquisition_cse: {
                         text: "🚚 Readily available off-the-shelf and can be picked up or delivered immediately",
-                        next: "directacquisition_invoicecompliant_cse"
+                        next: "prefer_directacquisition_cse"
                     },
                     otheravailability_directacquisition_cse: {
                         text: "❓ Not among the stated options",
-                        next: "lgu_goods"
-                    }
-                }
-            },
-            directacquisition_invoicecompliant_cse: {
-                question: "Does the supplier issue invoices compliant with the Bureau of Internal Revenue (BIR) and Commission on Audit (COA)?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "prefer_directacquisition_cse",
-                        triggers: ["Direct Acquisition"]
-                    },
-                    no: {
-                        text: "❌ No",
                         next: "lgu_goods"
                     }
                 }
