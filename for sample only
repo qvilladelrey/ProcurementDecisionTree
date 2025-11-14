@@ -2561,7 +2561,7 @@
                 if (currentNode === 'cse_goods' || 
                     currentNode === 'previouslyprocured_noncse' || 
                     currentNode === 'takeovercontract_cse_noncse' ||
-                    currentNode === 'previouscontract_takeovercontract_noncse' ||
+                    currentNode === 'previouscontract_takeovercontract_goods' ||
                     currentNode === 'directsales_previousprocurement_competitive' ||
                     currentNode === 'directsales_certificateofsatisfactoryperformance' ||
                     currentNode === 'directsales_previousprocurement_sixmonths' ||
@@ -2603,7 +2603,6 @@
                     currentNode === 'ngo_appropriationlaw_noncse' ||
                     currentNode === 'necessarytools_agencytoagency_noncse' ||
                     currentNode === 'directacquisition_abc_noncse' ||
-                    currentNode === 'directacquisition_invoicecompliant_noncse' ||
                     currentNode === 'availablepsdbm_cse' ||
                     currentNode === 'previouslyprocured_cse' ||
                     currentNode === 'previouscontract_takeovercontract_cse' ||
@@ -2611,8 +2610,7 @@
                     currentNode === 'repeatorder_lowerunitprice_cse' ||
                     currentNode === 'repeatorder_previousprocurement_sixmonths_cse' ||
                     currentNode === 'repeatorder_quantifiablegood_cse' ||
-                    currentNode === 'directacquisition_abc_cse' ||
-                    currentNode === 'compliantinvoice_directacquisition_cse') {
+                    currentNode === 'directacquisition_abc_cse') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
