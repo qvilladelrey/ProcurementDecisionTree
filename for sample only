@@ -513,7 +513,7 @@
               </div>
             </li>
         
-            <li><a href="https://drive.google.com/file/d/1M7oYGKPnB_VyNFjnMG34Z5yE1T5QAt1k/view?usp=sharing" target="_blank">User Guide</a></li>
+            <li><a href="https://drive.google.com/file/d/1O83BNWHSz4H0bz3HoS-3FfrxTLRAYdiq/view?usp=sharing" target="_blank">User Guide</a></li>
             <li><a href="https://www.gppb.gov.ph/" target="_blank">Contact Us</a></li>
           </ul>
         </nav>
@@ -2003,19 +2003,19 @@
                 }
             },
             need_csegoods: {
-                question: "Is there a need to:",
+                question: "Would you prefer to:",
                 options: {
                     twofailedbidding_cse: {
-                        text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
+                        text: "🔄 procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
                         next: "prefer_twofailedbidding_cse",
                         triggers: ["Negotiated Procurement: Two-Failed Biddings"]
                     },
                     replenishgoods_cse: {
-                        text: "📋 Replenish Goods procured under a previously awarded contract",
+                        text: "📋 replenish Goods procured under a previously awarded contract",
                         next: "repeatorder_previousprocurement_competitive_cse"
                     },
                     othergoods_cse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ choose another option not listed",
                         next: "directacquisition_abc_cse"
                     }
                 }
@@ -2273,7 +2273,7 @@
             },
             result_directprocurementforsti: {
                 title: "Direct Procurement for Science, Technology, and Innovation",
-                description: "Direct Procurement for Science, Technology, and Innovation is a mode of procurement in which the Procuring Entity may directly acquire goods and services from a manufacturer or supplier that is legally, technically, and financially capable of providing the required items or services. <em>(See Section 37, IRR of RA No. 12009.)</em>",
+                description: "Direct Procurement for Science, Technology, and Innovation is a mode of procurement in which the Procuring Entity may directly acquire goods and services from a manufacturer or supplier that is legally, technically, and financially capable of providing the required items or services. <em>(See Section 37, IRR of RA No. 12009.)</em> </br> </em>This mode of procurement may only be implemented upon the issuance of the corresponding implementing guidelines by the GPPB.</em>",
                 link: "https://drive.google.com/file/d/13gZCLwRib0lBDs7Y00VlOdHw0OSGtWEq/view?usp=sharing",
                 path: []
             },
