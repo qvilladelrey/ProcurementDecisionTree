@@ -2243,7 +2243,7 @@
             },
             result_ngoparticipation: {
                 title: "Negotiated Procurement: Non-Government Organization (NGO) Participation",
-                description: "This mode of procurement may be adopted through Non-Government Organization (NGO) Participation, wherein the Procuring Entity may enter into a Memorandum of Agreement (MOA) with an NGO when an appropriation law or ordinance earmarks funds specifically for contracting out projects to such organizations. <em>(See Section 35.10, IRR of RA No. 12009.)</em>",
+                description: "This mode of procurement may be adopted through Non-Government Organization (NGO) Participation, wherein the Procuring Entity may enter into a Memorandum of Agreement (MOA) with an NGO when an appropriation law or ordinance earmarks funds specifically for contracting out projects to such organizations. <em>(See Section 35.10, IRR of RA No. 12009.)</em> </br></br> <em>This mode of procurement may only be implemented upon the issuance of the corresponding implementing guidelines by the GPPB.</em>",
                 link: "https://drive.google.com/file/d/1sxmYXz2STl_MR50L8RRIkZeQ32PZColm/view?usp=sharing",
                 path: []
             },
@@ -2279,8 +2279,8 @@
             },
             result_procurepsdbm: {
                 title: "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)",
-                description: "Procuring Entities can purchase common-use supplies and equipment directly from the Procurement Service–Department of Budget and Management (PS-DBM). This ensures cost efficiency, standardization, and timely availability of pre-procured items, while reducing duplication of bidding and promoting the efficient use of government resources. <em>(See Section 40, IRR of RA No. 12009.)</em>",
-                link: "https://drive.google.com/file/d/1bwh1G5_njsfS-XAYI4BFVY8Xk4-7PUM0/view?usp=sharing",
+                description: "Instead of using the Modes of Procurement under Rule IV of the NGPA, you may consider purchasing these directly from the PS-DBM. <em>(See Section 40, IRR of RA No. 12009.)</em>",
+                link: "https://drive.google.com/file/d/1yan0pMum_FRZKIrZR_AW1yYQqOOYEPgx/view?usp=sharing",
                 path: []
             },
             result_reviewtechspecs: {
@@ -2352,7 +2352,7 @@
             "Negotiated Procurement: Direct Retail Purchase of Petroleum Fuel, Oil and Lubricant Products, Electronic Charging Devices, and Online Subscriptions": "https://drive.google.com/file/d/1gFtO3KQbsD2WUy50-qpTl4UWOYtRasy2/view?usp=sharing",
             "Direct Sales": "https://drive.google.com/file/d/14AchMeFf6PD1wJPaKS4jEsqkDX-Bh9P9/view?usp=sharing",
             "Direct Procurement for Science, Technology, and Innovation": "https://drive.google.com/file/d/13gZCLwRib0lBDs7Y00VlOdHw0OSGtWEq/view?usp=sharing",
-            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "https://drive.google.com/file/d/1bwh1G5_njsfS-XAYI4BFVY8Xk4-7PUM0/view?usp=sharing",
+            "Procure from the Procurement Service-Department of Budget and Management (PS-DBM)": "https://drive.google.com/file/d/1yan0pMum_FRZKIrZR_AW1yYQqOOYEPgx/view?usp=sharing",
             "Negotiated Procurement: Sagip Saka Act": "https://drive.google.com/file/d/16fsN6WnyAYvpJjqLPfNEzrFkeySZL88D/view?usp=sharing"
         };
 
