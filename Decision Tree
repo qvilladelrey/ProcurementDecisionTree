@@ -940,15 +940,18 @@
                 options: {
                     philgepsregistered_directacquisition_noncse: {
                         text: "💻 supplied by a supplier registered with the Philippine Government Electronic Procurement System (PhilGEPS) as verified from the PhilGEPS website",
-                        next: "prefer_directacquisition_noncse"
+                        next: "prefer_directacquisition_noncse",
+                        triggers: ["Direct Acquisition"]
                     },
                     ecommerce_directacquisition_noncse: {
                         text: "📦 available in electronic commerce platforms for delivery or pick up at such date and time identified by the PE",
-                        next: "prefer_directacquisition_noncse"
+                        next: "prefer_directacquisition_noncse",
+                        triggers: ["Direct Acquisition"]
                     },
                     immediatedelivery_directacquisition_noncse: {
                         text: "🚚 readily available off-the-shelf and can be picked up or delivered immediately",
-                        next: "prefer_directacquisition_noncse"
+                        next: "prefer_directacquisition_noncse",
+                        triggers: ["Direct Acquisition"]
                     },
                     otheravailability_directacquisition_noncse: {
                         text: "❌ not among the stated options",
