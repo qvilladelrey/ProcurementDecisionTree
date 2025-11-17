@@ -1931,7 +1931,7 @@
                     yes: {
                         text: "✅ Yes",
                         next: "prefer_ngoparticipation_noncse",
-                        triggers: ["Negotiated Procurement: Community Participation"]
+                        triggers: ["Negotiated Procurement: Non-Government Organization (NGO) Participation"]
                     },
                     no: {
                         text: "❌ No",
