@@ -2006,16 +2006,16 @@
                 question: "Would you prefer to:",
                 options: {
                     twofailedbidding_cse: {
-                        text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
+                        text: "🔄 procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
                         next: "prefer_twofailedbidding_cse",
                         triggers: ["Negotiated Procurement: Two-Failed Biddings"]
                     },
                     replenishgoods_cse: {
-                        text: "📋 Replenish Goods procured under a previously awarded contract",
+                        text: "📋 replenish Goods procured under a previously awarded contract",
                         next: "repeatorder_previousprocurement_competitive_cse"
                     },
                     othergoods_cse: {
-                        text: "❓ Not among the stated options",
+                        text: "❌ choose another option not listed",
                         next: "directacquisition_abc_cse"
                     }
                 }
