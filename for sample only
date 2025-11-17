@@ -2692,7 +2692,7 @@
               currentNode === "result_reviewtechspecs" ||
               currentNode === "result_procurepsdbm"
             ) {
-              headerLabel = "📋 Results";
+              headerLabel = "📋 Result";
             }
             
             primaryRecommendation.innerHTML = `
