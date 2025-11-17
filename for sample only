@@ -2685,13 +2685,23 @@
               learnMoreButton = `<a href="${result.link}" target="_blank" class="learn-more-btn">🔗 Learn more</a>`;
             }
             
+            // Determine header label based on result type
+            let headerLabel = "💡 Procurement Mode";
+            if (
+              currentNode === "result_underconstruction" ||
+              currentNode === "result_reviewtechspecs" ||
+              currentNode === "result_procurepsdbm"
+            ) {
+              headerLabel = "📋 Results";
+            }
+            
             primaryRecommendation.innerHTML = `
-              <div class="recommendation-title">💡 Procurement Mode</div>
-              <strong>${result.title}</strong>
-              <div class="recommendation-description">
-                ${result.description}
-              </div>
-              ${learnMoreButton}
+            <div class="recommendation-title">${headerLabel}</div>
+            <strong>${result.title}</strong>
+            <div class="recommendation-description">
+            ${result.description}
+            </div>
+            ${learnMoreButton}
             `;
             recommendationContainer.appendChild(primaryRecommendation);
             
