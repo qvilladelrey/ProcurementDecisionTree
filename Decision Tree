@@ -2007,8 +2007,7 @@
                 options: {
                     twofailedbidding_cse: {
                         text: "🔄 procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
-                        next: "prefer_twofailedbidding_cse",
-                        triggers: ["Negotiated Procurement: Two-Failed Biddings"]
+                        next: "result_twofailedbiddings"
                     },
                     replenishgoods_cse: {
                         text: "📋 replenish Goods procured under a previously awarded contract",
@@ -2107,15 +2106,18 @@
                 options: {
                     philgepsregistered_directacquisition_cse: {
                         text: "💻 supplied by a supplier registered with the Philippine Government Electronic Procurement System (PhilGEPS) as verified from the PhilGEPS website",
-                        next: "prefer_directacquisition_cse"
+                        next: "prefer_directacquisition_cse",
+                        triggers: ["Direct Acquisition"]
                     },
                     ecommerce_directacquisition_cse: {
                         text: "📦 available in electronic commerce platforms for delivery or pick up at such date and time identified by the Procuring Entity",
-                        next: "prefer_directacquisition_cse"
+                        next: "prefer_directacquisition_cse",
+                        triggers: ["Direct Acquisition"]
                     },
                     immediatedelivery_directacquisition_cse: {
                         text: "🚚 readily available off-the-shelf and can be picked up or delivered immediately",
-                        next: "prefer_directacquisition_cse"
+                        next: "prefer_directacquisition_cse",
+                        triggers: ["Direct Acquisition"]
                     },
                     otheravailability_directacquisition_cse: {
                         text: "❌ not among the stated options",
