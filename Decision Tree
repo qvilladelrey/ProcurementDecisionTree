@@ -2003,7 +2003,7 @@
                 }
             },
             need_csegoods: {
-                question: "Is there a need to:",
+                question: "Would you prefer to:",
                 options: {
                     twofailedbidding_cse: {
                         text: "🔄 Procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
