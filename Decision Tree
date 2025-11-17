@@ -716,7 +716,7 @@
                 }
             },
             takeovercontract_cse_noncse: {
-                question: "Is the Good included in the List of Common-Use Supplies and Equipment (CSE)?",
+                question: 'Is the Good included in the <a href="https://sys.ps-philgeps.gov.ph/catalogue/cse-list/" target="_blank" style="color:#1e3888; text-decoration:underline;">List of Common-Use Supplies and Equipment (CSE)</a>?',
                     options: {
                     yes: {
                         text: "✅ Yes",
@@ -729,7 +729,7 @@
                     }
                 },
                 cse_goods: {
-                    question: "Is the Good included in the List of Common-Use Supplies and Equipment (CSE)?",
+                question: 'Is the Good included in the <a href="https://sys.ps-philgeps.gov.ph/catalogue/cse-list/" target="_blank" style="color:#1e3888; text-decoration:underline;">List of Common-Use Supplies and Equipment (CSE)</a>?',
                     options: {
                     yes: {
                         text: "✅ Yes",
@@ -2554,7 +2554,7 @@
             document.getElementById('dynamicRecommendations').style.display = 'block';
             
             const nodeData = decisionTree[currentNode];
-            document.getElementById('questionText').textContent = nodeData.question;
+            document.getElementById('questionText').innerHTML = nodeData.question;
             
             const optionsContainer = document.getElementById('optionsContainer');
             
@@ -2682,7 +2682,7 @@
             primaryRecommendation.className = 'primary-recommendation';
             let learnMoreButton = '';
             if (result.link && result.link !== '#' && !result.link.toLowerCase().includes('under construction')) {
-              learnMoreButton = `<a href="${result.link}" target="_blank" class="learn-more-btn">🔗 Learn more about this mode</a>`;
+              learnMoreButton = `<a href="${result.link}" target="_blank" class="learn-more-btn">🔗 Learn more</a>`;
             }
             
             primaryRecommendation.innerHTML = `
