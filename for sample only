@@ -729,7 +729,7 @@
                     }
                 },
                 cse_goods: {
-                    question: "Is the Good included in the List of Common-Use Supplies and Equipment (CSE)?",
+                question: 'Is the Good included in the <a href="https://ps-philgeps.gov.ph/home/index.php/list-of-common-use-supplies-and-equipment-cse" target="_blank" style="color:#1e3888; text-decoration:underline;">List of Common-Use Supplies and Equipment (CSE)</a>?',
                     options: {
                     yes: {
                         text: "✅ Yes",
