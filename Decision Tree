@@ -1870,7 +1870,7 @@
                         next: "typeofgood_unagency_noncse"
                     },
                     ngo_noncse: {
-                        text: "🏢 a non-stock, non-profit domestic corporation with the Securities and Exchange Commission (SEC) or a cooperative registered with the Cooperative Development Authority (CDA)",
+                        text: "🏢 a non-stock, non-profit domestic corporation registered with the Securities and Exchange Commission (SEC) or a cooperative registered with the Cooperative Development Authority (CDA)",
                         next: "ngo_appropriationlaw_noncse"
                     },
                     governmentagency_noncse: {
