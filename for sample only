@@ -2212,7 +2212,7 @@
                     adjacent_infrastructure: {
                         text: "🔄 implement work adjacent or contiguous to an ongoing Infrastructure Project",
                         next: "adjacent_previouscontract_infrastructure",
-                    }
+                    },
                     otherpreviouslyprocured_infrastructure: {
                         text: "🔄choose another option not listed",
                         next: "type_infrastructure"
@@ -2220,8 +2220,8 @@
                 }
             },
             adjacent_previouscontract_infrastructure: {
-                question: "Was the original contract the result of Competitive Bidding, Competitive Dialogue, and Limited Source Bidding?:",
-                options: {
+                question: "Was the original contract the result of Competitive Bidding, Competitive Dialogue, and Limited Source Bidding?",
+                    options: {
                     yes_different_prefer_takeover_infrastructure: {
                         text: "✅ Yes",
                         next: "adjacent_similarscope_infrastructure"
@@ -2321,26 +2321,26 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "type_infrastructure" // B /
+                        next: "type_infrastructure" // B //
                     }
                 }
             },
                 previouscontract_takeovercontract_infrastructure: {
                 question: "Was the previous contract awarded through Competitive Bidding, Competitive Dialogue, Limited Source Bidding, or Small Value Procurement?",
-                options: {
-                    yes: {
-                        text: "✅ Yes",
-                        next: "prefer_takeover_infrastructure"
-                    },
-                    no: {
-                        text: "❌ No",
-                        next: "prefer_emergencycases_takeovercontract_infrastructure"
+                    options: {
+                        yes: {
+                            text: "✅ Yes",
+                            next: "prefer_takeover_infrastructure"
+                        },
+                        no: {
+                            text: "❌ No",
+                            next: "prefer_emergencycases_takeovercontract_infrastructure"
                     }
                 }
             },
             prefer_takeover_infrastructure: {
+                question: "Would You Prefer to?",    
                 options: {
-                    question: "Would You Prefer to?",
                     different_prefer_takeover_emergencycases_infrastructure: {
                         text: "Adopt Negotiated Procurement-EmergencyCases",
                         next: "result_emergencycases"
@@ -2356,8 +2356,8 @@
                 }
             },
             prefer_emergencycases_takeovercontract_infrastructure: {
+                question: "Would You Prefer to?",
                 options: {
-                    question: "Would You Prefer to?",
                     different_prefer_emergencycases_takeovercontract_infrastructure: {
                         text: "Adopt a Different Procurement Mode",
                         next: "type_infrastructure" // B //
@@ -2384,7 +2384,7 @@
                     },
                     simpleinfrastructure_localcommunity: {
                         text: "📋 simple Infrastructure Projects to be implemented by a local communitiy or social group (CSG)",
-                        next: "prefer_localcommunity_noncse"
+                        next: "prefer_localcommunity_infrastructure"
                     },
                     othertype_infrastructure: {
                         text: "❌ those not among the stated options",
@@ -2440,7 +2440,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "typeofgood_competitivedialogue_infrastructure" // C//
+                        next: "typeofgood_competitivedialogue_infrastructure" // C //
                     }
                 }
             },
@@ -2479,11 +2479,11 @@
                     },
                     different_prefer_defensecooperation_infrastructure: {
                         text: "🔄 Adopt a Different Procurement Mode",
-                        next: "typeofgood_competitivedialogue_infrastructure" // C//
+                        next: "typeofgood_competitivedialogue_infrastructure" // C //
                     }
                 }
             },
-            prefer_localcommunity_noncse: {
+            prefer_localcommunity_infrastructure: {
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_localcommunity_noncse: {
@@ -2497,7 +2497,7 @@
                 }
             },
 
-            // Infastructure C//
+            // Infastructure C //
             typeofgood_competitivedialogue_infrastructure: {
                 question: "Does the Infrastructure Project:",
                 options: {
@@ -2533,7 +2533,7 @@
                 }
             },
 
-            // Infastructure D//
+            // Infastructure D //
             typeofcontractor_infrastructure: {
                 question: "Is the contractor:",
                 options: {
@@ -2560,7 +2560,7 @@
                     },
                     no: {
                         text: "🔄 No",
-                        next: "lgu_goods"// E //
+                        next: "lgu_goods" // E //
                     }
                 }
             },
