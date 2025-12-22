@@ -1270,6 +1270,34 @@
                     }
                 }
             },
+            abc_municipality_fourhundred_goods: {
+                question: "Is the Approved Budget for the Contract (ABC) more than P400,000.00?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse",
+                        triggers: ["Small Value Procurement"]
+                    }
+                }
+            },
+            abc_municipality_twohundred_goods: {
+                question: "Is the Approved Budget for the Contract (ABC) more than P200,000.00?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "result_competitivebidding"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "prefer_competitivebidding_noncse",
+                        triggers: ["Small Value Procurement"]
+                    }
+                }
+            },
             abc_city_fourhundred_goods: {
                 question: "Is the Approved Budget for the Contract (ABC) more than P400,000.00?",
                 options: {
