@@ -612,7 +612,7 @@
                 options: {
                     goods: {
                         text: "📦 Goods",
-                        next: "result_underconstruction"
+                        next: "isthereemergency_goods"
                     },
                     infrastructure: {
                         text: "🏗️ Infrastructure Projects",
@@ -2616,8 +2616,8 @@
                     }
                 }
             }
-            
         };
+
         const results = {
             result_competitivebidding: {
                 title: "Competitive Bidding",
