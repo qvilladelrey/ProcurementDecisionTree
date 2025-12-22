@@ -2193,8 +2193,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "previouslyprocured_prefer_infrastructure",
-                        triggers: "previouslyprocured_prefer_infrastructure"
+                        next: "previouslyprocured_prefer_infrastructure"
                     },
                     no: {
                         text: "❌ No",
