@@ -2604,7 +2604,7 @@
                 options: {
                     yes_prefer_agencytoagency_infrastructure: {
                         text: "🔄Adopt Negotiated Procurement-Agency-to-Agency",
-                        next: "result_agencytoagency "
+                        next: "result_agencytoagency"
                     },
                     different_prefer_agencytoagency_infrastructure: {
                         text: "🔄Adopt a Different Procurement Mode",
