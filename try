@@ -2368,15 +2368,15 @@
                 question: "Would You Prefer to?",    
                 options: {
                     different_prefer_takeover_emergencycases_infrastructure: {
-                        text: "Adopt Negotiated Procurement-EmergencyCases",
+                        text: "🔄 Adopt Negotiated Procurement-EmergencyCases",
                         next: "result_emergencycases"
                     },
                     yes_prefer_takeover_infrastructure: {
-                        text: "Adopt Negotiated Procurement-Take-Over of Contracts",
+                        text: "🔄 Adopt Negotiated Procurement-Take-Over of Contracts",
                         next: "result_takeoverofcontracts"
                     },
                    different_prefer_takeover_infrastructure: {
-                        text: "Adopt a Different Procurement Mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "type_infrastructure" // B //
                     }
                 }
@@ -2385,11 +2385,11 @@
                 question: "Would You Prefer to?",
                 options: {
                     different_prefer_emergencycases_takeovercontract_infrastructure: {
-                        text: "Adopt a Different Procurement Mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "type_infrastructure" // B //
                     },
                     yes_prefer_emergencycases_takeovercontract_infrastructure: {
-                        text: "Adopt Negotiated Procurement-EmergencyCases",
+                        text: "🔄 Adopt Negotiated Procurement-EmergencyCases",
                         next: "result_emergencycases"
                     }
                 }
@@ -2498,7 +2498,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_defensecooperation_infrastructure: {
-                        text: "✅ Adopt Negotiated Procurement-Defense Cooperation Agreements and Inventory-Based Items",
+                        text: "🔄 Adopt Negotiated Procurement-Defense Cooperation Agreements and Inventory-Based Items",
                         next: "result_defensecooperationagreement"
                     },
                     different_prefer_defensecooperation_infrastructure: {
@@ -2511,7 +2511,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_localcommunity_noncse: {
-                        text: "Adopt Negotiated Procurement-Community Participation",
+                        text: "🔄 Adopt Negotiated Procurement-Community Participation",
                         next: "result_communityparticipation"
                     },
                     different_prefer_localcommunity_noncse: {
@@ -2547,7 +2547,7 @@
                 question: "Would you prefer to:?",
                 options: {
                     yes_prefer_competitivedialogue_infrastructure: {
-                        text: "✅ Adopt Competitive Dialogue",
+                        text: "🔄 Adopt Competitive Dialogue",
                         next: "result_competitivedialogue"
                     },
                     different_prefer_competitivedialogue_infrastructure: {
@@ -2592,7 +2592,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_ngoparticipation_infrastructure: {
-                        text: "Adopt Negotiated Procurement-Non-Government Organization (NGO) Participation",
+                        text: "🔄Adopt Negotiated Procurement-Non-Government Organization (NGO) Participation",
                         next: "result_ngoparticipation"
                     },
                     different_prefer_ngoparticipation_infrastructure: {
