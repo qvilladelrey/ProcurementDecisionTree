@@ -2404,11 +2404,11 @@
             approvedlist_limitedsourcebidding_infrastructure: {
                 question: "Is the contractor included in a government-approved or self-generated contractor list?",
                 options: {
-                    yes_prefer_limitedsourcebidding_infrastructure: {
+                    yes: {
                         text: "✅ Yes",
                         next: "result_limitedsourcebidding"
                     },
-                    different_prefer_limitedsourcebidding_infrastructure: {
+                    no: {
                         text: "❌ No",
                         next: "defense_necessary_infrastructure"
                     }
@@ -2516,7 +2516,7 @@
                 }
             },
             prefer_competitivedialogue_infrastructure: {
-                question: " Would you prefer to:?",
+                question: "Would you prefer to:?",
                 options: {
                     yes_prefer_competitivedialogue_infrastructure: {
                         text: "✅ Adopt Competitive Dialogue",
