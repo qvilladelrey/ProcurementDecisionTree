@@ -2591,7 +2591,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_agencytoagency_infrastructure "
+                        next: "prefer_agencytoagency_infrastructure"
                     },
                     no: {
                         text: "🔄 No",
