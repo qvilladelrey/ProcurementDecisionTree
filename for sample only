@@ -624,7 +624,6 @@
                     }
                 }
             },
-// Infastructure Coding A//
          isthereemergency_infrastructure: {
                 question: "Is there a need to:",
                 options: {
@@ -682,7 +681,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "type_infrastructure" // B//
+                        next: "type_infrastructure" 
                     }
                 }
             },
@@ -699,7 +698,7 @@
                     }
                     otherpreviouslyprocured_infrastructure: {
                         text: "🔄choose another option not listed",
-                        next: "type_infrastructure", // B //
+                        next: "type_infrastructure"
                     }
                 }
             },
@@ -712,12 +711,12 @@
                     },
                     different_prefer_takeover_infrastructure: {
                         text: "❌ No",
-                        next: "type_infrastructure" // B //
+                        next: "type_infrastructure"
                     }
                 }
             },
             adjacent_similarscope_infrastructure: {
-                question: 'Was the subject contract to be negotiated has similar or related Scope of Work or Terms of Reference?',
+                question: "Was the subject contract to be negotiated has similar or related Scope of Work or Terms of Reference?",
                     options: {
                     yes: {
                         text: "✅ Yes",
@@ -725,12 +724,12 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "type_infrastructure" // B //
+                        next: "type_infrastructure" 
                        }
                     }
                 },
                 adjacent_contractingcapacity_infrastructure: {
-                question: 'Is the project within the contracting capacity of the contractor?',
+                question: "Is the project within the contracting capacity of the contractor?",
                     options: {
                     yes: {
                         text: "✅ Yes",
@@ -738,7 +737,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "type_infrastructure" // B //
+                        next: "type_infrastructure"
                     }
                 }
             },
@@ -751,7 +750,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "type_infrastructure" // B //
+                        next: "type_infrastructure"
                     }
                 }
             },
@@ -765,7 +764,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "type_infrastructure" // B //
+                        next: "type_infrastructure" 
                     }
                 }
             },
@@ -841,7 +840,7 @@
             },
             prefer_emergencycases_takeovercontract_infrastructure: {
                 options: {
-                    question: "Would You Prefer to?"
+                    question: "Would You Prefer to?",
                     different_prefer_emergencycases_takeovercontract_infrastructure: {
                         text: "Adopt a Different Procurement Mode",
                         next: "type_infrastructure" // B //
@@ -856,7 +855,7 @@
 
 // Infastracture B//
             type_infrastructure: {
-                question: "Does the Infrastructure Project pertain to::",
+                question: "Does the Infrastructure Project pertain to:",
                 options: {
                     restorative_infrastructure: {
                         text: "📦 restorative works for the conservation of historical and culturally significant structures and artworks",
@@ -986,7 +985,7 @@
                 question: "Does the Infrastructure Project:",
                 options: {
                     innovativedesign_competitivedialogue_infrastructure: {
-                        text: "📦 include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility; ",
+                        text: "📦 include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility",
                         next: "prefer_competitivedialogue_infrastructure"
                     },
                     priornegotiation_competitivedialogue_infrastructure: {
@@ -1022,7 +1021,7 @@
                 question: "Is the contractor:",
                 options: {
                     ngo_infrastructure: {
-                        text: "📦 a non-stock, non-profit domestic corporation with the Securities and Exchange Commission (SEC) or a cooperative registered with the Cooperative Development Authority (CDA) ",
+                        text: "📦 a non-stock, non-profit domestic corporation with the Securities and Exchange Commission (SEC) or a cooperative registered with the Cooperative Development Authority (CDA)",
                         next: "ngo_appropriationlaw_infrastructure"
                     },
                     governmentagency_infrastructure: {
@@ -1039,7 +1038,7 @@
                 question: " Is there an appropriation law or ordinance earmarking an amount to be specifically contracted out to non-government organizations (NGOs)?",
                 options: {
                     yes: {
-                        text: "✅ Yes:",
+                        text: "✅ Yes",
                         next: "prefer_ngoparticipation_infrastructure "
                     },
                     no: {
@@ -1062,10 +1061,10 @@
                 }
             },
             necessarytools_agencytoagency_infrastructure: {
-                question: "Does the Servicing Agency (SA) own or has access to the necessary tools and equipment required for the project?:",
+                question: "Does the Servicing Agency (SA) own or has access to the necessary tools and equipment required for the project?",
                 options: {
                     yes: {
-                        text: "✅ Yes:",
+                        text: "✅ Yes",
                         next: "similarproject_agencytoagency_infrastructure"
                     },
                     no: {
@@ -1078,7 +1077,7 @@
                 question: "Does the SA have a track record of having completed, or supervised a project, by Admin or by contract, similar to and with a cost of at least 50% of the project at hand?",
                 options: {
                     yes: {
-                        text: "✅ Yes:",
+                        text: "✅ Yes",
                         next: "prefer_agencytoagency_infrastructure "
                     },
                     no: {
@@ -1091,7 +1090,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_agencytoagency_infrastructure: {
-                        text: "🔄Adopt Negotiated Procurement-Agency-to-Agency:",
+                        text: "🔄Adopt Negotiated Procurement-Agency-to-Agency",
                         next: "result_agencytoagency "
                     },
                     different_prefer_agencytoagency_infrastructure: {
