@@ -2548,11 +2548,11 @@
                 }
             },
             ngo_appropriationlaw_infrastructure: {
-                question: " Is there an appropriation law or ordinance earmarking an amount to be specifically contracted out to non-government organizations (NGOs)?",
+                question: "Is there an appropriation law or ordinance earmarking an amount to be specifically contracted out to non-government organizations (NGOs)?",
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_ngoparticipation_infrastructure "
+                        next: "prefer_ngoparticipation_infrastructure"
                     },
                     no: {
                         text: "🔄 No",
@@ -2564,7 +2564,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_ngoparticipation_infrastructure: {
-                        text: "Adopt Negotiated Procurement-Non-Government Organization (NGO) Participation:",
+                        text: "Adopt Negotiated Procurement-Non-Government Organization (NGO) Participation",
                         next: "result_ngoparticipation"
                     },
                     different_prefer_ngoparticipation_infrastructure: {
