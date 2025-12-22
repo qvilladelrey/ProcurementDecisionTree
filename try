@@ -2221,11 +2221,11 @@
             adjacent_previouscontract_infrastructure: {
                 question: "Was the original contract the result of Competitive Bidding, Competitive Dialogue, and Limited Source Bidding?",
                     options: {
-                    yes_different_prefer_takeover_infrastructure: {
+                    yes: {
                         text: "✅ Yes",
                         next: "adjacent_similarscope_infrastructure"
                     },
-                    different_prefer_takeover_infrastructure: {
+                    no: {
                         text: "❌ No",
                         next: "type_infrastructure"
                     }
@@ -2233,7 +2233,7 @@
             },
             adjacent_similarscope_infrastructure: {
                 question: "Was the subject contract to be negotiated has similar or related Scope of Work or Terms of Reference?",
-                    options: {
+                options: {
                     yes: {
                         text: "✅ Yes",
                         next: "adjacent_contractingcapacity_infrastructure"
