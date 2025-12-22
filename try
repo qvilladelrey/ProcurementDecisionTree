@@ -2311,7 +2311,6 @@
                     }
                 }
             },
-            
             adjacent_contractexpiry_infrastructure: {
                 question: "Did the negotiations for the procurement commence before the expiry of the original contract?",
                 options: {
@@ -2325,7 +2324,7 @@
                     }
                 }
             },
-                previouscontract_takeovercontract_infrastructure: {
+            previouscontract_takeovercontract_infrastructure: {
                 question: "Was the previous contract awarded through Competitive Bidding, Competitive Dialogue, Limited Source Bidding, or Small Value Procurement?",
                     options: {
                         yes: {
@@ -2365,11 +2364,9 @@
                     yes_prefer_emergencycases_takeovercontract_infrastructure: {
                         text: "Adopt Negotiated Procurement-EmergencyCases",
                         next: "result_emergencycases"
-                    },
+                    }
                 }
             },
-        
-
 // Infastracture B//
             type_infrastructure: {
                 question: "Does the Infrastructure Project pertain to:",
