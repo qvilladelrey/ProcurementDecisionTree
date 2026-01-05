@@ -2639,7 +2639,7 @@
                         next: "lgu_goods" // E //
                     }
                 }
-            }
+            },
             // Consultation Services A //
             isthereemergency_services: {
                 question: "Is there a need to:",
