@@ -2733,7 +2733,7 @@
                 }
             },
             negotiatedcontract_services: {
-                question: 'Does the contract to be negotiated have similar or related Scope of Work or Terms of Reference?',
+                question: "Does the contract to be negotiated have similar or related Scope of Work or Terms of Reference?",
                     options: {
                     yes: {
                         text: "✅ Yes",
@@ -2746,7 +2746,7 @@
                     }
                 },
                 contracting_services: {
-                question: 'Is the project within the contracting capacity of the consultant?',
+                question: "Is the project within the contracting capacity of the consultant?",
                     options: {
                     yes: {
                         text: "✅ Yes",
@@ -3034,7 +3034,7 @@
 
             // Consulting Services C//
             Innovative_design_services: {
-                question: "Did an entity submit an unsolicited offer which the Procuring Entity determine as necessary?:",
+                question: "Did an entity submit an unsolicited offer which the Procuring Entity determine as necessary?",
                 options: {
                     yes: {
                         text: "✅ Yes:",
@@ -3047,7 +3047,7 @@
                 }
             },
             negotiations_services: {
-                question: "Do the Consulting Services to be procured:", 
+                question: "Do the Consulting Services to be procured?", 
                 options: {
                     innovative_design_services: {
                         text: "📦 include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility;",
@@ -3897,5 +3897,6 @@
               window.removeEventListener('click', closeDropdown);
             }
           });
-
+        }
+    }
 </script>
