@@ -3198,15 +3198,14 @@
                 options: {
                     agency_adoptnegotiated_services: {
                         text: "🔄Adopt Negotiated Procurement-Agency-to-Agency:",
-                        next: "result_agencytoagency "
+                        next: "result_agencytoagency"
                     },
                     agency_adoptdifferent_services: {
                         text: "🔄Adopt a Different Procurement Mode",
                         next: "lgu_goods" // E//
                     }
                 }
-            }
-        
+            };
 
         const results = {
             result_competitivebidding: {
@@ -3898,7 +3897,5 @@
               window.removeEventListener('click', closeDropdown);
             }
           });
-        }
-    },
 
 </script>
