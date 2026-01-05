@@ -3206,6 +3206,7 @@
                     }
                 }
             };
+        }
 
         const results = {
             result_competitivebidding: {
@@ -3898,5 +3899,4 @@
             }
           });
         }
-    }
 </script>
