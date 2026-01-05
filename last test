@@ -2720,7 +2720,7 @@
                 }
             },
             competitive_bidding_services: {
-                question: "Was the original contract the result of Competitive Bidding, Competitive Dialogue, and Limited Source Bidding?:",
+                question: "Was the original contract the result of Competitive Bidding, Competitive Dialogue, and Limited Source Bidding",
                 options: {
                     yes_different_prefer_takeover_services: {
                         text: "✅ Yes",
@@ -2807,7 +2807,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "projects_services"// B //
+                        next: "projects_services" // B //
                     }
                 }
             },
@@ -2859,7 +2859,7 @@
 
 // Consulting Services B//
             projects_services: {
-                question: "Can the Consulting Services to be procured be classified as scientific, academic, scholarly work or research, or legal services?:",
+                question: "Can the Consulting Services to be procured be classified as scientific, academic, scholarly work or research, or legal services?",
                 options: {
                     limitedsource_services: {
                         text: "✅ Yes",
@@ -2937,7 +2937,8 @@
                     innovative_services: {
                         text: "not among the stated options ",
                         next: "instrumentality_services"
-                }
+                    }
+                },
             },
             modernization_services: {
                 question: "Would you prefer to:",
@@ -3204,8 +3205,8 @@
                         next: "lgu_goods" // E//
                     }
                 }
-            },
-        },
+            }
+        
 
         const results = {
             result_competitivebidding: {
