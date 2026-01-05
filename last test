@@ -2640,9 +2640,7 @@
                     }
                 }
             }
-        };
-                   // Consulting Services A //
-            // Goods Applicability Matrix //
+            // Consultation Services A //
             isthereemergency_services: {
                 question: "Is there a need to:",
                 options: {
@@ -3207,6 +3205,7 @@
                     }
                 }
             },
+        },
 
         const results = {
             result_competitivebidding: {
