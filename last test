@@ -3194,7 +3194,6 @@
                     }
                 }
             };
-        
 
         const results = {
             result_competitivebidding: {
@@ -3728,7 +3727,7 @@
                     }
                 }
             }
-        }
+        };
 
         function showResult() {
             const result = results[currentNode];
@@ -3887,5 +3886,4 @@
             }
           });
         }
-    
 </script>
