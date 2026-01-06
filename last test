@@ -2936,7 +2936,7 @@
                         next: "Innovative_design_services" // D //
                     }
                     innovative_services: {
-                        text: "not among the stated options ",
+                        text: "not among the stated options",
                         next: "instrumentality_services"
                     }
                 },
@@ -3207,7 +3207,6 @@
                     }
                 }
             };
-        
 
         const results = {
             result_competitivebidding: {
