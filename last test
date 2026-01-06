@@ -3702,8 +3702,28 @@
                     currentNode === 'defense_notavailablelocally_infrastructure' ||
                     currentNode === 'defense_afpmodernizationprogram_infrastructure' ||
                     currentNode === 'defense_defensecooperationagreement_infrastructure' ||
+                    currentNode === 'similarproject_agencytoagency_infrastructure' ||
                     currentNode === 'ngo_appropriationlaw_infrastructure' ||
-                    currentNode === 'similarproject_agencytoagency_infrastructure') {
+                    currentNode === 'previouscontract_takeovercontract_consulting' ||
+                    currentNode === 'adjacent_previouscontract_consulting' ||
+                    currentNode === 'adjacent_similarscope_consulting' ||
+                    currentNode === 'adjacent_contractingcapacity_consulting' ||
+                    currentNode === 'adjacent_sameprices_consulting' ||
+                    currentNode === 'adjacent_notexceed_consulting' ||
+                    currentNode === 'adjacent_negativeslippage_consulting' ||
+                    currentNode === 'adjacent_contractexpiry_consulting' ||
+                    currentNode === 'previouscontract_takeovercontract_consulting' ||
+                    currentNode === 'scientifcscholarly_consulting' ||
+                    currentNode === 'highlyspecialized_consulting' ||
+                    currentNode === 'approvedlist_limitedsourcebidding_consulting' ||
+                    currentNode === 'defense_necessary_consulting' ||
+                    currentNode === 'defense_notavailablelocally_consulting' ||
+                    currentNode === 'defense_defensecooperationagreement_consulting' ||
+                    currentNode === 'defense_afpmodernizationprogram_consulting' ||
+                    currentNode === 'unsolicitedoffer_consulting' ||
+                    currentNode === 'advancedtechnology_unagency_consulting' ||
+                    currentNode === 'ngo_appropriationlaw_consulting' ||
+                    currentNode === 'necessarytools_agencytoagency_consulting') {
                     optionsContainer.className = 'options horizontal';
                     optionsContainer.innerHTML = `
                         <div class="image-option" onclick="makeChoice('yes')">
