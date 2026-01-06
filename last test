@@ -2239,7 +2239,7 @@
                       },
                     adjacent_infrastructure: {
                         text: "🔄 implement work adjacent or contiguous to an ongoing Infrastructure Project",
-                        next: "adjacent_previouscontract_infrastructure",
+                        next: "adjacent_previouscontract_infrastructure"
                     },
                     otherpreviouslyprocured_infrastructure: {
                         text: "🔄choose another option not listed",
@@ -2716,7 +2716,7 @@
                     }
                     choose_option_consulting: {
                         text: "🔄choose another option not listed",
-                        next: "scientifcscholarly_consulting", // B //
+                        next: "scientifcscholarly_consulting" // B //
                     }
                 }
             },
@@ -2939,7 +2939,8 @@
                         text: "not among the stated options ",
                         next: "defense_necessary_consulting"
                 }
-            },
+            }
+        },
             prefer_highlytechnicalconsultant: {
                 question: "Would you prefer to:",
                 options: {
@@ -3192,8 +3193,8 @@
                         next: "lgu_goods" // E//
                     }
                 }
-            }
-        };
+            };
+        
 
         const results = {
             result_competitivebidding: {
