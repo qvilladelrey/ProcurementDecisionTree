@@ -3193,7 +3193,8 @@
                         next: "lgu_goods" // E//
                     }
                 }
-            };
+            }
+        };
 
         const results = {
             result_competitivebidding: {
@@ -3727,7 +3728,7 @@
                     }
                 }
             }
-        };
+        }
 
         function showResult() {
             const result = results[currentNode];
