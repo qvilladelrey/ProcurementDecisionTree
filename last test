@@ -2169,6 +2169,7 @@
                     }
                 }
             },
+            // Infrastructure A // 
             isthereemergency_infrastructure: {
                 question: "Is there a need to:",
                 options: {
@@ -2394,7 +2395,7 @@
                     }
                 }
             },
-// Infastracture B//
+            // Infastracture B//
             type_infrastructure: {
                 question: "Does the Infrastructure Project pertain to:",
                 options: {
@@ -2857,7 +2858,7 @@
             },
         
 
-// Consulting Services B//
+            // Consulting Services B//
             projects_services: {
                 question: "Can the Consulting Services to be procured be classified as scientific, academic, scholarly work or research, or legal services?",
                 options: {
@@ -3110,7 +3111,7 @@
             Innovative_design_services: {
                 question: "Is the consultant:",
                 options: {
-                    UN_agencies_services: {
+                    un_agencies_services: {
                         text: "United Nations (UN) Agencies, International Organizations or International Financing Institutions",
                         next: "consulting_techniques_services"
                     },
@@ -3206,7 +3207,7 @@
                     }
                 }
             };
-        }
+        
 
         const results = {
             result_competitivebidding: {
@@ -3899,4 +3900,5 @@
             }
           });
         }
+    }
 </script>
