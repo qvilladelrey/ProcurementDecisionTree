@@ -2721,7 +2721,7 @@
                 }
             },
             adjacent_previouscontract_consulting: {
-                question: "Was the original contract the result of Competitive Bidding, Competitive Dialogue, and Limited Source Bidding?:",
+                question: "Was the original contract the result of Competitive Bidding, Competitive Dialogue, and Limited Source Bidding?",
                 options: {
                     yes_different_prefer_takeover_consulting: {
                         text: "✅ Yes",
@@ -2734,7 +2734,7 @@
                 }
             },
             adjacent_similarscope_consulting: {
-                question: 'Does the contract to be negotiated have similar or related Scope of Work or Terms of Reference?',
+                question: "Does the contract to be negotiated have similar or related Scope of Work or Terms of Reference?",
                     options: {
                     yes: {
                         text: "✅ Yes",
@@ -2742,12 +2742,12 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "scientifcscholarly_consulting"// B //
+                        next: "scientifcscholarly_consulting" // B //
                        }
                     }
                 },
                 adjacent_contractingcapacity_consulting: {
-                question: 'Is the project within the contracting capacity of the consultant?',
+                question: "Is the project within the contracting capacity of the consultant?",
                     options: {
                     yes: {
                         text: "✅ Yes",
@@ -2755,7 +2755,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "scientifcscholarly_consulting"// B //
+                        next: "scientifcscholarly_consulting" // B //
                     }
                 }
             },
@@ -2961,7 +2961,7 @@
                         next: "defense_notavailablelocally_consulting"
                     },
                     no: {
-                        text: "❌ No"
+                        text: "❌ No",
                         next: "unsolicitedoffer_consulting" // C //
                     }
                 }
@@ -2974,7 +2974,7 @@
                         next: "defense_defensecooperationagreement_consulting"
                     },
                     no: {
-                        text: "❌ No"
+                        text: "❌ No",
                         next: "unsolicitedoffer_consulting" // C //
                     }
                 }
@@ -2987,7 +2987,7 @@
                         next: "defense_afpmodernizationprogram_consulting"
                     },
                     no: {
-                        text: "❌ No"
+                        text: "❌ No",
                         next: "unsolicitedoffer_consulting" // C //
                     }
                 }
@@ -3000,7 +3000,7 @@
                         next: "prefer_defensecooperation_consulting"
                     },
                     no: {
-                        text: "❌ No"
+                        text: "❌ No",
                         next: "unsolicitedoffer_consulting" // C //
                     }
                 }
@@ -3021,14 +3021,14 @@
 
             // Consulting Services C//
             unsolicitedoffer_consulting: {
-                question: "Did an entity submit an unsolicited offer which the Procuring Entity determine as necessary?:",
+                question: "Did an entity submit an unsolicited offer which the Procuring Entity determine as necessary?",
                 options: {
                     yes: {
                         text: "✅ Yes:",
                         next: "typeofproject_unsolicitedofferwithbidmatching_consulting"
                     },
                     no: {
-                        text: "🔄 No",
+                        text: "❌ No",
                         next: "typeofproject_competitivedialogue_consulting" 
                     }
                 }
@@ -3037,8 +3037,8 @@
                 question: "Do the Consulting Services to be procured:", 
                 options: {
                     innovativedesign_competitivedialogue_consulting: {
-                        text: "📦 include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility;",
-                        next: "prefer_competitivedialogue_consulting    "
+                        text: "📦 include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility",
+                        next: "prefer_competitivedialogue_consulting"
                     },
                     priornegotiation_competitivedialogue_consulting: {
                         text: "🔄 have a contract requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
@@ -3123,7 +3123,7 @@
                         next: "prefer_unagency_consulting"
                     },
                     no: {
-                        text: "🔄 No",
+                        text: "❌ No",
                         next: "lgu_goods" // E //
                     }
                 }
@@ -3149,7 +3149,7 @@
                         next:  "prefer_ngoparticipation_consulting"
                     },
                     no: {
-                        text: "🔄 No",
+                        text: "❌ No",
                         next: "lgu_goods"// E //
                     }
                 }
@@ -3175,7 +3175,7 @@
                         next: "prefer_agencytoagency_consulting"
                     },
                     no: {
-                        text: "🔄 No",
+                        text: "❌ No",
                         next: "lgu_goods" // E //
                     }
                 }
@@ -3184,7 +3184,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_agencytoagency_consulting: {
-                        text: "🔄Adopt Negotiated Procurement-Agency-to-Agency:",
+                        text: "🔄Adopt Negotiated Procurement-Agency-to-Agency",
                         next: "result_agencytoagency"
                     },a
                     different_prefer_agencytoagency_consulting: {
