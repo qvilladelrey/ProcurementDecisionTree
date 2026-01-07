@@ -2709,7 +2709,7 @@
                     },
                     adjacent_consulting: {
                         text: "🔄 implement work adjacent or contiguous to an ongoing Consulting services Project",
-                        next: "adjacent_previouscontract_consulting",
+                        next: "adjacent_previouscontract_consulting"
                     },
                     choose_option_consulting: {
                         text: "🔄choose another option not listed",
@@ -2769,7 +2769,6 @@
                     }
                 }
             },
-            
             adjacent_notexceed_consulting: {
                 question: "Will the amount involved not exceed the amount of the ongoing project?",
                 options: {
@@ -2822,7 +2821,6 @@
                     }
                 }
             },
-
             prefer_takeover_consulting: {
                 options: {
                     question: "Would You Prefer to?",
