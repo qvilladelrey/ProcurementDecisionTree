@@ -3108,7 +3108,7 @@
                     }
                 },
                 advancedtechnology_unagency_consulting: {
-                    question: "Does the Consulting Services involve advance technologies, techniques, and innovations not locally available as certified by the Department of Trade and Industry (DTI), when it is most advantageous to the Procuring Entity (PE)?",
+                    question: "Does the Consulting Services involve advanced technologies, techniques, and innovations not locally available as certified by the Department of Trade and Industry (DTI), when it is most advantageous to the Procuring Entity (PE)?",
                     options: {
                         yes: {
                             text: "✅ Yes",
@@ -3138,7 +3138,7 @@
                     options: {
                         yes: {
                             text: "✅ Yes",
-                            next:  "prefer_ngoparticipation_consulting"
+                            next: "prefer_ngoparticipation_consulting"
                         },
                         no: {
                             text: "🔄 No",
