@@ -995,7 +995,7 @@
                         text: "🚁 a major defense equipment or materiel deemed necessary to protect the country by the Secretary of the Department of National Defense",
                         next: "afpmodernizationprogram_noncse"
                     },
-                    scientifcscholarlyetc: {
+                    scientificscholarlyetc: {
                         text: "🔬🎨💻🎥📚 scientific, scholarly or artistic work, exclusive technology and/or media services",
                         next: "typeofgood_scientificscholarly_noncse"
                     },
@@ -2696,7 +2696,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "scientifcscholarly_consulting" // B //
+                        next: "scientificscholarly_consulting" // B //
                     }
                 }
             },
@@ -2713,7 +2713,7 @@
                     },
                     choose_option_consulting: {
                         text: "🔄choose another option not listed",
-                        next: "scientifcscholarly_consulting" // B //
+                        next: "scientificscholarly_consulting" // B //
                     }
                 }
             },
@@ -2726,7 +2726,7 @@
                     },
                     different_prefer_takeover_consulting: {
                         text: "❌ No",
-                        next: "scientifcscholarly_consulting" // B //
+                        next: "scientificscholarly_consulting" // B //
                     }
                 }
             },
@@ -2739,7 +2739,7 @@
                     },
                     no: {
                         text: "❌ No",
-                        next: "scientifcscholarly_consulting"// B //
+                        next: "scientificscholarly_consulting"// B //
                     }
                 }
             },
@@ -2752,7 +2752,7 @@
                         },
                         no: {
                             text: "❌ No",
-                            next: "scientifcscholarly_consulting"// B //
+                            next: "scientificscholarly_consulting"// B //
                         }
                     }
                 },
@@ -2765,7 +2765,7 @@
                         },
                         no: {
                             text: "❌ No",
-                            next: "scientifcscholarly_consulting"// B //
+                            next: "scientificscholarly_consulting"// B //
                         }
                     }
                 },
@@ -2778,7 +2778,7 @@
                         },
                         no: {
                             text: "❌ No",
-                            next: "scientifcscholarly_consulting"// B //
+                            next: "scientificscholarly_consulting"// B //
                         }
                     }
                 },
@@ -2791,7 +2791,7 @@
                         },
                         no: {
                             text: "❌ No",
-                            next: "scientifcscholarly_consulting"// B //
+                            next: "scientificscholarly_consulting"// B //
                         }
                     }
                 },
@@ -2804,7 +2804,7 @@
                         },
                         no: {
                             text: "❌ No",
-                            next: "scientifcscholarly_consulting"// B //
+                            next: "scientificscholarly_consulting"// B //
                         }
                     }
                 },
@@ -2834,7 +2834,7 @@
                         },
                         different_prefer_takeover_consulting: {
                             text: "Adopt a Different Procurement Mode",
-                            next: "scientifcscholarly_consulting" // B //
+                            next: "scientificscholarly_consulting" // B //
                         }
                     }
                 },
@@ -2843,7 +2843,7 @@
                         question: "Would You Prefer to:"
                         different_prefer_emergencycases_takeovercontract_consulting: {
                             text: "Adopt a Different Procurement Mode",
-                            next: "scientifcscholarly_consulting" // B //
+                            next: "scientificscholarly_consulting" // B //
                         },
                         yes_prefer_emergencycases_takeovercontract_consulting: {
                             text: "Adopt Negotiated Procurement-EmergencyCases",
@@ -2852,7 +2852,7 @@
                     }
                 },
     // Consulting Services B//
-                scientifcscholarly_consulting: {
+                scientificscholarly_consulting: {
                     question: "Can the Consulting Services to be procured be classified as scientific, academic, scholarly work or research, or legal services?",
                     options: {
                         yes: {
@@ -3704,7 +3704,7 @@
                     currentNode === 'adjacent_negativeslippage_consulting' ||
                     currentNode === 'adjacent_contractexpiry_consulting' ||
                     currentNode === 'previouscontract_takeovercontract_consulting' ||
-                    currentNode === 'scientifcscholarly_consulting' ||
+                    currentNode === 'scientificscholarly_consulting' ||
                     currentNode === 'highlyspecialized_consulting' ||
                     currentNode === 'approvedlist_limitedsourcebidding_consulting' ||
                     currentNode === 'defense_necessary_consulting' ||
