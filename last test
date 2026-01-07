@@ -2299,7 +2299,6 @@
                     }
                 }
             },
-            
             adjacent_sameprices_infrastructure: {
                 question: "Does the contractor use the same prices or lower unit prices as in the original contract less mobilization cost?",
                 options: {
@@ -2521,7 +2520,6 @@
                     }
                 }
             },
-
             // Infastructure C //
             typeofgood_competitivedialogue_infrastructure: {
                 question: "Does the Infrastructure Project:",
@@ -2557,7 +2555,6 @@
                     }
                 }
             },
-
             // Infastructure D //
             typeofcontractor_infrastructure: {
                 question: "Is the contractor:",
@@ -2709,11 +2706,11 @@
                     yes_prefer_emergencycases_takeovercontract_consulting: {
                         text: "procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
                         next: "result_twofailedbiddings"
-                      },
+                    },
                     adjacent_consulting: {
                         text: "🔄 implement work adjacent or contiguous to an ongoing Consulting services Project",
                         next: "adjacent_previouscontract_consulting",
-                    }
+                    },
                     choose_option_consulting: {
                         text: "🔄choose another option not listed",
                         next: "scientifcscholarly_consulting" // B //
