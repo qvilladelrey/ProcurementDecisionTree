@@ -2639,7 +2639,7 @@
                         next: "lgu_goods" // E //
                     }
                 }
-            }
+            },
             isthereemergency_consulting: {
                 question: "Is there a need to:",
                 options: {
@@ -2683,11 +2683,11 @@
                     },
                     previouslyprocured_prefer_consulting: {
                         text: "🔄 Adopt a Different Procurement Mode",
-                        next: "previouscontract_takeovercontract_consulting"
+                        next: "previouslyprocured_consulting"
                     }
                 }
             },
-            previouscontract_takeovercontract_consulting: {
+            previouslyprocured_consulting: {
                 question: "Was it procured previously?",
                 options: {
                     yes: {
@@ -2822,8 +2822,8 @@
                     }
                 },
                 prefer_takeover_consulting: {
+                    question: "Would You Prefer to?",
                     options: {
-                        question: "Would You Prefer to?",
                         different_prefer_takeover_emergencycases_consulting: {
                             text: "Adopt Negotiated Procurement-EmergencyCases",
                             next: "result_emergencycases"
@@ -3695,7 +3695,7 @@
                     currentNode === 'defense_defensecooperationagreement_infrastructure' ||
                     currentNode === 'ngo_appropriationlaw_infrastructure' ||
                     currentNode === 'similarproject_agencytoagency_infrastructure' ||
-                    currentNode === 'previouscontract_takeovercontract_consulting' ||
+                    currentNode === 'previouslyprocured_consulting' ||
                     currentNode === 'adjacent_previouscontract_consulting' ||
                     currentNode === 'adjacent_similarscope_consulting' ||
                     currentNode === 'adjacent_contractingcapacity_consulting' ||
