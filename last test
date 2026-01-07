@@ -3189,7 +3189,7 @@
                         next: "lgu_goods" // E//
                     }
                 }
-            },
+            }
         };
 
         const results = {
