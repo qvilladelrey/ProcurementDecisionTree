@@ -2640,116 +2640,115 @@
                     }
                 }
             }
-                isthereemergency_consulting: {
-                    question: "Is there a need to:",
-                    options: {
-                        imminentdanger_consulting: {
-                            text: "🌪️ address imminent danger to life or property during a state of calamity",
-                            next: "prefer_emergencycases_consulting",
-                            triggers: ["Negotiated Procurement: Emergency Cases"]
-                        },
-                        timeessence_consulting: {
-                            text: "🔥 implement prompt measures since time is of the essence in situations arising from natural or man-made calamities",
-                            next: "prefer_emergencycases_consulting",
-                            triggers: ["Negotiated Procurement: Emergency Cases"]
-                        },
-                        immediateaction_consulting: {
-                            text: "🚨 undertake immediate action to prevent damage to or loss of life or property or to restore vital public  services, services facilities,  and other public utilities",
-                            next: "prefer_emergencycases_consulting",
-                            triggers: ["Negotiated Procurement: Emergency Cases"]
-                        },
-                        otherinstancesemergency_consulting: {
-                            text: "⚠️ respond to other instances aside from the mentioned situations where the provision of life, injury, disease, and other negative effects on human, physical, mental and social well-being, together with damage to property, destruction of assets, loss of services, social and economic disruption and environmental degradation",
-                            next: "prefer_emergencycases_consulting",
-                            triggers: ["Negotiated Procurement: Emergency Cases"]
-                        },
-                        takeovercontract_consulting: {
-                            text: "🚨take-over a previously awarded contract that was rescinded or terminated for causes provided for in the contract and existing laws, in order to prevent damage to or loss of life or property or restore vital public services, etc.",
-                            next: "previouscontract_takeovercontract_consulting",
-                            triggers: ["Negotiated Procurement: Emergency Cases"]
-                        },
-                        othersemergency_consulting: {
-                            text: "❌ take action outside the stated options",
-                            next: "previouscontract_takeovercontract_consulting"
-                        }
-                    }
-                },
-                prefer_emergencycases_consulting: {
-                    question: "Would you prefer to:",
-                    options: {
-                        previously_emergencycases_consulting: {
-                            text: "🚨 Adopt Negotiated Procurement: Emergency Cases",
-                            next: "result_emergencycases"
-                        },
-                        previouslyprocured_prefer_consulting: {
-                            text: "🔄 Adopt a Different Procurement Mode",
-                            next: "previouscontract_takeovercontract_consulting"
-                        }
-                    }
-                },
-                previouscontract_takeovercontract_consulting: {
-                    question: "Was it procured previously?",
-                    options: {
-                        yes: {
-                            text: "✅ Yes",
-                            next: "prefer_emergencycases_takeovercontract_consulting",
-                            triggers: "prefer_emergencycases_takeovercontract_consulting"
-                        },
-                        no: {
-                            text: "❌ No",
-                            next: "scientifcscholarly_consulting" // B //
-                        }
-                    }
-                },
-                prefer_emergencycases_takeovercontract_consulting: {
-                    question: "Would you prefer to:",
-                    options: {
-                        yes_prefer_emergencycases_takeovercontract_consulting: {
-                            text: "procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
-                            next: "result_twofailedbiddings"
-                        },
-                        adjacent_consulting: {
-                            text: "🔄 implement work adjacent or contiguous to an ongoing Consulting services Project",
-                            next: "adjacent_previouscontract_consulting"
-                        },
-                        choose_option_consulting: {
-                            text: "🔄choose another option not listed",
-                            next: "scientifcscholarly_consulting" // B //
-                        }
-                    }
-                },
-                adjacent_previouscontract_consulting: {
-                    question: "Was the original contract the result of Competitive Bidding, Competitive Dialogue, and Limited Source Bidding?:",
-                    options: {
-                        yes_different_prefer_takeover_consulting: {
-                            text: "✅ Yes",
-                            next: "adjacent_similarscope_consulting"
-                        },
-                        different_prefer_takeover_consulting: {
-                            text: "❌ No",
-                            next: "scientifcscholarly_consulting" // B //
-                        }
-                    }
-                },
-                adjacent_similarscope_consulting: {
-                    question: "Does the contract to be negotiated have similar or related Scope of Work or Terms of Reference?",
-                        options: {
-                        yes: {
-                            text: "✅ Yes",
-                            next: "adjacent_contractingcapacity_consulting"
-                        },
-                        no: {
-                            text: "❌ No",
-                            next: "scientifcscholarly_consulting"// B //
-                        }
-                        }
+            isthereemergency_consulting: {
+                question: "Is there a need to:",
+                options: {
+                    imminentdanger_consulting: {
+                        text: "🌪️ address imminent danger to life or property during a state of calamity",
+                        next: "prefer_emergencycases_consulting",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
                     },
-                    adjacent_contractingcapacity_consulting: {
-                    question: "Is the project within the contracting capacity of the consultant?",
-                        options: {
-                        yes: {
-                            text: "✅ Yes",
-                            next: "adjacent_sameprices_consulting"
+                    timeessence_consulting: {
+                        text: "🔥 implement prompt measures since time is of the essence in situations arising from natural or man-made calamities",
+                        next: "prefer_emergencycases_consulting",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
+                    },
+                    immediateaction_consulting: {
+                        text: "🚨 undertake immediate action to prevent damage to or loss of life or property or to restore vital public  services, services facilities,  and other public utilities",
+                        next: "prefer_emergencycases_consulting",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
+                    },
+                    otherinstancesemergency_consulting: {
+                        text: "⚠️ respond to other instances aside from the mentioned situations where the provision of life, injury, disease, and other negative effects on human, physical, mental and social well-being, together with damage to property, destruction of assets, loss of services, social and economic disruption and environmental degradation",
+                        next: "prefer_emergencycases_consulting",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
+                    },
+                    takeovercontract_consulting: {
+                        text: "🚨take-over a previously awarded contract that was rescinded or terminated for causes provided for in the contract and existing laws, in order to prevent damage to or loss of life or property or restore vital public services, etc.",
+                        next: "previouscontract_takeovercontract_consulting",
+                        triggers: ["Negotiated Procurement: Emergency Cases"]
+                    },
+                    othersemergency_consulting: {
+                        text: "❌ take action outside the stated options",
+                        next: "previouscontract_takeovercontract_consulting"
+                    }
+                }
+            },
+            prefer_emergencycases_consulting: {
+                question: "Would you prefer to:",
+                options: {
+                    previously_emergencycases_consulting: {
+                        text: "🚨 Adopt Negotiated Procurement: Emergency Cases",
+                        next: "result_emergencycases"
+                    },
+                    previouslyprocured_prefer_consulting: {
+                        text: "🔄 Adopt a Different Procurement Mode",
+                        next: "previouscontract_takeovercontract_consulting"
+                    }
+                }
+            },
+            previouscontract_takeovercontract_consulting: {
+                question: "Was it procured previously?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "prefer_emergencycases_takeovercontract_consulting"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "scientifcscholarly_consulting" // B //
+                    }
+                }
+            },
+            prefer_emergencycases_takeovercontract_consulting: {
+                question: "Would you prefer to:",
+                options: {
+                    yes_prefer_emergencycases_takeovercontract_consulting: {
+                        text: "procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
+                        next: "result_twofailedbiddings"
+                    },
+                    adjacent_consulting: {
+                        text: "🔄 implement work adjacent or contiguous to an ongoing Consulting services Project",
+                        next: "adjacent_previouscontract_consulting"
+                    },
+                    choose_option_consulting: {
+                        text: "🔄choose another option not listed",
+                        next: "scientifcscholarly_consulting" // B //
+                    }
+                }
+            },
+            adjacent_previouscontract_consulting: {
+                question: "Was the original contract the result of Competitive Bidding, Competitive Dialogue, and Limited Source Bidding?:",
+                options: {
+                    yes_different_prefer_takeover_consulting: {
+                        text: "✅ Yes",
+                        next: "adjacent_similarscope_consulting"
+                    },
+                    different_prefer_takeover_consulting: {
+                        text: "❌ No",
+                        next: "scientifcscholarly_consulting" // B //
+                    }
+                }
+            },
+            adjacent_similarscope_consulting: {
+                question: "Does the contract to be negotiated have similar or related Scope of Work or Terms of Reference?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "adjacent_contractingcapacity_consulting"
+                    },
+                    no: {
+                        text: "❌ No",
+                        next: "scientifcscholarly_consulting"// B //
+                    }
+                }
+            },
+            adjacent_contractingcapacity_consulting: {
+                question: "Is the project within the contracting capacity of the consultant?",
+                options: {
+                    yes: {
+                        text: "✅ Yes",
+                        next: "adjacent_sameprices_consulting"
                         },
                         no: {
                             text: "❌ No",
@@ -2757,9 +2756,9 @@
                         }
                     }
                 },
-                adjacent_sameprices_consulting: {
-                    question: "Does the consultant impose the same prices or lower unit prices as the original contract, less mobilization cost?",
-                    options: {
+            adjacent_sameprices_consulting: {
+                question: "Does the consultant impose the same prices or lower unit prices as the original contract, less mobilization cost?",
+                options: {
                         yes: {
                             text: "✅ Yes",
                             next: "adjacent_notexceed_consulting"
@@ -2770,11 +2769,10 @@
                         }
                     }
                 },
-                
-                adjacent_notexceed_consulting: {
-                    question: "Will the amount involved not exceed the amount of the ongoing project?",
-                    options: {
-                        yes: {
+            adjacent_notexceed_consulting: {
+                question: "Will the amount involved not exceed the amount of the ongoing project?",
+                options: {
+                    yes: {
                             text: "✅ Yes",
                             next: "adjacent_negativeslippage_consulting"
                         },
@@ -2784,9 +2782,9 @@
                         }
                     }
                 },
-                adjacent_negativeslippage_consulting: {
-                    question: "Is there no negative slippage or delay in the original contract?",
-                    options: {
+            adjacent_negativeslippage_consulting: {
+                question: "Is there no negative slippage or delay in the original contract?",
+                options: {
                         yes: {
                             text: "✅ Yes",
                             next: "adjacent_contractexpiry_consulting"
@@ -2823,7 +2821,6 @@
                         }
                     }
                 },
-
                 prefer_takeover_consulting: {
                     options: {
                         question: "Would You Prefer to?",
@@ -2854,16 +2851,15 @@
                         }
                     }
                 },
-            
     // Consulting Services B//
                 scientifcscholarly_consulting: {
-                    question: "Can the Consulting Services to be procured be classified as scientific, academic, scholarly work or research, or legal services?:",
+                    question: "Can the Consulting Services to be procured be classified as scientific, academic, scholarly work or research, or legal services?",
                     options: {
-                        limitedsource_consulting: {
+                        yes: {
                             text: "✅ Yes",
                             next: "prefer_scientificscholarly_consulting"
                         },
-                        need__adoptdiffrent_consulting: {
+                        no: {
                             text: "❌ No",
                             next: "highlyspecialized_consulting"
                         }
@@ -2885,11 +2881,11 @@
                 highlyspecialized_consulting: {
                     question: "Is the project highly specialized or complex, which is known to be obtainable only from a limited number of sources?",
                     options: {
-                        limitedsource_consulting: {
+                        yes: {
                             text: "✅ Yes", 
                             next: "approvedlist_limitedsourcebidding_consulting"
                         },
-                        need__adoptdiffrent_consulting: {
+                        no: {
                             text: "❌ No",
                             next: "highlytechnicalconsultant_options"
                         }
