@@ -620,7 +620,7 @@
                     },
                     consulting: {
                         text: "🤝 Consulting Services",
-                        next: "result_underconstruction"
+                        next: "isthereemergency_consulting"
                     }
                 }
             },
