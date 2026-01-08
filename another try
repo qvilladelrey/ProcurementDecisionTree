@@ -606,7 +606,7 @@
 
     </div>
 
-    <script>
+   <script>
         const decisionTree = {
             start: {
                 question: "What is the nature of your procurement project?",
@@ -1785,7 +1785,7 @@
                 }
             },
             approvedlist_limitedsourcebidding_noncse: {
-                question: "Are the set of pre-selected suppliers included in a government-approved or self-generated supplier list?",
+                question: "Are the set of pre-selected suppliers included in a government-approved or self-generated supplier list?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2052,7 +2052,7 @@
                 }
             },
             repeatorder_previousprocurement_competitive_cse: {
-                question: "Was the original contract awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
+                question: "Was the original contract awarded through Competitive Bidding, Limited Source Bidding, Competitive Dialogue, or Unsolicited Offer with Bid Matching?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2840,8 +2840,8 @@
                     }
                 },
                 prefer_emergencycases_takeovercontract_consulting: {
+                    question: "Would You Prefer to:",
                     options: {
-                        question: "Would You Prefer to:"
                         different_prefer_emergencycases_takeovercontract_consulting: {
                             text: "Adopt a Different Procurement Mode",
                             next: "scientificscholarly_consulting" // B //
