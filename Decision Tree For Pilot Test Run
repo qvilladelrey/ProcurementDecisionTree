@@ -2238,11 +2238,11 @@
                         next: "result_twofailedbiddings"
                       },
                     adjacent_infrastructure: {
-                        text: "🔄 implement work adjacent or contiguous to an ongoing Infrastructure Project",
+                        text: "🏛️ implement work adjacent or contiguous to an ongoing Infrastructure Project",
                         next: "adjacent_previouscontract_infrastructure",
                     },
                     otherpreviouslyprocured_infrastructure: {
-                        text: "🔄 choose another option not listed",
+                        text: "❌ choose another option not listed",
                         next: "type_infrastructure"
                     }
                 }
@@ -2709,11 +2709,11 @@
                         next: "result_twofailedbiddings"
                     },
                     adjacent_consulting: {
-                        text: "🔄 implement work adjacent or contiguous to an ongoing Consulting services Project",
+                        text: "📝 implement work adjacent or contiguous to an ongoing Consulting services Project",
                         next: "adjacent_previouscontract_consulting"
                     },
                     choose_option_consulting: {
-                        text: "🔄 choose another option not listed",
+                        text: "❌ choose another option not listed",
                         next: "scientificscholarly_consulting" // B //
                     }
                 }
@@ -3073,7 +3073,7 @@
                             next: "result_unsolicitedofferwithbidmatching"
                         },
                         emergingtechnology_consulting: {
-                            text: "📋 incorporate features promoting emerging technology and sustainable solutions",
+                            text: "🔬 incorporate features promoting emerging technology and sustainable solutions",
                             next: "result_unsolicitedofferwithbidmatching" 
                         },
                         stateoftheart_consulting: {
