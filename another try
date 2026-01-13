@@ -2234,7 +2234,7 @@
                 question: "Would you prefer to:",
                 options: {
                     twofailedbidding_infrastructure: {
-                        text: "🔄procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
+                        text: "🔄 procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
                         next: "result_twofailedbiddings"
                       },
                     adjacent_infrastructure: {
@@ -2242,7 +2242,7 @@
                         next: "adjacent_previouscontract_infrastructure",
                     },
                     otherpreviouslyprocured_infrastructure: {
-                        text: "🔄choose another option not listed",
+                        text: "🔄 choose another option not listed",
                         next: "type_infrastructure"
                     }
                 }
@@ -2705,7 +2705,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_emergencycases_takeovercontract_consulting: {
-                        text: "🔄procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
+                        text: "🔄 procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
                         next: "result_twofailedbiddings"
                     },
                     adjacent_consulting: {
@@ -2713,7 +2713,7 @@
                         next: "adjacent_previouscontract_consulting"
                     },
                     choose_option_consulting: {
-                        text: "🔄choose another option not listed",
+                        text: "🔄 choose another option not listed",
                         next: "scientificscholarly_consulting" // B //
                     }
                 }
@@ -2922,15 +2922,15 @@
                     question: "Is the Consulting Services:",
                     options: {
                         highlytechnicalproprietary_consulting: {
-                            text: "highly technical or proprietary",
+                            text: "⚙️ highly technical or proprietary",
                             next: "prefer_highlytechnicalconsultant"
                         },
                         primarilyconfidential_consulting: {
-                            text: "primarily confidential or policy determining",
+                            text: "📋 primarily confidential or policy determining",
                             next: "typeofconsultant_consulting" // D //
                         },
                         highlytechnicalconsultant_other_options: {
-                            text: "not among the stated options",
+                            text: "❌ not among the stated options",
                             next: "defense_necessary_consulting"
                         }
                     }
@@ -3043,7 +3043,7 @@
                             next: "prefer_competitivedialogue_consulting" 
                         },
                         othergoods_competitivedialogue_consulting: {
-                            text: "📋 pertain to those not among the stated options",
+                            text: "❌ pertain to those not among the stated options",
                             next: "unsolicitedoffer_consulting" // D //
                         },
                     }
@@ -3077,11 +3077,11 @@
                             next: "result_unsolicitedofferwithbidmatching" 
                         },
                         stateoftheart_consulting: {
-                            text: "📋involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
+                            text: "📋 involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
                             next: "result_unsolicitedofferwithbidmatching"
                         },
                         otherservices_unsolicitedofferwithbidmatching_consulting: {
-                            text: "📋pertain to those not among the stated options",
+                            text: "❌ pertain to those not among the stated options",
                             next: "result_reviewtechspecs" 
                         }
                     }
@@ -3168,7 +3168,7 @@
                             next: "prefer_agencytoagency_consulting"
                         },
                         no: {
-                            text: "🔄 No",
+                            text: "❌ No",
                             next: "lgu_goods" // E //
                         }
                     }
