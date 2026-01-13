@@ -2571,7 +2571,7 @@
                         next: "necessarytools_agencytoagency_infrastructure"
                     },
                     othercontractor_infrastructure: {
-                        text: "📋 not among the stated options",
+                        text: "❌ not among the stated options",
                         next: "lgu_goods" // E //
                     },
                 }
