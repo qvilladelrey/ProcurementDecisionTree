@@ -3164,7 +3164,7 @@
                             next: "necessarytools_agencytoagency_consulting"
                         },
                         otherconsultant_consulting: {
-                            text: "📋 not among the stated options",
+                            text: "❌ not among the stated options",
                             next: "lgu_goods" // E //
                         }
                     }
