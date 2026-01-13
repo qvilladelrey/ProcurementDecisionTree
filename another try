@@ -3694,6 +3694,7 @@
                     currentNode === 'defense_notavailablelocally_infrastructure' ||
                     currentNode === 'defense_afpmodernizationprogram_infrastructure' ||
                     currentNode === 'defense_defensecooperationagreement_infrastructure' ||
+                    currentNode === 'necessarytools_agencytoagency_infrastructure' ||
                     currentNode === 'ngo_appropriationlaw_infrastructure' ||
                     currentNode === 'similarproject_agencytoagency_infrastructure' ||
                     currentNode === 'previouslyprocured_consulting' ||
