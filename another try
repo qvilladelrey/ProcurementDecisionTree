@@ -2234,7 +2234,7 @@
                 question: "Would you prefer to:",
                 options: {
                     twofailedbidding_infrastructure: {
-                        text: "procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
+                        text: "🔄procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
                         next: "result_twofailedbiddings"
                       },
                     adjacent_infrastructure: {
@@ -2369,11 +2369,11 @@
                 question: "Would You Prefer to?",    
                 options: {
                     different_prefer_takeover_emergencycases_infrastructure: {
-                        text: "🔄 Adopt Negotiated Procurement-EmergencyCases",
+                        text: "🚨 Adopt Negotiated Procurement-EmergencyCases",
                         next: "result_emergencycases"
                     },
                     yes_prefer_takeover_infrastructure: {
-                        text: "🔄 Adopt Negotiated Procurement-Take-Over of Contracts",
+                        text: "📋 Adopt Negotiated Procurement-Take-Over of Contracts",
                         next: "result_takeoverofcontracts"
                     },
                    different_prefer_takeover_infrastructure: {
@@ -2390,7 +2390,7 @@
                         next: "type_infrastructure" // B //
                     },
                     yes_prefer_emergencycases_takeovercontract_infrastructure: {
-                        text: "🔄 Adopt Negotiated Procurement-EmergencyCases",
+                        text: "🚨 Adopt Negotiated Procurement-EmergencyCases",
                         next: "result_emergencycases"
                     }
                 }
@@ -2421,11 +2421,11 @@
                 question: "Would you prefer to:",
                 options: {
                     different_prefer_scientificscholarly_infrastructure: {
-                        text: "🔄Adopt Negotiated Procurement-Scientific, Scholarly or Artistic Work,Exclusive Technology and Media Services",
+                        text: "🎓 Adopt Negotiated Procurement-Scientific, Scholarly or Artistic Work,Exclusive Technology and Media Services",
                         next: "result_scientificscholarlyetc"
                     },
                     yes_prefer_scientificscholarly_infrastructure: {
-                        text: "🔄Adopt a Different Procurement Mode",
+                        text: "🔄 Adopt a Different Procurement Mode",
                         next: "typeofgood_competitivedialogue_infrastructure" // C//
                     }
                 }
@@ -2499,7 +2499,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_defensecooperation_infrastructure: {
-                        text: "🔄 Adopt Negotiated Procurement-Defense Cooperation Agreements and Inventory-Based Items",
+                        text: "🚁 Adopt Negotiated Procurement-Defense Cooperation Agreements and Inventory-Based Items",
                         next: "result_defensecooperationagreement"
                     },
                     different_prefer_defensecooperation_infrastructure: {
@@ -2512,7 +2512,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_localcommunity_noncse: {
-                        text: "🔄 Adopt Negotiated Procurement-Community Participation",
+                        text: "🏘️ Adopt Negotiated Procurement-Community Participation",
                         next: "result_communityparticipation"
                     },
                     different_prefer_localcommunity_noncse: {
@@ -2548,7 +2548,7 @@
                 question: "Would you prefer to:?",
                 options: {
                     yes_prefer_competitivedialogue_infrastructure: {
-                        text: "🔄 Adopt Competitive Dialogue",
+                        text: "🤝 Adopt Competitive Dialogue",
                         next: "result_competitivedialogue"
                     },
                     different_prefer_competitivedialogue_infrastructure: {
@@ -2584,7 +2584,7 @@
                         next: "prefer_ngoparticipation_infrastructure"
                     },
                     no: {
-                        text: "🔄 No",
+                        text: "❌ No",
                         next: "lgu_goods" // E //
                     }
                 }
@@ -2593,7 +2593,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_ngoparticipation_infrastructure: {
-                        text: "🔄Adopt Negotiated Procurement-Non-Government Organization (NGO) Participation",
+                        text: "🏢 Adopt Negotiated Procurement-Non-Government Organization (NGO) Participation",
                         next: "result_ngoparticipation"
                     },
                     different_prefer_ngoparticipation_infrastructure: {
@@ -2610,7 +2610,7 @@
                         next: "similarproject_agencytoagency_infrastructure"
                     },
                     no: {
-                        text: "🔄 No",
+                        text: "❌ No",
                         next: "lgu_goods" // E //
                     }
                 }
@@ -2623,7 +2623,7 @@
                         next: "prefer_agencytoagency_infrastructure"
                     },
                     no: {
-                        text: "🔄 No",
+                        text: "❌ No",
                         next: "lgu_goods" // E //
                     }
                 }
@@ -2632,7 +2632,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_agencytoagency_infrastructure: {
-                        text: "🔄Adopt Negotiated Procurement-Agency-to-Agency",
+                        text: "🏛️ Adopt Negotiated Procurement-Agency-to-Agency",
                         next: "result_agencytoagency"
                     },
                     different_prefer_agencytoagency_infrastructure: {
@@ -2705,7 +2705,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_emergencycases_takeovercontract_consulting: {
-                        text: "procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
+                        text: "🔄procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
                         next: "result_twofailedbiddings"
                     },
                     adjacent_consulting: {
@@ -2826,15 +2826,15 @@
                     question: "Would You Prefer to?",
                     options: {
                         different_prefer_takeover_emergencycases_consulting: {
-                            text: "Adopt Negotiated Procurement-EmergencyCases",
+                            text: "🚨Adopt Negotiated Procurement-EmergencyCases",
                             next: "result_emergencycases"
                         },
                         yes_prefer_takeover_consulting: {
-                            text: "Adopt Negotiated Procurement-Take-Over of Contracts",
+                            text: "📋Adopt Negotiated Procurement-Take-Over of Contracts",
                             next: "result_takeoverofcontracts"
                         },
                         different_prefer_takeover_consulting: {
-                            text: "Adopt a Different Procurement Mode",
+                            text: "🔄Adopt a Different Procurement Mode",
                             next: "scientificscholarly_consulting" // B //
                         }
                     }
@@ -2843,11 +2843,11 @@
                     question: "Would You Prefer to:",
                     options: {
                         different_prefer_emergencycases_takeovercontract_consulting: {
-                            text: "Adopt a Different Procurement Mode",
+                            text: "🔄 Adopt a Different Procurement Mode",
                             next: "scientificscholarly_consulting" // B //
                         },
                         yes_prefer_emergencycases_takeovercontract_consulting: {
-                            text: "Adopt Negotiated Procurement-EmergencyCases",
+                            text: "🚨 Adopt Negotiated Procurement-EmergencyCases",
                             next: "result_emergencycases"
                         }
                     }
@@ -2870,11 +2870,11 @@
                     question: "Would you prefer to:",
                     options: {
                         yes_prefer_scientificscholarly_consulting: {
-                            text: "🔄Adopt Negotiated Procurement-Scientific, Scholarly or Artistic Work,Exclusive Technology and Media Services",
+                            text: "🎓 Adopt Negotiated Procurement-Scientific, Scholarly or Artistic Work,Exclusive Technology and Media Services",
                             next: "result_scientificscholarlyetc"
                         },
                         different_prefer_scientificscholarly_consulting: {
-                            text: "🔄Adopt a Different Procurement Mode",
+                            text: "🔄 Adopt a Different Procurement Mode",
                             next: "highlyspecialized_consulting"
                         }
                     }
@@ -2909,7 +2909,7 @@
                     question: "Would you prefer to:",
                     options: {
                         yes_prefer_limitedsourcebidding_consulting: {
-                            text: "✅ Adopt Limited Source Bidding",
+                            text: "🏭 Adopt Limited Source Bidding",
                             next: "result_limitedsourcebidding"
                         },
                         different_prefer_limitedsourcebidding_consulting: {
@@ -2939,7 +2939,7 @@
                     question: "Would you prefer to:",
                     options: {
                         yes_prefer_highlytechnicalconsultant: {
-                            text: "🔄 Adopt Negotiated Procurement-Highly Technical Consultant",
+                            text: "🌟 Adopt Negotiated Procurement-Highly Technical Consultant",
                             next: "result_highlytechnicalconsultants"
                         },
                         different_prefer_highlytechnicalconsultant: {
@@ -3004,7 +3004,7 @@
                     question: "Would you prefer to:",
                     options: {
                         yes_prefer_defensecooperation_consulting: {
-                            text: "✅ Adopt Negotiated Procurement-Defense Cooperation Agreements and Inventory-Based Items",
+                            text: "🚁 Adopt Negotiated Procurement-Defense Cooperation Agreements and Inventory-Based Items",
                             next: "result_defensecooperationagreement"
                         },
                         different_prefer_defensecooperation_consulting: {
@@ -3022,7 +3022,7 @@
                             next: "typeofproject_unsolicitedofferwithbidmatching_consulting"
                         },
                         no: {
-                            text: "🔄 No",
+                            text: "❌ No",
                             next: "typeofproject_competitivedialogue_consulting" 
                         }
                     }
@@ -3052,7 +3052,7 @@
                     question: "Would you prefer to:",
                     options: {
                         yes_prefer_competitivedialogue_consulting: {
-                            text: "Adopt Competitive Dialogue",
+                            text: "🤝 Adopt Competitive Dialogue",
                             next: "result_competitivedialogue"
                         },
                         different_prefer_competitivedialogue_consulting: {
@@ -3069,7 +3069,7 @@
                             next: "result_unsolicitedofferwithbidmatching"
                         },
                         substantialimprovement_consulting: {
-                            text: "🔄offer a substantial improvement over existing solutions, demonstrated through verifiable data, proof of concept, or technical studies",
+                            text: "🔄 offer a substantial improvement over existing solutions, demonstrated through verifiable data, proof of concept, or technical studies",
                             next: "result_unsolicitedofferwithbidmatching"
                         },
                         emergingtechnology_consulting: {
@@ -3091,7 +3091,7 @@
                     question: "Is the consultant:",
                     options: {
                         unagency_consulting: {
-                            text: "United Nations (UN) Agencies, International Organizations or International Financing Institutions",
+                            text: "🌐 United Nations (UN) Agencies, International Organizations or International Financing Institutions",
                             next: "advancedtechnology_unagency_consulting"
                         },
                         ngo_consulting: {
@@ -3116,7 +3116,7 @@
                             next: "prefer_unagency_consulting"
                         },
                         no: {
-                            text: "🔄 No",
+                            text: "❌ No",
                             next: "lgu_goods" // E //
                         }
                     }
@@ -3125,7 +3125,7 @@
                     question: "Would you prefer to:",
                     options: {
                         yes_prefer_unagency_consulting: {
-                            text: "Adopt Negotiated Procurement-United Nations (UN) Agencies, International Organizations or International Financing Institutions",
+                            text: "🌐 Adopt Negotiated Procurement-United Nations (UN) Agencies, International Organizations or International Financing Institutions",
                             next: "result_unagencies"
                         },
                         different_prefer_unagency_consulting: {
@@ -3142,7 +3142,7 @@
                             next: "prefer_ngoparticipation_consulting"
                         },
                         no: {
-                            text: "🔄 No",
+                            text: "❌ No",
                             next: "lgu_goods"// E //
                         }
                     }
@@ -3151,11 +3151,11 @@
                     question: "Would you prefer to:",
                     options: {
                         different_prefer_ngoparticipation_consulting: {
-                            text: "🔄Adopt Negotiated Procurement-Non-Government Organization (NGO) Participation",
+                            text: "🏢 Adopt Negotiated Procurement-Non-Government Organization (NGO) Participation",
                             next: "result_ngoparticipation"
                         },
                         yes_prefer_ngoparticipation_consulting: {
-                            text: "🔄Adopt a Different Procurement Mode",
+                            text: "🔄 Adopt a Different Procurement Mode",
                             next: "lgu_goods" // E//
                         }
                     }
@@ -3177,7 +3177,7 @@
                     question: "Would you prefer to:",
                     options: {
                         yes_prefer_agencytoagency_consulting: {
-                            text: "🔄Adopt Negotiated Procurement-Agency-to-Agency",
+                            text: "🏛️ Adopt Negotiated Procurement-Agency-to-Agency",
                             next: "result_agencytoagency"
                         },
                         different_prefer_agencytoagency_consulting: {
