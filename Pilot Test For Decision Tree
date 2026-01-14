@@ -2360,7 +2360,6 @@
                     }
                 }
             },
-            
             adjacent_sameprices_infrastructure: {
                 question: "Does the contractor use the same prices or lower unit prices as in the original contract less mobilization cost?",
                 options: {
@@ -2461,15 +2460,15 @@
                 question: "Does the Infrastructure Project pertain to:",
                 options: {
                     restorative_infrastructure: {
-                        text: "📦 restorative works for the conservation of historical and culturally significant structures and artworks",
+                        text: "🏛️ restorative works for the conservation of historical and culturally significant structures and artworks",
                         next: "prefer_scientificscholarly_infrastructure"
                     },
                     highlyspecialized_infrastructure: {
-                        text: "🔄 highly specialized infrastructure projects that involve and affect national security",
+                        text: "🏗️ highly specialized infrastructure projects that involve and affect national security",
                         next: "approvedlist_limitedsourcebidding_infrastructure"
                     },
                     simpleinfrastructure_localcommunity: {
-                        text: "📋 simple Infrastructure Projects to be implemented by a local communitiy or social group (CSG)",
+                        text: "🏘️ simple Infrastructure Projects to be implemented by a local communitiy or social group (CSG)",
                         next: "prefer_localcommunity_infrastructure"
                     },
                     othertype_infrastructure: {
@@ -2482,7 +2481,7 @@
                 question: "Would you prefer to:",
                 options: {
                     different_prefer_scientificscholarly_infrastructure: {
-                        text: "🎓 Adopt Negotiated Procurement-Scientific, Scholarly or Artistic Work,Exclusive Technology and Media Services",
+                        text: "🎓 Adopt Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services",
                         next: "result_scientificscholarlyetc"
                     },
                     yes_prefer_scientificscholarly_infrastructure: {
@@ -2531,7 +2530,7 @@
                 }
             },
             defense_afpmodernizationprogram_infrastructure: {
-                question: "Is the Infrastruture Project to be procured included in the AFP Modernization Program previously approved by the President of the PH?",
+                question: "Is the Infrastruture Project to be procured included in the AFP Modernization Program previously approved by the President of the Philippines?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2560,7 +2559,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_defensecooperation_infrastructure: {
-                        text: "🚁 Adopt Negotiated Procurement-Defense Cooperation Agreements and Inventory-Based Items",
+                        text: "🚁 Adopt Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items",
                         next: "result_defensecooperationagreement"
                     },
                     different_prefer_defensecooperation_infrastructure: {
@@ -2573,7 +2572,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_localcommunity_noncse: {
-                        text: "🏘️ Adopt Negotiated Procurement-Community Participation",
+                        text: "🏘️ Adopt Negotiated Procurement: Community Participation",
                         next: "result_communityparticipation"
                     },
                     different_prefer_localcommunity_noncse: {
@@ -2582,21 +2581,20 @@
                     }
                 }
             },
-
             // Infastructure C //
             typeofgood_competitivedialogue_infrastructure: {
                 question: "Does the Infrastructure Project:",
                 options: {
                     innovativedesign_competitivedialogue_infrastructure: {
-                        text: "📦 include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility",
+                        text: "🤖 include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility",
                         next: "prefer_competitivedialogue_infrastructure"
                     },
                     priornegotiation_competitivedialogue_infrastructure: {
-                        text: "🔄 involve a contract that requires prior negotiations with suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
+                        text: "⚙️ involve a contract that requires prior negotiations with suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
                         next: "prefer_competitivedialogue_infrastructure"
                     },
                     undefinedtechspecs_competitivedialogue_infrastructure: {
-                        text: "📋 include Technical Specifications that cannot be sufficiently established  or precisely defined by the Procuring Entity",
+                        text: "💡 include Technical Specifications that cannot be sufficiently established  or precisely defined by the Procuring Entity",
                         next: "prefer_competitivedialogue_infrastructure"
                     },
                     others_competitivedialogue_infrastructure: {
@@ -2618,17 +2616,16 @@
                     }
                 }
             },
-
             // Infastructure D //
             typeofcontractor_infrastructure: {
                 question: "Is the contractor:",
                 options: {
                     ngo_infrastructure: {
-                        text: "📦 a non-stock, non-profit domestic corporation with the Securities and Exchange Commission (SEC) or a cooperative registered with the Cooperative Development Authority (CDA)",
+                        text: "🏢 a non-stock, non-profit domestic corporation with the Securities and Exchange Commission (SEC) or a cooperative registered with the Cooperative Development Authority (CDA)",
                         next: "ngo_appropriationlaw_infrastructure"
                     },
                     governmentagency_infrastructure: {
-                        text: "🔄 another agency with the mandate and absorptive capacity to undertake the project, as validated by the Procuring Entity",
+                        text: "🏛️ another agency with the mandate and absorptive capacity to undertake the project, as validated by the Procuring Entity",
                         next: "necessarytools_agencytoagency_infrastructure"
                     },
                     othercontractor_infrastructure: {
@@ -2654,7 +2651,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_ngoparticipation_infrastructure: {
-                        text: "🏢 Adopt Negotiated Procurement-Non-Government Organization (NGO) Participation",
+                        text: "🏢 Adopt Negotiated Procurement: Non-Government Organization (NGO) Participation",
                         next: "result_ngoparticipation"
                     },
                     different_prefer_ngoparticipation_infrastructure: {
@@ -2677,7 +2674,7 @@
                 }
             },
             similarproject_agencytoagency_infrastructure: {
-                question: "Does the SA have a track record of having completed, or supervised a project, by Admin or by contract, similar to and with a cost of at least 50% of the project at hand?",
+                question: "Does the Servicing Agency (SA) have a track record of having completed, or supervised a project, by Administration or by contract, similar to and with a cost of at least 50% of the project at hand?",
                 options: {
                     yes: {
                         text: "✅ Yes",
@@ -2693,7 +2690,7 @@
                 question: "Would you prefer to:",
                 options: {
                     yes_prefer_agencytoagency_infrastructure: {
-                        text: "🏛️ Adopt Negotiated Procurement-Agency-to-Agency",
+                        text: "🏛️ Adopt Negotiated Procurement: Agency-to-Agency",
                         next: "result_agencytoagency"
                     },
                     different_prefer_agencytoagency_infrastructure: {
@@ -2887,11 +2884,11 @@
                     question: "Would You Prefer to?",
                     options: {
                         different_prefer_takeover_emergencycases_consulting: {
-                            text: "🚨Adopt Negotiated Procurement-EmergencyCases",
+                            text: "🚨Adopt Negotiated Procurement: Emergency Cases",
                             next: "result_emergencycases"
                         },
                         yes_prefer_takeover_consulting: {
-                            text: "📋Adopt Negotiated Procurement-Take-Over of Contracts",
+                            text: "📋Adopt Negotiated Procurement: Take-Over of Contracts",
                             next: "result_takeoverofcontracts"
                         },
                         different_prefer_takeover_consulting: {
@@ -2903,13 +2900,13 @@
                 prefer_emergencycases_takeovercontract_consulting: {
                     question: "Would You Prefer to:",
                     options: {
+                        yes_prefer_emergencycases_takeovercontract_consulting: {
+                            text: "🚨 Adopt Negotiated Procurement: Emergency Cases",
+                            next: "result_emergencycases"
+                        },
                         different_prefer_emergencycases_takeovercontract_consulting: {
                             text: "🔄 Adopt a Different Procurement Mode",
                             next: "scientificscholarly_consulting" // B //
-                        },
-                        yes_prefer_emergencycases_takeovercontract_consulting: {
-                            text: "🚨 Adopt Negotiated Procurement-EmergencyCases",
-                            next: "result_emergencycases"
                         }
                     }
                 },
@@ -2931,7 +2928,7 @@
                     question: "Would you prefer to:",
                     options: {
                         yes_prefer_scientificscholarly_consulting: {
-                            text: "🎓 Adopt Negotiated Procurement-Scientific, Scholarly or Artistic Work,Exclusive Technology and Media Services",
+                            text: "🎓 Adopt Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services",
                             next: "result_scientificscholarlyetc"
                         },
                         different_prefer_scientificscholarly_consulting: {
@@ -3065,7 +3062,7 @@
                     question: "Would you prefer to:",
                     options: {
                         yes_prefer_defensecooperation_consulting: {
-                            text: "🚁 Adopt Negotiated Procurement-Defense Cooperation Agreements and Inventory-Based Items",
+                            text: "🚁 Adopt Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items",
                             next: "result_defensecooperationagreement"
                         },
                         different_prefer_defensecooperation_consulting: {
@@ -3092,15 +3089,15 @@
                     question: "Do the Consulting Services to be procured:", 
                     options: {
                         innovativedesign_competitivedialogue_consulting: {
-                            text: "📦 include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility",
+                            text: "🤖 include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility",
                             next: "prefer_competitivedialogue_consulting"
                         },
                         priornegotiation_competitivedialogue_consulting: {
-                            text: "🔄 have a contract requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
+                            text: "⚙️ have a contract requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
                             next: "prefer_competitivedialogue_consulting"
                         },
                         undefinedtechspecs_competitivedialogue_consulting: {
-                            text: "📋 have Technical Specifications cannot be sufficiently established or precisely defined by the PE",
+                            text: "💡 have Technical Specifications cannot be sufficiently established or precisely defined by the PE",
                             next: "prefer_competitivedialogue_consulting" 
                         },
                         othergoods_competitivedialogue_consulting: {
@@ -3126,19 +3123,19 @@
                     question: "Does the Consulting Services to be procured:",
                     options: {
                         significantbenefits_consulting: {
-                            text: "📦 provide significant benefits to the procuring entity in terms of efficiency, cost, or outcome",
+                            text: "⚡ provide significant benefits to the Procuring Entity in terms of efficiency, cost, or outcome",
                             next: "result_unsolicitedofferwithbidmatching"
                         },
                         substantialimprovement_consulting: {
-                            text: "🔄 offer a substantial improvement over existing solutions, demonstrated through verifiable data, proof of concept, or technical studies",
+                            text: "📈 offer a substantial improvement over existing solutions, demonstrated through verifiable data, proof of concept, or technical studies",
                             next: "result_unsolicitedofferwithbidmatching"
                         },
                         emergingtechnology_consulting: {
-                            text: "🔬 incorporate features promoting emerging technology and sustainable solutions",
+                            text: "💡 incorporate features promoting emerging technology and sustainable solutions",
                             next: "result_unsolicitedofferwithbidmatching" 
                         },
                         stateoftheart_consulting: {
-                            text: "📋 involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
+                            text: "🛰️ involve state-of-the-art technology, as certified by a recognized independent agency with expertise in the field",
                             next: "result_unsolicitedofferwithbidmatching"
                         },
                         otherservices_unsolicitedofferwithbidmatching_consulting: {
@@ -3156,11 +3153,11 @@
                             next: "advancedtechnology_unagency_consulting"
                         },
                         ngo_consulting: {
-                            text: "📦 a non-stock, non-profit domestic corporation with the Securities and Exchange Commission (SEC) or a cooperative registered with the Cooperative Development Authority (CDA)",
+                            text: "🏢 a non-stock, non-profit domestic corporation with the Securities and Exchange Commission (SEC) or a cooperative registered with the Cooperative Development Authority (CDA)",
                             next: "ngo_appropriationlaw_consulting"
                         },
                         governmentagency_consulting: {
-                            text: "🔄 another agency with the mandate and absorptive capacity to undertake the project, as validated by the Procuring Entity",
+                            text: "🏛️ another agency with the mandate and absorptive capacity to undertake the project, as validated by the Procuring Entity",
                             next: "necessarytools_agencytoagency_consulting"
                         },
                         otherconsultant_consulting: {
