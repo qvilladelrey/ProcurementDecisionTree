@@ -2427,14 +2427,14 @@
                 }
             },
             prefer_takeover_infrastructure: {
-                question: "Would You Prefer to?",    
+                question: "Would You prefer to?",    
                 options: {
                     different_prefer_takeover_emergencycases_infrastructure: {
-                        text: "🚨 Adopt Negotiated Procurement-EmergencyCases",
+                        text: "🚨 Adopt Negotiated Procurement: Emergency Cases",
                         next: "result_emergencycases"
                     },
                     yes_prefer_takeover_infrastructure: {
-                        text: "📋 Adopt Negotiated Procurement-Take-Over of Contracts",
+                        text: "📋 Adopt Negotiated Procurement: Take-Over of Contracts",
                         next: "result_takeoverofcontracts"
                     },
                    different_prefer_takeover_infrastructure: {
@@ -2446,13 +2446,13 @@
             prefer_emergencycases_takeovercontract_infrastructure: {
                 question: "Would You Prefer to?",
                 options: {
-                    different_prefer_emergencycases_takeovercontract_infrastructure: {
-                        text: "🔄 Adopt a Different Procurement Mode",
-                        next: "type_infrastructure" // B //
-                    },
                     yes_prefer_emergencycases_takeovercontract_infrastructure: {
                         text: "🚨 Adopt Negotiated Procurement-EmergencyCases",
                         next: "result_emergencycases"
+                    },
+                    different_prefer_emergencycases_takeovercontract_infrastructure: {
+                        text: "🔄 Adopt a Different Procurement Mode",
+                        next: "type_infrastructure" // B //
                     }
                 }
             },
