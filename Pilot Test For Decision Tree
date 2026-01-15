@@ -2687,8 +2687,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "similarproject_agencytoagency_infrastructure",
-                        triggers: ["Negotiated Procurement: Agency-to-Agency"]
+                        next: "similarproject_agencytoagency_infrastructure"
                     },
                     no: {
                         text: "❌ No",
@@ -2701,7 +2700,8 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_agencytoagency_infrastructure"
+                        next: "prefer_agencytoagency_infrastructure",
+                        triggers: ["Negotiated Procurement: Agency-to-Agency"]
                     },
                     no: {
                         text: "❌ No",
