@@ -3023,7 +3023,7 @@
                     question: "Would you prefer to:",
                     options: {
                         yes_prefer_highlytechnicalconsultant: {
-                            text: "🌟 Adopt Negotiated Procurement-Highly Technical Consultant",
+                            text: "🌟 Adopt Negotiated Procurement: Highly Technical Consultant",
                             next: "result_highlytechnicalconsultants"
                         },
                         different_prefer_highlytechnicalconsultant: {
