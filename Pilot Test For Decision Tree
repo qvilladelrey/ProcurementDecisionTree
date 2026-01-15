@@ -2980,7 +2980,8 @@
                     options: {
                         yes: {
                             text: "✅ Yes",
-                            next: "prefer_limitedsourcebidding_consulting"
+                            next: "prefer_limitedsourcebidding_consulting",
+                        triggers: ["Limited Source Bidding"]
                         },
                         no: {
                             text: "❌ No",
