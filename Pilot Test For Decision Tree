@@ -2508,7 +2508,7 @@
                 options: {
                     yes_prefer_limitedsourcebidding_infrastructure: {
                         text: "🏭 Adopt Limited Source Bidding",
-                        next: "result_defensecooperationagreement"
+                        next: "result_limitedsourcebidding"
                     },
                     different_prefer_limitedsourcebidding_infrastructure: {
                         text: "🔄 Adopt a Different Procurement Mode",
