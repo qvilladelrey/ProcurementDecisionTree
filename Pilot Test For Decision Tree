@@ -2417,7 +2417,8 @@
                     options: {
                         yes: {
                             text: "✅ Yes",
-                            next: "prefer_takeover_infrastructure"
+                            next: "prefer_takeover_infrastructure",
+                        triggers: ["Negotiated Procurement: Take-Over of Contracts"]
                         },
                         no: {
                             text: "❌ No",
