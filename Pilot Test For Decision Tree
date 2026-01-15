@@ -2782,10 +2782,10 @@
                     }
                 }
             },
-            prefer_emergencycases_takeovercontract_consulting: {
+            previouslyprocured_prefer_consulting: {
                 question: "Would you prefer to:",
                 options: {
-                    yes_prefer_emergencycases_takeovercontract_consulting: {
+                    twofailedbidding_consulting: {
                         text: "🔄 procure again due to two (2) failures of bidding (Competitive Bidding, Limited Source Bidding, or Competitive Dialogue)",
                         next: "result_twofailedbiddings"
                     },
@@ -2793,7 +2793,7 @@
                         text: "📝 implement work adjacent or contiguous to an ongoing Consulting services Project",
                         next: "adjacent_previouscontract_consulting"
                     },
-                    choose_option_consulting: {
+                    otherpreviouslyprocured_consulting: {
                         text: "❌ choose another option not listed",
                         next: "scientificscholarly_consulting" // B //
                     }
