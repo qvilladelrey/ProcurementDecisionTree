@@ -2495,7 +2495,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "result_limitedsourcebidding"
+                        next: "prefer_limitedsourcebidding_infrastructure"
                     },
                     no: {
                         text: "❌ No",
