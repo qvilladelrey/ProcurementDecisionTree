@@ -3078,7 +3078,8 @@
                     options: {
                         yes: {
                             text: "✅ Yes",
-                            next: "prefer_defensecooperation_consulting"
+                            next: "prefer_defensecooperation_consulting",
+                            triggers: ["Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items"]
                         },
                         no: {
                             text: "❌ No",
