@@ -2512,7 +2512,7 @@
                     },
                     different_prefer_limitedsourcebidding_infrastructure: {
                         text: "🔄 Adopt a Different Procurement Mode",
-                        next: "typeofgood_competitivedialogue_infrastructure" // C //
+                        next: "defense_necessary_infrastructure"
                     }
                 }
             },
