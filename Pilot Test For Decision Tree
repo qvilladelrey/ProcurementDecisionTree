@@ -3134,7 +3134,7 @@
                         },
                         othergoods_competitivedialogue_consulting: {
                             text: "❌ pertain to those not among the stated options",
-                            next: "unsolicitedoffer_consulting" // D //
+                            next: "typeofconsultant_consulting" // D //
                         },
                     }
                 },
