@@ -2752,7 +2752,7 @@
                     },
                     othersemergency_consulting: {
                         text: "❌ take action outside the stated options",
-                        next: "previouscontract_takeovercontract_consulting"
+                        next: "previouslyprocured_consulting"
                     }
                 }
             },
