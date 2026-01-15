@@ -2895,7 +2895,8 @@
                     options: {
                         yes: {
                             text: "✅ Yes",
-                            next: "prefer_takeover_consulting"
+                            next: "prefer_takeover_consulting",
+                        triggers: ["Negotiated Procurement: Take-Over of Contracts"]
                         },
                         no: {
                             text: "❌ No",
