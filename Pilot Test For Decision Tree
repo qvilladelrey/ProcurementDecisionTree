@@ -2800,7 +2800,7 @@
                 }
             },
             adjacent_previouscontract_consulting: {
-                question: "Was the original contract the result of Competitive Bidding, Competitive Dialogue, and Limited Source Bidding?:",
+                question: "Was the original contract the result of Competitive Bidding, Competitive Dialogue, and Limited Source Bidding?",
                 options: {
                     yes_different_prefer_takeover_consulting: {
                         text: "✅ Yes",
@@ -3269,7 +3269,6 @@
                     }
                 }
             };
-
         const results = {
             result_competitivebidding: {
                 title: "Competitive Bidding",
