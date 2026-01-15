@@ -3216,7 +3216,7 @@
                     question: "Would you prefer to:",
                     options: {
                         yes_prefer_unagency_consulting: {
-                            text: "🌐 Adopt Negotiated Procurement-United Nations (UN) Agencies, International Organizations or International Financing Institutions",
+                            text: "🌐 Adopt Negotiated Procurement: United Nations (UN) Agencies, International Organizations or International Financing Institutions",
                             next: "result_unagencies"
                         },
                         different_prefer_unagency_consulting: {
@@ -3243,7 +3243,7 @@
                     question: "Would you prefer to:",
                     options: {
                         different_prefer_ngoparticipation_consulting: {
-                            text: "🏢 Adopt Negotiated Procurement-Non-Government Organization (NGO) Participation",
+                            text: "🏢 Adopt Negotiated Procurement: Non-Government Organization (NGO) Participation",
                             next: "result_ngoparticipation"
                         },
                         yes_prefer_ngoparticipation_consulting: {
@@ -3270,7 +3270,7 @@
                     question: "Would you prefer to:",
                     options: {
                         yes_prefer_agencytoagency_consulting: {
-                            text: "🏛️ Adopt Negotiated Procurement-Agency-to-Agency",
+                            text: "🏛️ Adopt Negotiated Procurement: Agency-to-Agency",
                             next: "result_agencytoagency"
                         },
                         different_prefer_agencytoagency_consulting: {
