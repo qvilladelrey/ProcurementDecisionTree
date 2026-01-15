@@ -2802,11 +2802,11 @@
             adjacent_previouscontract_consulting: {
                 question: "Was the original contract the result of Competitive Bidding, Competitive Dialogue, and Limited Source Bidding?",
                 options: {
-                    yes_different_prefer_takeover_consulting: {
+                    yes: {
                         text: "✅ Yes",
                         next: "adjacent_similarscope_consulting"
                     },
-                    different_prefer_takeover_consulting: {
+                    no: {
                         text: "❌ No",
                         next: "scientificscholarly_consulting" // B //
                     }
