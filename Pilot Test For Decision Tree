@@ -3007,11 +3007,13 @@
                     options: {
                         highlytechnicalproprietary_consulting: {
                             text: "⚙️ highly technical or proprietary",
-                            next: "prefer_highlytechnicalconsultant"
+                            next: "prefer_highlytechnicalconsultant",
+                            triggers: ["Negotiated Procurement: Highly Technical Consultants"]
                         },
                         primarilyconfidential_consulting: {
                             text: "📋 primarily confidential or policy determining",
-                            next: "typeofconsultant_consulting" // D //
+                            next: "prefer_highlytechnicalconsultant",
+                            triggers: ["Negotiated Procurement: Highly Technical Consultants"]
                         },
                         highlytechnicalconsultant_other_options: {
                             text: "❌ not among the stated options",
