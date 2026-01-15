@@ -2904,7 +2904,7 @@
                     }
                 },
                 prefer_takeover_consulting: {
-                    question: "Would You Prefer to?",
+                    question: "Would you prefer to?",
                     options: {
                         different_prefer_takeover_emergencycases_consulting: {
                             text: "🚨Adopt Negotiated Procurement: Emergency Cases",
@@ -2921,7 +2921,7 @@
                     }
                 },
                 prefer_emergencycases_takeovercontract_consulting: {
-                    question: "Would You Prefer to:",
+                    question: "Would you prefer to:",
                     options: {
                         yes_prefer_emergencycases_takeovercontract_consulting: {
                             text: "🚨 Adopt Negotiated Procurement: Emergency Cases",
