@@ -2462,7 +2462,8 @@
                 options: {
                     restorative_infrastructure: {
                         text: "🏛️ restorative works for the conservation of historical and culturally significant structures and artworks",
-                        next: "prefer_scientificscholarly_infrastructure"
+                        next: "prefer_scientificscholarly_infrastructure",
+                        triggers: ["Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services"]
                     },
                     highlyspecialized_infrastructure: {
                         text: "🏗️ highly specialized infrastructure projects that involve and affect national security",
@@ -2470,7 +2471,8 @@
                     },
                     simpleinfrastructure_localcommunity: {
                         text: "🏘️ simple Infrastructure Projects to be implemented by a local communitiy or social group (CSG)",
-                        next: "prefer_localcommunity_infrastructure"
+                        next: "prefer_localcommunity_infrastructure",
+                        triggers: ["Negotiated Procurement: Community Participation"]
                     },
                     othertype_infrastructure: {
                         text: "❌ those not among the stated options",
@@ -2496,7 +2498,8 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_limitedsourcebidding_infrastructure"
+                        next: "prefer_limitedsourcebidding_infrastructure",
+                        triggers: ["Limited Source Bidding"]
                     },
                     no: {
                         text: "❌ No",
@@ -2561,7 +2564,8 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_defensecooperation_infrastructure"
+                        next: "prefer_defensecooperation_infrastructure",
+                        triggers: ["Negotiated Procurement: Defense Cooperation Agreements and Inventory-Based Items"]
                     },
                     no: {
                         text: "❌ No",
@@ -2601,15 +2605,18 @@
                 options: {
                     innovativedesign_competitivedialogue_infrastructure: {
                         text: "🤖 include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility",
-                        next: "prefer_competitivedialogue_infrastructure"
+                        next: "prefer_competitivedialogue_infrastructure",
+                        triggers: ["Competitive Dialogue"]
                     },
                     priornegotiation_competitivedialogue_infrastructure: {
                         text: "⚙️ involve a contract that requires prior negotiations with suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
-                        next: "prefer_competitivedialogue_infrastructure"
+                        next: "prefer_competitivedialogue_infrastructure",
+                        triggers: ["Competitive Dialogue"]
                     },
                     undefinedtechspecs_competitivedialogue_infrastructure: {
                         text: "💡 include Technical Specifications that cannot be sufficiently established  or precisely defined by the Procuring Entity",
-                        next: "prefer_competitivedialogue_infrastructure"
+                        next: "prefer_competitivedialogue_infrastructure",
+                        triggers: ["Competitive Dialogue"]
                     },
                     others_competitivedialogue_infrastructure: {
                         text: "❌ pertain to those not among the stated options",
@@ -2653,7 +2660,8 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_ngoparticipation_infrastructure"
+                        next: "prefer_ngoparticipation_infrastructure",
+                        triggers: ["Negotiated Procurement: Non-Government Organization (NGO) Participation"]
                     },
                     no: {
                         text: "❌ No",
@@ -2679,7 +2687,8 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "similarproject_agencytoagency_infrastructure"
+                        next: "similarproject_agencytoagency_infrastructure",
+                        triggers: ["Negotiated Procurement: Agency-to-Agency"]
                     },
                     no: {
                         text: "❌ No",
