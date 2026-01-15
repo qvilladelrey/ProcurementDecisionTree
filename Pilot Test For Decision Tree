@@ -2774,7 +2774,7 @@
                 options: {
                     yes: {
                         text: "✅ Yes",
-                        next: "prefer_emergencycases_takeovercontract_consulting"
+                        next: "previouslyprocured_prefer_consulting"
                     },
                     no: {
                         text: "❌ No",
