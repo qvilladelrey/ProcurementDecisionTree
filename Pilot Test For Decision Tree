@@ -2940,7 +2940,8 @@
                     options: {
                         yes: {
                             text: "✅ Yes",
-                            next: "prefer_scientificscholarly_consulting"
+                            next: "prefer_scientificscholarly_consulting",
+                        triggers: ["Negotiated Procurement: Scientific, Scholarly or Artistic Work, Exclusive Technology and Media Services"]
                         },
                         no: {
                             text: "❌ No",
