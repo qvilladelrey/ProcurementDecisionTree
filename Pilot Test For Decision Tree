@@ -2617,7 +2617,7 @@
                 }
             },
             prefer_competitivedialogue_infrastructure: {
-                question: "Would you prefer to:?",
+                question: "Would you prefer to:",
                 options: {
                     yes_prefer_competitivedialogue_infrastructure: {
                         text: "🤝 Adopt Competitive Dialogue",
