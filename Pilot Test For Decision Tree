@@ -3119,15 +3119,18 @@
                     options: {
                         innovativedesign_competitivedialogue_consulting: {
                             text: "🤖 include innovative design or solutions involving procurement of complex purchases such as, but not limited to, intellectual services, major information communications technology projects, or sophisticated products that may refer to goods or services, which in order to be produced or offered, would require a high level of technology, human capital, competencies or facility",
-                            next: "prefer_competitivedialogue_consulting"
+                            next: "prefer_competitivedialogue_consulting",
+                        triggers: ["Competitive Dialogue"]
                         },
                         priornegotiation_competitivedialogue_consulting: {
                             text: "⚙️ have a contract requires prior negotiations with the suppliers because of specific circumstances related to nature, complexity, legal and financial issues, or risks attached to the procurement",
-                            next: "prefer_competitivedialogue_consulting"
+                            next: "prefer_competitivedialogue_consulting",
+                        triggers: ["Competitive Dialogue"]
                         },
                         undefinedtechspecs_competitivedialogue_consulting: {
                             text: "💡 have Technical Specifications cannot be sufficiently established or precisely defined by the PE",
-                            next: "prefer_competitivedialogue_consulting" 
+                            next: "prefer_competitivedialogue_consulting",
+                        triggers: ["Competitive Dialogue"]
                         },
                         othergoods_competitivedialogue_consulting: {
                             text: "❌ pertain to those not among the stated options",
