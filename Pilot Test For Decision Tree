@@ -3203,7 +3203,8 @@
                     options: {
                         yes: {
                             text: "✅ Yes",
-                            next: "prefer_unagency_consulting"
+                            next: "prefer_unagency_consulting",
+                        triggers: ["Negotiated Procurement: United Nations (UN) Agencies, International Organization or International Financing Organizations"]
                         },
                         no: {
                             text: "❌ No",
@@ -3229,7 +3230,8 @@
                     options: {
                         yes: {
                             text: "✅ Yes",
-                            next: "prefer_ngoparticipation_consulting"
+                            next: "prefer_ngoparticipation_consulting",
+                        triggers: ["Negotiated Procurement: Non-Government Organization (NGO) Participation"]
                         },
                         no: {
                             text: "❌ No",
@@ -3255,7 +3257,8 @@
                     options: {
                         yes: {
                             text: "✅ Yes",
-                            next: "prefer_agencytoagency_consulting"
+                            next: "prefer_agencytoagency_consulting",
+                        triggers: ["Negotiated Procurement: Agency-to-Agency"]
                         },
                         no: {
                             text: "❌ No",
