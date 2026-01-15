@@ -2503,6 +2503,19 @@
                     }
                 }
             },
+            prefer_limitedsourcebidding_infrastructure: {
+                question: "Would you prefer to:",
+                options: {
+                    yes_prefer_limitedsourcebidding_infrastructure: {
+                        text: "🏭 Adopt Limited Source Bidding",
+                        next: "result_defensecooperationagreement"
+                    },
+                    different_prefer_limitedsourcebidding_infrastructure: {
+                        text: "🔄 Adopt a Different Procurement Mode",
+                        next: "typeofgood_competitivedialogue_infrastructure" // C //
+                    }
+                }
+            },
             defense_necessary_infrastructure: {
                 question: " Was it deemed necessary in order to protect the interest of the country by the Secretary of the Department of National Defense?",
                 options: {
