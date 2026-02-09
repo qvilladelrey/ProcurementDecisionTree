@@ -563,13 +563,13 @@
             <li class="dropdown">
               <a href="#" class="dropbtn" onclick="toggleDropdown(event)">Manual Decision Tree ▾</a>
               <div class="dropdown-content" id="manualDropdown">
-                <a href="https://drive.google.com/file/d/1Pi2GlSFvoYXev4IXcRfAvBvG0D8OROHq/view?usp=sharing" target="_blank">Goods</a>
-                <a href="https://drive.google.com/file/d/1pV0JBLS0YosJ2h6k67If3ajZ5Vr6L-kF/view?usp=sharing" target="_blank">Infrastructure Project</a>
-                <a href="https://drive.google.com/file/d/1h1FTdtfP9Y67G9z6drTfa4I9GTTz78gl/view?usp=sharing" target="_blank">Consulting Services</a>
+                <a href="https://drive.google.com/file/d/1H3xjOcqefxgmvPPeH2-jp3i2yadEShS2/view?usp=sharing" target="_blank">Goods</a>
+                <a href="https://drive.google.com/file/d/1LOu_G6Riq4GVHxq7E86yB6YbRlPEQsRO/view?usp=sharing" target="_blank">Infrastructure Project</a>
+                <a href="https://drive.google.com/file/d/15KA2qarQH1G6w78fYw8RF57VLZf5m-ay/view?usp=sharing" target="_blank">Consulting Services</a>
               </div>
             </li>
         
-            <li><a href="https://drive.google.com/file/d/1byL1CMs_QsS6cUtrhNDVS4RFLWXz3vvP/view?usp=sharing" target="_blank">User Guide</a></li>
+            <li><a href="https://drive.google.com/file/d/1D6fD11bSlo2b5ptlHtlLN2ZeV_XDbFQ5/view?usp=sharing" target="_blank">User Guide</a></li>
             <li><a href="https://www.gppb.gov.ph/" target="_blank">Contact Us</a></li>
           </ul>
         </nav>
